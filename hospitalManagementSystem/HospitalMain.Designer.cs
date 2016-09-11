@@ -62,6 +62,7 @@
             this.btnNewPatient.TabIndex = 1;
             this.btnNewPatient.Text = "New Patient";
             this.btnNewPatient.UseVisualStyleBackColor = true;
+            this.btnNewPatient.Click += new System.EventHandler(this.btnNewPatient_Click);
             // 
             // lblExistingPatient
             // 
@@ -80,6 +81,7 @@
             this.btnExistingPatient.TabIndex = 3;
             this.btnExistingPatient.Text = "Existing Patient";
             this.btnExistingPatient.UseVisualStyleBackColor = true;
+            this.btnExistingPatient.Click += new System.EventHandler(this.btnExistingPatient_Click);
             // 
             // lblPatient
             // 
@@ -98,6 +100,7 @@
             this.btnNewDoctor.TabIndex = 5;
             this.btnNewDoctor.Text = "New Doctor";
             this.btnNewDoctor.UseVisualStyleBackColor = true;
+            this.btnNewDoctor.Click += new System.EventHandler(this.btnNewDoctor_Click);
             // 
             // lblDoctor
             // 
@@ -134,6 +137,7 @@
             this.btnExistingDoctor.TabIndex = 9;
             this.btnExistingDoctor.Text = "Existing Doctor";
             this.btnExistingDoctor.UseVisualStyleBackColor = true;
+            this.btnExistingDoctor.Click += new System.EventHandler(this.btnExistingDoctor_Click);
             // 
             // lblStaff
             // 
@@ -170,6 +174,7 @@
             this.btnNewStaff.TabIndex = 13;
             this.btnNewStaff.Text = "New Staff";
             this.btnNewStaff.UseVisualStyleBackColor = true;
+            this.btnNewStaff.Click += new System.EventHandler(this.btnNewStaff_Click);
             // 
             // btnExistingStaff
             // 
@@ -179,6 +184,7 @@
             this.btnExistingStaff.TabIndex = 14;
             this.btnExistingStaff.Text = "Existing Staff";
             this.btnExistingStaff.UseVisualStyleBackColor = true;
+            this.btnExistingStaff.Click += new System.EventHandler(this.btnExistingStaff_Click);
             // 
             // HospitalMain
             // 
@@ -202,6 +208,8 @@
             this.Controls.Add(this.lblNewPatient);
             this.Name = "HospitalMain";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.HospitalMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -280,6 +280,7 @@
             this.Controls.Add(this.labelFirstName);
             this.Name = "NewStaff";
             this.Text = "NewStaff";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,7 +19,8 @@ namespace hospitalManagementSystem
 
         private void NewPatient_Load(object sender, EventArgs e)
         {
-
+           
         }
+        
     }
 }

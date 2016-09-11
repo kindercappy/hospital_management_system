@@ -281,6 +281,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Name = "NewPatient";
             this.Text = "NewPatient";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.NewPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

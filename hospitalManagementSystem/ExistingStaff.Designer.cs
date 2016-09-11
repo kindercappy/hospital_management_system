@@ -211,7 +211,8 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(124, 299);
+            this.textBoxAddress.Location = new System.Drawing.Point(124, 326);
+            this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddress.TabIndex = 21;
@@ -219,7 +220,7 @@
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(12, 302);
+            this.labelAddress.Location = new System.Drawing.Point(12, 329);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(48, 13);
             this.labelAddress.TabIndex = 20;
@@ -228,7 +229,7 @@
             // labelNationality
             // 
             this.labelNationality.AutoSize = true;
-            this.labelNationality.Location = new System.Drawing.Point(12, 328);
+            this.labelNationality.Location = new System.Drawing.Point(12, 302);
             this.labelNationality.Name = "labelNationality";
             this.labelNationality.Size = new System.Drawing.Size(59, 13);
             this.labelNationality.TabIndex = 22;
@@ -245,7 +246,7 @@
             // comboBoxNationality
             // 
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(124, 325);
+            this.comboBoxNationality.Location = new System.Drawing.Point(124, 299);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 24;
@@ -300,6 +301,7 @@
             this.Controls.Add(this.labelHeightInch);
             this.Name = "ExistingStaff";
             this.Text = "ExistingStaff";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

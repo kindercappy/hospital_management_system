@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExistingDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExistingDoctor.Designer.cs">
+      <DependentUpon>ExistingDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExistingPatient.Designer.cs">
+      <DependentUpon>ExistingPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExistingStaff.Designer.cs">
+      <DependentUpon>ExistingStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="HospitalMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HospitalMain.Designer.cs">
       <DependentUpon>HospitalMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewDoctor.Designer.cs">
+      <DependentUpon>NewDoctor.cs</DependentUpon>
     </Compile>
     <Compile Include="NewPatient.cs">
       <SubType>Form</SubType>
@@ -58,13 +82,34 @@
     <Compile Include="NewPatient.Designer.cs">
       <DependentUpon>NewPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewStaff.Designer.cs">
+      <DependentUpon>NewStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExistingDoctor.resx">
+      <DependentUpon>ExistingDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExistingPatient.resx">
+      <DependentUpon>ExistingPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExistingStaff.resx">
+      <DependentUpon>ExistingStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HospitalMain.resx">
       <DependentUpon>HospitalMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewDoctor.resx">
+      <DependentUpon>NewDoctor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewPatient.resx">
       <DependentUpon>NewPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewStaff.resx">
+      <DependentUpon>NewStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

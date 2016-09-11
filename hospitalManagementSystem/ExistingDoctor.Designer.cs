@@ -301,6 +301,7 @@
             this.Controls.Add(this.labelDoctorID);
             this.Name = "ExistingDoctor";
             this.Text = "ExistingDoctor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
