@@ -21,25 +21,7 @@ namespace hospitalManagementSystem
         private void HospitalMain_Load(object sender, EventArgs e)
         {
             //Sql connection to database
-            sqlConnection();
-        }
-
-        //Sql connection method
-        public void sqlConnection()
-        {
-            string connectionString = "Data Source =CAPPY; Initial Catalog= hospitalManagementSystem; Integrated Security = SSPI; ";
-            SqlConnection cnn;
-            cnn = new SqlConnection(connectionString);
-            try
-            {
-                cnn.Open();
-                //MessageBox.Show("Connected");
-                cnn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cannot open connection string");
-            }
+            //sqlConnection();
         }
 
         // Button click open NewPatient Form

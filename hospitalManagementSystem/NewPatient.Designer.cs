@@ -52,6 +52,7 @@
             this.txtBxAddress = new System.Windows.Forms.TextBox();
             this.lblNationality = new System.Windows.Forms.Label();
             this.comboBxNationality = new System.Windows.Forms.ComboBox();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -250,11 +251,23 @@
             this.comboBxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBxNationality.TabIndex = 24;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonBack.Location = new System.Drawing.Point(15, 344);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(200, 41);
+            this.buttonBack.TabIndex = 25;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // NewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 504);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBxNationality);
             this.Controls.Add(this.lblNationality);
             this.Controls.Add(this.txtBxAddress);
@@ -314,5 +327,6 @@
         private System.Windows.Forms.TextBox txtBxAddress;
         private System.Windows.Forms.Label lblNationality;
         private System.Windows.Forms.ComboBox comboBxNationality;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

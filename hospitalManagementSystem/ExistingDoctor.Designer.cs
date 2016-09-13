@@ -54,6 +54,7 @@
             this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.labelDepartment = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelDoctorID
@@ -268,11 +269,23 @@
             this.labelDepartment.TabIndex = 27;
             this.labelDepartment.Text = "Department:";
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonBack.Location = new System.Drawing.Point(15, 361);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 43);
+            this.buttonBack.TabIndex = 28;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // ExistingDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 520);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelDepartment);
             this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.comboBoxSex);
@@ -335,5 +348,6 @@
         private System.Windows.Forms.ComboBox comboBoxSex;
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Label labelDepartment;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

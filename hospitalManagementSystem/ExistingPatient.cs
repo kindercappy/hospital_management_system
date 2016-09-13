@@ -16,5 +16,12 @@ namespace hospitalManagementSystem
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HospitalMain hospitalMain = new HospitalMain();
+            hospitalMain.ShowDialog();
+            this.Close();
+        }
     }
 }

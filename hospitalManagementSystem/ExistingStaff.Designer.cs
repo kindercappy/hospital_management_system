@@ -54,6 +54,7 @@
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.labelDepartment = new System.Windows.Forms.Label();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelHeightInch
@@ -268,11 +269,23 @@
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 26;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonBack.Location = new System.Drawing.Point(15, 365);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 44);
+            this.buttonBack.TabIndex = 27;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // ExistingStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 519);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.labelDepartment);
             this.Controls.Add(this.comboBoxNationality);
@@ -335,5 +348,6 @@
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Label labelDepartment;
         private System.Windows.Forms.ComboBox comboBoxDepartment;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

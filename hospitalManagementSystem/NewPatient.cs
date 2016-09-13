@@ -21,6 +21,12 @@ namespace hospitalManagementSystem
         {
            
         }
-        
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            HospitalMain hospitalMain = new HospitalMain();
+            hospitalMain.ShowDialog();
+            this.Close();
+        }
     }
 }

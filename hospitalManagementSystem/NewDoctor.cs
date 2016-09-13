@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using HospitalLibrary;
 
 namespace hospitalManagementSystem
 {
@@ -15,6 +17,21 @@ namespace hospitalManagementSystem
         public NewDoctor()
         {
             InitializeComponent();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            HospitalMain hospitalMain = new HospitalMain();
+            hospitalMain.ShowDialog();
+            this.Close();
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            Doctor doc = new Doctor();
+            doc.firstName = this.textBoxFirstName.Text;
+            DoctorManager.Doctor_Save(doc);
+
         }
     }
 }

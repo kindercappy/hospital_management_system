@@ -52,6 +52,8 @@
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -250,11 +252,37 @@
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 26;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.buttonBack.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonBack.Location = new System.Drawing.Point(15, 382);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(200, 33);
+            this.buttonBack.TabIndex = 27;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.SystemColors.GrayText;
+            this.buttonSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonSubmit.Location = new System.Drawing.Point(15, 342);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(200, 34);
+            this.buttonSubmit.TabIndex = 28;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            // 
             // NewDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 516);
+            this.Controls.Add(this.buttonSubmit);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxNationality);
             this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.comboBoxDepartment);
@@ -313,5 +341,7 @@
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.ComboBox comboBoxSex;
         private System.Windows.Forms.ComboBox comboBoxNationality;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonSubmit;
     }
 }
