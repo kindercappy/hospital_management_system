@@ -28,10 +28,38 @@ namespace hospitalManagementSystem
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            Doctor doc = new Doctor();
-            doc.firstName = this.textBoxFirstName.Text;
-            DoctorManager.Doctor_Save(doc);
+            //Doctor sample functionality for textBoxFirstName with sql
+            //Doctor doc = new Doctor();
+            //doc.firstName = this.textBoxFirstName.Text;
+            //DoctorManager.Doctor_Save(doc);
+            //Doctor doc = new Doctor();
+            //doc.department = this.comboBoxDepartment.Text;
+            //DoctorManager.Doctor_Save(doc.);
+            
+        }
 
+        private void NewDoctor_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.comboBoxDepartment.DataSource = DepartmentManager.getDepartmentList();
+                this.comboBoxDepartment.DisplayMember = "departmentName";
+                this.comboBoxDepartment.ValueMember = "departmentId";
+
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //try { 
+            //this.comboBoxDepartment.DataSource = 
+            //this.comboBoxDepartment.DisplayMember = "DepartmentName";
+            //this.comboBoxDepartment.ValueMember = "DepartmentID";
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }

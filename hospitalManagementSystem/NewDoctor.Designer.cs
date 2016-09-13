@@ -239,6 +239,9 @@
             // comboBoxSex
             // 
             this.comboBoxSex.FormattingEnabled = true;
+            this.comboBoxSex.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
             this.comboBoxSex.Location = new System.Drawing.Point(112, 116);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
@@ -310,6 +313,7 @@
             this.Name = "NewDoctor";
             this.Text = "NewDoctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.NewDoctor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
