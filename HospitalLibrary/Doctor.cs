@@ -36,7 +36,7 @@ namespace HospitalLibrary
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Doctor_Insert";
+                cmd.CommandText = "Doctor_Insert_Sample";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 SqlParameter sFirstNameParam = new SqlParameter("@firstName", doc.firstName);
                 sFirstNameParam.SqlDbType = System.Data.SqlDbType.NVarChar;
