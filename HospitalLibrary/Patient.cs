@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace HospitalLibrary
 {
-    public class Doctor
+    public class Patient
     {
         private string sFirstName;
         private string sLastName;
@@ -51,7 +50,7 @@ namespace HospitalLibrary
         {
             get
             {
-               return iDepartment;
+                return iDepartment;
             }
             set
             {
@@ -63,7 +62,7 @@ namespace HospitalLibrary
         {
             get
             {
-                 return iAge;
+                return iAge;
             }
             set
             {
@@ -75,7 +74,7 @@ namespace HospitalLibrary
         {
             get
             {
-               return sSex;
+                return sSex;
             }
             set
             {
@@ -151,7 +150,7 @@ namespace HospitalLibrary
             }
             set
             {
-                sAddress = value; 
+                sAddress = value;
             }
         }
 
@@ -166,79 +165,68 @@ namespace HospitalLibrary
                 iNationality = value;
             }
         }
-
     }
 
-    public class DoctorManager
+    public class PatientManager
     {
-        public static void Doctor_Save(Doctor doc)
+        public static void Patient_Save(Patient patient)
         {
-
-            //method to save in sample Doctor table in SqlServer
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Doctor_Insert";
+                cmd.CommandText = "Patient_Insert";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 //FirstName
-                SqlParameter sFirstNameParam = new SqlParameter("@firstName", doc.firstName);
+                SqlParameter sFirstNameParam = new SqlParameter("@firstName", patient.firstName);
                 sFirstNameParam.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sFirstNameParam);
                 //LastName
-                SqlParameter sLastNameParam = new SqlParameter("@lastName", doc.lastName);
+                SqlParameter sLastNameParam = new SqlParameter("@lastName", patient.lastName);
                 sLastNameParam.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sLastNameParam);
                 //Department
-                SqlParameter iDepartmentParam = new SqlParameter("@department", doc.department);
+                SqlParameter iDepartmentParam = new SqlParameter("@department", patient.department);
                 iDepartmentParam.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iDepartmentParam);
                 //Age
-                SqlParameter iAge = new SqlParameter("@age", doc.age);
+                SqlParameter iAge = new SqlParameter("@age", patient.age);
                 iAge.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iAge);
                 //Sex
-                SqlParameter sSex = new SqlParameter("@sex", doc.sex);
+                SqlParameter sSex = new SqlParameter("@sex", patient.sex);
                 sSex.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sSex);
                 //HeightFt
-                SqlParameter iHeightFt = new SqlParameter("@heightFt", doc.heightFt);
+                SqlParameter iHeightFt = new SqlParameter("@heightFt", patient.heightFt);
                 iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iHeightFt);
                 //HeightInches
-                SqlParameter iHeightInch = new SqlParameter("@heightInch", doc.heightInch);
+                SqlParameter iHeightInch = new SqlParameter("@heightInch", patient.heightInch);
                 iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iHeightInch);
                 //Weight
-                SqlParameter iWeight = new SqlParameter("@weight", doc.weight);
+                SqlParameter iWeight = new SqlParameter("@weight", patient.weight);
                 iWeight.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iWeight);
                 //Phone
-                SqlParameter iPhone = new SqlParameter("@phone", doc.phone);
+                SqlParameter iPhone = new SqlParameter("@phone", patient.phone);
                 iPhone.SqlDbType = System.Data.SqlDbType.BigInt;
                 cmd.Parameters.Add(iPhone);
                 //Email
-                SqlParameter sEmail = new SqlParameter("@email", doc.email);
+                SqlParameter sEmail = new SqlParameter("@email", patient.email);
                 iPhone.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sEmail);
                 //Address
-                SqlParameter sAddress = new SqlParameter("@address", doc.address);
+                SqlParameter sAddress = new SqlParameter("@address", patient.address);
                 sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sAddress);
                 //Nationality
-                SqlParameter iNationality = new SqlParameter("@nationality", doc.natioinality);
+                SqlParameter iNationality = new SqlParameter("@nationalityId", patient.natioinality);
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationality);
 
                 cmd.ExecuteNonQuery();
             }
-
         }
-        
-        
-
     }
-
-
 }
-
-

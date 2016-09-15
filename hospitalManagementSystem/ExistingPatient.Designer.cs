@@ -39,7 +39,6 @@
             this.lblWeight = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblNationality = new System.Windows.Forms.Label();
-            this.txtBxRegistration = new System.Windows.Forms.TextBox();
             this.txtBxPhone = new System.Windows.Forms.TextBox();
             this.txtBxFirstName = new System.Windows.Forms.TextBox();
             this.txtBxLastName = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.labelDepartment = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBoxUser = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblRegistrationNumber
@@ -62,9 +62,9 @@
             this.lblRegistrationNumber.AutoSize = true;
             this.lblRegistrationNumber.Location = new System.Drawing.Point(12, 15);
             this.lblRegistrationNumber.Name = "lblRegistrationNumber";
-            this.lblRegistrationNumber.Size = new System.Drawing.Size(106, 13);
+            this.lblRegistrationNumber.Size = new System.Drawing.Size(153, 13);
             this.lblRegistrationNumber.TabIndex = 0;
-            this.lblRegistrationNumber.Text = "Registration Number:";
+            this.lblRegistrationNumber.Text = "User: (Name, Phone, Address):";
             // 
             // lblPhone
             // 
@@ -155,13 +155,6 @@
             this.lblNationality.Size = new System.Drawing.Size(59, 13);
             this.lblNationality.TabIndex = 10;
             this.lblNationality.Text = "Nationality:";
-            // 
-            // txtBxRegistration
-            // 
-            this.txtBxRegistration.Location = new System.Drawing.Point(124, 12);
-            this.txtBxRegistration.Name = "txtBxRegistration";
-            this.txtBxRegistration.Size = new System.Drawing.Size(100, 20);
-            this.txtBxRegistration.TabIndex = 11;
             // 
             // txtBxPhone
             // 
@@ -280,11 +273,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBoxUser
+            // 
+            this.comboBoxUser.FormattingEnabled = true;
+            this.comboBoxUser.Location = new System.Drawing.Point(171, 11);
+            this.comboBoxUser.Name = "comboBoxUser";
+            this.comboBoxUser.Size = new System.Drawing.Size(410, 21);
+            this.comboBoxUser.TabIndex = 29;
+            this.comboBoxUser.SelectedIndexChanged += new System.EventHandler(this.comboBoxUser_SelectedIndexChanged);
+            // 
             // ExistingPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 523);
+            this.Controls.Add(this.comboBoxUser);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelDepartment);
             this.Controls.Add(this.comboBoxDepartment);
@@ -300,7 +303,6 @@
             this.Controls.Add(this.txtBxLastName);
             this.Controls.Add(this.txtBxFirstName);
             this.Controls.Add(this.txtBxPhone);
-            this.Controls.Add(this.txtBxRegistration);
             this.Controls.Add(this.lblNationality);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblWeight);
@@ -315,6 +317,7 @@
             this.Name = "ExistingPatient";
             this.Text = "ExistingPatient";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ExistingPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +336,6 @@
         private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblNationality;
-        private System.Windows.Forms.TextBox txtBxRegistration;
         private System.Windows.Forms.TextBox txtBxPhone;
         private System.Windows.Forms.TextBox txtBxFirstName;
         private System.Windows.Forms.TextBox txtBxLastName;
@@ -349,5 +351,6 @@
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Label labelDepartment;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBoxUser;
     }
 }

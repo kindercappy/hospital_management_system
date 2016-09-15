@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HospitalLibrary
 {
-     public class Department
+     public class DepartmentDoctor
     {
         private string sDepartmentName;
         private int sDepartmentId;
@@ -35,13 +35,14 @@ namespace HospitalLibrary
                 sDepartmentId = value;
             }
         }
+       
     }
 
-    public class DepartmentManager
+    public class DepartmentDoctorManager
         {
-            public static List<Department> getDepartmentList()
+            public static List<DepartmentDoctor> getDepartmentList()
             {
-                List<Department> DepartmentList = new List<Department>();
+                List<DepartmentDoctor> DepartmentList = new List<DepartmentDoctor>();
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = Common.getConnection();
@@ -52,7 +53,7 @@ namespace HospitalLibrary
                     da.Fill(dt);
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        Department dep = new Department();
+                        DepartmentDoctor dep = new DepartmentDoctor();
                         dep.departmentName = dt.Rows[i]["DepartmentName"].ToString();
                         dep.departmentId =Int32.Parse(dt.Rows[i]["DepartmentID"].ToString());
                         DepartmentList.Add(dep);

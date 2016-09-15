@@ -53,6 +53,7 @@
             this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -237,10 +238,14 @@
             // comboBoxSex
             // 
             this.comboBoxSex.FormattingEnabled = true;
+            this.comboBoxSex.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
             this.comboBoxSex.Location = new System.Drawing.Point(112, 116);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 25;
+            this.comboBoxSex.Text = "Select";
             // 
             // comboBoxNationality
             // 
@@ -252,8 +257,8 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonBack.Location = new System.Drawing.Point(15, 337);
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Location = new System.Drawing.Point(15, 371);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(218, 40);
             this.buttonBack.TabIndex = 27;
@@ -261,11 +266,23 @@
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonSubmit.Location = new System.Drawing.Point(15, 325);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(218, 40);
+            this.buttonSubmit.TabIndex = 28;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            // 
             // NewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 527);
+            this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxNationality);
             this.Controls.Add(this.comboBoxSex);
@@ -294,6 +311,7 @@
             this.Name = "NewStaff";
             this.Text = "NewStaff";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.NewStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +344,6 @@
         private System.Windows.Forms.ComboBox comboBoxSex;
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonSubmit;
     }
 }

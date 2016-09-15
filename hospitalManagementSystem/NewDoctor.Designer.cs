@@ -71,6 +71,7 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFirstName.TabIndex = 1;
+            this.textBoxFirstName.Text = "dsfsdf";
             // 
             // textBoxLastName
             // 
@@ -78,6 +79,7 @@
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
             this.textBoxLastName.TabIndex = 2;
+            this.textBoxLastName.Text = "asdfsd";
             // 
             // textBoxAge
             // 
@@ -85,6 +87,7 @@
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(100, 20);
             this.textBoxAge.TabIndex = 4;
+            this.textBoxAge.Text = "3";
             // 
             // textBoxHeightFt
             // 
@@ -92,6 +95,7 @@
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightFt.TabIndex = 6;
+            this.textBoxHeightFt.Text = "5";
             // 
             // textBoxHeightInch
             // 
@@ -99,6 +103,7 @@
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightInch.TabIndex = 7;
+            this.textBoxHeightInch.Text = "2";
             // 
             // textBoxWeight
             // 
@@ -106,6 +111,7 @@
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(100, 20);
             this.textBoxWeight.TabIndex = 8;
+            this.textBoxWeight.Text = "50";
             // 
             // textBoxPhone
             // 
@@ -113,6 +119,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxPhone.TabIndex = 9;
+            this.textBoxPhone.Text = "54456";
             // 
             // textBoxEmail
             // 
@@ -120,14 +127,16 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
             this.textBoxEmail.TabIndex = 10;
+            this.textBoxEmail.Text = "k@.com";
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(112, 299);
+            this.textBoxAddress.Location = new System.Drawing.Point(115, 299);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
             this.textBoxAddress.TabIndex = 11;
+            this.textBoxAddress.Text = "sadas";
             // 
             // lblLastName
             // 
@@ -213,7 +222,7 @@
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(12, 302);
+            this.labelAddress.Location = new System.Drawing.Point(15, 302);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(48, 13);
             this.labelAddress.TabIndex = 22;
@@ -246,6 +255,7 @@
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 25;
+            this.comboBoxSex.Text = "Select";
             // 
             // comboBoxNationality
             // 
