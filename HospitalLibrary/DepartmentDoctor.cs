@@ -54,8 +54,8 @@ namespace HospitalLibrary
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         DepartmentDoctor dep = new DepartmentDoctor();
-                        dep.departmentName = dt.Rows[i]["DepartmentName"].ToString();
-                        dep.departmentId =Int32.Parse(dt.Rows[i]["DepartmentID"].ToString());
+                        dep.departmentName = dt.Rows[i]["departmentName"].ToString();
+                        dep.departmentId =Int32.Parse(dt.Rows[i]["departmentId"].ToString());
                         DepartmentList.Add(dep);
                     }
 

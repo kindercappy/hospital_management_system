@@ -13,6 +13,7 @@ namespace hospitalManagementSystem
 {
     public partial class HospitalMain : Form
     {
+        
         public HospitalMain()
         {
             InitializeComponent();
@@ -20,9 +21,9 @@ namespace hospitalManagementSystem
 
         private void HospitalMain_Load(object sender, EventArgs e)
         {
-            //Sql connection to database
-            //sqlConnection();
+
         }
+
 
         // Button click open NewPatient Form
         private void btnNewPatient_Click(object sender, EventArgs e)
@@ -70,3 +71,4 @@ namespace hospitalManagementSystem
         }
     }
 }
+

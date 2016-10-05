@@ -234,6 +234,7 @@
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 24;
+            this.comboBoxDepartment.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartment_SelectedIndexChanged);
             // 
             // comboBoxSex
             // 

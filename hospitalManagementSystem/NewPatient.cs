@@ -70,5 +70,10 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void comboBoxDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

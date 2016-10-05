@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace HospitalLibrary
     {
         private string sFirstName;
         private string sLastName;
+        //private string sFullName;
+        private int iPatientId;
         private int iDepartment;
         private int iAge;
         private string sSex;
@@ -43,6 +46,26 @@ namespace HospitalLibrary
             set
             {
                 sLastName = value;
+            }
+        }
+
+        public string userInfo
+        {
+            get
+            {
+                return sFirstName + " " + sLastName + " | " + iPhone + " | " + sAddress;
+            }
+
+        }
+        public int patientId
+        {
+            get
+            {
+                return iPatientId;
+            }
+            set
+            {
+                iPatientId = value;
             }
         }
 
@@ -228,5 +251,64 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public static List<Patient> getPatientList()
+        {
+
+            {
+                List<Patient> patientList = new List<Patient>();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Common.getConnection();
+                    cmd.CommandText = "Patient_Select_PId_Fn_Ln_Ph_Add";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Patient patient = new Patient();
+                        patient.patientId = Int32.Parse(dt.Rows[i]["patientId"].ToString());
+                        patient.firstName = dt.Rows[i]["firstName"].ToString();
+                        patient.lastName = dt.Rows[i]["lastName"].ToString();
+                        patient.phone = Int64.Parse(dt.Rows[i]["phone"].ToString());
+                        patient.address = dt.Rows[i]["address"].ToString();
+                        patientList.Add(patient);
+                    }
+
+                }
+                return patientList;
+            }
+
+        }
+        public static Patient Patien_Select(int patientId)
+        {
+            Patient patient = new Patient();
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Patient_Existing_Select";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iPatientId = new SqlParameter("@patientId", patientId);
+                iPatientId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iPatientId);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (patientId > 0)
+                {
+                    patient.firstName = dt.Rows[0]["firstName"].ToString();
+                }
+                cmd.ExecuteNonQuery();
+            }
+            return patient;
+        }
     }
 }
+
+
+
+
+

@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalLibrary;
+using System.Data.SqlClient;
 
 namespace hospitalManagementSystem
 {
     public partial class ExistingPatient : Form
     {
-        public object ComboBoxItem { get; private set; }
-
         public ExistingPatient()
         {
             InitializeComponent();
@@ -29,7 +28,7 @@ namespace hospitalManagementSystem
 
         private void ExistingPatient_Load(object sender, EventArgs e)
         {
-            
+            Patient patient = new Patient();
             try
             {
                 //ExistingPatient Department comboBox
@@ -40,21 +39,35 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
+
+                this.comboBoxUser1.DataSource = PatientManager.getPatientList();
+                this.comboBoxUser1.DisplayMember = "userInfo";
+                this.comboBoxUser1.ValueMember = "patientId";
+
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxUser1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox cmb = (ComboBox)sender;
-            int selectedIndex = cmb.SelectedIndex;
-            int selectedValue = (int)cmb.SelectedValue;
-
-            
-
+            try
+            {
+                if (comboBoxUser1.SelectedIndex > -1)
+                {
+                    int value = Convert.ToInt32(comboBoxUser1.SelectedValue);
+                    Patient pat = new Patient();
+                    pat = PatientManager.Patien_Select(value);
+                    this.textBoxFirstName.Text = pat.firstName;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
+

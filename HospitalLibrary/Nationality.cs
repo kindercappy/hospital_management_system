@@ -50,12 +50,11 @@ namespace HospitalLibrary
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    for(int i = 0; i <
-                        dt.Rows.Count; i++)
+                    for(int i = 0; i < dt.Rows.Count; i++)
                     {
                         Nationality nation = new Nationality();
-                        nation.nationalityName = dt.Rows[i]["Nationality"].ToString();
-                        nation.nationalityId = Int32.Parse(dt.Rows[i]["NationalityID"].ToString());
+                        nation.nationalityName = dt.Rows[i]["nationality"].ToString();
+                        nation.nationalityId = Int32.Parse(dt.Rows[i]["nationalityId"].ToString());
                         NationalityList.Add(nation);
                     }
                 }
