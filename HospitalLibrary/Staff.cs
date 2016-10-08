@@ -221,7 +221,7 @@ namespace HospitalLibrary
                 sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sAddress);
                 //Nationality
-                SqlParameter iNationality = new SqlParameter("@nationalityId", staff.natioinality);
+                SqlParameter iNationality = new SqlParameter("@nationality", staff.natioinality);
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationality);
 

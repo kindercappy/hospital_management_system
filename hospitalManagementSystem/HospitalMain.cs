@@ -25,24 +25,44 @@ namespace hospitalManagementSystem
         }
 
 
-        // Button click open NewPatient Form
+        //Patient
         private void btnNewPatient_Click(object sender, EventArgs e)
         {
             NewPatient newPatient = new NewPatient();
             newPatient.ShowDialog();
-            this.Hide();
             this.Close();
+            
         }
 
         private void btnExistingPatient_Click(object sender, EventArgs e)
         {
             ExistingPatient existingPatient = new ExistingPatient();
             existingPatient.ShowDialog();
-            this.Hide();
             this.Close();
         }
 
+        private void newPatientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewPatient newPatient = new NewPatient();
+            newPatient.ShowDialog();
+            this.Close();
+        }
+        private void existingPatientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExistingPatient existingPatient = new ExistingPatient();
+            existingPatient.ShowDialog();
+            this.Close();
+        }
+
+
+        //Doctor
         private void btnNewDoctor_Click(object sender, EventArgs e)
+        {
+            NewDoctor newDoctor = new NewDoctor();
+            newDoctor.ShowDialog();
+            this.Close();
+        }
+        private void newDoctorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewDoctor newDoctor = new NewDoctor();
             newDoctor.ShowDialog();
@@ -55,7 +75,16 @@ namespace hospitalManagementSystem
             existingDoc.ShowDialog();
             this.Close();
         }
+        private void existingDoctorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExistingDoctor existingDoc = new ExistingDoctor();
+            existingDoc.ShowDialog();
+            this.Close();
+        }
 
+
+
+        //Staff
         private void btnNewStaff_Click(object sender, EventArgs e)
         {
             NewStaff newStaff = new NewStaff();
@@ -64,6 +93,20 @@ namespace hospitalManagementSystem
         }
 
         private void btnExistingStaff_Click(object sender, EventArgs e)
+        {
+            ExistingStaff existingStaff = new ExistingStaff();
+            existingStaff.ShowDialog();
+            this.Close();
+        }
+
+        private void newStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewStaff newStaff = new NewStaff();
+            newStaff.ShowDialog();
+            this.Close();
+        }
+
+        private void existingStaffToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExistingStaff existingStaff = new ExistingStaff();
             existingStaff.ShowDialog();

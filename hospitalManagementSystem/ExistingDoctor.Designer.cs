@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelDoctorID = new System.Windows.Forms.Label();
             this.textBoxRegistration = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
@@ -55,12 +56,44 @@
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.labelDepartment = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalManagementSystemDataSet = new hospitalManagementSystem.hospitalManagementSystemDataSet();
+            this.doctorTableAdapter = new hospitalManagementSystem.hospitalManagementSystemDataSetTableAdapters.DoctorTableAdapter();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.doctorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalManagementSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doctorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewExistingDocotor = new System.Windows.Forms.DataGridView();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heightFtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heightInchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nationalityIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalManagementSystemDataSet1 = new hospitalManagementSystem.hospitalManagementSystemDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDocotor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDoctorID
             // 
             this.labelDoctorID.AutoSize = true;
-            this.labelDoctorID.Location = new System.Drawing.Point(12, 15);
+            this.labelDoctorID.Location = new System.Drawing.Point(828, 15);
             this.labelDoctorID.Name = "labelDoctorID";
             this.labelDoctorID.Size = new System.Drawing.Size(56, 13);
             this.labelDoctorID.TabIndex = 0;
@@ -68,7 +101,7 @@
             // 
             // textBoxRegistration
             // 
-            this.textBoxRegistration.Location = new System.Drawing.Point(124, 12);
+            this.textBoxRegistration.Location = new System.Drawing.Point(940, 12);
             this.textBoxRegistration.Name = "textBoxRegistration";
             this.textBoxRegistration.Size = new System.Drawing.Size(100, 20);
             this.textBoxRegistration.TabIndex = 1;
@@ -76,7 +109,7 @@
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Location = new System.Drawing.Point(12, 41);
+            this.labelPhone.Location = new System.Drawing.Point(828, 41);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(41, 13);
             this.labelPhone.TabIndex = 2;
@@ -84,63 +117,63 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(124, 38);
+            this.textBoxPhone.Location = new System.Drawing.Point(940, 38);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxPhone.TabIndex = 3;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(124, 64);
+            this.textBoxFirstName.Location = new System.Drawing.Point(940, 64);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFirstName.TabIndex = 4;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(124, 90);
+            this.textBoxLastName.Location = new System.Drawing.Point(940, 90);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
             this.textBoxLastName.TabIndex = 5;
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(124, 143);
+            this.textBoxAge.Location = new System.Drawing.Point(940, 143);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(100, 20);
             this.textBoxAge.TabIndex = 6;
             // 
             // textBoxHeightFt
             // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(124, 195);
+            this.textBoxHeightFt.Location = new System.Drawing.Point(940, 195);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightFt.TabIndex = 8;
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(124, 221);
+            this.textBoxHeightInch.Location = new System.Drawing.Point(940, 221);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightInch.TabIndex = 9;
             // 
             // textBoxWeight
             // 
-            this.textBoxWeight.Location = new System.Drawing.Point(124, 247);
+            this.textBoxWeight.Location = new System.Drawing.Point(940, 247);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(100, 20);
             this.textBoxWeight.TabIndex = 10;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(124, 273);
+            this.textBoxEmail.Location = new System.Drawing.Point(940, 273);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
             this.textBoxEmail.TabIndex = 11;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(124, 325);
+            this.textBoxAddress.Location = new System.Drawing.Point(940, 325);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
@@ -149,7 +182,7 @@
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(12, 67);
+            this.labelFirstName.Location = new System.Drawing.Point(828, 67);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(60, 13);
             this.labelFirstName.TabIndex = 14;
@@ -158,7 +191,7 @@
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(12, 93);
+            this.labelLastName.Location = new System.Drawing.Point(828, 93);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(61, 13);
             this.labelLastName.TabIndex = 15;
@@ -167,7 +200,7 @@
             // labelAge
             // 
             this.labelAge.AutoSize = true;
-            this.labelAge.Location = new System.Drawing.Point(12, 146);
+            this.labelAge.Location = new System.Drawing.Point(828, 146);
             this.labelAge.Name = "labelAge";
             this.labelAge.Size = new System.Drawing.Size(29, 13);
             this.labelAge.TabIndex = 16;
@@ -176,7 +209,7 @@
             // labelSex
             // 
             this.labelSex.AutoSize = true;
-            this.labelSex.Location = new System.Drawing.Point(12, 172);
+            this.labelSex.Location = new System.Drawing.Point(828, 172);
             this.labelSex.Name = "labelSex";
             this.labelSex.Size = new System.Drawing.Size(28, 13);
             this.labelSex.TabIndex = 17;
@@ -185,7 +218,7 @@
             // labelHeightInFt
             // 
             this.labelHeightInFt.AutoSize = true;
-            this.labelHeightInFt.Location = new System.Drawing.Point(12, 198);
+            this.labelHeightInFt.Location = new System.Drawing.Point(828, 198);
             this.labelHeightInFt.Name = "labelHeightInFt";
             this.labelHeightInFt.Size = new System.Drawing.Size(83, 13);
             this.labelHeightInFt.TabIndex = 18;
@@ -194,7 +227,7 @@
             // labelHeightInch
             // 
             this.labelHeightInch.AutoSize = true;
-            this.labelHeightInch.Location = new System.Drawing.Point(12, 224);
+            this.labelHeightInch.Location = new System.Drawing.Point(828, 224);
             this.labelHeightInch.Name = "labelHeightInch";
             this.labelHeightInch.Size = new System.Drawing.Size(94, 13);
             this.labelHeightInch.TabIndex = 19;
@@ -203,7 +236,7 @@
             // labelWeight
             // 
             this.labelWeight.AutoSize = true;
-            this.labelWeight.Location = new System.Drawing.Point(12, 250);
+            this.labelWeight.Location = new System.Drawing.Point(828, 250);
             this.labelWeight.Name = "labelWeight";
             this.labelWeight.Size = new System.Drawing.Size(44, 13);
             this.labelWeight.TabIndex = 20;
@@ -212,7 +245,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(12, 276);
+            this.labelEmail.Location = new System.Drawing.Point(828, 276);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(35, 13);
             this.labelEmail.TabIndex = 21;
@@ -221,7 +254,7 @@
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(12, 328);
+            this.labelAddress.Location = new System.Drawing.Point(828, 328);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(48, 13);
             this.labelAddress.TabIndex = 22;
@@ -230,7 +263,7 @@
             // labelNationality
             // 
             this.labelNationality.AutoSize = true;
-            this.labelNationality.Location = new System.Drawing.Point(12, 302);
+            this.labelNationality.Location = new System.Drawing.Point(828, 302);
             this.labelNationality.Name = "labelNationality";
             this.labelNationality.Size = new System.Drawing.Size(59, 13);
             this.labelNationality.TabIndex = 23;
@@ -239,7 +272,7 @@
             // comboBoxNationality
             // 
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(124, 299);
+            this.comboBoxNationality.Location = new System.Drawing.Point(940, 299);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 24;
@@ -247,7 +280,7 @@
             // comboBoxSex
             // 
             this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.Location = new System.Drawing.Point(124, 169);
+            this.comboBoxSex.Location = new System.Drawing.Point(940, 169);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 25;
@@ -255,7 +288,7 @@
             // comboBoxDepartment
             // 
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(124, 116);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(940, 116);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 26;
@@ -263,7 +296,7 @@
             // labelDepartment
             // 
             this.labelDepartment.AutoSize = true;
-            this.labelDepartment.Location = new System.Drawing.Point(12, 119);
+            this.labelDepartment.Location = new System.Drawing.Point(828, 119);
             this.labelDepartment.Name = "labelDepartment";
             this.labelDepartment.Size = new System.Drawing.Size(65, 13);
             this.labelDepartment.TabIndex = 27;
@@ -272,7 +305,7 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonBack.Location = new System.Drawing.Point(15, 361);
+            this.buttonBack.Location = new System.Drawing.Point(831, 361);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 43);
             this.buttonBack.TabIndex = 28;
@@ -280,11 +313,175 @@
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(12, 9);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(153, 13);
+            this.labelUser.TabIndex = 29;
+            this.labelUser.Text = "User: (Name, Phone, Address):";
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataMember = "Doctor";
+            this.doctorBindingSource.DataSource = this.hospitalManagementSystemDataSet;
+            // 
+            // hospitalManagementSystemDataSet
+            // 
+            this.hospitalManagementSystemDataSet.DataSetName = "hospitalManagementSystemDataSet";
+            this.hospitalManagementSystemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // doctorTableAdapter
+            // 
+            this.doctorTableAdapter.ClearBeforeFill = true;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(171, 6);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 32;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(277, 4);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 33;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // doctorBindingSource1
+            // 
+            this.doctorBindingSource1.DataMember = "Doctor";
+            this.doctorBindingSource1.DataSource = this.hospitalManagementSystemDataSet;
+            // 
+            // hospitalManagementSystemDataSetBindingSource
+            // 
+            this.hospitalManagementSystemDataSetBindingSource.DataSource = this.hospitalManagementSystemDataSet;
+            this.hospitalManagementSystemDataSetBindingSource.Position = 0;
+            // 
+            // doctorBindingSource2
+            // 
+            this.doctorBindingSource2.DataMember = "Doctor";
+            this.doctorBindingSource2.DataSource = this.hospitalManagementSystemDataSetBindingSource;
+            // 
+            // dataGridViewExistingDocotor
+            // 
+            this.dataGridViewExistingDocotor.AutoGenerateColumns = false;
+            this.dataGridViewExistingDocotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExistingDocotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.departmentDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.sexDataGridViewTextBoxColumn,
+            this.heightFtDataGridViewTextBoxColumn,
+            this.heightInchDataGridViewTextBoxColumn,
+            this.weightDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.nationalityIdDataGridViewTextBoxColumn});
+            this.dataGridViewExistingDocotor.DataSource = this.doctorBindingSource3;
+            this.dataGridViewExistingDocotor.Location = new System.Drawing.Point(15, 33);
+            this.dataGridViewExistingDocotor.Name = "dataGridViewExistingDocotor";
+            this.dataGridViewExistingDocotor.Size = new System.Drawing.Size(807, 150);
+            this.dataGridViewExistingDocotor.TabIndex = 34;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // departmentDataGridViewTextBoxColumn
+            // 
+            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "department";
+            this.departmentDataGridViewTextBoxColumn.HeaderText = "department";
+            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            // 
+            // sexDataGridViewTextBoxColumn
+            // 
+            this.sexDataGridViewTextBoxColumn.DataPropertyName = "sex";
+            this.sexDataGridViewTextBoxColumn.HeaderText = "sex";
+            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            // 
+            // heightFtDataGridViewTextBoxColumn
+            // 
+            this.heightFtDataGridViewTextBoxColumn.DataPropertyName = "heightFt";
+            this.heightFtDataGridViewTextBoxColumn.HeaderText = "heightFt";
+            this.heightFtDataGridViewTextBoxColumn.Name = "heightFtDataGridViewTextBoxColumn";
+            // 
+            // heightInchDataGridViewTextBoxColumn
+            // 
+            this.heightInchDataGridViewTextBoxColumn.DataPropertyName = "heightInch";
+            this.heightInchDataGridViewTextBoxColumn.HeaderText = "heightInch";
+            this.heightInchDataGridViewTextBoxColumn.Name = "heightInchDataGridViewTextBoxColumn";
+            // 
+            // weightDataGridViewTextBoxColumn
+            // 
+            this.weightDataGridViewTextBoxColumn.DataPropertyName = "weight";
+            this.weightDataGridViewTextBoxColumn.HeaderText = "weight";
+            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // nationalityIdDataGridViewTextBoxColumn
+            // 
+            this.nationalityIdDataGridViewTextBoxColumn.DataPropertyName = "nationalityId";
+            this.nationalityIdDataGridViewTextBoxColumn.HeaderText = "nationalityId";
+            this.nationalityIdDataGridViewTextBoxColumn.Name = "nationalityIdDataGridViewTextBoxColumn";
+            // 
+            // doctorBindingSource3
+            // 
+            this.doctorBindingSource3.DataMember = "Doctor";
+            this.doctorBindingSource3.DataSource = this.hospitalManagementSystemDataSet1;
+            // 
+            // hospitalManagementSystemDataSet1
+            // 
+            this.hospitalManagementSystemDataSet1.DataSetName = "hospitalManagementSystemDataSet";
+            this.hospitalManagementSystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ExistingDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 520);
+            this.ClientSize = new System.Drawing.Size(1008, 520);
+            this.Controls.Add(this.dataGridViewExistingDocotor);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.labelUser);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelDepartment);
             this.Controls.Add(this.comboBoxDepartment);
@@ -315,6 +512,15 @@
             this.Name = "ExistingDoctor";
             this.Text = "ExistingDoctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ExistingDoctor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDocotor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +555,29 @@
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Label labelDepartment;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Label labelUser;
+        private hospitalManagementSystemDataSet hospitalManagementSystemDataSet;
+        private System.Windows.Forms.BindingSource doctorBindingSource;
+        private hospitalManagementSystemDataSetTableAdapters.DoctorTableAdapter doctorTableAdapter;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.BindingSource doctorBindingSource1;
+        private System.Windows.Forms.BindingSource hospitalManagementSystemDataSetBindingSource;
+        private System.Windows.Forms.BindingSource doctorBindingSource2;
+        private System.Windows.Forms.DataGridView dataGridViewExistingDocotor;
+        private hospitalManagementSystemDataSet hospitalManagementSystemDataSet1;
+        private System.Windows.Forms.BindingSource doctorBindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn heightFtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn heightInchDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nationalityIdDataGridViewTextBoxColumn;
     }
 }

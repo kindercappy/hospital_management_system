@@ -69,6 +69,17 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
+            this.textBoxFirstName.Text = "Kinder";
+            this.textBoxLastName.Text = "Preet";
+            this.textBoxAge.Text = "4";
+            this.comboBoxSex.Text = "MALE";
+            this.textBoxHeightFt.Text = "5";
+            this.textBoxHeightInch.Text = "6";
+            this.textBoxWeight.Text = "50";
+            this.textBoxPhone.Text = "4444444444444";
+            this.textBoxEmail.Text = "k@gmail.com";
+            this.textBoxAddress.Text = "sdsdsdsds";
+
         }
 
         private void comboBoxDepartment_SelectedIndexChanged(object sender, EventArgs e)

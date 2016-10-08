@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HospitalLibrary
 {
-    class Common
+     public class Common
     {
         
        public static string connectionString = "Data Source =CAPPY; Initial Catalog= hospitalManagementSystem; Integrated Security = SSPI; ";
