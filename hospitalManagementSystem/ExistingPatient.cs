@@ -14,9 +14,17 @@ namespace hospitalManagementSystem
 {
     public partial class ExistingPatient : Form
     {
+
+        SqlConnection con;
+        SqlCommand cmd = new SqlCommand();
+        SqlDataAdapter da = new SqlDataAdapter();
+        DataTable dt = new DataTable();
+        int Id = 0;
+
         public ExistingPatient()
         {
             InitializeComponent();
+            displayData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,6 +36,7 @@ namespace hospitalManagementSystem
 
         private void ExistingPatient_Load(object sender, EventArgs e)
         {
+            
             Patient patient = new Patient();
             try
             {
@@ -40,9 +49,9 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
 
-                this.comboBoxUser1.DataSource = PatientManager.getPatientList();
-                this.comboBoxUser1.DisplayMember = "userInfo";
-                this.comboBoxUser1.ValueMember = "patientId";
+                //this.comboBoxUser1.DataSource = PatientManager.getPatientList();
+                //this.comboBoxUser1.DisplayMember = "userInfo";
+                //this.comboBoxUser1.ValueMember = "patientId";
 
             }
             catch (System.Exception ex)
@@ -51,19 +60,139 @@ namespace hospitalManagementSystem
             }
         }
 
-        private void comboBoxUser1_SelectedIndexChanged(object sender, EventArgs e)
+        //display data in dataGridView
+        private void displayData()
         {
+            //cmd.Connection = Common.getConnection();
+            //cmd.CommandText = "Patient_Select";
+            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //da = new SqlDataAdapter(cmd);
+            //dt = new DataTable();
+            //da.Fill(dt);
+            //dataGridViewExistingPatient.DataSource = dt;
+            con = Common.getConnection();
+            dt = new DataTable();
+            da = new SqlDataAdapter("SELECT * FROM Patient", con);
+            da.Fill(dt);
+            dataGridViewExistingPatient.DataSource = dt;
+        }
+
+        //clear data
+        private void clearData()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            Id = 0;
+        }
+
+        private void dataGridViewExistingPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //display data in textboxes, comboboxes when record selected in datagridview
+            Id = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[0].Value.ToString());
+            textBoxFirstName.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxLastName.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[2].Value.ToString();
+            comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[3].Value.ToString());
+            textBoxAge.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[4].Value.ToString();
+            comboBoxSex.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textBoxHeightFt.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[6].Value.ToString();
+            textBoxHeightInch.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[7].Value.ToString();
+            textBoxWeight.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[8].Value.ToString();
+            textBoxPhone.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[9].Value.ToString();
+            textBoxEmail.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[10].Value.ToString();
+            textBoxAddress.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[11].Value.ToString();
+            comboBoxNationality.SelectedIndex = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[12].Value.ToString()) -1;
+
+        }
+
+        private void buttonInsert_Click(object sender, EventArgs e)
+        {
+            
+            string str = "REQUIRED: ";
+            if(textBoxFirstName.Text == "")
+            {
+                str = str + "First Name ";    
+            }
+            if (textBoxLastName.Text == "")
+            {
+                str = str  + Environment.NewLine + "Last Name ";
+            }
+            if (comboBoxDepartment.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Department ";
+            }
+            if (textBoxAge.Text =="")
+            {
+                str = str + Environment.NewLine + "Age ";
+            }
+            if (comboBoxSex.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Sex ";
+            }
+            if (comboBoxNationality.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Nationality";
+            }
+            if (str.Length <= 0)
+            {
+                MessageBox.Show(str);
+            }
+            else
+            {
+                //Insert the patient data here
+                Patient patient = new Patient();
+                try
+                {
+                    patient.firstName = this.textBoxFirstName.Text;
+                    patient.lastName = this.textBoxLastName.Text;
+                    patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                    patient.age = Convert.ToInt32(this.textBoxAge.Text);
+                    patient.sex = this.comboBoxSex.Text;
+                    patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                    patient.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                    patient.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    patient.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                    patient.email = this.textBoxEmail.Text;
+                    patient.address = this.textBoxAddress.Text;
+                    patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    PatientManager.Patient_Save(patient);
+                    MessageBox.Show("Success");
+                    displayData();
+                    clearData();
+                }
+
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            //updates patient data
+            Patient patient = new Patient();
             try
             {
-                if (comboBoxUser1.SelectedIndex > -1)
-                {
-                    int value = Convert.ToInt32(comboBoxUser1.SelectedValue);
-                    Patient pat = new Patient();
-                    pat = PatientManager.Patien_Select(value);
-                    this.textBoxFirstName.Text = pat.firstName;
-                }
+                patient.patientId = Id;
+                patient.firstName = this.textBoxFirstName.Text;
+                patient.lastName = this.textBoxLastName.Text;
+                patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                patient.age = Convert.ToInt32(this.textBoxAge.Text);
+                patient.sex = this.comboBoxSex.Text;
+                patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                patient.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                patient.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                patient.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                patient.email = this.textBoxEmail.Text;
+                patient.address = this.textBoxAddress.Text;
+                patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                PatientManager.Patient_Update(patient);
+                MessageBox.Show("Success");
+                displayData();
+                clearData();
             }
-            catch (System.Exception ex)
+            catch(System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

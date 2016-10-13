@@ -191,7 +191,8 @@ namespace HospitalLibrary
     }
 
     public class PatientManager
-    {
+    {   
+        //saves patient
         public static void Patient_Save(Patient patient)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -251,7 +252,7 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
+        //gets patient list
         public static List<Patient> getPatientList()
         {
 
@@ -280,6 +281,70 @@ namespace HospitalLibrary
                 return patientList;
             }
 
+        }
+        //updates patient
+        public static void Patient_Update(Patient patient)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Patient_Update";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iPatientId = new SqlParameter("patientId", patient.patientId);
+                iPatientId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iPatientId);
+
+                SqlParameter sFirstName = new SqlParameter("@firstName", patient.firstName);
+                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sFirstName);
+
+                SqlParameter sLastName = new SqlParameter("@lastName", patient.lastName);
+                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sLastName);
+
+                SqlParameter iDepartment = new SqlParameter("@department", patient.department);
+                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDepartment);
+
+                SqlParameter iAge = new SqlParameter("@age", patient.age);
+                iAge.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iAge);
+
+                SqlParameter sSex = new SqlParameter("@sex", patient.sex);
+                sSex.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sSex);
+
+                SqlParameter iHeightFt = new SqlParameter("@heightFt", patient.heightFt);
+                iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iHeightFt);
+
+                SqlParameter iHeightInch = new SqlParameter("@heightInch", patient.heightInch);
+                iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iHeightInch);
+
+                SqlParameter iWeight = new SqlParameter("@weight", patient.weight);
+                iWeight.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iWeight);
+
+                SqlParameter biPhone = new SqlParameter("@phone", patient.phone);
+                biPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+                cmd.Parameters.Add(biPhone);
+
+                SqlParameter sEmail = new SqlParameter("@email", patient.email);
+                sEmail.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sEmail);
+
+                SqlParameter sAddress = new SqlParameter("@address", patient.address);
+                sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sAddress);
+
+                SqlParameter iNationality = new SqlParameter("@nationalityId", patient.natioinality);
+                iNationality.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iNationality);
+
+                cmd.ExecuteNonQuery();
+            }
         }
         public static Patient Patien_Select(int patientId)
         {

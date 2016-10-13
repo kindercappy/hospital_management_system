@@ -55,6 +55,11 @@
             this.labelDepartment = new System.Windows.Forms.Label();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.dataGridViewExistingStaff = new System.Windows.Forms.DataGridView();
+            this.buttonInsert = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // labelHeightInch
@@ -280,11 +285,54 @@
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // dataGridViewExistingStaff
+            // 
+            this.dataGridViewExistingStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExistingStaff.Location = new System.Drawing.Point(251, 12);
+            this.dataGridViewExistingStaff.Name = "dataGridViewExistingStaff";
+            this.dataGridViewExistingStaff.Size = new System.Drawing.Size(763, 150);
+            this.dataGridViewExistingStaff.TabIndex = 28;
+            this.dataGridViewExistingStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingStaff_CellContentClick);
+            // 
+            // buttonInsert
+            // 
+            this.buttonInsert.Location = new System.Drawing.Point(251, 169);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(189, 23);
+            this.buttonInsert.TabIndex = 29;
+            this.buttonInsert.Text = "Insert";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(446, 169);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(189, 23);
+            this.buttonUpdate.TabIndex = 30;
+            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(641, 167);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(189, 23);
+            this.buttonDelete.TabIndex = 31;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // ExistingStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 519);
+            this.ClientSize = new System.Drawing.Size(1026, 519);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonInsert);
+            this.Controls.Add(this.dataGridViewExistingStaff);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.labelDepartment);
@@ -315,6 +363,8 @@
             this.Name = "ExistingStaff";
             this.Text = "ExistingStaff";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ExistingStaff_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +399,9 @@
         private System.Windows.Forms.Label labelDepartment;
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.DataGridView dataGridViewExistingStaff;
+        private System.Windows.Forms.Button buttonInsert;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

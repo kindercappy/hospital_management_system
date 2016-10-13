@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>hospitalManagementSystemDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="hospitalManagementSystemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hospitalManagementSystemDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NewDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +143,17 @@
     </None>
     <None Include="hospitalManagementSystemDataSet.xss">
       <DependentUpon>hospitalManagementSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalManagementSystemDataSet1.xsc">
+      <DependentUpon>hospitalManagementSystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalManagementSystemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hospitalManagementSystemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hospitalManagementSystemDataSet1.xss">
+      <DependentUpon>hospitalManagementSystemDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

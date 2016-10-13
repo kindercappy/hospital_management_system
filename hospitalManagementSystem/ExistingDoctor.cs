@@ -14,6 +14,7 @@ namespace hospitalManagementSystem
 {
     public partial class ExistingDoctor : Form
     {
+        SqlDataAdapter da;
         public ExistingDoctor()
         {
             InitializeComponent();
@@ -37,10 +38,11 @@ namespace hospitalManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT firstName,lastName FROM Doctor WHERE firstName ='" + textBoxSearch.Text + "'" ,Common.getConnection());
+            da = new SqlDataAdapter("SELECT firstName,lastName FROM Doctor WHERE firstName ='" + textBoxSearch.Text + "'" ,Common.getConnection());
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridViewExistingDocotor.DataSource = dt;
+            //displayData();
         }
     }
 }
