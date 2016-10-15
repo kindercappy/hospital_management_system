@@ -267,14 +267,14 @@
             // newStaffToolStripMenuItem
             // 
             this.newStaffToolStripMenuItem.Name = "newStaffToolStripMenuItem";
-            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.newStaffToolStripMenuItem.Text = "New Staff";
             this.newStaffToolStripMenuItem.Click += new System.EventHandler(this.newStaffToolStripMenuItem_Click);
             // 
             // existingStaffToolStripMenuItem
             // 
             this.existingStaffToolStripMenuItem.Name = "existingStaffToolStripMenuItem";
-            this.existingStaffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.existingStaffToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.existingStaffToolStripMenuItem.Text = "Existing Staff";
             this.existingStaffToolStripMenuItem.Click += new System.EventHandler(this.existingStaffToolStripMenuItem_Click);
             // 
@@ -299,9 +299,11 @@
             this.Controls.Add(this.btnNewPatient);
             this.Controls.Add(this.lblNewPatient);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.Name = "HospitalMain";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HospitalMain_FormClosed);
             this.Load += new System.EventHandler(this.HospitalMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

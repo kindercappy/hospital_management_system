@@ -50,10 +50,9 @@ namespace hospitalManagementSystem
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            HospitalMain hospitalMain = new HospitalMain();
-            hospitalMain.ShowDialog();
-            this.Hide();
+            HospitalMain hm = new HospitalMain();
             this.Close();
+            hm.Show();
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)

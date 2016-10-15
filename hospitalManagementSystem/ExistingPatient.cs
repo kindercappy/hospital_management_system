@@ -29,9 +29,9 @@ namespace hospitalManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HospitalMain hospitalMain = new HospitalMain();
-            hospitalMain.ShowDialog();
-            this.Close();
+            //HospitalMain hospitalMain = new HospitalMain();
+            //hospitalMain.Show();
+            //this.Close();
         }
 
         private void ExistingPatient_Load(object sender, EventArgs e)
@@ -196,6 +196,28 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            Patient patient = new Patient();
+            try
+            {
+                patient.patientId = Id;
+                PatientManager.Patient_Delete(patient);
+                MessageBox.Show("Deleted");
+                displayData();
+                clearData();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

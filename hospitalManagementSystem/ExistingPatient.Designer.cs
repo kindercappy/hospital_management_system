@@ -58,6 +58,8 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.textBoxPatientId = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingPatient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -274,7 +276,7 @@
             // dataGridViewExistingPatient
             // 
             this.dataGridViewExistingPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExistingPatient.Location = new System.Drawing.Point(12, 9);
+            this.dataGridViewExistingPatient.Location = new System.Drawing.Point(12, 39);
             this.dataGridViewExistingPatient.Name = "dataGridViewExistingPatient";
             this.dataGridViewExistingPatient.Size = new System.Drawing.Size(888, 150);
             this.dataGridViewExistingPatient.TabIndex = 29;
@@ -282,7 +284,7 @@
             // 
             // buttonInsert
             // 
-            this.buttonInsert.Location = new System.Drawing.Point(12, 165);
+            this.buttonInsert.Location = new System.Drawing.Point(12, 195);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(139, 23);
             this.buttonInsert.TabIndex = 30;
@@ -292,7 +294,7 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(157, 165);
+            this.buttonUpdate.Location = new System.Drawing.Point(157, 195);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(139, 23);
             this.buttonUpdate.TabIndex = 31;
@@ -302,12 +304,13 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(306, 165);
+            this.buttonDelete.Location = new System.Drawing.Point(306, 195);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(139, 23);
             this.buttonDelete.TabIndex = 32;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // textBoxPatientId
             // 
@@ -317,11 +320,30 @@
             this.textBoxPatientId.TabIndex = 33;
             this.textBoxPatientId.Visible = false;
             // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(12, 12);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(284, 20);
+            this.textBoxSearch.TabIndex = 34;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(306, 10);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(178, 23);
+            this.buttonSearch.TabIndex = 35;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
             // ExistingPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 523);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.textBoxPatientId);
             this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.comboBoxSex);
@@ -392,5 +414,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.TextBox textBoxPatientId;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }

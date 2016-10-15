@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalLibrary;
 
+
 namespace hospitalManagementSystem
 {
     public partial class ExistingDoctor : Form
@@ -22,9 +23,9 @@ namespace hospitalManagementSystem
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            HospitalMain hospitalMain = new HospitalMain();
-            hospitalMain.ShowDialog();
-            this.Close();
+            //HospitalMain hospitalMain = new HospitalMain();
+            //hospitalMain.ShowDialog();
+            //this.Close();
         }
 
         private void ExistingDoctor_Load(object sender, EventArgs e)

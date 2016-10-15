@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HospitalLibrary">
-      <HintPath>..\HospitalLibrary\bin\Debug\HospitalLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonFormOperation.cs" />
     <Compile Include="ExistingDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalLibrary\HospitalLibrary.csproj">
+      <Project>{8dd6fb38-3580-4245-a5ff-c29d5c5cc397}</Project>
+      <Name>HospitalLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

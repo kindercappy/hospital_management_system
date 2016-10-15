@@ -370,6 +370,22 @@ namespace HospitalLibrary
             }
             return patient;
         }
+
+        public static void Patient_Delete(Patient patient)
+        {
+            using(SqlCommand  cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Patient_Delete";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iPatientId = new SqlParameter("@patientId", patient.patientId);
+                iPatientId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iPatientId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }
 
