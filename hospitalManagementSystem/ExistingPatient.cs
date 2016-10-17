@@ -27,13 +27,37 @@ namespace hospitalManagementSystem
             displayData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+        // METHODS
+        //display data in dataGridView
+        private void displayData()
         {
-            //HospitalMain hospitalMain = new HospitalMain();
-            //hospitalMain.Show();
-            //this.Close();
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Patient_Select";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            dataGridViewExistingPatient.DataSource = dt;
+          
+        }
+        //clear data
+        private void clearData()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            textBoxAge.Text = "";
+            textBoxHeightFt.Text = "";
+            textBoxHeightInch.Text = "";
+            textBoxPhone.Text = "";
+            textBoxWeight.Text = "";
+            textBoxEmail.Text = "";
+            textBoxAddress.Text = "";
+            Id = 0;
         }
 
+
+        // EVENTS
         private void ExistingPatient_Load(object sender, EventArgs e)
         {
             
@@ -60,27 +84,6 @@ namespace hospitalManagementSystem
             }
         }
 
-        //display data in dataGridView
-        private void displayData()
-        {
-            cmd.Connection = Common.getConnection();
-            cmd.CommandText = "Patient_Select";
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            da.Fill(dt);
-            dataGridViewExistingPatient.DataSource = dt;
-          
-        }
-
-        //clear data
-        private void clearData()
-        {
-            textBoxFirstName.Text = "";
-            textBoxLastName.Text = "";
-            Id = 0;
-        }
-
         private void dataGridViewExistingPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //display data in textboxes, comboboxes when record selected in datagridview
@@ -103,7 +106,7 @@ namespace hospitalManagementSystem
         private void buttonInsert_Click(object sender, EventArgs e)
         {
             
-            string str = "REQUIRED: ";
+            string str = "";
             if(textBoxFirstName.Text == "")
             {
                 str = str + "First Name ";    
@@ -128,16 +131,16 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Nationality";
             }
-            if (str.Length <= 0)
+            if (str.Length >= 0)
             {
-                MessageBox.Show(str);
+                MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
             }
             else
             {
                 //Insert the patient data here
                 Patient patient = new Patient();
-                try
-                {
+                //try
+                //{
                     patient.firstName = this.textBoxFirstName.Text;
                     patient.lastName = this.textBoxLastName.Text;
                     patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
@@ -154,12 +157,12 @@ namespace hospitalManagementSystem
                     MessageBox.Show("Success");
                     displayData();
                     clearData();
-                }
+                //}
 
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                //catch (System.Exception ex)
+                //{
+                    //MessageBox.Show(ex.Message);
+                //}
 
             }
         }
@@ -214,6 +217,11 @@ namespace hospitalManagementSystem
         private void buttonSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

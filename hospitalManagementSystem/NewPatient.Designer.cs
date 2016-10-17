@@ -95,7 +95,6 @@
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(100, 21);
             this.comboBoxDepartment.TabIndex = 4;
-            this.comboBoxDepartment.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartment_SelectedIndexChanged);
             // 
             // lblDepartment
             // 

@@ -327,10 +327,19 @@ namespace HospitalLibrary
         //selects doctor
 
         //deletes doctor
+        public static void Patient_Delete(Doctor doctor)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Delete";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                SqlParameter iDoctorId = new SqlParameter("@doctorId", doctor.doctorId);
+                iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDoctorId);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
-
-
 }
-
-

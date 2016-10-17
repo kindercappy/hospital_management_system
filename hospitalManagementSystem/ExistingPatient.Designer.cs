@@ -52,7 +52,7 @@
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.labelDepartment = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.dataGridViewExistingPatient = new System.Windows.Forms.DataGridView();
             this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
@@ -262,16 +262,16 @@
             this.labelDepartment.TabIndex = 27;
             this.labelDepartment.Text = "Department:";
             // 
-            // button1
+            // buttonBack
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(999, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 41);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonBack.Location = new System.Drawing.Point(999, 358);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 41);
+            this.buttonBack.TabIndex = 28;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // dataGridViewExistingPatient
             // 
@@ -358,7 +358,7 @@
             this.Controls.Add(this.textBoxHeightInch);
             this.Controls.Add(this.dataGridViewExistingPatient);
             this.Controls.Add(this.textBoxWeight);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelDepartment);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.lblAddress);
@@ -407,7 +407,7 @@
         private System.Windows.Forms.ComboBox comboBoxSex;
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Label labelDepartment;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.DataGridView dataGridViewExistingPatient;
         private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Button buttonUpdate;

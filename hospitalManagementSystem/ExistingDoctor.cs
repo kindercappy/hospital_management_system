@@ -20,20 +20,46 @@ namespace hospitalManagementSystem
         SqlConnection con;
         DataTable dt = new DataTable();
         int Id = 0;
+
         public ExistingDoctor()
         {
             InitializeComponent();
             displayData();
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+        // METHODS
+
+        //display data in dataGridView
+        private void displayData()
         {
-            //HospitalMain hospitalMain = new HospitalMain();
-            //hospitalMain.ShowDialog();
-            //this.Close();
-            //CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.hospitalMain, this.MdiParent);
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Doctor_Select";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            dataGridViewExistingDoctor.DataSource = dt;
+        }
+
+        //clear data
+        private void clearData()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            textBoxAge.Text = "";
+            textBoxHeightFt.Text = "";
+            textBoxHeightInch.Text = "";
+            textBoxPhone.Text = "";
+            textBoxWeight.Text = "";
+            textBoxEmail.Text = "";
+            textBoxAddress.Text = "";
+            Id = 0;
+        }
+
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {            
             this.Close();
-            
         }
 
         private void ExistingDoctor_Load(object sender, EventArgs e)
@@ -111,27 +137,19 @@ namespace hospitalManagementSystem
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
-        }
-
-        //display data in dataGridView
-        private void displayData()
-        {
-            cmd.Connection = Common.getConnection();
-            cmd.CommandText = "Doctor_Select";
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            da.Fill(dt);
-            dataGridViewExistingDoctor.DataSource = dt;
-        }
-
-        //clear data
-            private void clearData()
-        {
-            textBoxFirstName.Text = "";
-            textBoxLastName.Text = "";
-            Id = 0;
+            Doctor doctor = new Doctor();
+            try
+            {
+                doctor.doctorId = Id;
+                DoctorManager.Patient_Delete(doctor);
+                MessageBox.Show("Deleted");
+                displayData();
+                clearData();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

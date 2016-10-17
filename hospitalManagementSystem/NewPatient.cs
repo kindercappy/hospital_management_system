@@ -37,56 +37,82 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
 
-            this.textBoxFirstName.Text = "Kinder";
-            this.textBoxLastName.Text = "Preet";
-            this.textBoxAge.Text = "4";
-            this.comboBoxSex.Text = "MALE";
-            this.textBoxHeightFt.Text = "5";
-            this.textBoxHeightInch.Text = "6";
-            this.textBoxWeight.Text = "50";
-            this.textBoxPhone.Text = "4444444444444";
-            this.textBoxEmail.Text = "k@gmail.com";
-            this.textBoxAddress.Text = "sdsdsdsds";
+            //this.textBoxFirstName.Text = "Kinder";
+            //this.textBoxLastName.Text = "Preet";
+            //this.textBoxAge.Text = "4";
+            //this.comboBoxSex.Text = "MALE";
+            //this.textBoxHeightFt.Text = "5";
+            //this.textBoxHeightInch.Text = "6";
+            //this.textBoxWeight.Text = "50";
+            //this.textBoxPhone.Text = "4444444444444";
+            //this.textBoxEmail.Text = "k@gmail.com";
+            //this.textBoxAddress.Text = "sdsdsdsds";
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            //HospitalMain hm = new HospitalMain();
-            //this.Close();
-            //hm.Show();
-            
+            this.Close();
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            Patient patient = new Patient();
-            try
+            string str = "";
+            if (textBoxFirstName.Text == "")
             {
-                patient.firstName = this.textBoxFirstName.Text;
-                patient.lastName = this.textBoxLastName.Text;
-                patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
-                patient.age = Convert.ToInt32(this.textBoxAge.Text);
-                patient.sex = this.comboBoxSex.Text;
-                patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
-                patient.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                patient.weight = Convert.ToInt32(this.textBoxWeight.Text);
-                patient.phone = Convert.ToInt64(this.textBoxPhone.Text);
-                patient.email = this.textBoxEmail.Text;
-                patient.address = this.textBoxAddress.Text;
-                patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                PatientManager.Patient_Save(patient);
-                MessageBox.Show("Success");
+                str = str + "First Name ";
             }
-
-            catch (System.Exception ex)
+            if (textBoxLastName.Text == "")
             {
-                MessageBox.Show(ex.Message);
+                str = str + Environment.NewLine + "Last Name ";
+            }
+            if (comboBoxDepartment.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Department ";
+            }
+            if (textBoxAge.Text == "")
+            {
+                str = str + Environment.NewLine + "Age ";
+            }
+            if (comboBoxSex.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Sex ";
+            }
+            if (comboBoxNationality.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Nationality";
+            }
+            if (str.Length >= 0)
+            {
+                MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
+            }
+            else
+            {
+                Patient patient = new Patient();
+                try
+                {
+                    patient.firstName = this.textBoxFirstName.Text;
+                    patient.lastName = this.textBoxLastName.Text;
+                    patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                    patient.age = Convert.ToInt32(this.textBoxAge.Text);
+                    patient.sex = this.comboBoxSex.Text;
+                    patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                    patient.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                    patient.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    patient.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                    patient.email = this.textBoxEmail.Text;
+                    patient.address = this.textBoxAddress.Text;
+                    patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    PatientManager.Patient_Save(patient);
+                    MessageBox.Show("Success");
+                }
+
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
-        private void comboBoxDepartment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
