@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.labelDoctorID = new System.Windows.Forms.Label();
             this.textBoxRegistration = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
@@ -57,37 +56,13 @@
             this.labelDepartment = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hospitalManagementSystemDataSet = new hospitalManagementSystem.hospitalManagementSystemDataSet();
-            this.doctorTableAdapter = new hospitalManagementSystem.hospitalManagementSystemDataSetTableAdapters.DoctorTableAdapter();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.doctorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.hospitalManagementSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doctorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewExistingDocotor = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heightFtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heightInchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nationalityIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.hospitalManagementSystemDataSet1 = new hospitalManagementSystem.hospitalManagementSystemDataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDocotor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet1)).BeginInit();
+            this.dataGridViewExistingDoctor = new System.Windows.Forms.DataGridView();
+            this.buttonInsert = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDoctorID
@@ -322,20 +297,6 @@
             this.labelUser.TabIndex = 29;
             this.labelUser.Text = "User: (Name, Phone, Address):";
             // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataMember = "Doctor";
-            this.doctorBindingSource.DataSource = this.hospitalManagementSystemDataSet;
-            // 
-            // hospitalManagementSystemDataSet
-            // 
-            this.hospitalManagementSystemDataSet.DataSetName = "hospitalManagementSystemDataSet";
-            this.hospitalManagementSystemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // doctorTableAdapter
-            // 
-            this.doctorTableAdapter.ClearBeforeFill = true;
-            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(171, 6);
@@ -353,132 +314,54 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // doctorBindingSource1
+            // dataGridViewExistingDoctor
             // 
-            this.doctorBindingSource1.DataMember = "Doctor";
-            this.doctorBindingSource1.DataSource = this.hospitalManagementSystemDataSet;
+            this.dataGridViewExistingDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExistingDoctor.Location = new System.Drawing.Point(15, 33);
+            this.dataGridViewExistingDoctor.Name = "dataGridViewExistingDoctor";
+            this.dataGridViewExistingDoctor.Size = new System.Drawing.Size(807, 150);
+            this.dataGridViewExistingDoctor.TabIndex = 34;
+            this.dataGridViewExistingDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingDocotor_CellContentClick);
             // 
-            // hospitalManagementSystemDataSetBindingSource
+            // buttonInsert
             // 
-            this.hospitalManagementSystemDataSetBindingSource.DataSource = this.hospitalManagementSystemDataSet;
-            this.hospitalManagementSystemDataSetBindingSource.Position = 0;
+            this.buttonInsert.Location = new System.Drawing.Point(15, 189);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(150, 23);
+            this.buttonInsert.TabIndex = 35;
+            this.buttonInsert.Text = "Insert";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
-            // doctorBindingSource2
+            // buttonUpdate
             // 
-            this.doctorBindingSource2.DataMember = "Doctor";
-            this.doctorBindingSource2.DataSource = this.hospitalManagementSystemDataSetBindingSource;
+            this.buttonUpdate.Location = new System.Drawing.Point(171, 189);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(150, 23);
+            this.buttonUpdate.TabIndex = 36;
+            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
-            // dataGridViewExistingDocotor
+            // buttonDelete
             // 
-            this.dataGridViewExistingDocotor.AutoGenerateColumns = false;
-            this.dataGridViewExistingDocotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExistingDocotor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.departmentDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.sexDataGridViewTextBoxColumn,
-            this.heightFtDataGridViewTextBoxColumn,
-            this.heightInchDataGridViewTextBoxColumn,
-            this.weightDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.nationalityIdDataGridViewTextBoxColumn});
-            this.dataGridViewExistingDocotor.DataSource = this.doctorBindingSource3;
-            this.dataGridViewExistingDocotor.Location = new System.Drawing.Point(15, 33);
-            this.dataGridViewExistingDocotor.Name = "dataGridViewExistingDocotor";
-            this.dataGridViewExistingDocotor.Size = new System.Drawing.Size(807, 150);
-            this.dataGridViewExistingDocotor.TabIndex = 34;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // departmentDataGridViewTextBoxColumn
-            // 
-            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "department";
-            this.departmentDataGridViewTextBoxColumn.HeaderText = "department";
-            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            // 
-            // sexDataGridViewTextBoxColumn
-            // 
-            this.sexDataGridViewTextBoxColumn.DataPropertyName = "sex";
-            this.sexDataGridViewTextBoxColumn.HeaderText = "sex";
-            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
-            // 
-            // heightFtDataGridViewTextBoxColumn
-            // 
-            this.heightFtDataGridViewTextBoxColumn.DataPropertyName = "heightFt";
-            this.heightFtDataGridViewTextBoxColumn.HeaderText = "heightFt";
-            this.heightFtDataGridViewTextBoxColumn.Name = "heightFtDataGridViewTextBoxColumn";
-            // 
-            // heightInchDataGridViewTextBoxColumn
-            // 
-            this.heightInchDataGridViewTextBoxColumn.DataPropertyName = "heightInch";
-            this.heightInchDataGridViewTextBoxColumn.HeaderText = "heightInch";
-            this.heightInchDataGridViewTextBoxColumn.Name = "heightInchDataGridViewTextBoxColumn";
-            // 
-            // weightDataGridViewTextBoxColumn
-            // 
-            this.weightDataGridViewTextBoxColumn.DataPropertyName = "weight";
-            this.weightDataGridViewTextBoxColumn.HeaderText = "weight";
-            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // nationalityIdDataGridViewTextBoxColumn
-            // 
-            this.nationalityIdDataGridViewTextBoxColumn.DataPropertyName = "nationalityId";
-            this.nationalityIdDataGridViewTextBoxColumn.HeaderText = "nationalityId";
-            this.nationalityIdDataGridViewTextBoxColumn.Name = "nationalityIdDataGridViewTextBoxColumn";
-            // 
-            // doctorBindingSource3
-            // 
-            this.doctorBindingSource3.DataMember = "Doctor";
-            this.doctorBindingSource3.DataSource = this.hospitalManagementSystemDataSet1;
-            // 
-            // hospitalManagementSystemDataSet1
-            // 
-            this.hospitalManagementSystemDataSet1.DataSetName = "hospitalManagementSystemDataSet";
-            this.hospitalManagementSystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.buttonDelete.Location = new System.Drawing.Point(327, 189);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(150, 23);
+            this.buttonDelete.TabIndex = 37;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // ExistingDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 520);
-            this.Controls.Add(this.dataGridViewExistingDocotor);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonInsert);
+            this.Controls.Add(this.dataGridViewExistingDoctor);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.labelUser);
@@ -513,14 +396,7 @@
             this.Text = "ExistingDoctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ExistingDoctor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDocotor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalManagementSystemDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,28 +432,11 @@
         private System.Windows.Forms.Label labelDepartment;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelUser;
-        private hospitalManagementSystemDataSet hospitalManagementSystemDataSet;
-        private System.Windows.Forms.BindingSource doctorBindingSource;
-        private hospitalManagementSystemDataSetTableAdapters.DoctorTableAdapter doctorTableAdapter;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.BindingSource doctorBindingSource1;
-        private System.Windows.Forms.BindingSource hospitalManagementSystemDataSetBindingSource;
-        private System.Windows.Forms.BindingSource doctorBindingSource2;
-        private System.Windows.Forms.DataGridView dataGridViewExistingDocotor;
-        private hospitalManagementSystemDataSet hospitalManagementSystemDataSet1;
-        private System.Windows.Forms.BindingSource doctorBindingSource3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn heightFtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn heightInchDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nationalityIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridViewExistingDoctor;
+        private System.Windows.Forms.Button buttonInsert;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

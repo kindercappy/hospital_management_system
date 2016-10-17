@@ -10,6 +10,7 @@ namespace HospitalLibrary
 {
     public class Doctor
     {
+        private int iDoctorId;
         private string sFirstName;
         private string sLastName;
         private int iDepartment;
@@ -23,6 +24,17 @@ namespace HospitalLibrary
         private string sAddress;
         private int iNationality;
 
+        public int doctorId
+        {
+            get
+            {
+                return iDoctorId;
+            }
+            set
+            {
+                iDoctorId = value;
+            }
+        }
         public string firstName
         {
             get
@@ -171,6 +183,7 @@ namespace HospitalLibrary
 
     public class DoctorManager
     {
+        //saves doctor
         public static void Doctor_Save(Doctor doc)
         {
 
@@ -233,8 +246,87 @@ namespace HospitalLibrary
             }
 
         }
-        
-        
+        //updates doctor
+        public static void Doctor_Update(Doctor doctor)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Update";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //DoctorId Integer Parameter
+                SqlParameter iDoctorId = new SqlParameter("@doctorId", doctor.doctorId);
+                iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDoctorId);
+
+                //FirstName NVarChar Parameter
+                SqlParameter sFirstName = new SqlParameter("@firstName", doctor.firstName);
+                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sFirstName);
+
+                //LastName NVarChar Parameter
+                SqlParameter sLastName = new SqlParameter("@lastName", doctor.lastName);
+                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sLastName);
+
+                //Department Integer Parameter
+                SqlParameter iDepartment = new SqlParameter("@department", doctor.department);
+                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDepartment);
+
+                //Age Integer Parameter
+                SqlParameter iAge = new SqlParameter("@age", doctor.age);
+                iAge.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iAge);
+
+                //Sex NVarChar Parameter
+                SqlParameter sSex = new SqlParameter("@sex", doctor.sex);
+                sSex.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sSex);
+
+                //HeightFt Integer Parameter
+                SqlParameter iHeightFt = new SqlParameter("heightFt", doctor.heightFt);
+                iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iHeightFt);
+
+                //HeightInch Integer Parameter
+                SqlParameter iHeightInch = new SqlParameter("heightInch", doctor.heightInch);
+                iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iHeightInch);
+
+                //Weight Integer Parameter
+                SqlParameter iWeight = new SqlParameter("@weight", doctor.weight);
+                iWeight.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iWeight);
+
+                //Phone Integer Parameter
+                SqlParameter iPhone = new SqlParameter("@phone", doctor.phone);
+                iPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+                cmd.Parameters.Add(iPhone);
+
+                //Email NVarChar Parameter
+                SqlParameter sEmail = new SqlParameter("@email", doctor.email);
+                sEmail.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sEmail);
+
+                //Address NVarChar Parameter
+                SqlParameter sAddress = new SqlParameter("@address", doctor.address);
+                sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sAddress);
+
+                //Nationality Integer Parameter
+                SqlParameter iNationalityId = new SqlParameter("@nationalityId", doctor.natioinality);
+                iNationalityId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iNationalityId);
+
+                cmd.ExecuteNonQuery();
+
+            }
+        }
+        //selects doctor
+
+        //deletes doctor
 
     }
 

@@ -13,6 +13,7 @@ namespace hospitalManagementSystem
 {
     public partial class NewPatient : Form
     {
+        CommonFormOperation cfo = new CommonFormOperation();
         public NewPatient()
         {
             InitializeComponent();
@@ -50,9 +51,10 @@ namespace hospitalManagementSystem
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            HospitalMain hm = new HospitalMain();
-            this.Close();
-            hm.Show();
+            //HospitalMain hm = new HospitalMain();
+            //this.Close();
+            //hm.Show();
+            
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)

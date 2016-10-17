@@ -63,18 +63,14 @@ namespace hospitalManagementSystem
         //display data in dataGridView
         private void displayData()
         {
-            //cmd.Connection = Common.getConnection();
-            //cmd.CommandText = "Patient_Select";
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            //da = new SqlDataAdapter(cmd);
-            //dt = new DataTable();
-            //da.Fill(dt);
-            //dataGridViewExistingPatient.DataSource = dt;
-            con = Common.getConnection();
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Patient_Select";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
             dt = new DataTable();
-            da = new SqlDataAdapter("SELECT * FROM Patient", con);
             da.Fill(dt);
             dataGridViewExistingPatient.DataSource = dt;
+          
         }
 
         //clear data
@@ -100,7 +96,7 @@ namespace hospitalManagementSystem
             textBoxPhone.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[9].Value.ToString();
             textBoxEmail.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[10].Value.ToString();
             textBoxAddress.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[11].Value.ToString();
-            comboBoxNationality.SelectedIndex = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[12].Value.ToString()) -1;
+            comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[12].Value.ToString());
 
         }
 
