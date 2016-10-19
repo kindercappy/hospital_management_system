@@ -284,7 +284,7 @@ namespace HospitalLibrary
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //PatientId Integer Parameter
-                SqlParameter iPatientId = new SqlParameter("patientId", patient.patientId);
+                SqlParameter iPatientId = new SqlParameter("@patientId", patient.patientId);
                 iPatientId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iPatientId);
 

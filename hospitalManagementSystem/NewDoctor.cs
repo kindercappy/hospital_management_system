@@ -21,9 +21,7 @@ namespace hospitalManagementSystem
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            //HospitalMain hospitalMain = new HospitalMain();
-            //hospitalMain.ShowDialog();
-            //this.Close();
+            
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -72,18 +70,6 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
-
-            this.textBoxFirstName.Text = "Kinder";
-            this.textBoxLastName.Text = "Preet";
-            this.textBoxAge.Text = "4";
-            this.comboBoxSex.Text = "MALE";
-            this.textBoxHeightFt.Text = "5";
-            this.textBoxHeightInch.Text = "6";
-            this.textBoxWeight.Text = "50";
-            this.textBoxPhone.Text = "4444444444444";
-            this.textBoxEmail.Text = "k@gmail.com";
-            this.textBoxAddress.Text = "sdsdsdsds";
-
         }
     }
 }

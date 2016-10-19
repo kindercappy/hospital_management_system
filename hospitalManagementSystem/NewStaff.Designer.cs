@@ -50,10 +50,10 @@
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelNationality = new System.Windows.Forms.Label();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
-            this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -236,18 +236,6 @@
             this.comboBoxDepartment.TabIndex = 24;
             this.comboBoxDepartment.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartment_SelectedIndexChanged);
             // 
-            // comboBoxSex
-            // 
-            this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.Items.AddRange(new object[] {
-            "MALE",
-            "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(112, 116);
-            this.comboBoxSex.Name = "comboBoxSex";
-            this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSex.TabIndex = 25;
-            this.comboBoxSex.Text = "Select";
-            // 
             // comboBoxNationality
             // 
             this.comboBoxNationality.FormattingEnabled = true;
@@ -278,15 +266,27 @@
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
+            // comboBoxSex
+            // 
+            this.comboBoxSex.FormattingEnabled = true;
+            this.comboBoxSex.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
+            this.comboBoxSex.Location = new System.Drawing.Point(112, 115);
+            this.comboBoxSex.Name = "comboBoxSex";
+            this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSex.TabIndex = 9;
+            this.comboBoxSex.Text = "Select";
+            // 
             // NewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 527);
+            this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxNationality);
-            this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.labelNationality);
             this.Controls.Add(this.labelAddress);
@@ -342,9 +342,9 @@
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.Label labelNationality;
         private System.Windows.Forms.ComboBox comboBoxDepartment;
-        private System.Windows.Forms.ComboBox comboBoxSex;
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.ComboBox comboBoxSex;
     }
 }

@@ -244,6 +244,9 @@
             // comboBoxSex
             // 
             this.comboBoxSex.FormattingEnabled = true;
+            this.comboBoxSex.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
             this.comboBoxSex.Location = new System.Drawing.Point(124, 169);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);

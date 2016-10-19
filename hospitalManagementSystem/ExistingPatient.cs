@@ -139,8 +139,8 @@ namespace hospitalManagementSystem
             {
                 //Insert the patient data here
                 Patient patient = new Patient();
-                //try
-                //{
+                try
+                {
                     patient.firstName = this.textBoxFirstName.Text;
                     patient.lastName = this.textBoxLastName.Text;
                     patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
@@ -157,12 +157,12 @@ namespace hospitalManagementSystem
                     MessageBox.Show("Success");
                     displayData();
                     clearData();
-                //}
+                }
 
-                //catch (System.Exception ex)
-                //{
-                    //MessageBox.Show(ex.Message);
-                //}
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
             }
         }

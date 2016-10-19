@@ -11,6 +11,7 @@ namespace HospitalLibrary
     {
         private string sFirstName;
         private string sLastName;
+        private int iStaffId;
         private int iDepartment;
         private int iAge;
         private string sSex;
@@ -22,6 +23,20 @@ namespace HospitalLibrary
         private string sAddress;
         private int iNationality;
 
+
+        //Properties
+
+        public int staffId
+        {
+            get
+            {
+                return iStaffId;
+            }
+            set
+            {
+                iStaffId = value;
+            }
+        }
         public string firstName
         {
             get
@@ -169,6 +184,7 @@ namespace HospitalLibrary
 
     public class StaffManager
     {
+        //saves staff
         public static void Staff_Save(Staff staff)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -228,6 +244,83 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+
+        //updates staff
+        public static void Staff_Update(Staff staff)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Staff_Update";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //StaffId Integer Parameter
+                SqlParameter iStaffId = new SqlParameter("staffId", staff.staffId);
+                iStaffId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iStaffId);
+
+                //FirstName NVarChar Parameter
+                SqlParameter sFirstName = new SqlParameter("@firstName", staff.firstName);
+                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sFirstName);
+
+                //LastName NVarChar Parameter
+                SqlParameter sLastName = new SqlParameter("@lastName", staff.lastName);
+                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sLastName);
+
+                //Department Integer Parameter
+                SqlParameter iDepartment = new SqlParameter("@department", staff.department);
+                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDepartment);
+
+                //Age Integer Parameter
+                SqlParameter iAge = new SqlParameter("@age", staff.age);
+                iAge.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iAge);
+
+                //Sex NVarChar Parameter
+                SqlParameter sSex = new SqlParameter("@sex", staff.sex);
+                sSex.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sSex);
+
+                //HeightFt Integer Parameter
+                SqlParameter iHeightFt = new SqlParameter("@heightFt", staff.heightFt);
+                iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iHeightFt);
+
+                //HeightInch Integer Parameter
+                SqlParameter iHeightInch = new SqlParameter("@heightInch", staff.heightInch);
+                iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iHeightInch);
+
+                //Weight Integer Parameter
+                SqlParameter iWeight = new SqlParameter("@weight", staff.weight);
+                iWeight.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iWeight);
+
+                //Phone Integer Parameter
+                SqlParameter iPhone = new SqlParameter("@phone", staff.phone);
+                iPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+                cmd.Parameters.Add(iPhone);
+
+                //Email NVarChar Parameter
+                SqlParameter sEmail = new SqlParameter("@email", staff.email);
+                sEmail.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sEmail);
+
+                //Address NVarChar Parameter
+                SqlParameter sAddress = new SqlParameter("@address", staff.address);
+                sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sAddress);
+
+                //Nationality Integer Parameter
+                SqlParameter iNationalityId = new SqlParameter("@nationalityId", staff.natioinality);
+                iNationalityId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iNationalityId);
+            }
+        }
+        //deletes staff
     }
 }
 

@@ -24,40 +24,39 @@ namespace hospitalManagementSystem
         {
             InitializeComponent();
             displayData();
-            //this.dataGridViewExistingStaff.Columns[0].Visible = false;
+            
+        }
+        // METHODS
+        //display data in dataGridView
+        private void displayData()
+        {
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Staff_Select";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            dataGridViewExistingStaff.DataSource = dt;
+
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            //HospitalMain hospitalMain = new HospitalMain();
-            //hospitalMain.ShowDialog();
-            //this.Close();
+         
         }
 
         private void ExistingStaff_Load(object sender, EventArgs e)
         {
+            //ExistingStaff Department comboBox
             this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
             this.comboBoxDepartment.DisplayMember = "departmentName";
             this.comboBoxDepartment.ValueMember = "departmentId";
-
+            //ExistingStaff Nationality comboBox
+            this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
+            this.comboBoxNationality.DisplayMember = "nationalityName";
+            this.comboBoxNationality.ValueMember = "nationalityId";
         }
 
-        //display data in dataGridView
-        private void displayData()
-        {
-            //cmd.Connection = Common.getConnection();
-            //cmd.CommandText = "StaffSample_Select";
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            //da = new SqlDataAdapter(cmd);
-            //dt = new DataTable();
-            //da.Fill(dt);
-            //dataGridViewExistingStaff.DataSource = dt;
-            con = Common.getConnection();
-            dt = new DataTable();
-            da = new SqlDataAdapter("SELECT * FROM StaffSample", con);
-            da.Fill(dt);
-            dataGridViewExistingStaff.DataSource = dt;
-        }
 
 
 
@@ -75,56 +74,108 @@ namespace hospitalManagementSystem
             textBoxFirstName.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBoxLastName.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
             comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[3].Value.ToString());
+            textBoxAge.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
+            comboBoxSex.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textBoxHeightFt.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+            textBoxHeightInch.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[7].Value.ToString();
+            textBoxWeight.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[8].Value.ToString();
+            textBoxPhone.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[9].Value.ToString();
+            textBoxEmail.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[10].Value.ToString();
+            textBoxAddress.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[11].Value.ToString();
+            comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[12].Value.ToString());
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            if(textBoxFirstName.Text != "" && textBoxLastName.Text != "")
+            string str = "";
+            if (textBoxFirstName.Text == "")
             {
-                cmd = new SqlCommand();
-                cmd.Connection = Common.getConnection();
-                cmd.CommandText = "StaffSample_Insert";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                SqlParameter sFirstName = new SqlParameter("@firstName", textBoxFirstName.Text);
-                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sFirstName);
-                SqlParameter sLastName = new SqlParameter("@lastName", textBoxLastName.Text);
-                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sLastName);
-                SqlParameter iDepartment = new SqlParameter("@department", comboBoxDepartment.SelectedValue);
-                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDepartment);
-                cmd.ExecuteNonQuery();
-                //cmd.Parameters.Clear();
-                MessageBox.Show("Data Inserted");
-                displayData();
-                clearData();
-                //cmd = new SqlCommand("INSERT INTO StaffSample(firstName,lastName,department) VALUES(@firstName,@lastName,@department)", con);
-                //con = Common.getConnection();
-                //cmd.Parameters.AddWithValue("@firstName", textBoxFirstName.Text);
-                //cmd.Parameters.AddWithValue("@lastName", textBoxLastName.Text);
-                //cmd.Parameters.AddWithValue("@department", comboBoxDepartment.SelectedValue);
-                //cmd.ExecuteNonQuery();
-                //MessageBox.Show("Done");
-                //displayData();
-                //clearData();
+                str = str + "First Name ";
             }
-            else {
-                MessageBox.Show("Please enter valid details!");
+            if (textBoxLastName.Text == "")
+            {
+                str = str + Environment.NewLine + "Last Name ";
+            }
+            if (comboBoxDepartment.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Department ";
+            }
+            if (textBoxAge.Text == "")
+            {
+                str = str + Environment.NewLine + "Age ";
+            }
+            if (comboBoxSex.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Sex ";
+            }
+            if (comboBoxNationality.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Nationality";
+            }
+            if (str.Length > 0)
+            {
+                MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
+            }
+            else
+            {
+                //Insert the patient data here
+                Staff staff = new Staff();
+                try
+                {
+                    staff.firstName = this.textBoxFirstName.Text;
+                    staff.lastName = this.textBoxLastName.Text;
+                    staff.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                    staff.age = Convert.ToInt32(this.textBoxAge.Text);
+                    staff.sex = this.comboBoxSex.Text;
+                    staff.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                    staff.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                    staff.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    staff.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                    staff.email = this.textBoxEmail.Text;
+                    staff.address = this.textBoxAddress.Text;
+                    staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    StaffManager.Staff_Save(staff);
+                    MessageBox.Show("Success");
+                    displayData();
+                    clearData();
+                }
+
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            cmd = new SqlCommand("UPDATE StaffSample set firstName=@firstName,lastName=@lastName WHERE Id=@id", con);
-            cmd.Connection = Common.getConnection();
-            cmd.Parameters.AddWithValue("@id", Id);
-            cmd.Parameters.AddWithValue("@firstName", textBoxFirstName.Text);
-            cmd.Parameters.AddWithValue("@lastName", textBoxLastName.Text);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Updated");
-            displayData();
-            clearData();
+            //updates staff data
+            Staff staff = new Staff();
+            try
+            {
+                staff.staffId = Id;
+                staff.firstName = this.textBoxFirstName.Text;
+                staff.lastName = this.textBoxLastName.Text;
+                staff.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                staff.age = Convert.ToInt32(this.textBoxAge.Text);
+                staff.sex = this.comboBoxSex.Text;
+                staff.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                staff.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                staff.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                staff.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                staff.email = this.textBoxEmail.Text;
+                staff.address = this.textBoxAddress.Text;
+                staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                StaffManager.Staff_Update(staff);
+                MessageBox.Show("Success");
+                displayData();
+                clearData();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

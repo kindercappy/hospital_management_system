@@ -141,6 +141,7 @@
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 9;
             this.comboBoxSex.Text = "Select";
+            this.comboBoxSex.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
             // 
             // lblHeightFt
             // 
