@@ -327,7 +327,7 @@ namespace HospitalLibrary
         //selects doctor
 
         //deletes doctor
-        public static void Patient_Delete(Doctor doctor)
+        public static void Doctor_Delete(Doctor doctor)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -338,6 +338,25 @@ namespace HospitalLibrary
                 SqlParameter iDoctorId = new SqlParameter("@doctorId", doctor.doctorId);
                 iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iDoctorId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        //search doctor
+       public static void Doctor_Search(Doctor doctor)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                SqlDataAdapter da = new SqlDataAdapter();
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Search";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter sFirstName = new SqlParameter("@firstName", doctor.firstName);
+                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sFirstName);
+                da.SelectCommand = cmd;
+
                 cmd.ExecuteNonQuery();
             }
         }

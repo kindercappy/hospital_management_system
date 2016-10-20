@@ -82,6 +82,17 @@ namespace hospitalManagementSystem
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.existingDoctor, this);
             panelHospitalMain.SendToBack();
         }
+        private void buttonDoctorShifts_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.doctorShifts, this);
+            panelHospitalMain.SendToBack();
+        }
+        private void doctorShiftsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.doctorShifts, this);
+            panelHospitalMain.SendToBack();
+        }
+
 
 
 
@@ -102,7 +113,6 @@ namespace hospitalManagementSystem
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.existingStaff, this);
             panelHospitalMain.SendToBack();
         }
-
 
         private void existingStaffToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -135,6 +145,7 @@ namespace hospitalManagementSystem
             hm.panelHospitalMain.BringToFront();
 
         }
+
     }
 }
 

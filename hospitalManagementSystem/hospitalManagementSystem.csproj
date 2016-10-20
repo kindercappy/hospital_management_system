@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonFormOperation.cs" />
+    <Compile Include="DoctorShifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorShifts.Designer.cs">
+      <DependentUpon>DoctorShifts.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExistingDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DoctorShifts.resx">
+      <DependentUpon>DoctorShifts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExistingDoctor.resx">
       <DependentUpon>ExistingDoctor.cs</DependentUpon>
     </EmbeddedResource>

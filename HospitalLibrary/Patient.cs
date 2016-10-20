@@ -382,7 +382,7 @@ namespace HospitalLibrary
             using(SqlCommand  cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Patient_Delete";
+                cmd.CommandText = "Doctor_Delete";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 SqlParameter iPatientId = new SqlParameter("@patientId", patient.patientId);

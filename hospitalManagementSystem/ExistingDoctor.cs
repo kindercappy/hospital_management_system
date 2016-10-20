@@ -77,11 +77,36 @@ namespace hospitalManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            da = new SqlDataAdapter("SELECT firstName,lastName FROM Doctor WHERE firstName ='" + textBoxSearch.Text + "'" ,Common.getConnection());
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridViewExistingDoctor.DataSource = dt;
+            //da = new SqlDataAdapter("SELECT firstName,lastName FROM Doctor WHERE firstName ='" + textBoxSearch.Text + "'" ,Common.getConnection());
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //dataGridViewExistingDoctor.DataSource = dt; 
             //displayData();
+            if (textBoxSearch.Text.Length > 0)
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    Doctor doctor = new Doctor();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    DataTable dt = new DataTable();
+                    cmd.Connection = Common.getConnection();
+                    cmd.CommandText = "Doctor_Search";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter sFirstName = new SqlParameter("@firstName", textBoxSearch.Text);
+                    sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                    cmd.Parameters.Add(sFirstName);
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    dataGridViewExistingDoctor.DataSource = dt;
+                    //displayData();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter details");
+            }
+
         }
 
         private void dataGridViewExistingDocotor_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -103,8 +128,63 @@ namespace hospitalManagementSystem
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
+            string str = "";
+            if (textBoxFirstName.Text == "")
+            {
+                str = str + "First Name ";
+            }
+            if (textBoxLastName.Text == "")
+            {
+                str = str + Environment.NewLine + "Last Name ";
+            }
+            if (comboBoxDepartment.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Department ";
+            }
+            if (textBoxAge.Text == "")
+            {
+                str = str + Environment.NewLine + "Age ";
+            }
+            if (comboBoxSex.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Sex ";
+            }
+            if (comboBoxNationality.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Nationality";
+            }
+            if (str.Length > 0)
+            {
+                MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
+            }
+            else
+            {
+                Doctor doc = new Doctor();
+                try
+                {
+                    doc.firstName = this.textBoxFirstName.Text;
+                    doc.lastName = this.textBoxLastName.Text;
+                    doc.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                    doc.age = Convert.ToInt32(this.textBoxAge.Text);
+                    doc.sex = this.comboBoxSex.Text;
+                    doc.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                    doc.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                    doc.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    doc.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                    doc.email = this.textBoxEmail.Text;
+                    doc.address = this.textBoxAddress.Text;
+                    doc.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    DoctorManager.Doctor_Save(doc);
+                    MessageBox.Show("Success");
+                }
 
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
+    
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
@@ -141,7 +221,7 @@ namespace hospitalManagementSystem
             try
             {
                 doctor.doctorId = Id;
-                DoctorManager.Patient_Delete(doctor);
+                DoctorManager.Doctor_Delete(doctor);
                 MessageBox.Show("Deleted");
                 displayData();
                 clearData();
@@ -152,6 +232,10 @@ namespace hospitalManagementSystem
             }
         }
 
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            displayData();
+        }
     }
 }
 

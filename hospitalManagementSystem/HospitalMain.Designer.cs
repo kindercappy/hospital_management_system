@@ -59,6 +59,7 @@
             this.labelStaffShifts = new System.Windows.Forms.Label();
             this.buttonStaffShifts = new System.Windows.Forms.Button();
             this.panelHospitalMain = new System.Windows.Forms.Panel();
+            this.doctorShiftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelHospitalMain.SuspendLayout();
             this.SuspendLayout();
@@ -220,7 +221,8 @@
             // 
             this.doctorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newDoctorToolStripMenuItem,
-            this.existingDoctorToolStripMenuItem});
+            this.existingDoctorToolStripMenuItem,
+            this.doctorShiftsToolStripMenuItem});
             this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
             this.doctorToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.doctorToolStripMenuItem.Text = "Doctor";
@@ -293,6 +295,7 @@
             this.buttonDoctorShifts.TabIndex = 17;
             this.buttonDoctorShifts.Text = "Doctor Shifts";
             this.buttonDoctorShifts.UseVisualStyleBackColor = true;
+            this.buttonDoctorShifts.Click += new System.EventHandler(this.buttonDoctorShifts_Click);
             // 
             // labelShifts
             // 
@@ -358,6 +361,13 @@
             this.panelHospitalMain.Size = new System.Drawing.Size(368, 287);
             this.panelHospitalMain.TabIndex = 22;
             // 
+            // doctorShiftsToolStripMenuItem
+            // 
+            this.doctorShiftsToolStripMenuItem.Name = "doctorShiftsToolStripMenuItem";
+            this.doctorShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.doctorShiftsToolStripMenuItem.Text = "Doctor Shifts";
+            this.doctorShiftsToolStripMenuItem.Click += new System.EventHandler(this.doctorShiftsToolStripMenuItem_Click);
+            // 
             // HospitalMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,6 +425,7 @@
         private System.Windows.Forms.Label labelStaffShifts;
         private System.Windows.Forms.Button buttonStaffShifts;
         private System.Windows.Forms.Panel panelHospitalMain;
+        private System.Windows.Forms.ToolStripMenuItem doctorShiftsToolStripMenuItem;
     }
 }
 
