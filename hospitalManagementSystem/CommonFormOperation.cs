@@ -18,6 +18,7 @@ namespace hospitalManagementSystem
         private static NewDoctor fNewDoctor;
         private static ExistingDoctor fExistingDoctor;
         private static DoctorShifts fDoctorShifts;
+        private static AssignDoctorShifts fAssignDoctorShifts;
         //Staff
         private static NewStaff fNewStaff;
         private static ExistingStaff fExistingStaff;
@@ -72,7 +73,6 @@ namespace hospitalManagementSystem
                 return fExistingDoctor;
             }
         }
-
         public static DoctorShifts doctorShifts
         {
             get
@@ -82,6 +82,17 @@ namespace hospitalManagementSystem
                     fDoctorShifts = new DoctorShifts();
                 }
                 return fDoctorShifts;
+            }
+        }
+        public static AssignDoctorShifts assignDoctorShifts
+        {
+            get
+            {
+                if(fAssignDoctorShifts == null || fAssignDoctorShifts.IsDisposed)
+                {
+                    fAssignDoctorShifts = new AssignDoctorShifts();
+                }
+                return fAssignDoctorShifts;
             }
         }
 

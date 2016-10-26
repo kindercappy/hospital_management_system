@@ -184,7 +184,7 @@ namespace HospitalLibrary
     public class DoctorManager
     {
         //saves doctor
-        public static void Doctor_Save(Doctor doc)
+        public static void doctorSave(Doctor doc)
         {
 
             //method to save in sample Doctor table in SqlServer
@@ -247,12 +247,12 @@ namespace HospitalLibrary
 
         }
         //updates doctor
-        public static void Doctor_Update(Doctor doctor)
+        public static void doctorUpdate(Doctor doctor)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Doctor_Update";
+                cmd.CommandText = "doctorUpdate";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //DoctorId Integer Parameter
@@ -327,12 +327,12 @@ namespace HospitalLibrary
         //selects doctor
 
         //deletes doctor
-        public static void Doctor_Delete(Doctor doctor)
+        public static void doctorDelete(Doctor doctor)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Doctor_Delete";
+                cmd.CommandText = "doctorDelete";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 SqlParameter iDoctorId = new SqlParameter("@doctorId", doctor.doctorId);
@@ -343,13 +343,13 @@ namespace HospitalLibrary
         }
 
         //search doctor
-       public static void Doctor_Search(Doctor doctor)
+       public static void doctorSearch(Doctor doctor)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 SqlDataAdapter da = new SqlDataAdapter();
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Doctor_Search";
+                cmd.CommandText = "doctorSearch";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 SqlParameter sFirstName = new SqlParameter("@firstName", doctor.firstName);

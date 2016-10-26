@@ -91,7 +91,7 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    PatientManager.Patient_Save(patient);
+                    PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
                 }
 

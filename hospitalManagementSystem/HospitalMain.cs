@@ -146,6 +146,11 @@ namespace hospitalManagementSystem
 
         }
 
+        private void buttonAssignDoctorShifts_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.assignDoctorShifts, this);
+            panelHospitalMain.SendToBack();
+        }
     }
 }
 

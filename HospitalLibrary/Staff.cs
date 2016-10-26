@@ -185,7 +185,7 @@ namespace HospitalLibrary
     public class StaffManager
     {
         //saves staff
-        public static void Staff_Save(Staff staff)
+        public static void staffSave(Staff staff)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -246,12 +246,12 @@ namespace HospitalLibrary
         }
 
         //updates staff
-        public static void Staff_Update(Staff staff)
+        public static void staffUpdate(Staff staff)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Staff_Update";
+                cmd.CommandText = "staffUpdate";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //StaffId Integer Parameter

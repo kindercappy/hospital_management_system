@@ -73,7 +73,7 @@ namespace hospitalManagementSystem
                     doc.email = this.textBoxEmail.Text;
                     doc.address = this.textBoxAddress.Text;
                     doc.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    DoctorManager.Doctor_Save(doc);
+                    DoctorManager.doctorSave(doc);
                     MessageBox.Show("Success");
                 }
 

@@ -15,7 +15,7 @@ namespace hospitalManagementSystem
     public partial class ExistingPatient : Form
     {
 
-        SqlConnection con;
+        //SqlConnection con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
@@ -153,7 +153,7 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    PatientManager.Patient_Save(patient);
+                    PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
                     displayData();
                     clearData();
@@ -186,7 +186,7 @@ namespace hospitalManagementSystem
                 patient.email = this.textBoxEmail.Text;
                 patient.address = this.textBoxAddress.Text;
                 patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                PatientManager.Patient_Update(patient);
+                PatientManager.patientUpdate(patient);
                 MessageBox.Show("Success");
                 displayData();
                 clearData();
@@ -203,7 +203,7 @@ namespace hospitalManagementSystem
             try
             {
                 patient.patientId = Id;
-                PatientManager.Patient_Delete(patient);
+                PatientManager.patientDelete(patient);
                 MessageBox.Show("Deleted");
                 displayData();
                 clearData();

@@ -185,7 +185,7 @@ namespace HospitalLibrary
     public class PatientManager
     {   
         //saves patient
-        public static void Patient_Save(Patient patient)
+        public static void patientSave(Patient patient)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -275,12 +275,12 @@ namespace HospitalLibrary
 
         }
         //updates patient
-        public static void Patient_Update(Patient patient)
+        public static void patientUpdate(Patient patient)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Patient_Update";
+                cmd.CommandText = "patientUpdate";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //PatientId Integer Parameter
@@ -352,7 +352,7 @@ namespace HospitalLibrary
             }
         }
         //selects patient
-        public static Patient Patien_Select(int patientId)
+        public static Patient patienSelect(int patientId)
         {
             Patient patient = new Patient();
             using (SqlCommand cmd = new SqlCommand())
@@ -377,12 +377,12 @@ namespace HospitalLibrary
             return patient;
         }
         //deletes patient
-        public static void Patient_Delete(Patient patient)
+        public static void patientDelete(Patient patient)
         {
             using(SqlCommand  cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Doctor_Delete";
+                cmd.CommandText = "doctorDelete";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 SqlParameter iPatientId = new SqlParameter("@patientId", patient.patientId);

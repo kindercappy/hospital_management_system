@@ -17,14 +17,13 @@ namespace hospitalManagementSystem
     {
         SqlDataAdapter da;
         SqlCommand cmd = new SqlCommand();
-        SqlConnection con;
         DataTable dt = new DataTable();
         int Id = 0;
 
         public ExistingDoctor()
         {
             InitializeComponent();
-            displayData();
+            
         }
 
         // METHODS
@@ -73,15 +72,11 @@ namespace hospitalManagementSystem
             this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
             this.comboBoxNationality.DisplayMember = "nationalityName";
             this.comboBoxNationality.ValueMember = "nationalityId";
+            displayData();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            //da = new SqlDataAdapter("SELECT firstName,lastName FROM Doctor WHERE firstName ='" + textBoxSearch.Text + "'" ,Common.getConnection());
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-            //dataGridViewExistingDoctor.DataSource = dt; 
-            //displayData();
             if (textBoxSearch.Text.Length > 0)
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -90,7 +85,7 @@ namespace hospitalManagementSystem
                     SqlDataAdapter da = new SqlDataAdapter();
                     DataTable dt = new DataTable();
                     cmd.Connection = Common.getConnection();
-                    cmd.CommandText = "Doctor_Search";
+                    cmd.CommandText = "doctorSearch";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     SqlParameter sFirstName = new SqlParameter("@firstName", textBoxSearch.Text);
@@ -99,7 +94,7 @@ namespace hospitalManagementSystem
                     da.SelectCommand = cmd;
                     da.Fill(dt);
                     dataGridViewExistingDoctor.DataSource = dt;
-                    //displayData();
+                    //displayDoctor();
                 }
             }
             else
@@ -174,7 +169,7 @@ namespace hospitalManagementSystem
                     doc.email = this.textBoxEmail.Text;
                     doc.address = this.textBoxAddress.Text;
                     doc.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    DoctorManager.Doctor_Save(doc);
+                    DoctorManager.doctorSave(doc);
                     MessageBox.Show("Success");
                 }
 
@@ -204,7 +199,7 @@ namespace hospitalManagementSystem
                 doctor.email = this.textBoxEmail.Text;
                 doctor.address = this.textBoxAddress.Text;
                 doctor.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                DoctorManager.Doctor_Update(doctor);
+                DoctorManager.doctorUpdate(doctor);
                 MessageBox.Show("Updates");
                 displayData();
                 clearData();
@@ -221,7 +216,7 @@ namespace hospitalManagementSystem
             try
             {
                 doctor.doctorId = Id;
-                DoctorManager.Doctor_Delete(doctor);
+                DoctorManager.doctorDelete(doctor);
                 MessageBox.Show("Deleted");
                 displayData();
                 clearData();
