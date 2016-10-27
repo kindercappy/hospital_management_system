@@ -12,7 +12,6 @@ namespace HospitalLibrary
     {
         private string sFirstName;
         private string sLastName;
-        //private string sFullName;
         private int iPatientId;
         private int iDepartment;
         private int iAge;
@@ -24,6 +23,8 @@ namespace HospitalLibrary
         private string sEmail;
         private string sAddress;
         private int iNationality;
+        private TimeSpan tFrom;
+        private TimeSpan tTo;
 
         public int patientId
         {
@@ -59,7 +60,6 @@ namespace HospitalLibrary
                 sLastName = value;
             }
         }
-
 
         public int department
         {
@@ -180,6 +180,31 @@ namespace HospitalLibrary
                 iNationality = value;
             }
         }
+
+        public TimeSpan from
+        {
+            get
+            {
+                return tFrom;
+            }
+            set
+            {
+                tFrom = value;
+            }
+        }
+        
+        public TimeSpan to
+        {
+            get
+            {
+                return tTo;
+            }
+            set
+            {
+                tTo = value;
+            }
+        }
+
     }
 
     public class PatientManager
@@ -240,6 +265,14 @@ namespace HospitalLibrary
                 SqlParameter iNationality = new SqlParameter("@nationalityId", patient.natioinality);
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationality);
+                //From
+                SqlParameter tFrom = new SqlParameter("@from", patient.from);
+                tFrom.SqlDbType = System.Data.SqlDbType.Time;
+                cmd.Parameters.Add(tFrom);
+                //To
+                SqlParameter tTo = new SqlParameter("@to", patient.to);
+                tTo.SqlDbType = System.Data.SqlDbType.Time;
+                cmd.Parameters.Add(tTo);
 
                 cmd.ExecuteNonQuery();
             }
@@ -382,7 +415,7 @@ namespace HospitalLibrary
             using(SqlCommand  cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "doctorDelete";
+                cmd.CommandText = "Patient_Delete";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 SqlParameter iPatientId = new SqlParameter("@patientId", patient.patientId);

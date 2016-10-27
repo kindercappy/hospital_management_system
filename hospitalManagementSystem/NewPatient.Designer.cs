@@ -54,6 +54,10 @@
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.textBoxFrom = new System.Windows.Forms.TextBox();
+            this.labelFrom = new System.Windows.Forms.Label();
+            this.labelTo = new System.Windows.Forms.Label();
+            this.textBoxTo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -260,7 +264,7 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.buttonBack.Location = new System.Drawing.Point(15, 376);
+            this.buttonBack.Location = new System.Drawing.Point(15, 427);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(200, 41);
             this.buttonBack.TabIndex = 25;
@@ -272,7 +276,7 @@
             // 
             this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonSubmit.ForeColor = System.Drawing.Color.Snow;
-            this.buttonSubmit.Location = new System.Drawing.Point(15, 329);
+            this.buttonSubmit.Location = new System.Drawing.Point(15, 380);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(200, 41);
             this.buttonSubmit.TabIndex = 26;
@@ -280,11 +284,47 @@
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
+            // textBoxFrom
+            // 
+            this.textBoxFrom.Location = new System.Drawing.Point(112, 328);
+            this.textBoxFrom.Name = "textBoxFrom";
+            this.textBoxFrom.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFrom.TabIndex = 27;
+            // 
+            // labelFrom
+            // 
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Location = new System.Drawing.Point(12, 331);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(86, 13);
+            this.labelFrom.TabIndex = 28;
+            this.labelFrom.Text = "From (hh:mm:ss):";
+            // 
+            // labelTo
+            // 
+            this.labelTo.AutoSize = true;
+            this.labelTo.Location = new System.Drawing.Point(12, 357);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(76, 13);
+            this.labelTo.TabIndex = 30;
+            this.labelTo.Text = "To (hh:mm:ss):";
+            // 
+            // textBoxTo
+            // 
+            this.textBoxTo.Location = new System.Drawing.Point(112, 354);
+            this.textBoxTo.Name = "textBoxTo";
+            this.textBoxTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTo.TabIndex = 29;
+            // 
             // NewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 504);
+            this.Controls.Add(this.labelTo);
+            this.Controls.Add(this.textBoxTo);
+            this.Controls.Add(this.labelFrom);
+            this.Controls.Add(this.textBoxFrom);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxNationality);
@@ -348,5 +388,9 @@
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.TextBox textBoxFrom;
+        private System.Windows.Forms.Label labelFrom;
+        private System.Windows.Forms.Label labelTo;
+        private System.Windows.Forms.TextBox textBoxTo;
     }
 }

@@ -69,6 +69,7 @@
             this.dataGridViewAssignDoctorShift.Name = "dataGridViewAssignDoctorShift";
             this.dataGridViewAssignDoctorShift.Size = new System.Drawing.Size(1170, 150);
             this.dataGridViewAssignDoctorShift.TabIndex = 0;
+            this.dataGridViewAssignDoctorShift.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAssignDoctorShift_CellContentClick);
             // 
             // buttonSubmit
             // 
@@ -78,6 +79,7 @@
             this.buttonSubmit.TabIndex = 3;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // labelHeightFeet
             // 

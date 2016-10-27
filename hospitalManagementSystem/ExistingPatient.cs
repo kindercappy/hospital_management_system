@@ -24,13 +24,13 @@ namespace hospitalManagementSystem
         public ExistingPatient()
         {
             InitializeComponent();
-            displayData();
+            
         }
 
        
         // METHODS
         //display data in dataGridView
-        private void displayData()
+        private void displayPatient()
         {
             cmd.Connection = Common.getConnection();
             cmd.CommandText = "Patient_Select";
@@ -60,7 +60,11 @@ namespace hospitalManagementSystem
         // EVENTS
         private void ExistingPatient_Load(object sender, EventArgs e)
         {
-            
+            //displays patient in grid
+            displayPatient();
+            //patientId hide in grid
+            dataGridViewExistingPatient.Columns[0].Visible = false;
+
             Patient patient = new Patient();
             try
             {
@@ -72,10 +76,6 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
-
-                //this.comboBoxUser1.DataSource = PatientManager.getPatientList();
-                //this.comboBoxUser1.DisplayMember = "userInfo";
-                //this.comboBoxUser1.ValueMember = "patientId";
 
             }
             catch (System.Exception ex)
@@ -131,7 +131,7 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Nationality";
             }
-            if (str.Length >= 0)
+            if (str.Length > 0)
             {
                 MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
             }
@@ -155,7 +155,7 @@ namespace hospitalManagementSystem
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
                     PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
-                    displayData();
+                    displayPatient();
                     clearData();
                 }
 
@@ -188,7 +188,7 @@ namespace hospitalManagementSystem
                 patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
                 PatientManager.patientUpdate(patient);
                 MessageBox.Show("Success");
-                displayData();
+                displayPatient();
                 clearData();
             }
             catch(System.Exception ex)
@@ -205,7 +205,7 @@ namespace hospitalManagementSystem
                 patient.patientId = Id;
                 PatientManager.patientDelete(patient);
                 MessageBox.Show("Deleted");
-                displayData();
+                displayPatient();
                 clearData();
             }
             catch(System.Exception ex)
@@ -216,12 +216,39 @@ namespace hospitalManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            if (textBoxSearch.Text.Length > 0)
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    Doctor doctor = new Doctor();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    DataTable dt = new DataTable();
+                    cmd.Connection = Common.getConnection();
+                    cmd.CommandText = "Patient_Search";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                    SqlParameter sFirstName = new SqlParameter("@firstName", textBoxSearch.Text);
+                    sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                    cmd.Parameters.Add(sFirstName);
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    dataGridViewExistingPatient.DataSource = dt;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter details");
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            displayPatient();
         }
     }
 }

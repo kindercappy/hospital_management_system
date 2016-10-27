@@ -57,16 +57,17 @@
             this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.textBoxPatientId = new System.Windows.Forms.TextBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingPatient)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(996, 33);
+            this.lblPhone.Location = new System.Drawing.Point(920, 225);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(41, 13);
             this.lblPhone.TabIndex = 1;
@@ -75,7 +76,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(996, 86);
+            this.lblFirstName.Location = new System.Drawing.Point(920, 15);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(60, 13);
             this.lblFirstName.TabIndex = 2;
@@ -84,7 +85,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(996, 112);
+            this.lblLastName.Location = new System.Drawing.Point(920, 41);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(61, 13);
             this.lblLastName.TabIndex = 3;
@@ -93,7 +94,7 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(996, 138);
+            this.lblAge.Location = new System.Drawing.Point(920, 94);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(29, 13);
             this.lblAge.TabIndex = 4;
@@ -102,7 +103,7 @@
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(996, 164);
+            this.lblSex.Location = new System.Drawing.Point(920, 121);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(28, 13);
             this.lblSex.TabIndex = 5;
@@ -111,7 +112,7 @@
             // lblHeightFt
             // 
             this.lblHeightFt.AutoSize = true;
-            this.lblHeightFt.Location = new System.Drawing.Point(996, 190);
+            this.lblHeightFt.Location = new System.Drawing.Point(920, 147);
             this.lblHeightFt.Name = "lblHeightFt";
             this.lblHeightFt.Size = new System.Drawing.Size(83, 13);
             this.lblHeightFt.TabIndex = 6;
@@ -120,7 +121,7 @@
             // lblHeightInches
             // 
             this.lblHeightInches.AutoSize = true;
-            this.lblHeightInches.Location = new System.Drawing.Point(996, 216);
+            this.lblHeightInches.Location = new System.Drawing.Point(920, 173);
             this.lblHeightInches.Name = "lblHeightInches";
             this.lblHeightInches.Size = new System.Drawing.Size(94, 13);
             this.lblHeightInches.TabIndex = 7;
@@ -129,7 +130,7 @@
             // lblWeight
             // 
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(996, 242);
+            this.lblWeight.Location = new System.Drawing.Point(920, 199);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(44, 13);
             this.lblWeight.TabIndex = 8;
@@ -138,7 +139,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(996, 268);
+            this.lblEmail.Location = new System.Drawing.Point(920, 251);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 9;
@@ -147,7 +148,7 @@
             // lblNationality
             // 
             this.lblNationality.AutoSize = true;
-            this.lblNationality.Location = new System.Drawing.Point(996, 294);
+            this.lblNationality.Location = new System.Drawing.Point(920, 303);
             this.lblNationality.Name = "lblNationality";
             this.lblNationality.Size = new System.Drawing.Size(59, 13);
             this.lblNationality.TabIndex = 10;
@@ -155,56 +156,56 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(1108, 30);
+            this.textBoxPhone.Location = new System.Drawing.Point(1032, 222);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxPhone.TabIndex = 12;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(1108, 83);
+            this.textBoxFirstName.Location = new System.Drawing.Point(1032, 12);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFirstName.TabIndex = 13;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(1108, 109);
+            this.textBoxLastName.Location = new System.Drawing.Point(1032, 38);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
             this.textBoxLastName.TabIndex = 14;
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(1108, 135);
+            this.textBoxAge.Location = new System.Drawing.Point(1032, 91);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(100, 20);
             this.textBoxAge.TabIndex = 15;
             // 
             // textBoxHeightFt
             // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(1108, 187);
+            this.textBoxHeightFt.Location = new System.Drawing.Point(1032, 144);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightFt.TabIndex = 17;
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(1108, 213);
+            this.textBoxHeightInch.Location = new System.Drawing.Point(1032, 170);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightInch.TabIndex = 18;
             // 
             // textBoxWeight
             // 
-            this.textBoxWeight.Location = new System.Drawing.Point(1108, 239);
+            this.textBoxWeight.Location = new System.Drawing.Point(1032, 196);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(100, 20);
             this.textBoxWeight.TabIndex = 19;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(1108, 265);
+            this.textBoxEmail.Location = new System.Drawing.Point(1032, 248);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
             this.textBoxEmail.TabIndex = 20;
@@ -212,7 +213,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(996, 320);
+            this.lblAddress.Location = new System.Drawing.Point(920, 277);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(48, 13);
             this.lblAddress.TabIndex = 22;
@@ -220,7 +221,7 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(1108, 317);
+            this.textBoxAddress.Location = new System.Drawing.Point(1032, 274);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
@@ -232,7 +233,7 @@
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(1108, 160);
+            this.comboBoxSex.Location = new System.Drawing.Point(1032, 117);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 24;
@@ -240,7 +241,7 @@
             // comboBoxNationality
             // 
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(1108, 291);
+            this.comboBoxNationality.Location = new System.Drawing.Point(1032, 300);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 25;
@@ -248,7 +249,7 @@
             // comboBoxDepartment
             // 
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(1108, 56);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(1032, 64);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 26;
@@ -256,7 +257,7 @@
             // labelDepartment
             // 
             this.labelDepartment.AutoSize = true;
-            this.labelDepartment.Location = new System.Drawing.Point(996, 59);
+            this.labelDepartment.Location = new System.Drawing.Point(920, 67);
             this.labelDepartment.Name = "labelDepartment";
             this.labelDepartment.Size = new System.Drawing.Size(65, 13);
             this.labelDepartment.TabIndex = 27;
@@ -265,7 +266,7 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonBack.Location = new System.Drawing.Point(999, 358);
+            this.buttonBack.Location = new System.Drawing.Point(923, 327);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 41);
             this.buttonBack.TabIndex = 28;
@@ -276,7 +277,7 @@
             // dataGridViewExistingPatient
             // 
             this.dataGridViewExistingPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExistingPatient.Location = new System.Drawing.Point(12, 39);
+            this.dataGridViewExistingPatient.Location = new System.Drawing.Point(12, 33);
             this.dataGridViewExistingPatient.Name = "dataGridViewExistingPatient";
             this.dataGridViewExistingPatient.Size = new System.Drawing.Size(888, 150);
             this.dataGridViewExistingPatient.TabIndex = 29;
@@ -312,39 +313,51 @@
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // textBoxPatientId
-            // 
-            this.textBoxPatientId.Location = new System.Drawing.Point(1108, 4);
-            this.textBoxPatientId.Name = "textBoxPatientId";
-            this.textBoxPatientId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPatientId.TabIndex = 33;
-            this.textBoxPatientId.Visible = false;
-            // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(12, 12);
+            this.textBoxSearch.Location = new System.Drawing.Point(90, 4);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(284, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(181, 20);
             this.textBoxSearch.TabIndex = 34;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(306, 10);
+            this.buttonSearch.Location = new System.Drawing.Point(277, 4);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(178, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 35;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(12, 9);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(72, 13);
+            this.labelUser.TabIndex = 36;
+            this.labelUser.Text = "User: (Name):";
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(358, 4);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.TabIndex = 39;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // ExistingPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 523);
+            this.Controls.Add(this.buttonRefresh);
+            this.Controls.Add(this.labelUser);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.textBoxPatientId);
             this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.textBoxHeightFt);
@@ -413,8 +426,9 @@
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ComboBox comboBoxDepartment;
-        private System.Windows.Forms.TextBox textBoxPatientId;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }

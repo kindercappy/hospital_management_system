@@ -70,7 +70,7 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Nationality";
             }
-            if (str.Length >= 0)
+            if (str.Length > 0)
             {
                 MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
             }
@@ -91,6 +91,8 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    patient.from = TimeSpan.Parse(this.textBoxFrom.Text);
+                    patient.to = TimeSpan.Parse(this.textBoxTo.Text);
                     PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
                 }

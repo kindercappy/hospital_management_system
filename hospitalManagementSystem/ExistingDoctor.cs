@@ -73,6 +73,7 @@ namespace hospitalManagementSystem
             this.comboBoxNationality.DisplayMember = "nationalityName";
             this.comboBoxNationality.ValueMember = "nationalityId";
             displayData();
+            this.dataGridViewExistingDoctor.Columns[0].Visible = false;
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -85,7 +86,7 @@ namespace hospitalManagementSystem
                     SqlDataAdapter da = new SqlDataAdapter();
                     DataTable dt = new DataTable();
                     cmd.Connection = Common.getConnection();
-                    cmd.CommandText = "doctorSearch";
+                    cmd.CommandText = "Doctor_Search";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     SqlParameter sFirstName = new SqlParameter("@firstName", textBoxSearch.Text);

@@ -86,6 +86,50 @@ namespace hospitalManagementSystem
             textBoxEmail.Text = dataGridViewDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
             textBoxAddress.Text = dataGridViewDoctor.Rows[e.RowIndex].Cells[11].Value.ToString();
             comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[12].Value.ToString());
+            comboBoxDoctorShift.SelectedValue = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
+            //if (comboBoxDoctorShift.SelectedValue == null)
+            //{
+            //    MessageBox.Show("Enter shift");
+            //}
+            //else
+            //{
+            //    comboBoxDoctorShift.SelectedValue = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
+            //}
+
+        }
+            
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            Doctor doctor = new Doctor();
+            try
+            {
+                doctor.doctorId = Id;
+                doctor.firstName = this.textBoxFirstName.Text;
+                doctor.lastName = this.textBoxLastName.Text;
+                doctor.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                doctor.age = Convert.ToInt32(this.textBoxAge.Text);
+                doctor.sex = this.comboBoxSex.Text;
+                doctor.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                doctor.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                doctor.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                doctor.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                doctor.email = this.textBoxEmail.Text;
+                doctor.address = this.textBoxAddress.Text;
+                doctor.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                doctor.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
+                DoctorManager.doctorSaveShift(doctor);
+                MessageBox.Show("Updates");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    
+
+        private void dataGridViewAssignDoctorShift_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
