@@ -54,6 +54,16 @@
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.comboBoxSex = new System.Windows.Forms.ComboBox();
+            this.labelStar = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelTo = new System.Windows.Forms.Label();
+            this.textBoxTo = new System.Windows.Forms.TextBox();
+            this.labelFrom = new System.Windows.Forms.Label();
+            this.textBoxFrom = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -247,7 +257,7 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonBack.Location = new System.Drawing.Point(15, 371);
+            this.buttonBack.Location = new System.Drawing.Point(15, 423);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(218, 40);
             this.buttonBack.TabIndex = 27;
@@ -258,7 +268,7 @@
             // buttonSubmit
             // 
             this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonSubmit.Location = new System.Drawing.Point(15, 325);
+            this.buttonSubmit.Location = new System.Drawing.Point(15, 377);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(218, 40);
             this.buttonSubmit.TabIndex = 28;
@@ -278,11 +288,107 @@
             this.comboBoxSex.TabIndex = 9;
             this.comboBoxSex.Text = "Select";
             // 
+            // labelStar
+            // 
+            this.labelStar.AutoSize = true;
+            this.labelStar.Location = new System.Drawing.Point(218, 12);
+            this.labelStar.Name = "labelStar";
+            this.labelStar.Size = new System.Drawing.Size(11, 13);
+            this.labelStar.TabIndex = 32;
+            this.labelStar.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(218, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(239, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(218, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(239, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 13);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(239, 298);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 13);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "*";
+            // 
+            // labelTo
+            // 
+            this.labelTo.AutoSize = true;
+            this.labelTo.Location = new System.Drawing.Point(12, 354);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(76, 13);
+            this.labelTo.TabIndex = 41;
+            this.labelTo.Text = "To (hh:mm:ss):";
+            // 
+            // textBoxTo
+            // 
+            this.textBoxTo.Location = new System.Drawing.Point(112, 351);
+            this.textBoxTo.Name = "textBoxTo";
+            this.textBoxTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTo.TabIndex = 40;
+            // 
+            // labelFrom
+            // 
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Location = new System.Drawing.Point(12, 328);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(86, 13);
+            this.labelFrom.TabIndex = 39;
+            this.labelFrom.Text = "From (hh:mm:ss):";
+            // 
+            // textBoxFrom
+            // 
+            this.textBoxFrom.Location = new System.Drawing.Point(112, 325);
+            this.textBoxFrom.Name = "textBoxFrom";
+            this.textBoxFrom.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFrom.TabIndex = 38;
+            // 
             // NewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 527);
+            this.ClientSize = new System.Drawing.Size(979, 718);
+            this.Controls.Add(this.labelTo);
+            this.Controls.Add(this.textBoxTo);
+            this.Controls.Add(this.labelFrom);
+            this.Controls.Add(this.textBoxFrom);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelStar);
             this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.buttonBack);
@@ -346,5 +452,15 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.ComboBox comboBoxSex;
+        private System.Windows.Forms.Label labelStar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelTo;
+        private System.Windows.Forms.TextBox textBoxTo;
+        private System.Windows.Forms.Label labelFrom;
+        private System.Windows.Forms.TextBox textBoxFrom;
     }
 }

@@ -52,6 +52,10 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Nationality";
             }
+            if(comboBoxDoctorShift.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Select a Shift";
+            }
             if (str.Length > 0)
             {
                 MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
@@ -73,6 +77,7 @@ namespace hospitalManagementSystem
                     doc.email = this.textBoxEmail.Text;
                     doc.address = this.textBoxAddress.Text;
                     doc.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    doc.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
                     DoctorManager.doctorSave(doc);
                     MessageBox.Show("Success");
                 }
@@ -95,6 +100,11 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
+
+                //DoctorShifts Doctor Shifts comboBox
+                this.comboBoxDoctorShift.DataSource = DoctorShiftsManager.getDoctorShifts();
+                this.comboBoxDoctorShift.DisplayMember = "fullDetails";
+                this.comboBoxDoctorShift.ValueMember = "shiftsId";
             }
             catch (System.Exception ex)
             {

@@ -41,21 +41,19 @@
             this.doctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existingDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.doctorShiftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeShiftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignShiftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existingPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existingStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonDoctorShifts = new System.Windows.Forms.Button();
-            this.labelShifts = new System.Windows.Forms.Label();
-            this.buttonStaffShifts = new System.Windows.Forms.Button();
+            this.buttonNewShifts = new System.Windows.Forms.Button();
             this.panelHospitalMain = new System.Windows.Forms.Panel();
-            this.buttonEditShift = new System.Windows.Forms.Button();
-            this.labelMakeShifts = new System.Windows.Forms.Label();
+            this.buttonAssignShifts = new System.Windows.Forms.Button();
+            this.buttonAssignShift = new System.Windows.Forms.Button();
             this.buttonNewShift = new System.Windows.Forms.Button();
-            this.buttonAssignDoctorShifts = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelHospitalMain.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +89,7 @@
             // 
             // btnNewDoctor
             // 
-            this.btnNewDoctor.Location = new System.Drawing.Point(3, 60);
+            this.btnNewDoctor.Location = new System.Drawing.Point(299, 18);
             this.btnNewDoctor.Name = "btnNewDoctor";
             this.btnNewDoctor.Size = new System.Drawing.Size(122, 23);
             this.btnNewDoctor.TabIndex = 5;
@@ -102,7 +100,7 @@
             // lblDoctor
             // 
             this.lblDoctor.AutoSize = true;
-            this.lblDoctor.Location = new System.Drawing.Point(112, 44);
+            this.lblDoctor.Location = new System.Drawing.Point(408, 2);
             this.lblDoctor.Name = "lblDoctor";
             this.lblDoctor.Size = new System.Drawing.Size(39, 13);
             this.lblDoctor.TabIndex = 6;
@@ -110,7 +108,7 @@
             // 
             // btnExistingDoctor
             // 
-            this.btnExistingDoctor.Location = new System.Drawing.Point(141, 60);
+            this.btnExistingDoctor.Location = new System.Drawing.Point(437, 18);
             this.btnExistingDoctor.Name = "btnExistingDoctor";
             this.btnExistingDoctor.Size = new System.Drawing.Size(122, 23);
             this.btnExistingDoctor.TabIndex = 9;
@@ -121,7 +119,7 @@
             // lblStaff
             // 
             this.lblStaff.AutoSize = true;
-            this.lblStaff.Location = new System.Drawing.Point(115, 86);
+            this.lblStaff.Location = new System.Drawing.Point(711, 2);
             this.lblStaff.Name = "lblStaff";
             this.lblStaff.Size = new System.Drawing.Size(29, 13);
             this.lblStaff.TabIndex = 10;
@@ -129,7 +127,7 @@
             // 
             // btnNewStaff
             // 
-            this.btnNewStaff.Location = new System.Drawing.Point(3, 102);
+            this.btnNewStaff.Location = new System.Drawing.Point(599, 18);
             this.btnNewStaff.Name = "btnNewStaff";
             this.btnNewStaff.Size = new System.Drawing.Size(122, 23);
             this.btnNewStaff.TabIndex = 13;
@@ -139,7 +137,7 @@
             // 
             // btnExistingStaff
             // 
-            this.btnExistingStaff.Location = new System.Drawing.Point(141, 102);
+            this.btnExistingStaff.Location = new System.Drawing.Point(737, 18);
             this.btnExistingStaff.Name = "btnExistingStaff";
             this.btnExistingStaff.Size = new System.Drawing.Size(122, 23);
             this.btnExistingStaff.TabIndex = 14;
@@ -164,7 +162,8 @@
             this.doctorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newDoctorToolStripMenuItem,
             this.existingDoctorToolStripMenuItem,
-            this.doctorShiftsToolStripMenuItem});
+            this.makeShiftsToolStripMenuItem,
+            this.assignShiftsToolStripMenuItem});
             this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
             this.doctorToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.doctorToolStripMenuItem.Text = "Doctor";
@@ -183,12 +182,19 @@
             this.existingDoctorToolStripMenuItem.Text = "Existing Doctor";
             this.existingDoctorToolStripMenuItem.Click += new System.EventHandler(this.existingDoctorToolStripMenuItem_Click);
             // 
-            // doctorShiftsToolStripMenuItem
+            // makeShiftsToolStripMenuItem
             // 
-            this.doctorShiftsToolStripMenuItem.Name = "doctorShiftsToolStripMenuItem";
-            this.doctorShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.doctorShiftsToolStripMenuItem.Text = "Doctor Shifts";
-            this.doctorShiftsToolStripMenuItem.Click += new System.EventHandler(this.doctorShiftsToolStripMenuItem_Click);
+            this.makeShiftsToolStripMenuItem.Name = "makeShiftsToolStripMenuItem";
+            this.makeShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.makeShiftsToolStripMenuItem.Text = "Make Shifts";
+            this.makeShiftsToolStripMenuItem.Click += new System.EventHandler(this.makeShiftsToolStripMenuItem_Click);
+            // 
+            // assignShiftsToolStripMenuItem
+            // 
+            this.assignShiftsToolStripMenuItem.Name = "assignShiftsToolStripMenuItem";
+            this.assignShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.assignShiftsToolStripMenuItem.Text = "Assign shifts";
+            this.assignShiftsToolStripMenuItem.Click += new System.EventHandler(this.assignShiftsToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem
             // 
@@ -236,94 +242,64 @@
             this.existingStaffToolStripMenuItem.Text = "Existing Staff";
             this.existingStaffToolStripMenuItem.Click += new System.EventHandler(this.existingStaffToolStripMenuItem_Click);
             // 
-            // buttonDoctorShifts
+            // buttonNewShifts
             // 
-            this.buttonDoctorShifts.Location = new System.Drawing.Point(0, 144);
-            this.buttonDoctorShifts.Name = "buttonDoctorShifts";
-            this.buttonDoctorShifts.Size = new System.Drawing.Size(125, 23);
-            this.buttonDoctorShifts.TabIndex = 17;
-            this.buttonDoctorShifts.Text = "New Doctor Shifts";
-            this.buttonDoctorShifts.UseVisualStyleBackColor = true;
-            this.buttonDoctorShifts.Click += new System.EventHandler(this.buttonDoctorShifts_Click);
-            // 
-            // labelShifts
-            // 
-            this.labelShifts.AutoSize = true;
-            this.labelShifts.Location = new System.Drawing.Point(115, 128);
-            this.labelShifts.Name = "labelShifts";
-            this.labelShifts.Size = new System.Drawing.Size(33, 13);
-            this.labelShifts.TabIndex = 18;
-            this.labelShifts.Text = "Shifts";
-            // 
-            // buttonStaffShifts
-            // 
-            this.buttonStaffShifts.Location = new System.Drawing.Point(221, 294);
-            this.buttonStaffShifts.Name = "buttonStaffShifts";
-            this.buttonStaffShifts.Size = new System.Drawing.Size(122, 23);
-            this.buttonStaffShifts.TabIndex = 21;
-            this.buttonStaffShifts.Text = "Staff Shifts";
-            this.buttonStaffShifts.UseVisualStyleBackColor = true;
+            this.buttonNewShifts.Location = new System.Drawing.Point(299, 47);
+            this.buttonNewShifts.Name = "buttonNewShifts";
+            this.buttonNewShifts.Size = new System.Drawing.Size(122, 23);
+            this.buttonNewShifts.TabIndex = 17;
+            this.buttonNewShifts.Text = "New Shifts";
+            this.buttonNewShifts.UseVisualStyleBackColor = true;
+            this.buttonNewShifts.Click += new System.EventHandler(this.buttonDoctorShifts_Click);
             // 
             // panelHospitalMain
             // 
             this.panelHospitalMain.BackColor = System.Drawing.Color.DarkGray;
-            this.panelHospitalMain.Controls.Add(this.buttonAssignDoctorShifts);
-            this.panelHospitalMain.Controls.Add(this.buttonEditShift);
-            this.panelHospitalMain.Controls.Add(this.labelMakeShifts);
+            this.panelHospitalMain.Controls.Add(this.buttonAssignShifts);
+            this.panelHospitalMain.Controls.Add(this.buttonAssignShift);
             this.panelHospitalMain.Controls.Add(this.buttonNewShift);
             this.panelHospitalMain.Controls.Add(this.btnNewPatient);
-            this.panelHospitalMain.Controls.Add(this.buttonStaffShifts);
             this.panelHospitalMain.Controls.Add(this.lblStaff);
             this.panelHospitalMain.Controls.Add(this.btnExistingDoctor);
             this.panelHospitalMain.Controls.Add(this.btnExistingPatient);
-            this.panelHospitalMain.Controls.Add(this.labelShifts);
             this.panelHospitalMain.Controls.Add(this.btnNewStaff);
             this.panelHospitalMain.Controls.Add(this.lblPatient);
             this.panelHospitalMain.Controls.Add(this.lblDoctor);
-            this.panelHospitalMain.Controls.Add(this.buttonDoctorShifts);
+            this.panelHospitalMain.Controls.Add(this.buttonNewShifts);
             this.panelHospitalMain.Controls.Add(this.btnExistingStaff);
             this.panelHospitalMain.Controls.Add(this.btnNewDoctor);
             this.panelHospitalMain.Location = new System.Drawing.Point(12, 27);
             this.panelHospitalMain.Name = "panelHospitalMain";
-            this.panelHospitalMain.Size = new System.Drawing.Size(604, 495);
+            this.panelHospitalMain.Size = new System.Drawing.Size(891, 385);
             this.panelHospitalMain.TabIndex = 22;
             // 
-            // buttonEditShift
+            // buttonAssignShifts
             // 
-            this.buttonEditShift.Location = new System.Drawing.Point(141, 186);
-            this.buttonEditShift.Name = "buttonEditShift";
-            this.buttonEditShift.Size = new System.Drawing.Size(122, 23);
-            this.buttonEditShift.TabIndex = 26;
-            this.buttonEditShift.Text = "Edit Shift";
-            this.buttonEditShift.UseVisualStyleBackColor = true;
+            this.buttonAssignShifts.Location = new System.Drawing.Point(437, 47);
+            this.buttonAssignShifts.Name = "buttonAssignShifts";
+            this.buttonAssignShifts.Size = new System.Drawing.Size(122, 23);
+            this.buttonAssignShifts.TabIndex = 27;
+            this.buttonAssignShifts.Text = "Assign Shifts";
+            this.buttonAssignShifts.UseVisualStyleBackColor = true;
+            this.buttonAssignShifts.Click += new System.EventHandler(this.buttonAssignDoctorShifts_Click);
             // 
-            // labelMakeShifts
+            // buttonAssignShift
             // 
-            this.labelMakeShifts.AutoSize = true;
-            this.labelMakeShifts.Location = new System.Drawing.Point(102, 170);
-            this.labelMakeShifts.Name = "labelMakeShifts";
-            this.labelMakeShifts.Size = new System.Drawing.Size(63, 13);
-            this.labelMakeShifts.TabIndex = 23;
-            this.labelMakeShifts.Text = "Make Shifts";
+            this.buttonAssignShift.Location = new System.Drawing.Point(737, 47);
+            this.buttonAssignShift.Name = "buttonAssignShift";
+            this.buttonAssignShift.Size = new System.Drawing.Size(122, 23);
+            this.buttonAssignShift.TabIndex = 26;
+            this.buttonAssignShift.Text = "Assign Shift";
+            this.buttonAssignShift.UseVisualStyleBackColor = true;
             // 
             // buttonNewShift
             // 
-            this.buttonNewShift.Location = new System.Drawing.Point(0, 186);
+            this.buttonNewShift.Location = new System.Drawing.Point(599, 47);
             this.buttonNewShift.Name = "buttonNewShift";
             this.buttonNewShift.Size = new System.Drawing.Size(122, 23);
             this.buttonNewShift.TabIndex = 22;
             this.buttonNewShift.Text = "New Shift";
             this.buttonNewShift.UseVisualStyleBackColor = true;
-            // 
-            // buttonAssignDoctorShifts
-            // 
-            this.buttonAssignDoctorShifts.Location = new System.Drawing.Point(141, 144);
-            this.buttonAssignDoctorShifts.Name = "buttonAssignDoctorShifts";
-            this.buttonAssignDoctorShifts.Size = new System.Drawing.Size(125, 23);
-            this.buttonAssignDoctorShifts.TabIndex = 27;
-            this.buttonAssignDoctorShifts.Text = "Assign Doctor Shifts";
-            this.buttonAssignDoctorShifts.UseVisualStyleBackColor = true;
-            this.buttonAssignDoctorShifts.Click += new System.EventHandler(this.buttonAssignDoctorShifts_Click);
             // 
             // HospitalMain
             // 
@@ -369,15 +345,13 @@
         private System.Windows.Forms.ToolStripMenuItem staffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newStaffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem existingStaffToolStripMenuItem;
-        private System.Windows.Forms.Button buttonDoctorShifts;
-        private System.Windows.Forms.Label labelShifts;
-        private System.Windows.Forms.Button buttonStaffShifts;
+        private System.Windows.Forms.Button buttonNewShifts;
         private System.Windows.Forms.Panel panelHospitalMain;
-        private System.Windows.Forms.ToolStripMenuItem doctorShiftsToolStripMenuItem;
-        private System.Windows.Forms.Label labelMakeShifts;
         private System.Windows.Forms.Button buttonNewShift;
-        private System.Windows.Forms.Button buttonEditShift;
-        private System.Windows.Forms.Button buttonAssignDoctorShifts;
+        private System.Windows.Forms.Button buttonAssignShift;
+        private System.Windows.Forms.Button buttonAssignShifts;
+        private System.Windows.Forms.ToolStripMenuItem makeShiftsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignShiftsToolStripMenuItem;
     }
 }
 

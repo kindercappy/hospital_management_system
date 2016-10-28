@@ -37,9 +37,10 @@ namespace hospitalManagementSystem
 
         //Patient
         private void btnNewPatient_Click(object sender, EventArgs e)
-        {  
+        {
+            panelHospitalMain.Visible = false;
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.newPatient, this);
-            panelHospitalMain.SendToBack();
+            //panelHospitalMain.SendToBack();
         }
 
         private void btnExistingPatient_Click(object sender, EventArgs e)
@@ -61,40 +62,60 @@ namespace hospitalManagementSystem
 
 
         //Doctor
+        // New Doctor Button
         private void btnNewDoctor_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.newDoctor, this);
             panelHospitalMain.SendToBack();
         }
+        // menu New Doctor button
         private void newDoctorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.newDoctor, this);
             panelHospitalMain.SendToBack();
         }
 
+        // Existing Doctor Button
         private void btnExistingDoctor_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.existingDoctor, this);
             panelHospitalMain.SendToBack();
         }
+
+        //menu Existing doctor button
         private void existingDoctorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.existingDoctor, this);
             panelHospitalMain.SendToBack();
         }
+
+        // make doctor shifts button
         private void buttonDoctorShifts_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.doctorShifts, this);
             panelHospitalMain.SendToBack();
         }
-        private void doctorShiftsToolStripMenuItem_Click(object sender, EventArgs e)
+
+        // menu make shifts button
+        private void makeShiftsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.doctorShifts, this);
             panelHospitalMain.SendToBack();
         }
 
+        // assign doctor shifts button
+        private void buttonAssignDoctorShifts_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.assignDoctorShifts, this);
+            panelHospitalMain.SendToBack();
+        }
 
-
+        //menu assign shifts button
+        private void assignShiftsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.assignDoctorShifts, this);
+            panelHospitalMain.SendToBack();
+        }
 
         //Staff
         private void btnNewStaff_Click(object sender, EventArgs e)
@@ -139,18 +160,7 @@ namespace hospitalManagementSystem
             //panelHospitalMain.BringToFront();
         }
 
-        public void showPanel()
-        {
-            HospitalMain hm = new HospitalMain();
-            hm.panelHospitalMain.BringToFront();
-
-        }
-
-        private void buttonAssignDoctorShifts_Click(object sender, EventArgs e)
-        {
-            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.assignDoctorShifts, this);
-            panelHospitalMain.SendToBack();
-        }
+        
     }
 }
 

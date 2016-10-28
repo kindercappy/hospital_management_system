@@ -255,12 +255,17 @@ namespace HospitalLibrary
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationality);
 
+                //doctorShift Integer param
+                SqlParameter iDoctorShift = new SqlParameter("@doctorShift", doc.shift);
+                iDoctorShift.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDoctorShift);
+
                 cmd.ExecuteNonQuery();
             }
 
         }
         //updates doctor with shift
-        public static void doctorSaveShift(Doctor doc)
+        public static void doctorUpdatesShift(Doctor doc)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -416,19 +421,22 @@ namespace HospitalLibrary
                 iNationalityId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationalityId);
 
+                //doctorShift Integer param
+                SqlParameter iDoctorShift = new SqlParameter("@doctorShift", doctor.shift);
+                iDoctorShift.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDoctorShift);
+
                 cmd.ExecuteNonQuery();
 
             }
         }
-        //selects doctor
-
         //deletes doctor
         public static void doctorDelete(Doctor doctor)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "doctorDelete";
+                cmd.CommandText = "Doctor_Delete";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 SqlParameter iDoctorId = new SqlParameter("@doctorId", doctor.doctorId);

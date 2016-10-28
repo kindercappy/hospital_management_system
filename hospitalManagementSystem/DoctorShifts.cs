@@ -25,7 +25,6 @@ namespace hospitalManagementSystem
             displayData();
             displayDataShifts();
             this.dataGridViewShifts.Columns[0].Visible = false;
-            this.dataGridViewDoctorShifts.Columns[0].Visible = false;
         }
         //METHODS
 
@@ -33,7 +32,7 @@ namespace hospitalManagementSystem
         private void displayDataShifts()
         {
             cmd.Connection = Common.getConnection();
-            cmd.CommandText = "Doctor_Shifts_Select";
+            cmd.CommandText = "Doctor_Shift_Select";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
@@ -49,48 +48,23 @@ namespace hospitalManagementSystem
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
-            dataGridViewDoctorShifts.DataSource = dt;
+            
         }
 
         private void reloadForm()
         {
-            comboBoxShifts.Refresh();
+            
             dataGridViewShifts.Update();
         }
 
         private void DoctorShifts_Load(object sender, EventArgs e)
         {
-            //DoctorShifts Depertment comboBox
-            this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
-            this.comboBoxDepartment.DisplayMember = "departmentName";
-            this.comboBoxDepartment.ValueMember = "departmentId";
-
-            //DoctorShifts Nationality comboBox
-            this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
-            this.comboBoxNationality.DisplayMember = "nationalityName";
-            this.comboBoxNationality.ValueMember = "nationalityId";
-
-            //DoctorShifts Doctor Shifts comboBox
-            this.comboBoxShifts.DataSource = DoctorShiftsManager.getDoctorShifts();
-            this.comboBoxShifts.DisplayMember = "fullDetails";
-            this.comboBoxShifts.ValueMember = "shiftsId";
+            
         }
 
         private void dataGridViewDoctorShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            IdDoc = Convert.ToInt32(dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBoxFirstName.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxLastName.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[2].Value.ToString();
-            comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[3].Value.ToString());
-            textBoxAge.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[4].Value.ToString();
-            comboBoxSex.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[5].Value.ToString();
-            textBoxHeightFt.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[6].Value.ToString();
-            textBoxHeightInch.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[7].Value.ToString();
-            textBoxWeight.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[8].Value.ToString();
-            textBoxPhone.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[9].Value.ToString();
-            textBoxEmail.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[10].Value.ToString();
-            textBoxAddress.Text = dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[11].Value.ToString();
-            comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewDoctorShifts.Rows[e.RowIndex].Cells[12].Value.ToString());
+            
         }
 
         private void buttonNewShift_Click(object sender, EventArgs e)

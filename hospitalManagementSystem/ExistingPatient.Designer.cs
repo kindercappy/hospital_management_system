@@ -61,13 +61,17 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.buttonRefresh = new System.Windows.Forms.Button();
+            this.labelFrom = new System.Windows.Forms.Label();
+            this.textBoxFrom = new System.Windows.Forms.TextBox();
+            this.labelTo = new System.Windows.Forms.Label();
+            this.textBoxTo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingPatient)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(920, 225);
+            this.lblPhone.Location = new System.Drawing.Point(13, 437);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(41, 13);
             this.lblPhone.TabIndex = 1;
@@ -76,7 +80,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(920, 15);
+            this.lblFirstName.Location = new System.Drawing.Point(13, 227);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(60, 13);
             this.lblFirstName.TabIndex = 2;
@@ -85,7 +89,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(920, 41);
+            this.lblLastName.Location = new System.Drawing.Point(13, 253);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(61, 13);
             this.lblLastName.TabIndex = 3;
@@ -94,7 +98,7 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(920, 94);
+            this.lblAge.Location = new System.Drawing.Point(13, 306);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(29, 13);
             this.lblAge.TabIndex = 4;
@@ -103,7 +107,7 @@
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(920, 121);
+            this.lblSex.Location = new System.Drawing.Point(13, 333);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(28, 13);
             this.lblSex.TabIndex = 5;
@@ -112,7 +116,7 @@
             // lblHeightFt
             // 
             this.lblHeightFt.AutoSize = true;
-            this.lblHeightFt.Location = new System.Drawing.Point(920, 147);
+            this.lblHeightFt.Location = new System.Drawing.Point(13, 359);
             this.lblHeightFt.Name = "lblHeightFt";
             this.lblHeightFt.Size = new System.Drawing.Size(83, 13);
             this.lblHeightFt.TabIndex = 6;
@@ -121,7 +125,7 @@
             // lblHeightInches
             // 
             this.lblHeightInches.AutoSize = true;
-            this.lblHeightInches.Location = new System.Drawing.Point(920, 173);
+            this.lblHeightInches.Location = new System.Drawing.Point(13, 385);
             this.lblHeightInches.Name = "lblHeightInches";
             this.lblHeightInches.Size = new System.Drawing.Size(94, 13);
             this.lblHeightInches.TabIndex = 7;
@@ -130,7 +134,7 @@
             // lblWeight
             // 
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(920, 199);
+            this.lblWeight.Location = new System.Drawing.Point(13, 411);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(44, 13);
             this.lblWeight.TabIndex = 8;
@@ -139,7 +143,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(920, 251);
+            this.lblEmail.Location = new System.Drawing.Point(13, 463);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 9;
@@ -148,7 +152,7 @@
             // lblNationality
             // 
             this.lblNationality.AutoSize = true;
-            this.lblNationality.Location = new System.Drawing.Point(920, 303);
+            this.lblNationality.Location = new System.Drawing.Point(13, 515);
             this.lblNationality.Name = "lblNationality";
             this.lblNationality.Size = new System.Drawing.Size(59, 13);
             this.lblNationality.TabIndex = 10;
@@ -156,56 +160,56 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(1032, 222);
+            this.textBoxPhone.Location = new System.Drawing.Point(125, 434);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxPhone.TabIndex = 12;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(1032, 12);
+            this.textBoxFirstName.Location = new System.Drawing.Point(125, 224);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFirstName.TabIndex = 13;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(1032, 38);
+            this.textBoxLastName.Location = new System.Drawing.Point(125, 250);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
             this.textBoxLastName.TabIndex = 14;
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(1032, 91);
+            this.textBoxAge.Location = new System.Drawing.Point(125, 303);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(100, 20);
             this.textBoxAge.TabIndex = 15;
             // 
             // textBoxHeightFt
             // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(1032, 144);
+            this.textBoxHeightFt.Location = new System.Drawing.Point(125, 356);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightFt.TabIndex = 17;
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(1032, 170);
+            this.textBoxHeightInch.Location = new System.Drawing.Point(125, 382);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(100, 20);
             this.textBoxHeightInch.TabIndex = 18;
             // 
             // textBoxWeight
             // 
-            this.textBoxWeight.Location = new System.Drawing.Point(1032, 196);
+            this.textBoxWeight.Location = new System.Drawing.Point(125, 408);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(100, 20);
             this.textBoxWeight.TabIndex = 19;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(1032, 248);
+            this.textBoxEmail.Location = new System.Drawing.Point(125, 460);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
             this.textBoxEmail.TabIndex = 20;
@@ -213,7 +217,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(920, 277);
+            this.lblAddress.Location = new System.Drawing.Point(13, 489);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(48, 13);
             this.lblAddress.TabIndex = 22;
@@ -221,7 +225,7 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(1032, 274);
+            this.textBoxAddress.Location = new System.Drawing.Point(125, 486);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
@@ -233,7 +237,7 @@
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(1032, 117);
+            this.comboBoxSex.Location = new System.Drawing.Point(125, 329);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 24;
@@ -241,7 +245,7 @@
             // comboBoxNationality
             // 
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(1032, 300);
+            this.comboBoxNationality.Location = new System.Drawing.Point(125, 512);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 25;
@@ -249,7 +253,7 @@
             // comboBoxDepartment
             // 
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(1032, 64);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(125, 276);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 26;
@@ -257,7 +261,7 @@
             // labelDepartment
             // 
             this.labelDepartment.AutoSize = true;
-            this.labelDepartment.Location = new System.Drawing.Point(920, 67);
+            this.labelDepartment.Location = new System.Drawing.Point(13, 279);
             this.labelDepartment.Name = "labelDepartment";
             this.labelDepartment.Size = new System.Drawing.Size(65, 13);
             this.labelDepartment.TabIndex = 27;
@@ -266,7 +270,7 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonBack.Location = new System.Drawing.Point(923, 327);
+            this.buttonBack.Location = new System.Drawing.Point(16, 591);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 41);
             this.buttonBack.TabIndex = 28;
@@ -315,7 +319,7 @@
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(90, 4);
+            this.textBoxSearch.Location = new System.Drawing.Point(90, 6);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(181, 20);
             this.textBoxSearch.TabIndex = 34;
@@ -349,11 +353,49 @@
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
+            // labelFrom
+            // 
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Location = new System.Drawing.Point(13, 542);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(86, 13);
+            this.labelFrom.TabIndex = 40;
+            this.labelFrom.Text = "From (hh:mm:ss):";
+            // 
+            // textBoxFrom
+            // 
+            this.textBoxFrom.Location = new System.Drawing.Point(125, 539);
+            this.textBoxFrom.Multiline = true;
+            this.textBoxFrom.Name = "textBoxFrom";
+            this.textBoxFrom.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFrom.TabIndex = 41;
+            // 
+            // labelTo
+            // 
+            this.labelTo.AutoSize = true;
+            this.labelTo.Location = new System.Drawing.Point(13, 568);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(76, 13);
+            this.labelTo.TabIndex = 42;
+            this.labelTo.Text = "To (hh:mm:ss):";
+            // 
+            // textBoxTo
+            // 
+            this.textBoxTo.Location = new System.Drawing.Point(125, 565);
+            this.textBoxTo.Multiline = true;
+            this.textBoxTo.Name = "textBoxTo";
+            this.textBoxTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTo.TabIndex = 43;
+            // 
             // ExistingPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 523);
+            this.ClientSize = new System.Drawing.Size(1239, 668);
+            this.Controls.Add(this.labelTo);
+            this.Controls.Add(this.textBoxTo);
+            this.Controls.Add(this.labelFrom);
+            this.Controls.Add(this.textBoxFrom);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.buttonSearch);
@@ -430,5 +472,9 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Label labelFrom;
+        private System.Windows.Forms.TextBox textBoxFrom;
+        private System.Windows.Forms.Label labelTo;
+        private System.Windows.Forms.TextBox textBoxTo;
     }
 }

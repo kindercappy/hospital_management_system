@@ -17,7 +17,7 @@ namespace hospitalManagementSystem
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
-        int IdShift = 0;
+        //int IdShift = 0;
         int Id = 0;
 
         public AssignDoctorShifts()
@@ -35,7 +35,7 @@ namespace hospitalManagementSystem
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
-            dataGridViewAssignDoctorShift.DataSource = dt;
+            dataGridViewDoctorShift.DataSource = dt;
         }
 
         //displays doctors
@@ -54,7 +54,8 @@ namespace hospitalManagementSystem
         {
             displayShifts();
             displayDoctor();
-
+            dataGridViewDoctor.Columns[0].Visible = false;
+            dataGridViewDoctorShift.Columns[0].Visible = false;
             //ExistingDoctor Depertment comboBox
             this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
             this.comboBoxDepartment.DisplayMember = "departmentName";
@@ -70,7 +71,7 @@ namespace hospitalManagementSystem
             this.comboBoxDoctorShift.DisplayMember = "fullDetails";
             this.comboBoxDoctorShift.ValueMember = "shiftsId";
         }
-
+        //dataGridView Doctor
         private void dataGridViewDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Id = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -87,17 +88,11 @@ namespace hospitalManagementSystem
             textBoxAddress.Text = dataGridViewDoctor.Rows[e.RowIndex].Cells[11].Value.ToString();
             comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[12].Value.ToString());
             comboBoxDoctorShift.SelectedValue = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
-            //if (comboBoxDoctorShift.SelectedValue == null)
-            //{
-            //    MessageBox.Show("Enter shift");
-            //}
-            //else
-            //{
-            //    comboBoxDoctorShift.SelectedValue = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
-            //}
 
         }
-            
+
+        // Doctor
+        //button doctor assign    
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             Doctor doctor = new Doctor();
@@ -117,8 +112,9 @@ namespace hospitalManagementSystem
                 doctor.address = this.textBoxAddress.Text;
                 doctor.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
                 doctor.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
-                DoctorManager.doctorSaveShift(doctor);
-                MessageBox.Show("Updates");
+                DoctorManager.doctorUpdate(doctor);
+                MessageBox.Show("Updated");
+                displayDoctor();
             }
             catch (System.Exception ex)
             {
@@ -130,6 +126,73 @@ namespace hospitalManagementSystem
         private void dataGridViewAssignDoctorShift_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        //button doctor search
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text.Length > 0)
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    Doctor doctor = new Doctor();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    DataTable dt = new DataTable();
+                    cmd.Connection = Common.getConnection();
+                    cmd.CommandText = "Doctor_Search";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter sFirstName = new SqlParameter("@firstName", textBoxSearch.Text);
+                    sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                    cmd.Parameters.Add(sFirstName);
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    dataGridViewDoctor.DataSource = dt;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter doctor to search");
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            displayDoctor();
+        }
+
+        // Shift
+        //button shift search
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(textBoxShiftSearch.Text.Length > 0)
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    DoctorShifts docshi = new DoctorShifts();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    DataTable dt = new DataTable();
+                    cmd.Connection = Common.getConnection();
+                    cmd.CommandText = "Doctor_Shift_Search";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter sShiftName = new SqlParameter("@shiftName", textBoxShiftSearch.Text);
+                    sShiftName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                    cmd.Parameters.Add(sShiftName);
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    dataGridViewDoctorShift.DataSource = dt;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter shift to search");
+            }
+        }
+        //button shift refresh
+        private void buttonShiftRefresh_Click(object sender, EventArgs e)
+        {
+            displayShifts();
         }
     }
 }

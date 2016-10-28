@@ -167,6 +167,7 @@ namespace hospitalManagementSystem
                 staff.email = this.textBoxEmail.Text;
                 staff.address = this.textBoxAddress.Text;
                 staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+
                 StaffManager.staffUpdate(staff);
                 MessageBox.Show("Success");
                 displayData();

@@ -63,6 +63,8 @@ namespace hospitalManagementSystem
 
         private void ExistingDoctor_Load(object sender, EventArgs e)
         {
+            displayData();
+            this.dataGridViewExistingDoctor.Columns[0].Visible = false;
             //ExistingDoctor Depertment comboBox
             this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
             this.comboBoxDepartment.DisplayMember = "departmentName";
@@ -72,8 +74,11 @@ namespace hospitalManagementSystem
             this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
             this.comboBoxNationality.DisplayMember = "nationalityName";
             this.comboBoxNationality.ValueMember = "nationalityId";
-            displayData();
-            this.dataGridViewExistingDoctor.Columns[0].Visible = false;
+
+            //DoctorShifts Doctor Shifts comboBox
+            this.comboBoxDoctorShift.DataSource = DoctorShiftsManager.getDoctorShifts();
+            this.comboBoxDoctorShift.DisplayMember = "fullDetails";
+            this.comboBoxDoctorShift.ValueMember = "shiftsId";
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -120,6 +125,7 @@ namespace hospitalManagementSystem
             textBoxEmail.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
             textBoxAddress.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[11].Value.ToString();
             comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[12].Value.ToString());
+            comboBoxDoctorShift.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -149,6 +155,10 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Nationality";
             }
+            if(comboBoxDoctorShift.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Doctor Shift";
+            }
             if (str.Length > 0)
             {
                 MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
@@ -170,8 +180,10 @@ namespace hospitalManagementSystem
                     doc.email = this.textBoxEmail.Text;
                     doc.address = this.textBoxAddress.Text;
                     doc.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    doc.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
                     DoctorManager.doctorSave(doc);
                     MessageBox.Show("Success");
+                    displayData();
                 }
 
                 catch (System.Exception ex)
@@ -180,34 +192,71 @@ namespace hospitalManagementSystem
                 }
             }
         }
-    
+
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            Doctor doctor = new Doctor();
-            try
+            string str = "";
+            if (textBoxFirstName.Text == "")
             {
-                doctor.doctorId = Id;
-                doctor.firstName = this.textBoxFirstName.Text;
-                doctor.lastName = this.textBoxLastName.Text;
-                doctor.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
-                doctor.age = Convert.ToInt32(this.textBoxAge.Text);
-                doctor.sex = this.comboBoxSex.Text;
-                doctor.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
-                doctor.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                doctor.weight = Convert.ToInt32(this.textBoxWeight.Text);
-                doctor.phone = Convert.ToInt64(this.textBoxPhone.Text);
-                doctor.email = this.textBoxEmail.Text;
-                doctor.address = this.textBoxAddress.Text;
-                doctor.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                DoctorManager.doctorUpdate(doctor);
-                MessageBox.Show("Updates");
-                displayData();
-                clearData();
+                str = str + "First Name ";
             }
-            catch (System.Exception ex)
+            if (textBoxLastName.Text == "")
             {
-                MessageBox.Show(ex.Message);
+                str = str + Environment.NewLine + "Last Name ";
+            }
+            if (comboBoxDepartment.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Department ";
+            }
+            if (textBoxAge.Text == "")
+            {
+                str = str + Environment.NewLine + "Age ";
+            }
+            if (comboBoxSex.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Sex ";
+            }
+            if (comboBoxNationality.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Nationality";
+            }
+            if (comboBoxDoctorShift.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Doctor Shift";
+            }
+            if (str.Length > 0)
+            {
+                MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
+            }
+            else
+            {
+                Doctor doctor = new Doctor();
+                try
+                {
+                    doctor.doctorId = Id;
+                    doctor.firstName = this.textBoxFirstName.Text;
+                    doctor.lastName = this.textBoxLastName.Text;
+                    doctor.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                    doctor.age = Convert.ToInt32(this.textBoxAge.Text);
+                    doctor.sex = this.comboBoxSex.Text;
+                    doctor.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
+                    doctor.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
+                    doctor.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    doctor.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                    doctor.email = this.textBoxEmail.Text;
+                    doctor.address = this.textBoxAddress.Text;
+                    doctor.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    doctor.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
+                    DoctorManager.doctorUpdate(doctor);
+                    MessageBox.Show("Updated");
+                    displayData();
+                    clearData();
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -231,6 +280,16 @@ namespace hospitalManagementSystem
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             displayData();
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

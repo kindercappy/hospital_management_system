@@ -52,6 +52,12 @@
     <Compile Include="AssignDoctorShifts.Designer.cs">
       <DependentUpon>AssignDoctorShifts.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssignStaffShifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignStaffShifts.Designer.cs">
+      <DependentUpon>AssignStaffShifts.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonFormOperation.cs" />
     <Compile Include="DoctorShifts.cs">
       <SubType>Form</SubType>
@@ -119,8 +125,17 @@
     <Compile Include="Shifts.Designer.cs">
       <DependentUpon>Shifts.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffShifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffShifts.Designer.cs">
+      <DependentUpon>StaffShifts.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AssignDoctorShifts.resx">
       <DependentUpon>AssignDoctorShifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignStaffShifts.resx">
+      <DependentUpon>AssignStaffShifts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorShifts.resx">
       <DependentUpon>DoctorShifts.cs</DependentUpon>
@@ -155,6 +170,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StaffShifts.resx">
+      <DependentUpon>StaffShifts.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="hospitalManagementSystemDataSet.xsc">
       <DependentUpon>hospitalManagementSystemDataSet.xsd</DependentUpon>
     </None>

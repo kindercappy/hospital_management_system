@@ -54,6 +54,15 @@
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.labelDoctorShift = new System.Windows.Forms.Label();
+            this.comboBoxDoctorShift = new System.Windows.Forms.ComboBox();
+            this.labelStar = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -123,7 +132,7 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(115, 299);
+            this.textBoxAddress.Location = new System.Drawing.Point(112, 299);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
@@ -260,7 +269,7 @@
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.buttonBack.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonBack.Location = new System.Drawing.Point(15, 382);
+            this.buttonBack.Location = new System.Drawing.Point(12, 422);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(200, 33);
             this.buttonBack.TabIndex = 27;
@@ -272,7 +281,7 @@
             // 
             this.buttonSubmit.BackColor = System.Drawing.SystemColors.GrayText;
             this.buttonSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonSubmit.Location = new System.Drawing.Point(15, 342);
+            this.buttonSubmit.Location = new System.Drawing.Point(12, 382);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(200, 34);
             this.buttonSubmit.TabIndex = 28;
@@ -280,11 +289,101 @@
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
+            // labelDoctorShift
+            // 
+            this.labelDoctorShift.AutoSize = true;
+            this.labelDoctorShift.Location = new System.Drawing.Point(12, 328);
+            this.labelDoctorShift.Name = "labelDoctorShift";
+            this.labelDoctorShift.Size = new System.Drawing.Size(66, 13);
+            this.labelDoctorShift.TabIndex = 83;
+            this.labelDoctorShift.Text = "Doctor Shift:";
+            // 
+            // comboBoxDoctorShift
+            // 
+            this.comboBoxDoctorShift.FormattingEnabled = true;
+            this.comboBoxDoctorShift.Location = new System.Drawing.Point(112, 325);
+            this.comboBoxDoctorShift.Name = "comboBoxDoctorShift";
+            this.comboBoxDoctorShift.Size = new System.Drawing.Size(253, 21);
+            this.comboBoxDoctorShift.TabIndex = 82;
+            this.comboBoxDoctorShift.Text = "Select";
+            // 
+            // labelStar
+            // 
+            this.labelStar.AutoSize = true;
+            this.labelStar.Location = new System.Drawing.Point(218, 12);
+            this.labelStar.Name = "labelStar";
+            this.labelStar.Size = new System.Drawing.Size(11, 13);
+            this.labelStar.TabIndex = 84;
+            this.labelStar.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(218, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(239, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.TabIndex = 86;
+            this.label2.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(218, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.TabIndex = 87;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(239, 116);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 13);
+            this.label4.TabIndex = 88;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(239, 272);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 13);
+            this.label5.TabIndex = 89;
+            this.label5.Text = "*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(371, 325);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(11, 13);
+            this.label6.TabIndex = 90;
+            this.label6.Text = "*";
+            // 
             // NewDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 516);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelStar);
+            this.Controls.Add(this.labelDoctorShift);
+            this.Controls.Add(this.comboBoxDoctorShift);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxNationality);
@@ -348,5 +447,14 @@
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.Label labelDoctorShift;
+        private System.Windows.Forms.ComboBox comboBoxDoctorShift;
+        private System.Windows.Forms.Label labelStar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
