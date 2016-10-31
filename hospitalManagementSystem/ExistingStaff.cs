@@ -23,12 +23,12 @@ namespace hospitalManagementSystem
         public ExistingStaff()
         {
             InitializeComponent();
-            displayData();
+            
             
         }
         // METHODS
-        //display data in dataGridView
-        private void displayData()
+        //display staff in dataGridView
+        private void displayStaff()
         {
             cmd.Connection = Common.getConnection();
             cmd.CommandText = "Staff_Select";
@@ -37,9 +37,21 @@ namespace hospitalManagementSystem
             dt = new DataTable();
             da.Fill(dt);
             dataGridViewExistingStaff.DataSource = dt;
-
         }
-
+        //clear data
+        private void clearData()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            textBoxAge.Text = "";
+            textBoxHeightFt.Text = "";
+            textBoxHeightInch.Text = "";
+            textBoxPhone.Text = "";
+            textBoxWeight.Text = "";
+            textBoxEmail.Text = "";
+            textBoxAddress.Text = "";
+            Id = 0;
+        }
         private void buttonBack_Click(object sender, EventArgs e)
         {
          
@@ -47,6 +59,8 @@ namespace hospitalManagementSystem
 
         private void ExistingStaff_Load(object sender, EventArgs e)
         {
+            //display staff in dataGridView
+            displayStaff();
             //ExistingStaff Department comboBox
             this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
             this.comboBoxDepartment.DisplayMember = "departmentName";
@@ -57,16 +71,7 @@ namespace hospitalManagementSystem
             this.comboBoxNationality.ValueMember = "nationalityId";
         }
 
-
-
-
-        //clear data
-        private void clearData()
-        {
-            textBoxFirstName.Text = "";
-            textBoxLastName.Text = "";
-            Id = 0;
-        }
+        
         //dataGridView cellContentClick
         private void dataGridViewExistingStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -136,7 +141,7 @@ namespace hospitalManagementSystem
                     staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
                     StaffManager.staffSave(staff);
                     MessageBox.Show("Success");
-                    displayData();
+                    displayStaff();
                     clearData();
                 }
 
@@ -170,7 +175,7 @@ namespace hospitalManagementSystem
 
                 StaffManager.staffUpdate(staff);
                 MessageBox.Show("Success");
-                displayData();
+                displayStaff();
                 clearData();
             }
             catch (System.Exception ex)
@@ -186,7 +191,7 @@ namespace hospitalManagementSystem
             cmd.Parameters.AddWithValue("@Id", Id);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Deleted");
-            displayData();
+            displayStaff();
             clearData();
         }
     }

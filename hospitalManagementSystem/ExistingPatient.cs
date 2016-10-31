@@ -14,8 +14,6 @@ namespace hospitalManagementSystem
 {
     public partial class ExistingPatient : Form
     {
-
-        //SqlConnection con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
@@ -276,15 +274,16 @@ namespace hospitalManagementSystem
             }
         }
 
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            displayPatient();
+        }
+
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            displayPatient();
-        }
     }
 }
 

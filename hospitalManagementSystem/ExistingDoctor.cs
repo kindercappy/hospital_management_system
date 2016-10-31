@@ -29,7 +29,7 @@ namespace hospitalManagementSystem
         // METHODS
 
         //display data in dataGridView
-        private void displayData()
+        private void displayDoctor()
         {
             cmd.Connection = Common.getConnection();
             cmd.CommandText = "Doctor_Select";
@@ -63,7 +63,7 @@ namespace hospitalManagementSystem
 
         private void ExistingDoctor_Load(object sender, EventArgs e)
         {
-            displayData();
+            displayDoctor();
             this.dataGridViewExistingDoctor.Columns[0].Visible = false;
             //ExistingDoctor Depertment comboBox
             this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
@@ -183,7 +183,8 @@ namespace hospitalManagementSystem
                     doc.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
                     DoctorManager.doctorSave(doc);
                     MessageBox.Show("Success");
-                    displayData();
+                    displayDoctor();
+                    clearData();
                 }
 
                 catch (System.Exception ex)
@@ -192,7 +193,6 @@ namespace hospitalManagementSystem
                 }
             }
         }
-
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
@@ -250,7 +250,7 @@ namespace hospitalManagementSystem
                     doctor.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
                     DoctorManager.doctorUpdate(doctor);
                     MessageBox.Show("Updated");
-                    displayData();
+                    displayDoctor();
                     clearData();
                 }
                 catch (System.Exception ex)
@@ -268,7 +268,7 @@ namespace hospitalManagementSystem
                 doctor.doctorId = Id;
                 DoctorManager.doctorDelete(doctor);
                 MessageBox.Show("Deleted");
-                displayData();
+                displayDoctor();
                 clearData();
             }
             catch(System.Exception ex)
@@ -279,7 +279,7 @@ namespace hospitalManagementSystem
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            displayData();
+            displayDoctor();
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)

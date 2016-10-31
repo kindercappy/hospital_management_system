@@ -14,6 +14,7 @@ namespace hospitalManagementSystem
         //Patient
         private static NewPatient fNewPatient;
         private static ExistingPatient fExistingPatient;
+        private static BookAppointment fBookApp;
         //Doctor
         private static NewDoctor fNewDoctor;
         private static ExistingDoctor fExistingDoctor;
@@ -22,11 +23,13 @@ namespace hospitalManagementSystem
         //Staff
         private static NewStaff fNewStaff;
         private static ExistingStaff fExistingStaff;
+        private static StaffShifts fStaffSfhits;
+        private static AssignStaffShifts fAssignStaffShifts;
         //Hospital
         private static HospitalMain fHospitalMain;
 
         //Patient
-            public static NewPatient newPatient
+        public static NewPatient newPatient
             {
                 get
                 {
@@ -38,7 +41,7 @@ namespace hospitalManagementSystem
                     return fNewPatient;
                 }
             }
-            public static ExistingPatient existingPatient
+        public static ExistingPatient existingPatient
             {
                 get
                 {
@@ -49,7 +52,17 @@ namespace hospitalManagementSystem
                         return fExistingPatient;
                 }
             }
-
+        public static BookAppointment bookApp
+        {
+            get
+            {
+                if(fBookApp == null || fBookApp.IsDisposed)
+                {
+                    fBookApp = new BookAppointment();
+                }
+                return fBookApp;
+            }
+        }    
         //Doctor
         public static NewDoctor newDoctor
         {
@@ -119,7 +132,28 @@ namespace hospitalManagementSystem
                 return fExistingStaff;
             }
         }
-        
+        public static StaffShifts staffShifts
+        {
+            get
+            {
+                if(fStaffSfhits == null || fStaffSfhits.IsDisposed)
+                {
+                    fStaffSfhits = new StaffShifts();
+                }
+                return fStaffSfhits;
+            }
+        }
+        public static AssignStaffShifts assignStaffShifts
+        {
+            get
+            {
+                if (fAssignStaffShifts == null || fAssignStaffShifts.IsDisposed)
+                {
+                    fAssignStaffShifts = new AssignStaffShifts();
+                }
+                return fAssignStaffShifts;
+            }
+        }
         //HospitalMain
         public static HospitalMain hospitalMain
         {

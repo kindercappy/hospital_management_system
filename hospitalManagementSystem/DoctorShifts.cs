@@ -22,7 +22,7 @@ namespace hospitalManagementSystem
         public DoctorShifts()
         {
             InitializeComponent();
-            displayData();
+            displayDoctor();
             displayDataShifts();
             this.dataGridViewShifts.Columns[0].Visible = false;
         }
@@ -40,7 +40,7 @@ namespace hospitalManagementSystem
             dataGridViewShifts.DataSource = dt;
         }
         //displays data for doctorDataGrid
-        private void displayData()
+        private void displayDoctor()
         {
             cmd.Connection = Common.getConnection();
             cmd.CommandText = "Doctor_Select";
@@ -70,27 +70,26 @@ namespace hospitalManagementSystem
         private void buttonNewShift_Click(object sender, EventArgs e)
         {
             DoctorShiftsHL docshi = new DoctorShiftsHL();
-            //try
-            //{
+            try
+            {
                 docshi.shiftsName = textBoxShiftsName.Text;
-                docshi.from =TimeSpan.Parse(textBoxFrom.Text);
+                docshi.from = TimeSpan.Parse(textBoxFrom.Text);
                 docshi.to = TimeSpan.Parse(textBoxTo.Text);
                 DoctorShiftsManager.doctorShiftsSave(docshi);
                 MessageBox.Show("Success");
-                
                 displayDataShifts();
-            //}
-            //catch (System.Exception ex)
-            //{
-                //MessageBox.Show(ex.Message);
-            //}
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
 
         private void dataGridViewShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             IdShift = Convert.ToInt32(dataGridViewShifts.Rows[e.RowIndex].Cells[0].Value.ToString());
             textBoxShiftsName.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[1].Value.ToString();
-
             textBoxFrom.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[2].Value.ToString();
             textBoxTo.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[3].Value.ToString();
         }

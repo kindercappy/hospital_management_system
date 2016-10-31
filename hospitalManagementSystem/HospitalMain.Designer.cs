@@ -54,6 +54,8 @@
             this.buttonAssignShifts = new System.Windows.Forms.Button();
             this.buttonAssignShift = new System.Windows.Forms.Button();
             this.buttonNewShift = new System.Windows.Forms.Button();
+            this.buttonBookAppointment = new System.Windows.Forms.Button();
+            this.bookAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelHospitalMain.SuspendLayout();
             this.SuspendLayout();
@@ -200,7 +202,8 @@
             // 
             this.patientToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newPatientToolStripMenuItem,
-            this.existingPatientToolStripMenuItem});
+            this.existingPatientToolStripMenuItem,
+            this.bookAppointmentToolStripMenuItem});
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
             this.patientToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.patientToolStripMenuItem.Text = "Patient";
@@ -255,6 +258,7 @@
             // panelHospitalMain
             // 
             this.panelHospitalMain.BackColor = System.Drawing.Color.DarkGray;
+            this.panelHospitalMain.Controls.Add(this.buttonBookAppointment);
             this.panelHospitalMain.Controls.Add(this.buttonAssignShifts);
             this.panelHospitalMain.Controls.Add(this.buttonAssignShift);
             this.panelHospitalMain.Controls.Add(this.buttonNewShift);
@@ -291,6 +295,7 @@
             this.buttonAssignShift.TabIndex = 26;
             this.buttonAssignShift.Text = "Assign Shift";
             this.buttonAssignShift.UseVisualStyleBackColor = true;
+            this.buttonAssignShift.Click += new System.EventHandler(this.buttonAssignShift_Click);
             // 
             // buttonNewShift
             // 
@@ -300,6 +305,24 @@
             this.buttonNewShift.TabIndex = 22;
             this.buttonNewShift.Text = "New Shift";
             this.buttonNewShift.UseVisualStyleBackColor = true;
+            this.buttonNewShift.Click += new System.EventHandler(this.buttonNewShift_Click);
+            // 
+            // buttonBookAppointment
+            // 
+            this.buttonBookAppointment.Location = new System.Drawing.Point(0, 47);
+            this.buttonBookAppointment.Name = "buttonBookAppointment";
+            this.buttonBookAppointment.Size = new System.Drawing.Size(122, 23);
+            this.buttonBookAppointment.TabIndex = 28;
+            this.buttonBookAppointment.Text = "Book Appointment";
+            this.buttonBookAppointment.UseVisualStyleBackColor = true;
+            this.buttonBookAppointment.Click += new System.EventHandler(this.buttonBookAppointment_Click);
+            // 
+            // bookAppointmentToolStripMenuItem
+            // 
+            this.bookAppointmentToolStripMenuItem.Name = "bookAppointmentToolStripMenuItem";
+            this.bookAppointmentToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.bookAppointmentToolStripMenuItem.Text = "Book Appointment";
+            this.bookAppointmentToolStripMenuItem.Click += new System.EventHandler(this.bookAppointmentToolStripMenuItem_Click);
             // 
             // HospitalMain
             // 
@@ -352,6 +375,8 @@
         private System.Windows.Forms.Button buttonAssignShifts;
         private System.Windows.Forms.ToolStripMenuItem makeShiftsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignShiftsToolStripMenuItem;
+        private System.Windows.Forms.Button buttonBookAppointment;
+        private System.Windows.Forms.ToolStripMenuItem bookAppointmentToolStripMenuItem;
     }
 }
 
