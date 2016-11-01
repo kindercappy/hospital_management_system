@@ -239,6 +239,7 @@
             // 
             // comboBoxDepartment
             // 
+            this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(112, 64);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
@@ -247,6 +248,7 @@
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
@@ -255,10 +257,10 @@
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 25;
-            this.comboBoxSex.Text = "Select";
             // 
             // comboBoxNationality
             // 
+            this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
             this.comboBoxNationality.Location = new System.Drawing.Point(112, 272);
             this.comboBoxNationality.Name = "comboBoxNationality";
@@ -268,7 +270,8 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.buttonBack.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
             this.buttonBack.Location = new System.Drawing.Point(12, 422);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(200, 33);
@@ -279,8 +282,10 @@
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.BackColor = System.Drawing.SystemColors.GrayText;
-            this.buttonSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSubmit.FlatAppearance.BorderSize = 0;
+            this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
             this.buttonSubmit.Location = new System.Drawing.Point(12, 382);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(200, 34);
@@ -300,12 +305,12 @@
             // 
             // comboBoxDoctorShift
             // 
+            this.comboBoxDoctorShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDoctorShift.FormattingEnabled = true;
             this.comboBoxDoctorShift.Location = new System.Drawing.Point(112, 325);
             this.comboBoxDoctorShift.Name = "comboBoxDoctorShift";
             this.comboBoxDoctorShift.Size = new System.Drawing.Size(253, 21);
             this.comboBoxDoctorShift.TabIndex = 82;
-            this.comboBoxDoctorShift.Text = "Select";
             // 
             // labelStar
             // 

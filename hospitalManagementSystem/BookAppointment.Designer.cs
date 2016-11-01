@@ -62,7 +62,18 @@
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxFrom = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxTo = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxAppTime = new System.Windows.Forms.TextBox();
+            this.comboBoxDoctor = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.dataGridViewDoctor = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewPatient
@@ -116,12 +127,15 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
             this.buttonSearch.Location = new System.Drawing.Point(554, 4);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
             this.buttonSearch.TabIndex = 8;
             this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBoxSearchPhone
@@ -133,12 +147,15 @@
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(635, 4);
+            this.buttonRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonRefresh.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonRefresh.ForeColor = System.Drawing.Color.Navy;
+            this.buttonRefresh.Location = new System.Drawing.Point(710, 3);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
             this.buttonRefresh.TabIndex = 10;
             this.buttonRefresh.Text = "Refresh";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // label1
@@ -193,11 +210,13 @@
             // 
             // comboBoxDepartment
             // 
+            this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(113, 248);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(177, 21);
             this.comboBoxDepartment.TabIndex = 17;
+            this.comboBoxDepartment.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartment_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -218,7 +237,7 @@
             // comboBoxSex
             // 
             this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.Location = new System.Drawing.Point(113, 275);
+            this.comboBoxSex.Location = new System.Drawing.Point(113, 305);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(177, 21);
             this.comboBoxSex.TabIndex = 21;
@@ -226,7 +245,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 278);
+            this.label6.Location = new System.Drawing.Point(12, 308);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 20;
@@ -251,7 +270,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 305);
+            this.label8.Location = new System.Drawing.Point(12, 335);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 13);
             this.label8.TabIndex = 25;
@@ -259,7 +278,7 @@
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(113, 302);
+            this.textBoxHeightInch.Location = new System.Drawing.Point(113, 332);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(177, 20);
             this.textBoxHeightInch.TabIndex = 24;
@@ -283,7 +302,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 331);
+            this.label10.Location = new System.Drawing.Point(12, 361);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 29;
@@ -291,7 +310,7 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(113, 328);
+            this.textBoxPhone.Location = new System.Drawing.Point(113, 358);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(177, 20);
             this.textBoxPhone.TabIndex = 28;
@@ -315,7 +334,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 357);
+            this.label13.Location = new System.Drawing.Point(12, 387);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 13);
             this.label13.TabIndex = 35;
@@ -323,7 +342,7 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(113, 354);
+            this.textBoxAddress.Location = new System.Drawing.Point(113, 384);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(177, 20);
             this.textBoxAddress.TabIndex = 34;
@@ -345,11 +364,107 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "Nationality:";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 413);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(33, 13);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "From:";
+            // 
+            // textBoxFrom
+            // 
+            this.textBoxFrom.Location = new System.Drawing.Point(113, 410);
+            this.textBoxFrom.Name = "textBoxFrom";
+            this.textBoxFrom.Size = new System.Drawing.Size(177, 20);
+            this.textBoxFrom.TabIndex = 38;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(300, 383);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 13);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "To:";
+            // 
+            // textBoxTo
+            // 
+            this.textBoxTo.Location = new System.Drawing.Point(389, 380);
+            this.textBoxTo.Name = "textBoxTo";
+            this.textBoxTo.Size = new System.Drawing.Size(177, 20);
+            this.textBoxTo.TabIndex = 40;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(9, 439);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 13);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Appointment Time:";
+            // 
+            // textBoxAppTime
+            // 
+            this.textBoxAppTime.Location = new System.Drawing.Point(113, 436);
+            this.textBoxAppTime.Name = "textBoxAppTime";
+            this.textBoxAppTime.Size = new System.Drawing.Size(177, 20);
+            this.textBoxAppTime.TabIndex = 42;
+            // 
+            // comboBoxDoctor
+            // 
+            this.comboBoxDoctor.FormattingEnabled = true;
+            this.comboBoxDoctor.Location = new System.Drawing.Point(113, 278);
+            this.comboBoxDoctor.Name = "comboBoxDoctor";
+            this.comboBoxDoctor.Size = new System.Drawing.Size(177, 21);
+            this.comboBoxDoctor.TabIndex = 45;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(12, 281);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 13);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "Doctor:";
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
+            this.buttonSubmit.Location = new System.Drawing.Point(12, 477);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(200, 34);
+            this.buttonSubmit.TabIndex = 46;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            // 
+            // dataGridViewDoctor
+            // 
+            this.dataGridViewDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDoctor.Location = new System.Drawing.Point(572, 194);
+            this.dataGridViewDoctor.Name = "dataGridViewDoctor";
+            this.dataGridViewDoctor.Size = new System.Drawing.Size(250, 262);
+            this.dataGridViewDoctor.TabIndex = 47;
+            // 
             // BookAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1666, 799);
+            this.Controls.Add(this.dataGridViewDoctor);
+            this.Controls.Add(this.buttonSubmit);
+            this.Controls.Add(this.comboBoxDoctor);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.textBoxAppTime);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.textBoxTo);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBoxFrom);
             this.Controls.Add(this.comboBoxNationality);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -388,6 +503,7 @@
             this.Text = "BookAppointment";
             this.Load += new System.EventHandler(this.BookAppointment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,5 +545,15 @@
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxFrom;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxTo;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxAppTime;
+        private System.Windows.Forms.ComboBox comboBoxDoctor;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.DataGridView dataGridViewDoctor;
     }
 }

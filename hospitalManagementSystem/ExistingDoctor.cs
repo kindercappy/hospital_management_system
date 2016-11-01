@@ -63,22 +63,36 @@ namespace hospitalManagementSystem
 
         private void ExistingDoctor_Load(object sender, EventArgs e)
         {
-            displayDoctor();
-            this.dataGridViewExistingDoctor.Columns[0].Visible = false;
-            //ExistingDoctor Depertment comboBox
-            this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
-            this.comboBoxDepartment.DisplayMember = "departmentName";
-            this.comboBoxDepartment.ValueMember = "departmentId";
+            try
+            {
+                displayDoctor();
+                this.dataGridViewExistingDoctor.Columns[0].Visible = false;
+                //ExistingDoctor Depertment comboBox
+                this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
+                this.comboBoxDepartment.DisplayMember = "departmentName";
+                this.comboBoxDepartment.ValueMember = "departmentId";
 
-            //ExistingDoctor Nationality comboBox
-            this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
-            this.comboBoxNationality.DisplayMember = "nationalityName";
-            this.comboBoxNationality.ValueMember = "nationalityId";
+                //ExistingDoctor Nationality comboBox
+                this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
+                this.comboBoxNationality.DisplayMember = "nationalityName";
+                this.comboBoxNationality.ValueMember = "nationalityId";
 
-            //DoctorShifts Doctor Shifts comboBox
-            this.comboBoxDoctorShift.DataSource = DoctorShiftsManager.getDoctorShifts();
-            this.comboBoxDoctorShift.DisplayMember = "fullDetails";
-            this.comboBoxDoctorShift.ValueMember = "shiftsId";
+                //DoctorShifts Doctor Shifts comboBox
+                this.comboBoxDoctorShift.DataSource = DoctorShiftsManager.getDoctorShifts();
+                this.comboBoxDoctorShift.DisplayMember = "fullDetails";
+                this.comboBoxDoctorShift.ValueMember = "shiftsId";
+                //sets colour for alternate rowns for dataGridViewExsitingDoctor
+                this.dataGridViewExistingDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
+                //Setting comboboxes to -1 index so no item apperas on load
+                this.comboBoxDepartment.SelectedIndex = -1;
+                this.comboBoxNationality.SelectedIndex = -1;
+                this.comboBoxSex.SelectedIndex = -1;
+                this.comboBoxDoctorShift.SelectedIndex = -1;
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -129,7 +143,7 @@ namespace hospitalManagementSystem
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
-        {
+            {
             string str = "";
             if (textBoxFirstName.Text == "")
             {

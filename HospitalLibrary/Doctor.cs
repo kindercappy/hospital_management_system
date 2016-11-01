@@ -264,6 +264,7 @@ namespace HospitalLibrary
             }
 
         }
+
         //updates doctor with shift
         public static void doctorUpdatesShift(Doctor doc)
         {
@@ -347,6 +348,7 @@ namespace HospitalLibrary
 
             }
         }
+
         //updates doctor
         public static void doctorUpdate(Doctor doctor)
         {
@@ -430,6 +432,7 @@ namespace HospitalLibrary
 
             }
         }
+
         //deletes doctor
         public static void doctorDelete(Doctor doctor)
         {
@@ -447,7 +450,7 @@ namespace HospitalLibrary
         }
 
         //search doctor
-       public static void doctorSearch(Doctor doctor)
+        public static void doctorSearch(Doctor doctor)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -460,6 +463,24 @@ namespace HospitalLibrary
                 sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sFirstName);
                 da.SelectCommand = cmd;
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        //selects doctor by department
+        public static void doctorSelectByDepartment(Doctor doctor)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+                using(SqlDataAdapter da = new SqlDataAdapter())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Select_By_Department";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iDepartment = new SqlParameter("department", doctor.department);
+                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDepartment);
 
                 cmd.ExecuteNonQuery();
             }

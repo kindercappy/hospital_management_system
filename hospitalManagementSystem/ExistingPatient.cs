@@ -74,6 +74,12 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
+                //sets colour for alternate rowns for dataGridViewExsitingPatient
+                this.dataGridViewExistingPatient.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
+                //Setting comboboxes to -1 index so no item apperas on load
+                this.comboBoxDepartment.SelectedIndex = -1;
+                this.comboBoxNationality.SelectedIndex = -1;
+                this.comboBoxSex.SelectedIndex = -1;
 
             }
             catch (System.Exception ex)

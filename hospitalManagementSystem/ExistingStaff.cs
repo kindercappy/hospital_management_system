@@ -59,19 +59,32 @@ namespace hospitalManagementSystem
 
         private void ExistingStaff_Load(object sender, EventArgs e)
         {
-            //display staff in dataGridView
-            displayStaff();
-            //ExistingStaff Department comboBox
-            this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
-            this.comboBoxDepartment.DisplayMember = "departmentName";
-            this.comboBoxDepartment.ValueMember = "departmentId";
-            //ExistingStaff Nationality comboBox
-            this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
-            this.comboBoxNationality.DisplayMember = "nationalityName";
-            this.comboBoxNationality.ValueMember = "nationalityId";
+            try
+            {
+                //display staff in dataGridView
+                displayStaff();
+                //ExistingStaff Department comboBox
+                this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
+                this.comboBoxDepartment.DisplayMember = "departmentName";
+                this.comboBoxDepartment.ValueMember = "departmentId";
+                //ExistingStaff Nationality comboBox
+                this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
+                this.comboBoxNationality.DisplayMember = "nationalityName";
+                this.comboBoxNationality.ValueMember = "nationalityId";
+                //sets colour for alternate rowns for dataGridViewExsitingDoctor
+                this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+                //Setting comboboxes to -1 index so no item apperas on load
+                this.comboBoxDepartment.SelectedIndex = -1;
+                this.comboBoxNationality.SelectedIndex = -1;
+                this.comboBoxSex.SelectedIndex = -1;
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        
+
         //dataGridView cellContentClick
         private void dataGridViewExistingStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

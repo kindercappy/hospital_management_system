@@ -239,6 +239,7 @@
             // 
             // comboBoxDepartment
             // 
+            this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(112, 64);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
@@ -248,6 +249,7 @@
             // 
             // comboBoxNationality
             // 
+            this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
             this.comboBoxNationality.Location = new System.Drawing.Point(112, 298);
             this.comboBoxNationality.Name = "comboBoxNationality";
@@ -257,6 +259,8 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
             this.buttonBack.Location = new System.Drawing.Point(15, 423);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(218, 40);
@@ -267,7 +271,9 @@
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
             this.buttonSubmit.Location = new System.Drawing.Point(15, 377);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(218, 40);
@@ -278,6 +284,7 @@
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
@@ -286,7 +293,6 @@
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 9;
-            this.comboBoxSex.Text = "Select";
             // 
             // labelStar
             // 
@@ -415,6 +421,7 @@
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.labelFirstName);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "NewStaff";
             this.Text = "NewStaff";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

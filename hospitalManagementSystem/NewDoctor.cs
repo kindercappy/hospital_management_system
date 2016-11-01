@@ -105,6 +105,12 @@ namespace hospitalManagementSystem
                 this.comboBoxDoctorShift.DataSource = DoctorShiftsManager.getDoctorShifts();
                 this.comboBoxDoctorShift.DisplayMember = "fullDetails";
                 this.comboBoxDoctorShift.ValueMember = "shiftsId";
+
+                //Setting comboboxes to -1 index so no item apperas on load
+                this.comboBoxDepartment.SelectedIndex = -1;
+                this.comboBoxDoctorShift.SelectedIndex = -1;
+                this.comboBoxNationality.SelectedIndex = -1;
+                this.comboBoxSex.SelectedIndex = -1;
             }
             catch (System.Exception ex)
             {

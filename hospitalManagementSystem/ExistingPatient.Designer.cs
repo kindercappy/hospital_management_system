@@ -233,6 +233,7 @@
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
@@ -244,6 +245,7 @@
             // 
             // comboBoxNationality
             // 
+            this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
             this.comboBoxNationality.Location = new System.Drawing.Point(125, 512);
             this.comboBoxNationality.Name = "comboBoxNationality";
@@ -252,6 +254,7 @@
             // 
             // comboBoxDepartment
             // 
+            this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(125, 276);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
@@ -269,7 +272,9 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
             this.buttonBack.Location = new System.Drawing.Point(16, 591);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 41);
@@ -283,38 +288,47 @@
             this.dataGridViewExistingPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExistingPatient.Location = new System.Drawing.Point(12, 33);
             this.dataGridViewExistingPatient.Name = "dataGridViewExistingPatient";
-            this.dataGridViewExistingPatient.Size = new System.Drawing.Size(888, 150);
+            this.dataGridViewExistingPatient.Size = new System.Drawing.Size(1338, 150);
             this.dataGridViewExistingPatient.TabIndex = 29;
             this.dataGridViewExistingPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingPatient_CellContentClick);
             // 
             // buttonInsert
             // 
-            this.buttonInsert.Location = new System.Drawing.Point(12, 195);
+            this.buttonInsert.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonInsert.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonInsert.ForeColor = System.Drawing.Color.Navy;
+            this.buttonInsert.Location = new System.Drawing.Point(12, 189);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(139, 23);
+            this.buttonInsert.Size = new System.Drawing.Size(150, 23);
             this.buttonInsert.TabIndex = 30;
             this.buttonInsert.Text = "Insert";
-            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.UseVisualStyleBackColor = false;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(157, 195);
+            this.buttonUpdate.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonUpdate.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonUpdate.ForeColor = System.Drawing.Color.Navy;
+            this.buttonUpdate.Location = new System.Drawing.Point(168, 189);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(139, 23);
+            this.buttonUpdate.Size = new System.Drawing.Size(150, 23);
             this.buttonUpdate.TabIndex = 31;
             this.buttonUpdate.Text = "Update";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(306, 195);
+            this.buttonDelete.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDelete.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDelete.ForeColor = System.Drawing.Color.Navy;
+            this.buttonDelete.Location = new System.Drawing.Point(324, 189);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(139, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(150, 23);
             this.buttonDelete.TabIndex = 32;
             this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // textBoxSearch
@@ -326,12 +340,15 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
             this.buttonSearch.Location = new System.Drawing.Point(277, 4);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
             this.buttonSearch.TabIndex = 35;
             this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // labelUser
@@ -345,12 +362,15 @@
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(358, 4);
+            this.buttonRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonRefresh.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonRefresh.ForeColor = System.Drawing.Color.Navy;
+            this.buttonRefresh.Location = new System.Drawing.Point(433, 4);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
             this.buttonRefresh.TabIndex = 39;
-            this.buttonRefresh.Text = "Refresh";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Text = "Reset";
+            this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // labelFrom
@@ -391,7 +411,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 668);
+            this.ClientSize = new System.Drawing.Size(1546, 837);
             this.Controls.Add(this.labelTo);
             this.Controls.Add(this.textBoxTo);
             this.Controls.Add(this.labelFrom);

@@ -235,6 +235,7 @@
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
@@ -246,6 +247,7 @@
             // 
             // comboBoxNationality
             // 
+            this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
             this.comboBoxNationality.Location = new System.Drawing.Point(124, 485);
             this.comboBoxNationality.Name = "comboBoxNationality";
@@ -263,6 +265,7 @@
             // 
             // comboBoxDepartment
             // 
+            this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(124, 276);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
@@ -271,7 +274,9 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
             this.buttonBack.Location = new System.Drawing.Point(15, 538);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 44);
@@ -291,42 +296,54 @@
             // 
             // buttonInsert
             // 
+            this.buttonInsert.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonInsert.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonInsert.ForeColor = System.Drawing.Color.Navy;
             this.buttonInsert.Location = new System.Drawing.Point(12, 189);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(189, 23);
+            this.buttonInsert.Size = new System.Drawing.Size(150, 23);
             this.buttonInsert.TabIndex = 29;
             this.buttonInsert.Text = "Insert";
-            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.UseVisualStyleBackColor = false;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(207, 189);
+            this.buttonUpdate.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonUpdate.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonUpdate.ForeColor = System.Drawing.Color.Navy;
+            this.buttonUpdate.Location = new System.Drawing.Point(168, 189);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(189, 23);
+            this.buttonUpdate.Size = new System.Drawing.Size(150, 23);
             this.buttonUpdate.TabIndex = 30;
             this.buttonUpdate.Text = "Update";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(402, 187);
+            this.buttonDelete.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDelete.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDelete.ForeColor = System.Drawing.Color.Navy;
+            this.buttonDelete.Location = new System.Drawing.Point(324, 189);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(189, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(150, 23);
             this.buttonDelete.TabIndex = 31;
             this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonSearch
             // 
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
             this.buttonSearch.Location = new System.Drawing.Point(277, 4);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
             this.buttonSearch.TabIndex = 32;
             this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -346,12 +363,15 @@
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(358, 4);
+            this.buttonRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonRefresh.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonRefresh.ForeColor = System.Drawing.Color.Navy;
+            this.buttonRefresh.Location = new System.Drawing.Point(433, 4);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
             this.buttonRefresh.TabIndex = 35;
             this.buttonRefresh.Text = "Refresh";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.UseVisualStyleBackColor = false;
             // 
             // labelStar
             // 
