@@ -86,7 +86,7 @@ namespace hospitalManagementSystem
                 {
                     patient.firstName = this.textBoxFirstName.Text;
                     patient.lastName = this.textBoxLastName.Text;
-                    patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                    //patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
                     patient.age = Convert.ToInt32(this.textBoxAge.Text);
                     patient.sex = this.comboBoxSex.Text;
                     patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);

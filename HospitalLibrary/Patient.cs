@@ -13,7 +13,7 @@ namespace HospitalLibrary
         private string sFirstName;
         private string sLastName;
         private int iPatientId;
-        private int iDepartment;
+        //private int iDepartment;
         private int iAge;
         private string sSex;
         private int iHeightFt;
@@ -61,17 +61,17 @@ namespace HospitalLibrary
             }
         }
 
-        public int department
-        {
-            get
-            {
-                return iDepartment;
-            }
-            set
-            {
-                iDepartment = value;
-            }
-        }
+        //public int department
+        //{
+        //    get
+        //    {
+        //        return iDepartment;
+        //    }
+        //    set
+        //    {
+        //        iDepartment = value;
+        //    }
+        //}
 
         public int age
         {
@@ -226,9 +226,9 @@ namespace HospitalLibrary
                 sLastNameParam.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sLastNameParam);
                 //Department
-                SqlParameter iDepartmentParam = new SqlParameter("@department", patient.department);
-                iDepartmentParam.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDepartmentParam);
+                //SqlParameter iDepartmentParam = new SqlParameter("@department", patient.department);
+                //iDepartmentParam.SqlDbType = System.Data.SqlDbType.Int;
+                //cmd.Parameters.Add(iDepartmentParam);
                 //Age
                 SqlParameter iAge = new SqlParameter("@age", patient.age);
                 iAge.SqlDbType = System.Data.SqlDbType.Int;
@@ -331,10 +331,10 @@ namespace HospitalLibrary
                 sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sLastName);
 
-                //Department Integer Parameter
-                SqlParameter iDepartment = new SqlParameter("@department", patient.department);
-                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDepartment);
+                ////Department Integer Parameter
+                //SqlParameter iDepartment = new SqlParameter("@department", patient.department);
+                //iDepartment.SqlDbType = System.Data.SqlDbType.Int;
+                //cmd.Parameters.Add(iDepartment);
 
                 //Age Integer Parameter
                 SqlParameter iAge = new SqlParameter("@age", patient.age);

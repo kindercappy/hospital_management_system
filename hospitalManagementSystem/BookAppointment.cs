@@ -17,7 +17,8 @@ namespace hospitalManagementSystem
         //SqlCommand cmd = new SqlCommand();
         //SqlDataAdapter da = new SqlDataAdapter();
         //DataTable dt = new DataTable();
-        //int Id = 0;
+        int patId = 0;
+        int docId = 0;
         public BookAppointment()
         {
             InitializeComponent();
@@ -63,22 +64,28 @@ namespace hospitalManagementSystem
         //        dataGridViewPatient.DataSource = dt;
         //    }
         //}
-
+        
         private void BookAppointment_Load(object sender, EventArgs e)
         {
-            
+            //displaying Patient list in dataGridViewPatient
+            displayPatient();
             //Department ComboBox
             this.comboBoxDepartment.DisplayMember = "departmentName";
             this.comboBoxDepartment.ValueMember = "departmentId";
             this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
-           
-            this.comboBoxDepartment.SelectedIndex = -1;
-            displayPatient();
-
+            //dataGridViewDoctor alternateRow colorChanged
             this.dataGridViewDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
+            //dataGridViewPatient alternateRow colorChanged
             this.dataGridViewPatient.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
+            //comboBoxDepartment 
+            this.comboBoxDepartment.SelectedIndex = -1;
+            //textBoxTime scrollBars
+            textBoxAppTime.ScrollBars=ScrollBars.Vertical;
+            //dataGridViewDoctor is Visible = False
+            this.dataGridViewDoctor.Visible = false;
         }
 
+        //button Search onClick event
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             if (textBoxSearchId.Text.Length > 0 || textBoxSearchName.Text.Length > 0 || textBoxSearchPhone.Text.Length > 0)
@@ -152,16 +159,37 @@ namespace hospitalManagementSystem
             }
         }
 
+        //button Refresh onClick event
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             displayPatient();
         }
 
+        //Submit button onClock event
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Appointment app = new Appointment();
+                app.firstName = this.textBoxFirstName.Text;
+                app.lastName = this.textBoxLastName.Text;
+                app.departmentId = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
+                app.age = Convert.ToInt32(this.textBoxAge.Text);
+                app.doctorId = docId;
+                app.sex = this.comboBoxSex.Text;
+                app.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                app.appTime = TimeSpan.Parse(this.textBoxAppTime.Text);
+                app.patientId = patId;
+                AppointmentManager.appointmentSave(app);
+                MessageBox.Show("Success");
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        //comboBocDepartment SelectedIndexChanged
         private void comboBoxDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -169,7 +197,7 @@ namespace hospitalManagementSystem
                 if (this.comboBoxDepartment.SelectedIndex >= 0)
                 {
 
-
+                    this.dataGridViewDoctor.Visible = true;
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = Common.getConnection();
@@ -191,6 +219,24 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        //dataGridViewPateint cellContentClick
+        private void dataGridViewPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            patId = Convert.ToInt32(dataGridViewPatient.Rows[e.RowIndex].Cells[0].Value.ToString());
+            textBoxFirstName.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxLastName.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBoxAge.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textBoxPhone.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[8].Value.ToString();
+            comboBoxSex.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[4].Value.ToString();
+        }
+
+        //dataGridView cellContentClick
+        private void dataGridViewDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            docId = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
+            textBoxDoctor.Text = dataGridViewDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

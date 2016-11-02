@@ -64,13 +64,13 @@ namespace hospitalManagementSystem
                 //display staff in dataGridView
                 displayStaff();
                 //ExistingStaff Department comboBox
-                this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
                 this.comboBoxDepartment.ValueMember = "departmentId";
+                this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 //ExistingStaff Nationality comboBox
-                this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
+                this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 //sets colour for alternate rowns for dataGridViewExsitingDoctor
                 this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
                 //Setting comboboxes to -1 index so no item apperas on load

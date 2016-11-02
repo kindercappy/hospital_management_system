@@ -68,10 +68,12 @@
             this.textBoxTo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxAppTime = new System.Windows.Forms.TextBox();
-            this.comboBoxDoctor = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.dataGridViewDoctor = new System.Windows.Forms.DataGridView();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxDoctor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).BeginInit();
             this.SuspendLayout();
@@ -79,10 +81,11 @@
             // dataGridViewPatient
             // 
             this.dataGridViewPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPatient.Location = new System.Drawing.Point(12, 32);
+            this.dataGridViewPatient.Location = new System.Drawing.Point(12, 58);
             this.dataGridViewPatient.Name = "dataGridViewPatient";
             this.dataGridViewPatient.Size = new System.Drawing.Size(1544, 150);
             this.dataGridViewPatient.TabIndex = 0;
+            this.dataGridViewPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPatient_CellContentClick);
             // 
             // textBoxSearchName
             // 
@@ -161,15 +164,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 194);
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 211);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(150, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Patient Information";
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(113, 222);
+            this.textBoxFirstName.Location = new System.Drawing.Point(113, 234);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(177, 20);
             this.textBoxFirstName.TabIndex = 12;
@@ -177,7 +181,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 225);
+            this.label2.Location = new System.Drawing.Point(12, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 13;
@@ -186,7 +190,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(300, 225);
+            this.label3.Location = new System.Drawing.Point(300, 237);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 15;
@@ -194,7 +198,7 @@
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(389, 222);
+            this.textBoxLastName.Location = new System.Drawing.Point(402, 234);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(177, 20);
             this.textBoxLastName.TabIndex = 14;
@@ -202,7 +206,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 251);
+            this.label4.Location = new System.Drawing.Point(12, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 16;
@@ -212,7 +216,7 @@
             // 
             this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(113, 248);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(113, 260);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(177, 21);
             this.comboBoxDepartment.TabIndex = 17;
@@ -221,7 +225,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(300, 251);
+            this.label5.Location = new System.Drawing.Point(300, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 19;
@@ -229,15 +233,19 @@
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(389, 248);
+            this.textBoxAge.Location = new System.Drawing.Point(402, 260);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(177, 20);
             this.textBoxAge.TabIndex = 18;
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.Location = new System.Drawing.Point(113, 305);
+            this.comboBoxSex.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
+            this.comboBoxSex.Location = new System.Drawing.Point(402, 286);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(177, 21);
             this.comboBoxSex.TabIndex = 21;
@@ -245,7 +253,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 308);
+            this.label6.Location = new System.Drawing.Point(301, 292);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 20;
@@ -254,7 +262,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(300, 278);
+            this.label7.Location = new System.Drawing.Point(859, 320);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 23;
@@ -262,7 +270,7 @@
             // 
             // textBoxHeightFt
             // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(389, 275);
+            this.textBoxHeightFt.Location = new System.Drawing.Point(948, 317);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(177, 20);
             this.textBoxHeightFt.TabIndex = 22;
@@ -270,7 +278,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 335);
+            this.label8.Location = new System.Drawing.Point(847, 240);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 13);
             this.label8.TabIndex = 25;
@@ -278,7 +286,7 @@
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(113, 332);
+            this.textBoxHeightInch.Location = new System.Drawing.Point(948, 237);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(177, 20);
             this.textBoxHeightInch.TabIndex = 24;
@@ -286,7 +294,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(300, 305);
+            this.label9.Location = new System.Drawing.Point(859, 346);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 27;
@@ -294,7 +302,7 @@
             // 
             // textBoxWeight
             // 
-            this.textBoxWeight.Location = new System.Drawing.Point(389, 302);
+            this.textBoxWeight.Location = new System.Drawing.Point(948, 343);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(177, 20);
             this.textBoxWeight.TabIndex = 26;
@@ -302,7 +310,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 361);
+            this.label10.Location = new System.Drawing.Point(11, 320);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 29;
@@ -310,7 +318,7 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(113, 358);
+            this.textBoxPhone.Location = new System.Drawing.Point(113, 313);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(177, 20);
             this.textBoxPhone.TabIndex = 28;
@@ -318,7 +326,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(300, 331);
+            this.label11.Location = new System.Drawing.Point(859, 372);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 31;
@@ -326,7 +334,7 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(389, 328);
+            this.textBoxEmail.Location = new System.Drawing.Point(948, 369);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(177, 20);
             this.textBoxEmail.TabIndex = 30;
@@ -334,7 +342,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 387);
+            this.label13.Location = new System.Drawing.Point(847, 266);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 13);
             this.label13.TabIndex = 35;
@@ -342,7 +350,7 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(113, 384);
+            this.textBoxAddress.Location = new System.Drawing.Point(948, 263);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(177, 20);
             this.textBoxAddress.TabIndex = 34;
@@ -350,7 +358,7 @@
             // comboBoxNationality
             // 
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(389, 353);
+            this.comboBoxNationality.Location = new System.Drawing.Point(948, 394);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(177, 21);
             this.comboBoxNationality.TabIndex = 37;
@@ -358,7 +366,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(300, 357);
+            this.label12.Location = new System.Drawing.Point(859, 398);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 13);
             this.label12.TabIndex = 36;
@@ -367,7 +375,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 413);
+            this.label14.Location = new System.Drawing.Point(847, 292);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(33, 13);
             this.label14.TabIndex = 39;
@@ -375,7 +383,7 @@
             // 
             // textBoxFrom
             // 
-            this.textBoxFrom.Location = new System.Drawing.Point(113, 410);
+            this.textBoxFrom.Location = new System.Drawing.Point(948, 289);
             this.textBoxFrom.Name = "textBoxFrom";
             this.textBoxFrom.Size = new System.Drawing.Size(177, 20);
             this.textBoxFrom.TabIndex = 38;
@@ -383,7 +391,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(300, 383);
+            this.label15.Location = new System.Drawing.Point(859, 424);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(23, 13);
             this.label15.TabIndex = 41;
@@ -391,7 +399,7 @@
             // 
             // textBoxTo
             // 
-            this.textBoxTo.Location = new System.Drawing.Point(389, 380);
+            this.textBoxTo.Location = new System.Drawing.Point(948, 421);
             this.textBoxTo.Name = "textBoxTo";
             this.textBoxTo.Size = new System.Drawing.Size(177, 20);
             this.textBoxTo.TabIndex = 40;
@@ -399,7 +407,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 439);
+            this.label16.Location = new System.Drawing.Point(301, 317);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(95, 13);
             this.label16.TabIndex = 43;
@@ -407,36 +415,20 @@
             // 
             // textBoxAppTime
             // 
-            this.textBoxAppTime.Location = new System.Drawing.Point(113, 436);
+            this.textBoxAppTime.Location = new System.Drawing.Point(402, 313);
+            this.textBoxAppTime.Multiline = true;
             this.textBoxAppTime.Name = "textBoxAppTime";
-            this.textBoxAppTime.Size = new System.Drawing.Size(177, 20);
+            this.textBoxAppTime.Size = new System.Drawing.Size(177, 78);
             this.textBoxAppTime.TabIndex = 42;
-            // 
-            // comboBoxDoctor
-            // 
-            this.comboBoxDoctor.FormattingEnabled = true;
-            this.comboBoxDoctor.Location = new System.Drawing.Point(113, 278);
-            this.comboBoxDoctor.Name = "comboBoxDoctor";
-            this.comboBoxDoctor.Size = new System.Drawing.Size(177, 21);
-            this.comboBoxDoctor.TabIndex = 45;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 281);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 13);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "Doctor:";
             // 
             // buttonSubmit
             // 
             this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSubmit.Location = new System.Drawing.Point(12, 477);
+            this.buttonSubmit.Location = new System.Drawing.Point(12, 339);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(200, 34);
+            this.buttonSubmit.Size = new System.Drawing.Size(384, 52);
             this.buttonSubmit.TabIndex = 46;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -445,20 +437,59 @@
             // dataGridViewDoctor
             // 
             this.dataGridViewDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDoctor.Location = new System.Drawing.Point(572, 194);
+            this.dataGridViewDoctor.Location = new System.Drawing.Point(591, 234);
             this.dataGridViewDoctor.Name = "dataGridViewDoctor";
             this.dataGridViewDoctor.Size = new System.Drawing.Size(250, 262);
             this.dataGridViewDoctor.TabIndex = 47;
+            this.dataGridViewDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellContentClick);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(588, 211);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(60, 17);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Doctor";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(9, 38);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(62, 17);
+            this.label19.TabIndex = 49;
+            this.label19.Text = "Patient";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(12, 292);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 13);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Doctor:";
+            // 
+            // textBoxDoctor
+            // 
+            this.textBoxDoctor.Location = new System.Drawing.Point(113, 287);
+            this.textBoxDoctor.Name = "textBoxDoctor";
+            this.textBoxDoctor.Size = new System.Drawing.Size(177, 20);
+            this.textBoxDoctor.TabIndex = 50;
             // 
             // BookAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1666, 799);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.textBoxDoctor);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.dataGridViewDoctor);
             this.Controls.Add(this.buttonSubmit);
-            this.Controls.Add(this.comboBoxDoctor);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBoxAppTime);
             this.Controls.Add(this.label15);
@@ -551,9 +582,11 @@
         private System.Windows.Forms.TextBox textBoxTo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxAppTime;
-        private System.Windows.Forms.ComboBox comboBoxDoctor;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.DataGridView dataGridViewDoctor;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxDoctor;
     }
 }
