@@ -11,32 +11,32 @@ namespace HospitalLibrary
 {
      public class DoctorShiftsHL
     {
-        private int iDoctorShiftsId;
-        private string sShiftsName;
+        private int iDoctorShiftId;
+        private string sShiftName;
         private TimeSpan tFrom;
         private TimeSpan tTo;
         
 
-        public int shiftsId
+        public int shiftId
         {
             get
             {
-                return iDoctorShiftsId;
+                return iDoctorShiftId;
             }
             set
             {
-                iDoctorShiftsId = value;
+                iDoctorShiftId = value;
             }
         }
-        public string shiftsName
+        public string shiftName
         {
             get
             {
-                return sShiftsName;
+                return sShiftName;
             }
             set
             {
-                sShiftsName = value;
+                sShiftName = value;
             }
         }
         public TimeSpan from
@@ -65,7 +65,7 @@ namespace HospitalLibrary
         {
             get
             {
-                return sShiftsName + " From " + tFrom + " To " + tTo;
+                return sShiftName + " From " + tFrom + " To " + tTo;
             }
         }
         
@@ -75,7 +75,7 @@ namespace HospitalLibrary
         //gets doctorShifts list
         public static List<DoctorShiftsHL> getDoctorShifts()
         {
-            List<DoctorShiftsHL> doctorShiftsList = new List<DoctorShiftsHL>();
+            List<DoctorShiftsHL> doctorShiftList = new List<DoctorShiftsHL>();
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
@@ -88,17 +88,17 @@ namespace HospitalLibrary
                 for(int i = 0; i < dt.Rows.Count; i++)
                 {
                     DoctorShiftsHL ds = new DoctorShiftsHL();
-                    ds.shiftsId = Int32.Parse(dt.Rows[i]["shiftsId"].ToString());
-                    ds.shiftsName = dt.Rows[i]["shiftsName"].ToString();
+                    ds.shiftId = Int32.Parse(dt.Rows[i]["shiftId"].ToString());
+                    ds.shiftName = dt.Rows[i]["shiftName"].ToString();
                     ds.from =(TimeSpan) dt.Rows[i]["from"];
                     ds.to = (TimeSpan)dt.Rows[i]["to"];
-                    doctorShiftsList.Add(ds);
+                    doctorShiftList.Add(ds);
                 }
-                return doctorShiftsList;
+                return doctorShiftList;
             }
         }
         //saves doctor shift
-        public static void doctorShiftsSave(DoctorShiftsHL docshi)
+        public static void doctorShiftSave(DoctorShiftsHL docshi)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
@@ -107,7 +107,7 @@ namespace HospitalLibrary
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //Shift Name
-                SqlParameter sShiftsName = new SqlParameter("@shiftsName",docshi.shiftsName);
+                SqlParameter sShiftsName = new SqlParameter("@shiftName",docshi.shiftName);
                 sShiftsName.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sShiftsName);
 
@@ -126,7 +126,7 @@ namespace HospitalLibrary
             }
         }
         //updates doctor shift
-        public static void doctorShiftsUpdate(DoctorShiftsHL docshi)
+        public static void doctorShiftUpdate(DoctorShiftsHL docshi)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
@@ -135,12 +135,12 @@ namespace HospitalLibrary
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //ShifId Integer param
-                SqlParameter iShiftId = new SqlParameter("@shiftId", docshi.shiftsId);
+                SqlParameter iShiftId = new SqlParameter("@shiftId", docshi.shiftId);
                 iShiftId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iShiftId);
 
                 //shiftName NVarChar param
-                SqlParameter sShiftName = new SqlParameter("@shiftName", docshi.shiftsName);
+                SqlParameter sShiftName = new SqlParameter("@shiftName", docshi.shiftName);
                 sShiftName.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sShiftName);
 
@@ -158,7 +158,7 @@ namespace HospitalLibrary
             }
         }
         //deletes doctor shift
-        public static void doctorShiftsDelete(DoctorShiftsHL docshi)
+        public static void doctorShiftDelete(DoctorShiftsHL docshi)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -166,7 +166,7 @@ namespace HospitalLibrary
                 cmd.CommandText = "Doctor_Shift_Delete";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                SqlParameter iShiftId = new SqlParameter("@shiftId", docshi.shiftsId);
+                SqlParameter iShiftId = new SqlParameter("@shiftId", docshi.shiftId);
                 iShiftId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iShiftId);
 
@@ -174,5 +174,4 @@ namespace HospitalLibrary
             }
         }
     }
-
 }

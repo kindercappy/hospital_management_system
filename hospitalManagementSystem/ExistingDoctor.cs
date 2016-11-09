@@ -80,7 +80,7 @@ namespace hospitalManagementSystem
                 //DoctorShifts Doctor Shifts comboBox
                 this.comboBoxDoctorShift.DataSource = DoctorShiftsManager.getDoctorShifts();
                 this.comboBoxDoctorShift.DisplayMember = "fullDetails";
-                this.comboBoxDoctorShift.ValueMember = "shiftsId";
+                this.comboBoxDoctorShift.ValueMember = "shiftId";
                 //sets colour for alternate rowns for dataGridViewExsitingDoctor
                 this.dataGridViewExistingDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
                 //Setting comboboxes to -1 index so no item apperas on load

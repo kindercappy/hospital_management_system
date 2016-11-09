@@ -313,7 +313,7 @@ namespace HospitalLibrary
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "patientUpdate";
+                cmd.CommandText = "Patient_Update";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //PatientId Integer Parameter

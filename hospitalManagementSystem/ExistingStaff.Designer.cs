@@ -67,6 +67,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelStaffShift = new System.Windows.Forms.Label();
+            this.comboBoxStaffShift = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,7 +280,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(15, 538);
+            this.buttonBack.Location = new System.Drawing.Point(15, 593);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 44);
             this.buttonBack.TabIndex = 27;
@@ -370,7 +373,7 @@
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
             this.buttonRefresh.TabIndex = 35;
-            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.Text = "Reset";
             this.buttonRefresh.UseVisualStyleBackColor = false;
             // 
             // labelStar
@@ -427,11 +430,42 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "*";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(358, 538);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(11, 13);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "*";
+            // 
+            // labelStaffShift
+            // 
+            this.labelStaffShift.AutoSize = true;
+            this.labelStaffShift.Location = new System.Drawing.Point(12, 541);
+            this.labelStaffShift.Name = "labelStaffShift";
+            this.labelStaffShift.Size = new System.Drawing.Size(58, 13);
+            this.labelStaffShift.TabIndex = 49;
+            this.labelStaffShift.Text = "StaffShifts:";
+            // 
+            // comboBoxStaffShift
+            // 
+            this.comboBoxStaffShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStaffShift.FormattingEnabled = true;
+            this.comboBoxStaffShift.Location = new System.Drawing.Point(124, 538);
+            this.comboBoxStaffShift.Name = "comboBoxStaffShift";
+            this.comboBoxStaffShift.Size = new System.Drawing.Size(228, 21);
+            this.comboBoxStaffShift.TabIndex = 48;
+            // 
             // ExistingStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1429, 748);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelStaffShift);
+            this.Controls.Add(this.comboBoxStaffShift);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -522,5 +556,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelStaffShift;
+        private System.Windows.Forms.ComboBox comboBoxStaffShift;
     }
 }

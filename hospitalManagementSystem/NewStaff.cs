@@ -106,14 +106,22 @@ namespace hospitalManagementSystem
                 this.comboBoxDepartment.DataSource = DepartmentStaffManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
                 this.comboBoxDepartment.ValueMember = "departmentId";
+
                 //NewPatient Nationality comboBox
                 this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
+
+                //Staff shifts combobox
+                this.comboBoxStaffShift.DataSource = StaffShiftsManager.getStaffShifts();
+                this.comboBoxStaffShift.DisplayMember = "fullDetails";
+                this.comboBoxStaffShift.ValueMember = "shiftId";
+
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
+                this.comboBoxStaffShift.SelectedIndex = -1;
             }
             catch (System.Exception ex)
             {

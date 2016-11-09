@@ -48,24 +48,8 @@
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.comboBoxSex = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxHeightFt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxHeightInch = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxWeight = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.comboBoxNationality = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBoxFrom = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBoxTo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxAppTime = new System.Windows.Forms.TextBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
@@ -83,7 +67,7 @@
             this.dataGridViewPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPatient.Location = new System.Drawing.Point(12, 58);
             this.dataGridViewPatient.Name = "dataGridViewPatient";
-            this.dataGridViewPatient.Size = new System.Drawing.Size(1544, 150);
+            this.dataGridViewPatient.Size = new System.Drawing.Size(1494, 150);
             this.dataGridViewPatient.TabIndex = 0;
             this.dataGridViewPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPatient_CellContentClick);
             // 
@@ -198,7 +182,7 @@
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(402, 234);
+            this.textBoxLastName.Location = new System.Drawing.Point(471, 234);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(177, 20);
             this.textBoxLastName.TabIndex = 14;
@@ -233,7 +217,7 @@
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(402, 260);
+            this.textBoxAge.Location = new System.Drawing.Point(471, 260);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(177, 20);
             this.textBoxAge.TabIndex = 18;
@@ -245,7 +229,7 @@
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(402, 286);
+            this.comboBoxSex.Location = new System.Drawing.Point(471, 286);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(177, 21);
             this.comboBoxSex.TabIndex = 21;
@@ -258,54 +242,6 @@
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 20;
             this.label6.Text = "Sex:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(859, 320);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 13);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Height (In Feet):";
-            // 
-            // textBoxHeightFt
-            // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(948, 317);
-            this.textBoxHeightFt.Name = "textBoxHeightFt";
-            this.textBoxHeightFt.Size = new System.Drawing.Size(177, 20);
-            this.textBoxHeightFt.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(847, 240);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 13);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Height (In Inches):";
-            // 
-            // textBoxHeightInch
-            // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(948, 237);
-            this.textBoxHeightInch.Name = "textBoxHeightInch";
-            this.textBoxHeightInch.Size = new System.Drawing.Size(177, 20);
-            this.textBoxHeightInch.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(859, 346);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Weight:";
-            // 
-            // textBoxWeight
-            // 
-            this.textBoxWeight.Location = new System.Drawing.Point(948, 343);
-            this.textBoxWeight.Name = "textBoxWeight";
-            this.textBoxWeight.Size = new System.Drawing.Size(177, 20);
-            this.textBoxWeight.TabIndex = 26;
             // 
             // label10
             // 
@@ -323,102 +259,20 @@
             this.textBoxPhone.Size = new System.Drawing.Size(177, 20);
             this.textBoxPhone.TabIndex = 28;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(859, 372);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Email:";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(948, 369);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(177, 20);
-            this.textBoxEmail.TabIndex = 30;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(847, 266);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 13);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Address:";
-            // 
-            // textBoxAddress
-            // 
-            this.textBoxAddress.Location = new System.Drawing.Point(948, 263);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(177, 20);
-            this.textBoxAddress.TabIndex = 34;
-            // 
-            // comboBoxNationality
-            // 
-            this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(948, 394);
-            this.comboBoxNationality.Name = "comboBoxNationality";
-            this.comboBoxNationality.Size = new System.Drawing.Size(177, 21);
-            this.comboBoxNationality.TabIndex = 37;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(859, 398);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 13);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Nationality:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(847, 292);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(33, 13);
-            this.label14.TabIndex = 39;
-            this.label14.Text = "From:";
-            // 
-            // textBoxFrom
-            // 
-            this.textBoxFrom.Location = new System.Drawing.Point(948, 289);
-            this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.Size = new System.Drawing.Size(177, 20);
-            this.textBoxFrom.TabIndex = 38;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(859, 424);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 13);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "To:";
-            // 
-            // textBoxTo
-            // 
-            this.textBoxTo.Location = new System.Drawing.Point(948, 421);
-            this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.Size = new System.Drawing.Size(177, 20);
-            this.textBoxTo.TabIndex = 40;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(301, 317);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 13);
+            this.label16.Size = new System.Drawing.Size(158, 13);
             this.label16.TabIndex = 43;
-            this.label16.Text = "Appointment Time:";
+            this.label16.Text = "Appointment Time (HH:MM:SS):";
             // 
             // textBoxAppTime
             // 
-            this.textBoxAppTime.Location = new System.Drawing.Point(402, 313);
-            this.textBoxAppTime.Multiline = true;
+            this.textBoxAppTime.Location = new System.Drawing.Point(471, 313);
             this.textBoxAppTime.Name = "textBoxAppTime";
-            this.textBoxAppTime.Size = new System.Drawing.Size(177, 78);
+            this.textBoxAppTime.Size = new System.Drawing.Size(177, 20);
             this.textBoxAppTime.TabIndex = 42;
             // 
             // buttonSubmit
@@ -437,9 +291,9 @@
             // dataGridViewDoctor
             // 
             this.dataGridViewDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDoctor.Location = new System.Drawing.Point(591, 234);
+            this.dataGridViewDoctor.Location = new System.Drawing.Point(697, 237);
             this.dataGridViewDoctor.Name = "dataGridViewDoctor";
-            this.dataGridViewDoctor.Size = new System.Drawing.Size(250, 262);
+            this.dataGridViewDoctor.Size = new System.Drawing.Size(344, 262);
             this.dataGridViewDoctor.TabIndex = 47;
             this.dataGridViewDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellContentClick);
             // 
@@ -483,6 +337,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1666, 799);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBoxDoctor);
@@ -492,24 +347,8 @@
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBoxAppTime);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBoxTo);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBoxFrom);
-            this.Controls.Add(this.comboBoxNationality);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBoxAddress);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxPhone);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxWeight);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxHeightInch);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxHeightFt);
             this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -562,24 +401,8 @@
         private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.ComboBox comboBoxSex;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxHeightFt;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxHeightInch;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxWeight;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.ComboBox comboBoxNationality;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxFrom;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBoxTo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxAppTime;
         private System.Windows.Forms.Button buttonSubmit;

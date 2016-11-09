@@ -38,6 +38,17 @@ namespace hospitalManagementSystem
                 dataGridViewPatient.DataSource = dt;
             }
         }
+        private void clearData()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            textBoxPhone.Text = "";
+            textBoxAge.Text = "";
+            textBoxDoctor.Text = "";
+            textBoxAppTime.Text = "";
+            comboBoxSex.SelectedIndex = -1;
+            comboBoxDepartment.SelectedIndex = -1;
+        }
         // clear textBoxSearch Id, Name, Phone
         private void clearSearchBoxes()
         {
@@ -170,6 +181,7 @@ namespace hospitalManagementSystem
         {
             try
             {
+
                 Appointment app = new Appointment();
                 app.firstName = this.textBoxFirstName.Text;
                 app.lastName = this.textBoxLastName.Text;
@@ -177,11 +189,13 @@ namespace hospitalManagementSystem
                 app.age = Convert.ToInt32(this.textBoxAge.Text);
                 app.doctorId = docId;
                 app.sex = this.comboBoxSex.Text;
-                app.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                app.phone = Convert.ToInt64(this.textBoxPhone.Text);        
                 app.appTime = TimeSpan.Parse(this.textBoxAppTime.Text);
                 app.patientId = patId;
                 AppointmentManager.appointmentSave(app);
                 MessageBox.Show("Success");
+                clearSearchBoxes();
+                clearData();
             }
             catch(System.Exception ex)
             {

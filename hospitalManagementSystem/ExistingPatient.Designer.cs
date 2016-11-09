@@ -65,7 +65,9 @@
             this.textBoxFrom = new System.Windows.Forms.TextBox();
             this.labelTo = new System.Windows.Forms.Label();
             this.textBoxTo = new System.Windows.Forms.TextBox();
+            this.dataGridViewAppointmentHistory = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPhone
@@ -254,7 +256,6 @@
             // 
             // comboBoxDepartment
             // 
-            this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(125, 276);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
@@ -407,11 +408,22 @@
             this.textBoxTo.Size = new System.Drawing.Size(100, 20);
             this.textBoxTo.TabIndex = 43;
             // 
+            // dataGridViewAppointmentHistory
+            // 
+            this.dataGridViewAppointmentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAppointmentHistory.Location = new System.Drawing.Point(480, 189);
+            this.dataGridViewAppointmentHistory.Name = "dataGridViewAppointmentHistory";
+            this.dataGridViewAppointmentHistory.Size = new System.Drawing.Size(1064, 150);
+            this.dataGridViewAppointmentHistory.TabIndex = 44;
+            this.dataGridViewAppointmentHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointmentHistory_CellContentClick);
+            // 
             // ExistingPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1546, 837);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(1597, 837);
+            this.Controls.Add(this.dataGridViewAppointmentHistory);
             this.Controls.Add(this.labelTo);
             this.Controls.Add(this.textBoxTo);
             this.Controls.Add(this.labelFrom);
@@ -453,6 +465,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ExistingPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,5 +509,6 @@
         private System.Windows.Forms.TextBox textBoxFrom;
         private System.Windows.Forms.Label labelTo;
         private System.Windows.Forms.TextBox textBoxTo;
+        private System.Windows.Forms.DataGridView dataGridViewAppointmentHistory;
     }
 }

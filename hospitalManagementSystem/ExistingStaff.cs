@@ -14,7 +14,7 @@ namespace hospitalManagementSystem
 {
     public partial class ExistingStaff : Form
     {
-        SqlConnection con;
+        //SqlConnection con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
@@ -54,7 +54,7 @@ namespace hospitalManagementSystem
         }
         private void buttonBack_Click(object sender, EventArgs e)
         {
-         
+            this.Close();
         }
 
         private void ExistingStaff_Load(object sender, EventArgs e)
@@ -71,12 +71,17 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.DisplayMember = "nationalityName";
                 this.comboBoxNationality.ValueMember = "nationalityId";
                 this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
+                //Staff shifts combobox
+                this.comboBoxStaffShift.DataSource = StaffShiftsManager.getStaffShifts();
+                this.comboBoxStaffShift.DisplayMember = "fullDetails";
+                this.comboBoxStaffShift.ValueMember = "shiftId";
                 //sets colour for alternate rowns for dataGridViewExsitingDoctor
                 this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
+                this.comboBoxStaffShift.SelectedIndex = -1;
             }
             catch (System.Exception ex)
             {
@@ -199,13 +204,13 @@ namespace hospitalManagementSystem
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            cmd = new SqlCommand("DELETE StaffSample WHERE Id=@Id", con);
-            cmd.Connection = Common.getConnection();
-            cmd.Parameters.AddWithValue("@Id", Id);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Deleted");
-            displayStaff();
-            clearData();
+        //    cmd = new SqlCommand("DELETE StaffSample WHERE Id=@Id", con);
+        //    cmd.Connection = Common.getConnection();
+        //    cmd.Parameters.AddWithValue("@Id", Id);
+        //    cmd.ExecuteNonQuery();
+        //    MessageBox.Show("Deleted");
+        //    displayStaffShift();
+        //    clearData();
         }
     }
 }

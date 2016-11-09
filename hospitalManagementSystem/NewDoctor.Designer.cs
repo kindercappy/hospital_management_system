@@ -132,7 +132,7 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(112, 299);
+            this.textBoxAddress.Location = new System.Drawing.Point(112, 272);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
@@ -222,7 +222,7 @@
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(15, 302);
+            this.labelAddress.Location = new System.Drawing.Point(12, 275);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(48, 13);
             this.labelAddress.TabIndex = 22;
@@ -231,11 +231,11 @@
             // labelNationality
             // 
             this.labelNationality.AutoSize = true;
-            this.labelNationality.Location = new System.Drawing.Point(12, 275);
+            this.labelNationality.Location = new System.Drawing.Point(12, 301);
             this.labelNationality.Name = "labelNationality";
-            this.labelNationality.Size = new System.Drawing.Size(61, 13);
+            this.labelNationality.Size = new System.Drawing.Size(59, 13);
             this.labelNationality.TabIndex = 23;
-            this.labelNationality.Text = "Natiionality:";
+            this.labelNationality.Text = "Nationality:";
             // 
             // comboBoxDepartment
             // 
@@ -262,7 +262,7 @@
             // 
             this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(112, 272);
+            this.comboBoxNationality.Location = new System.Drawing.Point(112, 298);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 26;
@@ -270,9 +270,9 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(12, 422);
+            this.buttonBack.Location = new System.Drawing.Point(15, 392);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(200, 33);
             this.buttonBack.TabIndex = 27;
@@ -286,7 +286,7 @@
             this.buttonSubmit.FlatAppearance.BorderSize = 0;
             this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSubmit.Location = new System.Drawing.Point(12, 382);
+            this.buttonSubmit.Location = new System.Drawing.Point(15, 352);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(200, 34);
             this.buttonSubmit.TabIndex = 28;
@@ -360,7 +360,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(239, 272);
+            this.label5.Location = new System.Drawing.Point(239, 298);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 89;
@@ -379,7 +379,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 516);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(979, 718);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

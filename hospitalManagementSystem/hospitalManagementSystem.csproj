@@ -179,6 +179,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Shifts.resx">
+      <DependentUpon>Shifts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StaffShifts.resx">
       <DependentUpon>StaffShifts.cs</DependentUpon>
     </EmbeddedResource>

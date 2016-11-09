@@ -180,5 +180,52 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+        public static void appointmentSelect(Appointment app)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Appointment_Select_By_PatientId";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iPatientId = new SqlParameter("@patientId", app.patientId);
+                iPatientId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(cmd);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+        
+        public static void AppointmentInfoUpdate(Appointment app)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Appointment_Update";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //patientId Integer param
+                SqlParameter iPatientId = new SqlParameter("@patientId",app.patientId);
+                iPatientId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iPatientId);
+
+                //firstName NVarChar param
+                SqlParameter sFirstName = new SqlParameter("@firstName", app.firstName);
+                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sFirstName);
+
+                //lastName NVarChar param
+                SqlParameter sLastName = new SqlParameter("@lastNAme", app.lastName);
+                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sLastName);
+
+                //phone BigInt param
+                SqlParameter bPhone = new SqlParameter("@phone", app.phone);
+                bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+                cmd.Parameters.Add(bPhone);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

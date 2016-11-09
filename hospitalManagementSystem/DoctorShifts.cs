@@ -17,7 +17,6 @@ namespace hospitalManagementSystem
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
-        int IdDoc = 0;
         int IdShift = 0;
         public DoctorShifts()
         {
@@ -72,10 +71,10 @@ namespace hospitalManagementSystem
             DoctorShiftsHL docshi = new DoctorShiftsHL();
             try
             {
-                docshi.shiftsName = textBoxShiftsName.Text;
+                docshi.shiftName = textBoxShiftsName.Text;
                 docshi.from = TimeSpan.Parse(textBoxFrom.Text);
                 docshi.to = TimeSpan.Parse(textBoxTo.Text);
-                DoctorShiftsManager.doctorShiftsSave(docshi);
+                DoctorShiftsManager.doctorShiftSave(docshi);
                 MessageBox.Show("Success");
                 displayDataShifts();
             }
@@ -104,11 +103,11 @@ namespace hospitalManagementSystem
             DoctorShiftsHL docshi = new DoctorShiftsHL();
             try
             {
-                docshi.shiftsId = IdShift;
-                docshi.shiftsName = textBoxShiftsName.Text;
+                docshi.shiftId = IdShift;
+                docshi.shiftName = textBoxShiftsName.Text;
                 docshi.from = TimeSpan.Parse(textBoxFrom.Text);
                 docshi.to = TimeSpan.Parse(textBoxTo.Text);
-                DoctorShiftsManager.doctorShiftsUpdate(docshi);
+                DoctorShiftsManager.doctorShiftUpdate(docshi);
                 MessageBox.Show("Success");
                 displayDataShifts();
             }
@@ -123,8 +122,8 @@ namespace hospitalManagementSystem
             DoctorShiftsHL docshi = new DoctorShiftsHL();
             try
             {
-                docshi.shiftsId = IdShift;
-                DoctorShiftsManager.doctorShiftsDelete(docshi);
+                docshi.shiftId = IdShift;
+                DoctorShiftsManager.doctorShiftDelete(docshi);
                 MessageBox.Show("Deleted");
                 displayDataShifts();
             }

@@ -69,7 +69,7 @@ namespace hospitalManagementSystem
             //DoctorShifts Doctor Shifts comboBox
             this.comboBoxDoctorShift.DataSource = DoctorShiftsManager.getDoctorShifts();
             this.comboBoxDoctorShift.DisplayMember = "fullDetails";
-            this.comboBoxDoctorShift.ValueMember = "shiftsId";
+            this.comboBoxDoctorShift.ValueMember = "shiftId";
         }
         //dataGridView Doctor
         private void dataGridViewDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)

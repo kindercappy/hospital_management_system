@@ -81,12 +81,15 @@
             // 
             // buttonAssign
             // 
+            this.buttonAssign.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonAssign.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonAssign.ForeColor = System.Drawing.Color.Navy;
             this.buttonAssign.Location = new System.Drawing.Point(12, 587);
             this.buttonAssign.Name = "buttonAssign";
-            this.buttonAssign.Size = new System.Drawing.Size(209, 23);
+            this.buttonAssign.Size = new System.Drawing.Size(200, 34);
             this.buttonAssign.TabIndex = 3;
             this.buttonAssign.Text = "Assign";
-            this.buttonAssign.UseVisualStyleBackColor = true;
+            this.buttonAssign.UseVisualStyleBackColor = false;
             this.buttonAssign.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // labelHeightFeet
@@ -399,6 +402,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1602, 831);
             this.Controls.Add(this.labelShift);
             this.Controls.Add(this.buttonShiftRefresh);

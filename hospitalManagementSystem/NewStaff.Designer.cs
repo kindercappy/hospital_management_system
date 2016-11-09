@@ -60,10 +60,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.labelTo = new System.Windows.Forms.Label();
-            this.textBoxTo = new System.Windows.Forms.TextBox();
-            this.labelFrom = new System.Windows.Forms.Label();
-            this.textBoxFrom = new System.Windows.Forms.TextBox();
+            this.labelDoctorShift = new System.Windows.Forms.Label();
+            this.comboBoxStaffShift = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -259,11 +257,11 @@
             // buttonBack
             // 
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(15, 423);
+            this.buttonBack.Location = new System.Drawing.Point(15, 392);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(218, 40);
+            this.buttonBack.Size = new System.Drawing.Size(200, 34);
             this.buttonBack.TabIndex = 27;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = false;
@@ -272,11 +270,11 @@
             // buttonSubmit
             // 
             this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSubmit.Location = new System.Drawing.Point(15, 377);
+            this.buttonSubmit.Location = new System.Drawing.Point(15, 352);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(218, 40);
+            this.buttonSubmit.Size = new System.Drawing.Size(200, 34);
             this.buttonSubmit.TabIndex = 28;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -348,47 +346,32 @@
             this.label5.TabIndex = 37;
             this.label5.Text = "*";
             // 
-            // labelTo
+            // labelDoctorShift
             // 
-            this.labelTo.AutoSize = true;
-            this.labelTo.Location = new System.Drawing.Point(12, 354);
-            this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(76, 13);
-            this.labelTo.TabIndex = 41;
-            this.labelTo.Text = "To (hh:mm:ss):";
+            this.labelDoctorShift.AutoSize = true;
+            this.labelDoctorShift.Location = new System.Drawing.Point(12, 328);
+            this.labelDoctorShift.Name = "labelDoctorShift";
+            this.labelDoctorShift.Size = new System.Drawing.Size(56, 13);
+            this.labelDoctorShift.TabIndex = 85;
+            this.labelDoctorShift.Text = "Staff Shift:";
             // 
-            // textBoxTo
+            // comboBoxStaffShift
             // 
-            this.textBoxTo.Location = new System.Drawing.Point(112, 351);
-            this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTo.TabIndex = 40;
-            // 
-            // labelFrom
-            // 
-            this.labelFrom.AutoSize = true;
-            this.labelFrom.Location = new System.Drawing.Point(12, 328);
-            this.labelFrom.Name = "labelFrom";
-            this.labelFrom.Size = new System.Drawing.Size(86, 13);
-            this.labelFrom.TabIndex = 39;
-            this.labelFrom.Text = "From (hh:mm:ss):";
-            // 
-            // textBoxFrom
-            // 
-            this.textBoxFrom.Location = new System.Drawing.Point(112, 325);
-            this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.Size = new System.Drawing.Size(100, 20);
-            this.textBoxFrom.TabIndex = 38;
+            this.comboBoxStaffShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStaffShift.FormattingEnabled = true;
+            this.comboBoxStaffShift.Location = new System.Drawing.Point(112, 325);
+            this.comboBoxStaffShift.Name = "comboBoxStaffShift";
+            this.comboBoxStaffShift.Size = new System.Drawing.Size(253, 21);
+            this.comboBoxStaffShift.TabIndex = 84;
             // 
             // NewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(979, 718);
-            this.Controls.Add(this.labelTo);
-            this.Controls.Add(this.textBoxTo);
-            this.Controls.Add(this.labelFrom);
-            this.Controls.Add(this.textBoxFrom);
+            this.Controls.Add(this.labelDoctorShift);
+            this.Controls.Add(this.comboBoxStaffShift);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -465,9 +448,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labelTo;
-        private System.Windows.Forms.TextBox textBoxTo;
-        private System.Windows.Forms.Label labelFrom;
-        private System.Windows.Forms.TextBox textBoxFrom;
+        private System.Windows.Forms.Label labelDoctorShift;
+        private System.Windows.Forms.ComboBox comboBoxStaffShift;
     }
 }
