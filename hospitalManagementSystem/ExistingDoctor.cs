@@ -53,6 +53,11 @@ namespace hospitalManagementSystem
             textBoxEmail.Text = "";
             textBoxAddress.Text = "";
             Id = 0;
+            comboBoxDepartment.SelectedIndex = -1;
+            comboBoxDoctorShift.SelectedIndex = -1;
+            comboBoxNationality.SelectedIndex = -1;
+            comboBoxSex.SelectedIndex = -1;
+
         }
 
 

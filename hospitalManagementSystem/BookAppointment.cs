@@ -19,6 +19,7 @@ namespace hospitalManagementSystem
         //DataTable dt = new DataTable();
         int patId = 0;
         int docId = 0;
+        int docNewId = 0;
         public BookAppointment()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace hospitalManagementSystem
                 dataGridViewPatient.DataSource = dt;
             }
         }
+        //clears data from boxes
         private void clearData()
         {
             textBoxFirstName.Text = "";
@@ -56,6 +58,7 @@ namespace hospitalManagementSystem
             textBoxSearchName.Text = "";
             textBoxSearchPhone.Text = "";
         }
+
         //private void loadDoctor()
         //{
         //    using (SqlCommand cmd = new SqlCommand())
@@ -75,7 +78,7 @@ namespace hospitalManagementSystem
         //        dataGridViewPatient.DataSource = dt;
         //    }
         //}
-        
+
         private void BookAppointment_Load(object sender, EventArgs e)
         {
             //displaying Patient list in dataGridViewPatient
@@ -84,91 +87,109 @@ namespace hospitalManagementSystem
             this.comboBoxDepartment.DisplayMember = "departmentName";
             this.comboBoxDepartment.ValueMember = "departmentId";
             this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
+            //ExistingDoctor Nationality comboBox
+            this.comboBoxNewNationality.DisplayMember = "nationalityName";
+            this.comboBoxNewNationality.ValueMember = "nationalityId";
+            this.comboBoxNewNationality.DataSource = NationalityManager.getNationalityList();
             //dataGridViewDoctor alternateRow colorChanged
             this.dataGridViewDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
             //dataGridViewPatient alternateRow colorChanged
             this.dataGridViewPatient.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
-            //comboBoxDepartment 
+            //comboBox
             this.comboBoxDepartment.SelectedIndex = -1;
+            this.comboBoxNewNationality.SelectedIndex = -1;
             //textBoxTime scrollBars
-            textBoxAppTime.ScrollBars=ScrollBars.Vertical;
+            textBoxAppTime.ScrollBars = ScrollBars.Vertical;
             //dataGridViewDoctor is Visible = False
             this.dataGridViewDoctor.Visible = false;
+
         }
 
         //button Search onClick event
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            if (textBoxSearchId.Text.Length > 0 || textBoxSearchName.Text.Length > 0 || textBoxSearchPhone.Text.Length > 0)
+            try
             {
-                //Search by Id
-                if (textBoxSearchId.Text.Length > 0)
+                if (textBoxSearchId.Text.Length > 0 || textBoxSearchName.Text.Length > 0 || textBoxSearchPhone.Text.Length > 0)
                 {
-                    using (SqlCommand cmd = new SqlCommand())
-                    using (SqlDataAdapter da = new SqlDataAdapter())
-                    using (DataTable dt = new DataTable())
+                    //Search by Id
+                    if (textBoxSearchId.Text.Length > 0)
                     {
-                        cmd.Connection = Common.getConnection();
-                        cmd.CommandText = "Patient_Search_Id";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Patient_Search_Id";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        SqlParameter iPatientId = new SqlParameter("@patientId", this.textBoxSearchId.Text);
-                        iPatientId.SqlDbType = SqlDbType.Int;
-                        cmd.Parameters.Add(iPatientId);
-                        da.SelectCommand = cmd;
-                        da.Fill(dt);
-                        dataGridViewPatient.DataSource = dt;
-                        clearSearchBoxes();
+                            SqlParameter iPatientId = new SqlParameter("@patientId", this.textBoxSearchId.Text);
+                            iPatientId.SqlDbType = SqlDbType.Int;
+                            cmd.Parameters.Add(iPatientId);
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewPatient.DataSource = dt;
+                            clearSearchBoxes();
+                        }
+                    }
+                    //Search by Name
+                    if (textBoxSearchName.Text.Length > 0)
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Patient_Search_Name";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            SqlParameter sFirstName = new SqlParameter("@firstName", this.textBoxSearchName.Text);
+                            sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                            cmd.Parameters.Add(sFirstName);
+
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewPatient.DataSource = dt;
+                            clearSearchBoxes();
+                        }
+                    }
+                    //Search by Phone
+                    if (textBoxSearchPhone.Text.Length > 0)
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Patient_Search_Phone";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            SqlParameter bPhone = new SqlParameter("@phone", this.textBoxSearchPhone.Text);
+                            bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+                            cmd.Parameters.Add(bPhone);
+
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewPatient.DataSource = dt;
+                            clearSearchBoxes();
+                        }
                     }
                 }
-                //Search by Name
-                if (textBoxSearchName.Text.Length > 0)
+
+
+
+
+                else
                 {
-                    using (SqlCommand cmd = new SqlCommand())
-                    using (SqlDataAdapter da = new SqlDataAdapter())
-                    using (DataTable dt = new DataTable())
-                    {
-                        cmd.Connection = Common.getConnection();
-                        cmd.CommandText = "Patient_Search_Name";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                        SqlParameter sFirstName = new SqlParameter("@firstName", this.textBoxSearchName.Text);
-                        sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                        cmd.Parameters.Add(sFirstName);
-
-                        da.SelectCommand = cmd;
-                        da.Fill(dt);
-                        dataGridViewPatient.DataSource = dt;
-                        clearSearchBoxes();
-                    }
-                }
-                //Search by Phone
-                if (textBoxSearchPhone.Text.Length > 0)
-                {
-                    using (SqlCommand cmd = new SqlCommand())
-                    using (SqlDataAdapter da = new SqlDataAdapter())
-                    using (DataTable dt = new DataTable())
-                    {
-                        cmd.Connection = Common.getConnection();
-                        cmd.CommandText = "Patient_Search_Phone";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                        SqlParameter bPhone = new SqlParameter("@phone", this.textBoxSearchPhone.Text);
-                        bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
-                        cmd.Parameters.Add(bPhone);
-
-                        da.SelectCommand = cmd;
-                        da.Fill(dt);
-                        dataGridViewPatient.DataSource = dt;
-                        clearSearchBoxes();
-                    }
+                    MessageBox.Show("Please enter a value to search!");
                 }
             }
-            else
+            catch (System.Exception ex)
             {
-                MessageBox.Show("Please enter a value to search!");
+                MessageBox.Show(ex.Message);
             }
         }
+
 
         //button Refresh onClick event
         private void buttonRefresh_Click(object sender, EventArgs e)
@@ -189,15 +210,16 @@ namespace hospitalManagementSystem
                 app.age = Convert.ToInt32(this.textBoxAge.Text);
                 app.doctorId = docId;
                 app.sex = this.comboBoxSex.Text;
-                app.phone = Convert.ToInt64(this.textBoxPhone.Text);        
+                app.phone = Convert.ToInt64(this.textBoxPhone.Text);
                 app.appTime = TimeSpan.Parse(this.textBoxAppTime.Text);
                 app.patientId = patId;
                 AppointmentManager.appointmentSave(app);
                 MessageBox.Show("Success");
+                displayPatient();
                 clearSearchBoxes();
                 clearData();
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -251,6 +273,47 @@ namespace hospitalManagementSystem
         {
             docId = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
             textBoxDoctor.Text = dataGridViewDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Patient patient = new Patient();
+            try
+            {
+                patient.firstName = this.textBoxNewFirstName.Text;
+                patient.lastName = this.textBoxNewLastName.Text;
+                patient.age = Convert.ToInt32(this.textBoxNewAge.Text);
+                patient.sex = this.comboBoxNewSex.Text;
+                patient.natioinality = Int32.Parse(this.comboBoxNewNationality.SelectedValue.ToString());
+                PatientManager.patientAppSave(patient);
+                MessageBox.Show("Success");
+                displayPatient();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

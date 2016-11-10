@@ -83,11 +83,10 @@ namespace hospitalManagementSystem
             Patient patient = new Patient();
             try
             {
-                //ExistingPatient Department comboBox
+                //ExistingPatient Depertment comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
                 this.comboBoxDepartment.ValueMember = "departmentId";
-
                 //ExistingPatient Nationality comboBox
                 this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
                 this.comboBoxNationality.DisplayMember = "nationalityName";
@@ -97,10 +96,9 @@ namespace hospitalManagementSystem
                 this.dataGridViewExistingPatient.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
 
                 //Setting comboboxes to -1 index so no item apperas on load
-                this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
-
+                this.comboBoxDepartment.SelectedIndex = -1;
             }
             catch (System.Exception ex)
             {
@@ -127,7 +125,7 @@ namespace hospitalManagementSystem
                 comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[11].Value.ToString());
                 textBoxFrom.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[12].Value.ToString();
                 textBoxTo.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[13].Value.ToString();
-
+                this.comboBoxDepartment.SelectedIndex = -1;
                 
             }
             catch (System.Exception ex)
@@ -149,10 +147,7 @@ namespace hospitalManagementSystem
             {
                 str = str  + Environment.NewLine + "Last Name ";
             }
-            if (comboBoxDepartment.SelectedIndex < 0)
-            {
-                str = str + Environment.NewLine + "Department ";
-            }
+ 
             if (textBoxAge.Text =="")
             {
                 str = str + Environment.NewLine + "Age ";

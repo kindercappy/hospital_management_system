@@ -59,10 +59,6 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Last Name ";
             }
-            if (comboBoxDepartment.SelectedIndex < 0)
-            {
-                str = str + Environment.NewLine + "Department ";
-            }
             if (textBoxAge.Text == "")
             {
                 str = str + Environment.NewLine + "Age ";

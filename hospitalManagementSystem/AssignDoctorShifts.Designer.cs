@@ -73,9 +73,9 @@
             // dataGridViewDoctorShift
             // 
             this.dataGridViewDoctorShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDoctorShift.Location = new System.Drawing.Point(1194, 33);
+            this.dataGridViewDoctorShift.Location = new System.Drawing.Point(277, 274);
             this.dataGridViewDoctorShift.Name = "dataGridViewDoctorShift";
-            this.dataGridViewDoctorShift.Size = new System.Drawing.Size(342, 203);
+            this.dataGridViewDoctorShift.Size = new System.Drawing.Size(344, 203);
             this.dataGridViewDoctorShift.TabIndex = 0;
             this.dataGridViewDoctorShift.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAssignDoctorShift_CellContentClick);
             // 
@@ -114,11 +114,12 @@
             this.comboBoxDepartment.FormattingEnabled = true;
             this.comboBoxDepartment.Location = new System.Drawing.Point(121, 323);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
-            this.comboBoxDepartment.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 77;
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
@@ -127,7 +128,6 @@
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 76;
-            this.comboBoxSex.Text = "Select";
             // 
             // comboBoxNationality
             // 
@@ -232,63 +232,63 @@
             this.textBoxAddress.Location = new System.Drawing.Point(121, 532);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddress.Size = new System.Drawing.Size(121, 21);
             this.textBoxAddress.TabIndex = 64;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(121, 480);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(121, 20);
             this.textBoxEmail.TabIndex = 63;
             // 
             // textBoxWeight
             // 
             this.textBoxWeight.Location = new System.Drawing.Point(121, 454);
             this.textBoxWeight.Name = "textBoxWeight";
-            this.textBoxWeight.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWeight.Size = new System.Drawing.Size(121, 20);
             this.textBoxWeight.TabIndex = 62;
             // 
             // textBoxHeightInch
             // 
             this.textBoxHeightInch.Location = new System.Drawing.Point(121, 428);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
-            this.textBoxHeightInch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHeightInch.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightInch.TabIndex = 61;
             // 
             // textBoxHeightFt
             // 
             this.textBoxHeightFt.Location = new System.Drawing.Point(121, 402);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
-            this.textBoxHeightFt.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHeightFt.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightFt.TabIndex = 60;
             // 
             // textBoxAge
             // 
             this.textBoxAge.Location = new System.Drawing.Point(121, 350);
             this.textBoxAge.Name = "textBoxAge";
-            this.textBoxAge.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAge.Size = new System.Drawing.Size(121, 20);
             this.textBoxAge.TabIndex = 59;
             // 
             // textBoxLastName
             // 
             this.textBoxLastName.Location = new System.Drawing.Point(121, 297);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLastName.Size = new System.Drawing.Size(121, 20);
             this.textBoxLastName.TabIndex = 58;
             // 
             // textBoxFirstName
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(121, 271);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFirstName.Size = new System.Drawing.Size(121, 20);
             this.textBoxFirstName.TabIndex = 57;
             // 
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(121, 245);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPhone.Size = new System.Drawing.Size(121, 20);
             this.textBoxPhone.TabIndex = 56;
             // 
             // labelPhone
@@ -305,7 +305,7 @@
             this.dataGridViewDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDoctor.Location = new System.Drawing.Point(12, 33);
             this.dataGridViewDoctor.Name = "dataGridViewDoctor";
-            this.dataGridViewDoctor.Size = new System.Drawing.Size(1170, 203);
+            this.dataGridViewDoctor.Size = new System.Drawing.Size(1350, 203);
             this.dataGridViewDoctor.TabIndex = 79;
             this.dataGridViewDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellContentClick);
             // 
@@ -364,7 +364,7 @@
             // 
             // buttonShiftRefresh
             // 
-            this.buttonShiftRefresh.Location = new System.Drawing.Point(1462, 3);
+            this.buttonShiftRefresh.Location = new System.Drawing.Point(545, 241);
             this.buttonShiftRefresh.Name = "buttonShiftRefresh";
             this.buttonShiftRefresh.Size = new System.Drawing.Size(75, 23);
             this.buttonShiftRefresh.TabIndex = 88;
@@ -374,7 +374,7 @@
             // 
             // buttonShiftSearch
             // 
-            this.buttonShiftSearch.Location = new System.Drawing.Point(1381, 4);
+            this.buttonShiftSearch.Location = new System.Drawing.Point(464, 242);
             this.buttonShiftSearch.Name = "buttonShiftSearch";
             this.buttonShiftSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonShiftSearch.TabIndex = 87;
@@ -384,7 +384,7 @@
             // 
             // textBoxShiftSearch
             // 
-            this.textBoxShiftSearch.Location = new System.Drawing.Point(1257, 6);
+            this.textBoxShiftSearch.Location = new System.Drawing.Point(340, 244);
             this.textBoxShiftSearch.Name = "textBoxShiftSearch";
             this.textBoxShiftSearch.Size = new System.Drawing.Size(118, 20);
             this.textBoxShiftSearch.TabIndex = 86;
@@ -392,7 +392,7 @@
             // labelShift
             // 
             this.labelShift.AutoSize = true;
-            this.labelShift.Location = new System.Drawing.Point(1191, 9);
+            this.labelShift.Location = new System.Drawing.Point(274, 247);
             this.labelShift.Name = "labelShift";
             this.labelShift.Size = new System.Drawing.Size(62, 13);
             this.labelShift.TabIndex = 89;

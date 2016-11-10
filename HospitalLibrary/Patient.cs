@@ -277,6 +277,43 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+        //save patient for appointment
+        public static void patientAppSave(Patient patient)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Patient_For_Appointment_Insert";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //firstName NVarChar param
+                SqlParameter sFirstName = new SqlParameter("@firstName", patient.firstName);
+                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sFirstName);
+
+                //lastName NVarChar param
+                SqlParameter sLastName = new SqlParameter("@lastName", patient.lastName);
+                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sLastName);
+
+                //age Integer param
+                SqlParameter iAge = new SqlParameter("@age", patient.age);
+                iAge.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iAge);
+
+                //sex NVarChar param
+                SqlParameter sSex = new SqlParameter("@sex", patient.sex);
+                sSex.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sSex);
+
+                //nationalityId Integer param
+                SqlParameter iNationalityId = new SqlParameter("@nationalityId", patient.natioinality);
+                iNationalityId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iNationalityId);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
         //gets patient list
         public static List<Patient> getPatientList()
         {
