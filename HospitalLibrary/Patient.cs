@@ -418,6 +418,16 @@ namespace HospitalLibrary
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationality);
 
+                //From Time param
+                SqlParameter tFrom = new SqlParameter("@from", patient.from);
+                tFrom.SqlDbType = System.Data.SqlDbType.Time;
+                cmd.Parameters.Add(tFrom);
+
+                //To time param
+                SqlParameter tTo = new SqlParameter("@to", patient.to);
+                tTo.SqlDbType = System.Data.SqlDbType.Time;
+                cmd.Parameters.Add(tTo);
+
                 cmd.ExecuteNonQuery();
             }
         }

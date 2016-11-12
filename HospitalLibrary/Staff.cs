@@ -22,6 +22,7 @@ namespace HospitalLibrary
         private string sEmail;
         private string sAddress;
         private int iNationality;
+        private int iStaffShift;
 
 
         //Properties
@@ -180,6 +181,17 @@ namespace HospitalLibrary
                 iNationality = value;
             }
         }
+        public int staffShift
+        {
+            get
+            {
+                return iStaffShift;
+            }
+            set
+            {
+                iStaffShift = value;
+            }
+        }
     }
 
     public class StaffManager
@@ -240,7 +252,11 @@ namespace HospitalLibrary
                 SqlParameter iNationality = new SqlParameter("@nationality", staff.natioinality);
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationality);
-
+                //StaffShift
+                SqlParameter iStaffShift = new SqlParameter("@staffShift", staff.staffShift);
+                iStaffShift.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iStaffShift);
+                
                 cmd.ExecuteNonQuery();
             }
         }

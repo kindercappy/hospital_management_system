@@ -106,6 +106,7 @@ namespace hospitalManagementSystem
             textBoxEmail.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[10].Value.ToString();
             textBoxAddress.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[11].Value.ToString();
             comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[12].Value.ToString());
+            comboBoxStaffShift.SelectedValue = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[13].Value.ToString());
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)

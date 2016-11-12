@@ -18,7 +18,23 @@ namespace hospitalManagementSystem
         {
             InitializeComponent();
         }
-
+        //METHODS
+        //clear entered data
+        private void clearData()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            comboBoxDepartment.SelectedIndex = -1;
+            textBoxAge.Text = "";
+            comboBoxSex.SelectedIndex = -1;
+            textBoxHeightFt.Text = "";
+            textBoxHeightInch.Text = "";
+            textBoxWeight.Text = "";
+            textBoxPhone.Text = "";
+            comboBoxNationality.SelectedIndex = -1;
+            textBoxFrom.Text = "";
+            textBoxTo.Text = "";
+        }
         private void NewPatient_Load(object sender, EventArgs e)
         {
             try
@@ -67,9 +83,33 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Sex ";
             }
+            if (textBoxHeightFt.Text == "")
+            {
+                textBoxHeightFt.Text = "0";
+            }
+            if (textBoxHeightInch.Text == "")
+            {
+                textBoxHeightInch.Text = "0";
+            }
+            if (textBoxWeight.Text == "")
+            {
+                textBoxWeight.Text = "0";
+            }
+            if (textBoxPhone.Text == "")
+            {
+                textBoxPhone.Text = "0";
+            }
             if (comboBoxNationality.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Nationality";
+            }
+            if (textBoxFrom.Text == "")
+            {
+                textBoxFrom.Text = "00:00:00";
+            }
+            if (textBoxTo.Text == "")
+            {
+                textBoxTo.Text = "00:00:00";
             }
             if (str.Length > 0)
             {
@@ -96,6 +136,7 @@ namespace hospitalManagementSystem
                     patient.to = TimeSpan.Parse(this.textBoxTo.Text);
                     PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
+                    clearData();
                 }
 
                 catch (System.Exception ex)

@@ -54,11 +54,11 @@ namespace hospitalManagementSystem
         // clear textBoxSearch Id, Name, Phone
         private void clearSearchBoxes()
         {
-            textBoxSearchId.Text = "";
             textBoxSearchName.Text = "";
+            textBoxSearchId.Text = "";
             textBoxSearchPhone.Text = "";
         }
-
+        
         //private void loadDoctor()
         //{
         //    using (SqlCommand cmd = new SqlCommand())
@@ -81,6 +81,7 @@ namespace hospitalManagementSystem
 
         private void BookAppointment_Load(object sender, EventArgs e)
         {
+            
             //displaying Patient list in dataGridViewPatient
             displayPatient();
             //Department ComboBox
@@ -110,28 +111,8 @@ namespace hospitalManagementSystem
         {
             try
             {
-                if (textBoxSearchId.Text.Length > 0 || textBoxSearchName.Text.Length > 0 || textBoxSearchPhone.Text.Length > 0)
+                if (textBoxSearchName.Text.Length > 0 || textBoxSearchId.Text.Length > 0 ||  textBoxSearchPhone.Text.Length > 0)
                 {
-                    //Search by Id
-                    if (textBoxSearchId.Text.Length > 0)
-                    {
-                        using (SqlCommand cmd = new SqlCommand())
-                        using (SqlDataAdapter da = new SqlDataAdapter())
-                        using (DataTable dt = new DataTable())
-                        {
-                            cmd.Connection = Common.getConnection();
-                            cmd.CommandText = "Patient_Search_Id";
-                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                            SqlParameter iPatientId = new SqlParameter("@patientId", this.textBoxSearchId.Text);
-                            iPatientId.SqlDbType = SqlDbType.Int;
-                            cmd.Parameters.Add(iPatientId);
-                            da.SelectCommand = cmd;
-                            da.Fill(dt);
-                            dataGridViewPatient.DataSource = dt;
-                            clearSearchBoxes();
-                        }
-                    }
                     //Search by Name
                     if (textBoxSearchName.Text.Length > 0)
                     {
@@ -146,6 +127,27 @@ namespace hospitalManagementSystem
                             SqlParameter sFirstName = new SqlParameter("@firstName", this.textBoxSearchName.Text);
                             sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
                             cmd.Parameters.Add(sFirstName);
+
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewPatient.DataSource = dt;
+                            clearSearchBoxes();
+                        }
+                    }
+                    //Search by Id
+                    if (textBoxSearchId.Text.Length > 0)
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Patient_Search_Id";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            SqlParameter iPatientId = new SqlParameter("@patientId", this.textBoxSearchId.Text);
+                            iPatientId.SqlDbType = SqlDbType.Int;
+                            cmd.Parameters.Add(iPatientId);
 
                             da.SelectCommand = cmd;
                             da.Fill(dt);
@@ -175,10 +177,6 @@ namespace hospitalManagementSystem
                         }
                     }
                 }
-
-
-
-
                 else
                 {
                     MessageBox.Show("Please enter a value to search!");

@@ -144,12 +144,27 @@ namespace hospitalManagementSystem
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.staffShifts, this);
             panelHospitalMain.SendToBack();
         }
+        //New shift menu
+        private void newShiftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.staffShifts, this);
+            panelHospitalMain.SendToBack();
+        }
         //Assign Shifts button
         private void buttonAssignShift_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.assignStaffShifts, this);
             panelHospitalMain.SendToBack();
+            
         }
+        //Assign shifts menu
+        private void assignShiftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.assignStaffShifts, this);
+            panelHospitalMain.SendToBack();
+        }
+
+
 
         private void HospitalMain_FormClosed(object sender, FormClosedEventArgs e)
         {

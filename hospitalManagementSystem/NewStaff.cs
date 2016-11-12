@@ -86,6 +86,7 @@ namespace hospitalManagementSystem
                     staff.email = this.textBoxEmail.Text;
                     staff.address = this.textBoxAddress.Text;
                     staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    staff.staffShift = Convert.ToInt32(this.comboBoxStaffShift.SelectedValue.ToString());
                     StaffManager.staffSave(staff);
                     MessageBox.Show("Success");
                     clearData();

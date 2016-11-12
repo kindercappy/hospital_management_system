@@ -168,17 +168,18 @@ namespace hospitalManagementSystem
             if(textBoxShiftSearch.Text.Length > 0)
             {
                 using (SqlCommand cmd = new SqlCommand())
+                using (SqlDataAdapter da = new SqlDataAdapter())
+                    using(DataTable dt = new DataTable())
                 {
                     DoctorShifts docshi = new DoctorShifts();
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    DataTable dt = new DataTable();
                     cmd.Connection = Common.getConnection();
                     cmd.CommandText = "Doctor_Shift_Search";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
+                    //shift name
                     SqlParameter sShiftName = new SqlParameter("@shiftName", textBoxShiftSearch.Text);
                     sShiftName.SqlDbType = System.Data.SqlDbType.NVarChar;
                     cmd.Parameters.Add(sShiftName);
+
                     da.SelectCommand = cmd;
                     da.Fill(dt);
                     dataGridViewDoctorShift.DataSource = dt;

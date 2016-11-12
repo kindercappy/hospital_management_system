@@ -44,12 +44,16 @@ namespace hospitalManagementSystem
             textBoxFirstName.Text = "";
             textBoxLastName.Text = "";
             textBoxAge.Text = "";
+            comboBoxSex.SelectedIndex = -1;
             textBoxHeightFt.Text = "";
             textBoxHeightInch.Text = "";
             textBoxPhone.Text = "";
             textBoxWeight.Text = "";
             textBoxEmail.Text = "";
             textBoxAddress.Text = "";
+            comboBoxNationality.SelectedIndex = -1;
+            textBoxFrom.Text = "";
+            textBoxTo.Text = "";
             Id = 0;
         }
 
@@ -247,6 +251,8 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
+                    patient.from = TimeSpan.Parse(this.textBoxFrom.Text);
+                    patient.to = TimeSpan.Parse(this.textBoxTo.Text);
                     //appointment
                     appointment.patientId = Id;
                     appointment.firstName = this.textBoxFirstName.Text;

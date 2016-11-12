@@ -18,7 +18,23 @@ namespace hospitalManagementSystem
         {
             InitializeComponent();
         }
+        //METHODS
+        //clear entered data
+        private void clearData()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            comboBoxDepartment.SelectedIndex = -1;
+            textBoxAge.Text = "";
+            comboBoxSex.SelectedIndex = -1;
+            textBoxHeightFt.Text = "";
+            textBoxHeightInch.Text = "";
+            textBoxWeight.Text = "";
+            textBoxPhone.Text = "";
+            comboBoxNationality.SelectedIndex = -1;
+            comboBoxDoctorShift.SelectedIndex = -1;
 
+        }
         private void buttonBack_Click(object sender, EventArgs e)
         {
             
@@ -26,7 +42,6 @@ namespace hospitalManagementSystem
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-
             string str = "";
             if (textBoxFirstName.Text == "")
             {
@@ -48,11 +63,27 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Sex ";
             }
+            if (textBoxHeightFt.Text == "")
+            {
+                textBoxHeightFt.Text = "0";
+            }
+            if(textBoxHeightInch.Text == "")
+            {
+                textBoxHeightInch.Text = "0";
+            }
+            if (textBoxWeight.Text == "")
+            {
+                textBoxWeight.Text = "0";
+            }
+            if(textBoxPhone.Text == "")
+            {
+                textBoxPhone.Text = "0";
+            }
             if (comboBoxNationality.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Nationality";
             }
-            if(comboBoxDoctorShift.SelectedIndex < 0)
+            if (comboBoxDoctorShift.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Select a Shift";
             }
@@ -80,6 +111,7 @@ namespace hospitalManagementSystem
                     doc.shift = Int32.Parse(this.comboBoxDoctorShift.SelectedValue.ToString());
                     DoctorManager.doctorSave(doc);
                     MessageBox.Show("Success");
+                    clearData();
                 }
 
                 catch (System.Exception ex)

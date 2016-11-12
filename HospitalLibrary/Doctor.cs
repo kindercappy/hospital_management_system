@@ -229,27 +229,27 @@ namespace HospitalLibrary
                 //HeightFt
                 SqlParameter iHeightFt = new SqlParameter("@heightFt", doc.heightFt);
                 iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightFt);
+                cmd.Parameters.Add(iHeightFt).Value=DBNull.Value;
                 //HeightInches
                 SqlParameter iHeightInch = new SqlParameter("@heightInch", doc.heightInch);
                 iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightInch);
+                cmd.Parameters.Add(iHeightInch).Value = DBNull.Value;
                 //Weight
                 SqlParameter iWeight = new SqlParameter("@weight", doc.weight);
                 iWeight.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iWeight);
+                cmd.Parameters.Add(iWeight).Value = DBNull.Value;
                 //Phone
                 SqlParameter iPhone = new SqlParameter("@phone", doc.phone);
                 iPhone.SqlDbType = System.Data.SqlDbType.BigInt;
-                cmd.Parameters.Add(iPhone);
+                cmd.Parameters.Add(iPhone).Value = DBNull.Value;
                 //Email
                 SqlParameter sEmail = new SqlParameter("@email", doc.email);
                 iPhone.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sEmail);
+                cmd.Parameters.Add(sEmail).Value = DBNull.Value;
                 //Address
                 SqlParameter sAddress = new SqlParameter("@address", doc.address);
                 sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sAddress);
+                cmd.Parameters.Add(sAddress).Value = DBNull.Value;
                 //Nationality
                 SqlParameter iNationality = new SqlParameter("@nationality", doc.natioinality);
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
@@ -258,7 +258,7 @@ namespace HospitalLibrary
                 //doctorShift Integer param
                 SqlParameter iDoctorShift = new SqlParameter("@doctorShift", doc.shift);
                 iDoctorShift.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDoctorShift);
+                cmd.Parameters.Add(iDoctorShift).Value = DBNull.Value;
 
                 cmd.ExecuteNonQuery();
             }

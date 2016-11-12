@@ -119,7 +119,7 @@ namespace hospitalManagementSystem
                     da.SelectCommand = cmd;
                     da.Fill(dt);
                     dataGridViewExistingDoctor.DataSource = dt;
-                    //displayDoctor();
+                    //displayStaff();
                 }
             }
             else
