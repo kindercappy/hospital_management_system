@@ -299,6 +299,7 @@
             this.dataGridViewExistingPatient.Name = "dataGridViewExistingPatient";
             this.dataGridViewExistingPatient.Size = new System.Drawing.Size(1467, 150);
             this.dataGridViewExistingPatient.TabIndex = 29;
+            this.dataGridViewExistingPatient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingPatient_CellClick);
             this.dataGridViewExistingPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingPatient_CellContentClick);
             // 
             // buttonInsert
@@ -426,6 +427,7 @@
             this.dataGridViewAppointmentHistory.Name = "dataGridViewAppointmentHistory";
             this.dataGridViewAppointmentHistory.Size = new System.Drawing.Size(1073, 150);
             this.dataGridViewAppointmentHistory.TabIndex = 44;
+            this.dataGridViewAppointmentHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointmentHistory_CellClick);
             this.dataGridViewAppointmentHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointmentHistory_CellContentClick);
             // 
             // label13

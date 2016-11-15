@@ -313,6 +313,7 @@
             this.dataGridViewExistingStaff.Name = "dataGridViewExistingStaff";
             this.dataGridViewExistingStaff.Size = new System.Drawing.Size(1338, 150);
             this.dataGridViewExistingStaff.TabIndex = 28;
+            this.dataGridViewExistingStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingStaff_CellClick);
             this.dataGridViewExistingStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingStaff_CellContentClick);
             // 
             // buttonInsert

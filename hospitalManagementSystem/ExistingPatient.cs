@@ -112,31 +112,7 @@ namespace hospitalManagementSystem
 
         private void dataGridViewExistingPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                //display data in textboxes, comboboxes when record selected in datagridview
-                Id = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[0].Value.ToString());
-                textBoxFirstName.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxLastName.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textBoxAge.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[3].Value.ToString();
-                comboBoxSex.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[4].Value.ToString();
-                textBoxHeightFt.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textBoxHeightInch.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textBoxWeight.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textBoxPhone.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[8].Value.ToString();
-                textBoxEmail.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[9].Value.ToString();
-                textBoxAddress.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[10].Value.ToString();
-                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[11].Value.ToString());
-                textBoxFrom.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[12].Value.ToString();
-                textBoxTo.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[13].Value.ToString();
-                this.comboBoxDepartment.SelectedIndex = -1;
-                
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            displayAppointment();
+            
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -328,6 +304,40 @@ namespace hospitalManagementSystem
 
         //DataGridView Appointment History CellContentClick
         private void dataGridViewAppointmentHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridViewExistingPatient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //display data in textboxes, comboboxes when record selected in datagridview
+                Id = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[0].Value.ToString());
+                textBoxFirstName.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBoxLastName.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBoxAge.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[3].Value.ToString();
+                comboBoxSex.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textBoxHeightFt.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textBoxHeightInch.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textBoxWeight.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textBoxPhone.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[8].Value.ToString();
+                textBoxEmail.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[9].Value.ToString();
+                textBoxAddress.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[10].Value.ToString();
+                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingPatient.Rows[e.RowIndex].Cells[11].Value.ToString());
+                textBoxFrom.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[12].Value.ToString();
+                textBoxTo.Text = dataGridViewExistingPatient.Rows[e.RowIndex].Cells[13].Value.ToString();
+                this.comboBoxDepartment.SelectedIndex = -1;
+
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            displayAppointment();
+        }
+
+        private void dataGridViewAppointmentHistory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewAppointmentHistory.Rows[e.RowIndex].Cells[3].Value.ToString());
         }

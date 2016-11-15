@@ -73,7 +73,9 @@
             this.dataGridViewShifts.Name = "dataGridViewShifts";
             this.dataGridViewShifts.Size = new System.Drawing.Size(340, 166);
             this.dataGridViewShifts.TabIndex = 77;
+            this.dataGridViewShifts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellClick);
             this.dataGridViewShifts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellContentClick);
+            this.dataGridViewShifts.Click += new System.EventHandler(this.dataGridViewShifts_Click);
             // 
             // buttonNewShift
             // 

@@ -258,7 +258,7 @@ namespace HospitalLibrary
                 //doctorShift Integer param
                 SqlParameter iDoctorShift = new SqlParameter("@doctorShift", doc.shift);
                 iDoctorShift.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDoctorShift).Value = DBNull.Value;
+                cmd.Parameters.Add(iDoctorShift);
 
                 cmd.ExecuteNonQuery();
             }
@@ -442,9 +442,11 @@ namespace HospitalLibrary
                 cmd.CommandText = "Doctor_Delete";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                //DoctorId Integer
                 SqlParameter iDoctorId = new SqlParameter("@doctorId", doctor.doctorId);
                 iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iDoctorId);
+
                 cmd.ExecuteNonQuery();
             }
         }

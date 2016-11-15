@@ -267,7 +267,7 @@ namespace HospitalLibrary
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
-                cmd.CommandText = "staffUpdate";
+                cmd.CommandText = "Staff_Update";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //StaffId Integer Parameter
@@ -334,9 +334,33 @@ namespace HospitalLibrary
                 SqlParameter iNationalityId = new SqlParameter("@nationalityId", staff.natioinality);
                 iNationalityId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iNationalityId);
+
+                //staffShift Integer param
+                SqlParameter iStaffShift = new SqlParameter("@staffShift", staff.staffShift);
+                iStaffShift.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iStaffShift);
+
+                cmd.ExecuteNonQuery();
             }
         }
+
         //deletes staff
+        public static void staffDelete(Staff staff)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Staff_Delete";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //StaffId Integer
+                SqlParameter iStaffId = new SqlParameter("@staffId", staff.staffId);
+                iStaffId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iStaffId);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }
 

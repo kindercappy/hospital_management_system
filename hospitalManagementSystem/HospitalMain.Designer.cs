@@ -213,7 +213,7 @@
             // 
             this.makeShiftsToolStripMenuItem.Name = "makeShiftsToolStripMenuItem";
             this.makeShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.makeShiftsToolStripMenuItem.Text = "Make Shifts";
+            this.makeShiftsToolStripMenuItem.Text = "New Shifts";
             this.makeShiftsToolStripMenuItem.Click += new System.EventHandler(this.makeShiftsToolStripMenuItem_Click);
             // 
             // assignShiftsToolStripMenuItem
@@ -267,14 +267,14 @@
             // newStaffToolStripMenuItem
             // 
             this.newStaffToolStripMenuItem.Name = "newStaffToolStripMenuItem";
-            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.newStaffToolStripMenuItem.Text = "New Staff";
             this.newStaffToolStripMenuItem.Click += new System.EventHandler(this.newStaffToolStripMenuItem_Click);
             // 
             // existingStaffToolStripMenuItem
             // 
             this.existingStaffToolStripMenuItem.Name = "existingStaffToolStripMenuItem";
-            this.existingStaffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.existingStaffToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.existingStaffToolStripMenuItem.Text = "Existing Staff";
             this.existingStaffToolStripMenuItem.Click += new System.EventHandler(this.existingStaffToolStripMenuItem_Click);
             // 
@@ -285,25 +285,25 @@
             this.toolStripSeparator1,
             this.assignShiftToolStripMenuItem});
             this.shiftsToolStripMenuItem.Name = "shiftsToolStripMenuItem";
-            this.shiftsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shiftsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.shiftsToolStripMenuItem.Text = "Shift";
             // 
             // newShiftToolStripMenuItem
             // 
             this.newShiftToolStripMenuItem.Name = "newShiftToolStripMenuItem";
-            this.newShiftToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newShiftToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.newShiftToolStripMenuItem.Text = "New Shift";
             this.newShiftToolStripMenuItem.Click += new System.EventHandler(this.newShiftToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // assignShiftToolStripMenuItem
             // 
             this.assignShiftToolStripMenuItem.Name = "assignShiftToolStripMenuItem";
-            this.assignShiftToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.assignShiftToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.assignShiftToolStripMenuItem.Text = "Assign Shift";
             this.assignShiftToolStripMenuItem.Click += new System.EventHandler(this.assignShiftToolStripMenuItem_Click);
             // 

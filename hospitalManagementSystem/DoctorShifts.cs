@@ -21,9 +21,7 @@ namespace hospitalManagementSystem
         public DoctorShifts()
         {
             InitializeComponent();
-            displayDoctor();
-            displayDataShifts();
-            this.dataGridViewShifts.Columns[0].Visible = false;
+            
         }
         //METHODS
 
@@ -58,7 +56,11 @@ namespace hospitalManagementSystem
 
         private void DoctorShifts_Load(object sender, EventArgs e)
         {
-            
+            displayDoctor();
+            displayDataShifts();
+            this.dataGridViewShifts.Columns[0].Visible = false;
+            //sets alternate color of datagridviewshifts
+            this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
         }
 
         private void dataGridViewDoctorShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -87,10 +89,7 @@ namespace hospitalManagementSystem
 
         private void dataGridViewShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            IdShift = Convert.ToInt32(dataGridViewShifts.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBoxShiftsName.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxFrom.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBoxTo.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[3].Value.ToString();
+            
         }
 
         private void comboBoxShifts_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,6 +125,21 @@ namespace hospitalManagementSystem
                 DoctorShiftsManager.doctorShiftDelete(docshi);
                 MessageBox.Show("Deleted");
                 displayDataShifts();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridViewShifts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                IdShift = Convert.ToInt32(dataGridViewShifts.Rows[e.RowIndex].Cells[0].Value.ToString());
+                textBoxShiftsName.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBoxFrom.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBoxTo.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
             catch(System.Exception ex)
             {

@@ -74,8 +74,10 @@ namespace hospitalManagementSystem
                 this.comboBoxStaffShift.DataSource = StaffShiftsManager.getStaffShifts();
                 this.comboBoxStaffShift.DisplayMember = "fullDetails";
                 this.comboBoxStaffShift.ValueMember = "shiftId";
-                //sets colour for alternate rowns for dataGridViewExsitingDoctor
+                //sets colour for alternate rowns for dataGridViewStaff
                 this.dataGridViewStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+                //sets colour for laternate rows for datagridviewstaffshift
+                this.dataGridViewStaffShift.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
@@ -87,23 +89,10 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
         private void dataGridViewStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            staffId = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBoxFirstName.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxLastName.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
-            comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[3].Value.ToString());
-            textBoxAge.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
-            comboBoxSex.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
-            textBoxHeightFt.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
-            textBoxHeightInch.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[7].Value.ToString();
-            textBoxWeight.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[8].Value.ToString();
-            textBoxPhone.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[9].Value.ToString();
-            textBoxEmail.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[10].Value.ToString();
-            textBoxAddress.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[11].Value.ToString();
-            comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[12].Value.ToString());
-            comboBoxStaffShift.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[13].Value.ToString());
+            
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -222,6 +211,36 @@ namespace hospitalManagementSystem
         private void buttonShiftRefresh_Click(object sender, EventArgs e)
         {
             displayShifts();
+        }
+
+        private void dataGridViewStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                staffId = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[0].Value.ToString());
+                textBoxFirstName.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBoxLastName.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
+                comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[3].Value.ToString());
+                textBoxAge.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
+                comboBoxSex.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textBoxHeightFt.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textBoxHeightInch.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textBoxWeight.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[8].Value.ToString();
+                textBoxPhone.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[9].Value.ToString();
+                textBoxEmail.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[10].Value.ToString();
+                textBoxAddress.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[11].Value.ToString();
+                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[12].Value.ToString());
+                comboBoxStaffShift.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[13].Value.ToString());
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridViewStaffShift_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -168,6 +168,7 @@
             this.dataGridViewStaff.Name = "dataGridViewStaff";
             this.dataGridViewStaff.Size = new System.Drawing.Size(1350, 203);
             this.dataGridViewStaff.TabIndex = 116;
+            this.dataGridViewStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaff_CellClick);
             this.dataGridViewStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaff_CellContentClick);
             // 
             // label1
@@ -403,6 +404,7 @@
             this.dataGridViewStaffShift.Name = "dataGridViewStaffShift";
             this.dataGridViewStaffShift.Size = new System.Drawing.Size(344, 203);
             this.dataGridViewStaffShift.TabIndex = 90;
+            this.dataGridViewStaffShift.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaffShift_CellContentClick);
             // 
             // labelSearchPhone
             // 

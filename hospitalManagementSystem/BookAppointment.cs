@@ -258,19 +258,13 @@ namespace hospitalManagementSystem
         //dataGridViewPateint cellContentClick
         private void dataGridViewPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            patId = Convert.ToInt32(dataGridViewPatient.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBoxFirstName.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxLastName.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBoxAge.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[3].Value.ToString();
-            textBoxPhone.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[8].Value.ToString();
-            comboBoxSex.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[4].Value.ToString();
+            
         }
 
         //dataGridView cellContentClick
         private void dataGridViewDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            docId = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBoxDoctor.Text = dataGridViewDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -282,8 +276,16 @@ namespace hospitalManagementSystem
                 patient.lastName = this.textBoxNewLastName.Text;
                 patient.age = Convert.ToInt32(this.textBoxNewAge.Text);
                 patient.sex = this.comboBoxNewSex.Text;
+                patient.heightFt = Convert.ToInt32("0");
+                patient.heightInch = Convert.ToInt32("0");
+                patient.weight = Convert.ToInt32("0");
+                patient.phone = Convert.ToInt64("0");
+                patient.email = null;
+                patient.address = null;
                 patient.natioinality = Int32.Parse(this.comboBoxNewNationality.SelectedValue.ToString());
-                PatientManager.patientAppSave(patient);
+                
+
+                PatientManager.patientSave(patient);
                 MessageBox.Show("Success");
                 displayPatient();
             }
@@ -311,6 +313,36 @@ namespace hospitalManagementSystem
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void dataGridViewPatient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                patId = Convert.ToInt32(dataGridViewPatient.Rows[e.RowIndex].Cells[0].Value.ToString());
+                textBoxFirstName.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBoxLastName.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBoxAge.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBoxPhone.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[8].Value.ToString();
+                comboBoxSex.Text = dataGridViewPatient.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridViewDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                docId = Convert.ToInt32(dataGridViewDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
+                textBoxDoctor.Text = dataGridViewDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

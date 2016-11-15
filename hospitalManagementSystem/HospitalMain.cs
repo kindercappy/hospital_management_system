@@ -167,7 +167,7 @@ namespace hospitalManagementSystem
 
 
         private void HospitalMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
+        {  
 
         }
 

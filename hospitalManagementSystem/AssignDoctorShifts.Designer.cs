@@ -58,14 +58,18 @@
             this.dataGridViewDoctor = new System.Windows.Forms.DataGridView();
             this.comboBoxDoctorShift = new System.Windows.Forms.ComboBox();
             this.labelDoctorShift = new System.Windows.Forms.Label();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.labelUser = new System.Windows.Forms.Label();
             this.buttonShiftRefresh = new System.Windows.Forms.Button();
             this.buttonShiftSearch = new System.Windows.Forms.Button();
             this.textBoxShiftSearch = new System.Windows.Forms.TextBox();
             this.labelShift = new System.Windows.Forms.Label();
+            this.labelSearchPhone = new System.Windows.Forms.Label();
+            this.textBoxSearchPhone = new System.Windows.Forms.TextBox();
+            this.labelSearchId = new System.Windows.Forms.Label();
+            this.textBoxSearchId = new System.Windows.Forms.TextBox();
+            this.labelSearchName = new System.Windows.Forms.Label();
+            this.textBoxSearchName = new System.Windows.Forms.TextBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctorShift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +81,7 @@
             this.dataGridViewDoctorShift.Name = "dataGridViewDoctorShift";
             this.dataGridViewDoctorShift.Size = new System.Drawing.Size(344, 203);
             this.dataGridViewDoctorShift.TabIndex = 0;
+            this.dataGridViewDoctorShift.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctorShift_CellClick);
             this.dataGridViewDoctorShift.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAssignDoctorShift_CellContentClick);
             // 
             // buttonAssign
@@ -316,12 +321,18 @@
             // 
             // dataGridViewDoctor
             // 
+            this.dataGridViewDoctor.AllowUserToAddRows = false;
+            this.dataGridViewDoctor.AllowUserToDeleteRows = false;
             this.dataGridViewDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDoctor.Location = new System.Drawing.Point(12, 33);
             this.dataGridViewDoctor.Name = "dataGridViewDoctor";
-            this.dataGridViewDoctor.Size = new System.Drawing.Size(1350, 203);
+            this.dataGridViewDoctor.ReadOnly = true;
+            this.dataGridViewDoctor.Size = new System.Drawing.Size(1364, 150);
             this.dataGridViewDoctor.TabIndex = 79;
+            this.dataGridViewDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellClick);
             this.dataGridViewDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellContentClick);
+            this.dataGridViewDoctor.SelectionChanged += new System.EventHandler(this.dataGridViewDoctor_SelectionChanged);
+            this.dataGridViewDoctor.Click += new System.EventHandler(this.dataGridViewDoctor_Click);
             // 
             // comboBoxDoctorShift
             // 
@@ -341,49 +352,6 @@
             this.labelDoctorShift.Size = new System.Drawing.Size(79, 13);
             this.labelDoctorShift.TabIndex = 81;
             this.labelDoctorShift.Text = "Doctor Shift:";
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonRefresh.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonRefresh.ForeColor = System.Drawing.Color.Navy;
-            this.buttonRefresh.Location = new System.Drawing.Point(446, 3);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
-            this.buttonRefresh.TabIndex = 85;
-            this.buttonRefresh.Text = "Refresh";
-            this.buttonRefresh.UseVisualStyleBackColor = false;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSearch.Location = new System.Drawing.Point(290, 4);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
-            this.buttonSearch.TabIndex = 84;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Location = new System.Drawing.Point(103, 6);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(181, 20);
-            this.textBoxSearch.TabIndex = 83;
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(12, 9);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(85, 13);
-            this.labelUser.TabIndex = 82;
-            this.labelUser.Text = "User: (Name):";
             // 
             // buttonShiftRefresh
             // 
@@ -428,20 +396,101 @@
             this.labelShift.TabIndex = 89;
             this.labelShift.Text = "Shift Name:";
             // 
+            // labelSearchPhone
+            // 
+            this.labelSearchPhone.AutoSize = true;
+            this.labelSearchPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchPhone.Location = new System.Drawing.Point(389, 9);
+            this.labelSearchPhone.Name = "labelSearchPhone";
+            this.labelSearchPhone.Size = new System.Drawing.Size(91, 13);
+            this.labelSearchPhone.TabIndex = 142;
+            this.labelSearchPhone.Text = "Search Phone:";
+            // 
+            // textBoxSearchPhone
+            // 
+            this.textBoxSearchPhone.Location = new System.Drawing.Point(486, 6);
+            this.textBoxSearchPhone.Name = "textBoxSearchPhone";
+            this.textBoxSearchPhone.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchPhone.TabIndex = 141;
+            // 
+            // labelSearchId
+            // 
+            this.labelSearchId.AutoSize = true;
+            this.labelSearchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchId.Location = new System.Drawing.Point(211, 9);
+            this.labelSearchId.Name = "labelSearchId";
+            this.labelSearchId.Size = new System.Drawing.Size(68, 13);
+            this.labelSearchId.TabIndex = 140;
+            this.labelSearchId.Text = "Search ID:";
+            // 
+            // textBoxSearchId
+            // 
+            this.textBoxSearchId.Location = new System.Drawing.Point(283, 6);
+            this.textBoxSearchId.Name = "textBoxSearchId";
+            this.textBoxSearchId.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchId.TabIndex = 139;
+            // 
+            // labelSearchName
+            // 
+            this.labelSearchName.AutoSize = true;
+            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchName.Location = new System.Drawing.Point(12, 9);
+            this.labelSearchName.Name = "labelSearchName";
+            this.labelSearchName.Size = new System.Drawing.Size(87, 13);
+            this.labelSearchName.TabIndex = 138;
+            this.labelSearchName.Text = "Search Name:";
+            // 
+            // textBoxSearchName
+            // 
+            this.textBoxSearchName.Location = new System.Drawing.Point(105, 6);
+            this.textBoxSearchName.Name = "textBoxSearchName";
+            this.textBoxSearchName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchName.TabIndex = 137;
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonRefresh.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonRefresh.ForeColor = System.Drawing.Color.Navy;
+            this.buttonRefresh.Location = new System.Drawing.Point(748, 6);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
+            this.buttonRefresh.TabIndex = 136;
+            this.buttonRefresh.Text = "Reset";
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click_1);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
+            this.buttonSearch.Location = new System.Drawing.Point(592, 6);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
+            this.buttonSearch.TabIndex = 135;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click_1);
+            // 
             // AssignDoctorShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1602, 831);
+            this.Controls.Add(this.labelSearchPhone);
+            this.Controls.Add(this.textBoxSearchPhone);
+            this.Controls.Add(this.labelSearchId);
+            this.Controls.Add(this.textBoxSearchId);
+            this.Controls.Add(this.labelSearchName);
+            this.Controls.Add(this.textBoxSearchName);
+            this.Controls.Add(this.buttonRefresh);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.labelShift);
             this.Controls.Add(this.buttonShiftRefresh);
             this.Controls.Add(this.buttonShiftSearch);
             this.Controls.Add(this.textBoxShiftSearch);
-            this.Controls.Add(this.buttonRefresh);
-            this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.labelUser);
             this.Controls.Add(this.labelDoctorShift);
             this.Controls.Add(this.comboBoxDoctorShift);
             this.Controls.Add(this.dataGridViewDoctor);
@@ -514,13 +563,17 @@
         private System.Windows.Forms.DataGridView dataGridViewDoctor;
         private System.Windows.Forms.ComboBox comboBoxDoctorShift;
         private System.Windows.Forms.Label labelDoctorShift;
-        private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Button buttonShiftRefresh;
         private System.Windows.Forms.Button buttonShiftSearch;
         private System.Windows.Forms.TextBox textBoxShiftSearch;
         private System.Windows.Forms.Label labelShift;
+        private System.Windows.Forms.Label labelSearchPhone;
+        private System.Windows.Forms.TextBox textBoxSearchPhone;
+        private System.Windows.Forms.Label labelSearchId;
+        private System.Windows.Forms.TextBox textBoxSearchId;
+        private System.Windows.Forms.Label labelSearchName;
+        private System.Windows.Forms.TextBox textBoxSearchName;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }

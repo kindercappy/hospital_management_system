@@ -56,7 +56,7 @@ namespace hospitalManagementSystem
             comboBoxDepartment.SelectedIndex = -1;
             comboBoxDoctorShift.SelectedIndex = -1;
             comboBoxNationality.SelectedIndex = -1;
-            comboBoxSex.SelectedIndex = -1;
+            //comboBoxSex.SelectedIndex = -1;
 
         }
 
@@ -131,50 +131,61 @@ namespace hospitalManagementSystem
 
         private void dataGridViewExistingDocotor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Id = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
-            textBoxFirstName.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxLastName.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
-            comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[3].Value.ToString());
-            textBoxAge.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[4].Value.ToString();
-            comboBoxSex.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
-            textBoxHeightFt.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
-            textBoxHeightInch.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[7].Value.ToString();
-            textBoxWeight.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
-            textBoxPhone.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
-            textBoxEmail.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
-            textBoxAddress.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[11].Value.ToString();
-            comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[12].Value.ToString());
-            comboBoxDoctorShift.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
+            
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
             {
             string str = "";
-            if (textBoxFirstName.Text == "")
+            if (this.textBoxFirstName.Text == "")
             {
                 str = str + "First Name ";
             }
-            if (textBoxLastName.Text == "")
+            if (this.textBoxLastName.Text == "")
             {
                 str = str + Environment.NewLine + "Last Name ";
             }
-            if (comboBoxDepartment.SelectedIndex < 0)
+            if (this.comboBoxDepartment.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Department ";
             }
-            if (textBoxAge.Text == "")
+            if (this.textBoxAge.Text == "")
             {
                 str = str + Environment.NewLine + "Age ";
             }
-            if (comboBoxSex.SelectedIndex < 0)
+            if (this.comboBoxSex.SelectedIndex <0)
             {
                 str = str + Environment.NewLine + "Sex ";
             }
-            if (comboBoxNationality.SelectedIndex < 0)
+            if (this.comboBoxNationality.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Nationality";
             }
-            if(comboBoxDoctorShift.SelectedIndex < 0)
+            if (this.textBoxHeightFt.Text == "")
+            {
+                this.textBoxHeightFt.Text = "0";
+            }
+            if (this.textBoxHeightInch.Text == "")
+            {
+                this.textBoxHeightInch.Text = "0";
+            }
+            if (this.textBoxWeight.Text == "")
+            {
+                this.textBoxWeight.Text = "0";
+            }
+            if (this.textBoxPhone.Text == "")
+            {
+                this.textBoxPhone.Text = "0";
+            }
+            if (this.textBoxEmail.Text == "")
+            {
+                this.textBoxEmail.Text = null;
+            }
+            if (this.textBoxAddress.Text == "")
+            {
+                this.textBoxAddress.Text = null;
+            }
+            if (this.comboBoxDoctorShift.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Doctor Shift";
             }
@@ -309,6 +320,36 @@ namespace hospitalManagementSystem
         private void labelUser_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonClearTextboxes_Click(object sender, EventArgs e)
+        {
+            clearData();
+        }
+
+        private void dataGridViewExistingDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Id = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
+                textBoxFirstName.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBoxLastName.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
+                comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[3].Value.ToString());
+                textBoxAge.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[4].Value.ToString();
+                comboBoxSex.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textBoxHeightFt.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textBoxHeightInch.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textBoxWeight.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
+                textBoxPhone.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
+                textBoxEmail.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
+                textBoxAddress.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[11].Value.ToString();
+                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[12].Value.ToString());
+                comboBoxDoctorShift.SelectedValue = Int32.Parse(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
