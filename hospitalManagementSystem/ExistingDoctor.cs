@@ -39,7 +39,6 @@ namespace hospitalManagementSystem
             da.Fill(dt);
             dataGridViewExistingDoctor.DataSource = dt;
         }
-
         //clear data
         private void clearData()
         {
@@ -59,7 +58,30 @@ namespace hospitalManagementSystem
             //comboBoxSex.SelectedIndex = -1;
 
         }
-
+        private void notSortableDataGridViewExistingDoctor()
+        {
+            foreach(DataGridViewColumn col in this.dataGridViewExistingDoctor.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+        private void setdatGridViewEixsitngHeaders()
+        {
+            this.dataGridViewExistingDoctor.Columns[0].HeaderText = "Doctor ID";
+            this.dataGridViewExistingDoctor.Columns[1].HeaderText = "First Name";
+            this.dataGridViewExistingDoctor.Columns[2].HeaderText = "Last Name";
+            this.dataGridViewExistingDoctor.Columns[3].HeaderText = "Department";
+            this.dataGridViewExistingDoctor.Columns[4].HeaderText = "Age";
+            this.dataGridViewExistingDoctor.Columns[5].HeaderText = "Sex";
+            this.dataGridViewExistingDoctor.Columns[6].HeaderText = "Height (Feet)";
+            this.dataGridViewExistingDoctor.Columns[7].HeaderText = "Height (Inch)";
+            this.dataGridViewExistingDoctor.Columns[8].HeaderText = "Weight";
+            this.dataGridViewExistingDoctor.Columns[9].HeaderText = "Phone";
+            this.dataGridViewExistingDoctor.Columns[10].HeaderText = "Email";
+            this.dataGridViewExistingDoctor.Columns[11].HeaderText = "Address";
+            this.dataGridViewExistingDoctor.Columns[12].HeaderText = "Nationality ID";
+            this.dataGridViewExistingDoctor.Columns[13].HeaderText = "Doctor Shift";
+        }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {            
@@ -71,6 +93,8 @@ namespace hospitalManagementSystem
             try
             {
                 displayDoctor();
+                notSortableDataGridViewExistingDoctor();
+                setdatGridViewEixsitngHeaders();
                 this.dataGridViewExistingDoctor.Columns[0].Visible = false;
                 //ExistingDoctor Depertment comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
@@ -93,6 +117,8 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
                 this.comboBoxDoctorShift.SelectedIndex = -1;
+                //datagridview full row select
+                this.dataGridViewExistingDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }
             catch(System.Exception ex)
             {
@@ -127,11 +153,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show("Please enter details");
             }
 
-        }
-
-        private void dataGridViewExistingDocotor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -312,43 +333,36 @@ namespace hospitalManagementSystem
             displayDoctor();
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonClearTextboxes_Click(object sender, EventArgs e)
         {
             clearData();
         }
 
-        private void dataGridViewExistingDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewExistingDoctor_SelectionChanged(object sender, EventArgs e)
         {
-            try
+            if(this.dataGridViewExistingDoctor.CurrentRow != null && this.dataGridViewExistingDoctor.CurrentRow.Index != -1)
             {
-                Id = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
-                textBoxFirstName.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxLastName.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
-                comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[3].Value.ToString());
-                textBoxAge.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[4].Value.ToString();
-                comboBoxSex.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textBoxHeightFt.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textBoxHeightInch.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textBoxWeight.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
-                textBoxPhone.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
-                textBoxEmail.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
-                textBoxAddress.Text = dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[11].Value.ToString();
-                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[12].Value.ToString());
-                comboBoxDoctorShift.SelectedValue = Int32.Parse(dataGridViewExistingDoctor.Rows[e.RowIndex].Cells[13].Value.ToString());
-            }
-            catch(System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    Id = Convert.ToInt32(dataGridViewExistingDoctor.CurrentRow.Cells[0].Value.ToString());
+                    textBoxFirstName.Text = dataGridViewExistingDoctor.CurrentRow.Cells[1].Value.ToString();
+                    textBoxLastName.Text = dataGridViewExistingDoctor.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.CurrentRow.Cells[3].Value.ToString());
+                    textBoxAge.Text = dataGridViewExistingDoctor.CurrentRow.Cells[4].Value.ToString();
+                    comboBoxSex.Text = dataGridViewExistingDoctor.CurrentRow.Cells[5].Value.ToString();
+                    textBoxHeightFt.Text = dataGridViewExistingDoctor.CurrentRow.Cells[6].Value.ToString();
+                    textBoxHeightInch.Text = dataGridViewExistingDoctor.CurrentRow.Cells[7].Value.ToString();
+                    textBoxWeight.Text = dataGridViewExistingDoctor.CurrentRow.Cells[8].Value.ToString();
+                    textBoxPhone.Text = dataGridViewExistingDoctor.CurrentRow.Cells[9].Value.ToString();
+                    textBoxEmail.Text = dataGridViewExistingDoctor.CurrentRow.Cells[10].Value.ToString();
+                    textBoxAddress.Text = dataGridViewExistingDoctor.CurrentRow.Cells[11].Value.ToString();
+                    comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.CurrentRow.Cells[12].Value.ToString());
+                    comboBoxDoctorShift.SelectedValue = Int32.Parse(dataGridViewExistingDoctor.CurrentRow.Cells[13].Value.ToString());
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

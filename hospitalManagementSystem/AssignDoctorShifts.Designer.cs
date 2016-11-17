@@ -83,6 +83,7 @@
             this.dataGridViewDoctorShift.TabIndex = 0;
             this.dataGridViewDoctorShift.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctorShift_CellClick);
             this.dataGridViewDoctorShift.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAssignDoctorShift_CellContentClick);
+            this.dataGridViewDoctorShift.SelectionChanged += new System.EventHandler(this.dataGridViewDoctorShift_SelectionChanged);
             // 
             // buttonAssign
             // 

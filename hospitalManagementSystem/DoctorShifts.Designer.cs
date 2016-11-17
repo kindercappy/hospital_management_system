@@ -47,7 +47,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(498, 155);
+            this.buttonBack.Location = new System.Drawing.Point(505, 155);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(123, 23);
             this.buttonBack.TabIndex = 55;
@@ -58,7 +58,7 @@
             // 
             this.labelShiftName.AutoSize = true;
             this.labelShiftName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShiftName.Location = new System.Drawing.Point(358, 12);
+            this.labelShiftName.Location = new System.Drawing.Point(365, 12);
             this.labelShiftName.Name = "labelShiftName";
             this.labelShiftName.Size = new System.Drawing.Size(69, 13);
             this.labelShiftName.TabIndex = 58;
@@ -66,14 +66,14 @@
             // 
             // textBoxShiftsName
             // 
-            this.textBoxShiftsName.Location = new System.Drawing.Point(464, 12);
+            this.textBoxShiftsName.Location = new System.Drawing.Point(471, 12);
             this.textBoxShiftsName.Name = "textBoxShiftsName";
             this.textBoxShiftsName.Size = new System.Drawing.Size(173, 20);
             this.textBoxShiftsName.TabIndex = 59;
             // 
             // textBoxFrom
             // 
-            this.textBoxFrom.Location = new System.Drawing.Point(464, 39);
+            this.textBoxFrom.Location = new System.Drawing.Point(471, 39);
             this.textBoxFrom.Name = "textBoxFrom";
             this.textBoxFrom.Size = new System.Drawing.Size(173, 20);
             this.textBoxFrom.TabIndex = 60;
@@ -82,7 +82,7 @@
             // 
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.Location = new System.Drawing.Point(358, 42);
+            this.labelFrom.Location = new System.Drawing.Point(365, 42);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(100, 13);
             this.labelFrom.TabIndex = 61;
@@ -92,7 +92,7 @@
             // 
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(358, 72);
+            this.labelTo.Location = new System.Drawing.Point(365, 72);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(88, 13);
             this.labelTo.TabIndex = 62;
@@ -100,7 +100,7 @@
             // 
             // textBoxTo
             // 
-            this.textBoxTo.Location = new System.Drawing.Point(464, 65);
+            this.textBoxTo.Location = new System.Drawing.Point(471, 65);
             this.textBoxTo.Name = "textBoxTo";
             this.textBoxTo.Size = new System.Drawing.Size(173, 20);
             this.textBoxTo.TabIndex = 63;
@@ -110,7 +110,7 @@
             this.buttonNewShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonNewShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewShift.Location = new System.Drawing.Point(361, 126);
+            this.buttonNewShift.Location = new System.Drawing.Point(368, 126);
             this.buttonNewShift.Name = "buttonNewShift";
             this.buttonNewShift.Size = new System.Drawing.Size(123, 23);
             this.buttonNewShift.TabIndex = 64;
@@ -120,20 +120,23 @@
             // 
             // dataGridViewShifts
             // 
+            this.dataGridViewShifts.AllowUserToAddRows = false;
+            this.dataGridViewShifts.AllowUserToDeleteRows = false;
             this.dataGridViewShifts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewShifts.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewShifts.Name = "dataGridViewShifts";
-            this.dataGridViewShifts.Size = new System.Drawing.Size(340, 166);
+            this.dataGridViewShifts.ReadOnly = true;
+            this.dataGridViewShifts.Size = new System.Drawing.Size(347, 166);
             this.dataGridViewShifts.TabIndex = 65;
             this.dataGridViewShifts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellClick);
-            this.dataGridViewShifts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellContentClick);
+            this.dataGridViewShifts.SelectionChanged += new System.EventHandler(this.dataGridViewShifts_SelectionChanged);
             // 
             // buttonUpdateShift
             // 
             this.buttonUpdateShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonUpdateShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonUpdateShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonUpdateShift.Location = new System.Drawing.Point(498, 126);
+            this.buttonUpdateShift.Location = new System.Drawing.Point(505, 126);
             this.buttonUpdateShift.Name = "buttonUpdateShift";
             this.buttonUpdateShift.Size = new System.Drawing.Size(123, 23);
             this.buttonUpdateShift.TabIndex = 67;
@@ -146,7 +149,7 @@
             this.buttonDeleteShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDeleteShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonDeleteShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDeleteShift.Location = new System.Drawing.Point(361, 155);
+            this.buttonDeleteShift.Location = new System.Drawing.Point(368, 155);
             this.buttonDeleteShift.Name = "buttonDeleteShift";
             this.buttonDeleteShift.Size = new System.Drawing.Size(123, 23);
             this.buttonDeleteShift.TabIndex = 68;

@@ -58,7 +58,7 @@ namespace hospitalManagementSystem
             textBoxSearchPhone.Text = "";
         }
         // set headers of datagridviewDoctor
-        private void setHeaders()
+        private void setDataGridViewDoctorHeaders()
         {
             this.dataGridViewDoctor.Columns[0].HeaderText = "Doctor ID";
             this.dataGridViewDoctor.Columns[1].HeaderText = "First Name";
@@ -75,28 +75,26 @@ namespace hospitalManagementSystem
             this.dataGridViewDoctor.Columns[12].HeaderText = "Nationality ID";
             this.dataGridViewDoctor.Columns[13].HeaderText = "Doctor Shift ID";
         }
-        private void setHeadersDoctorShift()
+        private void setDataGridViewDoctorShiftHeaders()
         {
             this.dataGridViewDoctorShift.Columns[0].HeaderText = "Shift ID";
             this.dataGridViewDoctorShift.Columns[1].HeaderText = "Shift Name";
             this.dataGridViewDoctorShift.Columns[2].HeaderText = "From";
             this.dataGridViewDoctorShift.Columns[3].HeaderText = "To";
         }
-        private void setHeaderUnselectable()
+        private void notSortableDataGridViewDoctor()
         {
-            //this.dataGridViewDoctorShift.Rows[0].ReadOnly = true;
-            this.dataGridViewDoctor.Rows[1].ReadOnly = true;
+            
             foreach (DataGridViewColumn col in dataGridViewDoctor.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            foreach(DataGridViewRow row in dataGridViewDoctor.Rows)
-            {
-                row.ReadOnly = true;
-            }
-            dataGridViewDoctor.Rows[1].ReadOnly = false;
+            
         }
-
+        private void fullRowSelectDataGridViewDoctorShift()
+        {
+            this.dataGridViewDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
 
 
 
@@ -104,9 +102,10 @@ namespace hospitalManagementSystem
         {
             displayShifts();
             displayDoctor();
-            setHeaders();
-            setHeadersDoctorShift();
-            setHeaderUnselectable();
+            setDataGridViewDoctorHeaders();
+            setDataGridViewDoctorShiftHeaders();
+            notSortableDataGridViewDoctor();
+            fullRowSelectDataGridViewDoctorShift();
             //dataGridViewDoctor.Columns[0].Visible = false;
             //dataGridViewDoctorShift.Columns[0].Visible = false;
             //ExistingDoctor Depertment comboBox
@@ -131,9 +130,13 @@ namespace hospitalManagementSystem
             this.dataGridViewDoctor.Columns[0].Visible = false;
             //hide shift Id column
             this.dataGridViewDoctorShift.Columns[0].Visible = false;
-
-
-            this.dataGridViewDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //allowUsersToAddRows =false
+            this.dataGridViewDoctor.AllowUserToAddRows = false;
+            this.dataGridViewDoctorShift.AllowUserToAddRows = false;
+            //make datagridview readonly
+            this.dataGridViewDoctor.ReadOnly = true;
+            this.dataGridViewDoctorShift.ReadOnly = true;
+            //datagrid full row select
         }
         //dataGridView Doctor
         private void dataGridViewDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -309,23 +312,7 @@ namespace hospitalManagementSystem
 
         private void dataGridViewDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                //if (dataGridViewDoctor.CurrentRow.Index >= 0)
-                //{
-
-                
-
-                //}
-
-
-                //int rowindex = dataGridViewDoctor.CurrentRow.Index;
-                //MessageBox.Show(rowindex.ToString());
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void dataGridViewDoctor_Click(object sender, EventArgs e)
@@ -341,25 +328,36 @@ namespace hospitalManagementSystem
         private void dataGridViewDoctor_SelectionChanged(object sender, EventArgs e)
         {
             
-            if(dataGridViewDoctor.CurrentRow != null && dataGridViewDoctor.CurrentRow.Index != -1)
+            if(this.dataGridViewDoctor.CurrentRow != null && this.dataGridViewDoctor.CurrentRow.Index != -1)
             {
-                //string index = "CurrentRow";
-                Id = Convert.ToInt32(dataGridViewDoctor.CurrentRow.Cells[0].Value.ToString());
-                textBoxFirstName.Text = dataGridViewDoctor.CurrentRow.Cells[1].Value.ToString();
-                textBoxLastName.Text = dataGridViewDoctor.CurrentRow.Cells[2].Value.ToString();
-                comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewDoctor.CurrentRow.Cells[3].Value.ToString());
-                textBoxAge.Text = dataGridViewDoctor.CurrentRow.Cells[4].Value.ToString();
-                comboBoxSex.Text = dataGridViewDoctor.CurrentRow.Cells[5].Value.ToString();
-                textBoxHeightFt.Text = dataGridViewDoctor.CurrentRow.Cells[6].Value.ToString();
-                textBoxHeightInch.Text = dataGridViewDoctor.CurrentRow.Cells[7].Value.ToString();
-                textBoxWeight.Text = dataGridViewDoctor.CurrentRow.Cells[8].Value.ToString();
-                textBoxPhone.Text = dataGridViewDoctor.CurrentRow.Cells[9].Value.ToString();
-                textBoxEmail.Text = dataGridViewDoctor.CurrentRow.Cells[10].Value.ToString();
-                textBoxAddress.Text = dataGridViewDoctor.CurrentRow.Cells[11].Value.ToString();
-                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewDoctor.CurrentRow.Cells[12].Value.ToString());
-                comboBoxDoctorShift.SelectedValue = Convert.ToInt32(dataGridViewDoctor.CurrentRow.Cells[13].Value.ToString());
-                //MessageBox.Show("hello");
+
+                try
+                {
+                    Id = Convert.ToInt32(this.dataGridViewDoctor.CurrentRow.Cells[0].Value.ToString());
+                    textBoxFirstName.Text = this.dataGridViewDoctor.CurrentRow.Cells[1].Value.ToString();
+                    textBoxLastName.Text = this.dataGridViewDoctor.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxDepartment.SelectedValue = Convert.ToInt32(this.dataGridViewDoctor.CurrentRow.Cells[3].Value.ToString());
+                    textBoxAge.Text = this.dataGridViewDoctor.CurrentRow.Cells[4].Value.ToString();
+                    comboBoxSex.Text = this.dataGridViewDoctor.CurrentRow.Cells[5].Value.ToString();
+                    textBoxHeightFt.Text = this.dataGridViewDoctor.CurrentRow.Cells[6].Value.ToString();
+                    textBoxHeightInch.Text = this.dataGridViewDoctor.CurrentRow.Cells[7].Value.ToString();
+                    textBoxWeight.Text = this.dataGridViewDoctor.CurrentRow.Cells[8].Value.ToString();
+                    textBoxPhone.Text = this.dataGridViewDoctor.CurrentRow.Cells[9].Value.ToString();
+                    textBoxEmail.Text = this.dataGridViewDoctor.CurrentRow.Cells[10].Value.ToString();
+                    textBoxAddress.Text = this.dataGridViewDoctor.CurrentRow.Cells[11].Value.ToString();
+                    comboBoxNationality.SelectedValue = Convert.ToInt32(this.dataGridViewDoctor.CurrentRow.Cells[12].Value.ToString());
+                    comboBoxDoctorShift.SelectedValue = Convert.ToInt32(this.dataGridViewDoctor.CurrentRow.Cells[13].Value.ToString());
+                }
+                catch(System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+        }
+
+        private void dataGridViewDoctorShift_SelectionChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

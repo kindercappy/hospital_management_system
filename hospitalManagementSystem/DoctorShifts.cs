@@ -47,7 +47,21 @@ namespace hospitalManagementSystem
             da.Fill(dt);
             
         }
+        private void setDataGridViewShiftsHeaders()
+        {
+            this.dataGridViewShifts.Columns[0].HeaderText = "Shift ID";
+            this.dataGridViewShifts.Columns[1].HeaderText = "Shift Name";
+            this.dataGridViewShifts.Columns[2].HeaderText = "From";
+            this.dataGridViewShifts.Columns[3].HeaderText = "To";
 
+        }
+        private void notSortableDataGridViewShifts()
+        {
+            foreach(DataGridViewColumn col in dataGridViewShifts.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
         private void reloadForm()
         {
             
@@ -58,9 +72,13 @@ namespace hospitalManagementSystem
         {
             displayDoctor();
             displayDataShifts();
+            setDataGridViewShiftsHeaders();
+            notSortableDataGridViewShifts();
             this.dataGridViewShifts.Columns[0].Visible = false;
             //sets alternate color of datagridviewshifts
             this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
+            //datagridview shifts full row select
+            this.dataGridViewShifts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void dataGridViewDoctorShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,11 +104,6 @@ namespace hospitalManagementSystem
             }
         }
 
-
-        private void dataGridViewShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         private void comboBoxShifts_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -134,16 +147,24 @@ namespace hospitalManagementSystem
 
         private void dataGridViewShifts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            
+        }
+
+        private void dataGridViewShifts_SelectionChanged(object sender, EventArgs e)
+        {
+            if(this.dataGridViewShifts.CurrentRow != null && this.dataGridViewShifts.CurrentRow.Index != -1)
             {
-                IdShift = Convert.ToInt32(dataGridViewShifts.Rows[e.RowIndex].Cells[0].Value.ToString());
-                textBoxShiftsName.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxFrom.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textBoxTo.Text = dataGridViewShifts.Rows[e.RowIndex].Cells[3].Value.ToString();
-            }
-            catch(System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    IdShift = Convert.ToInt32(dataGridViewShifts.CurrentRow.Cells[0].Value.ToString());
+                    textBoxShiftsName.Text = dataGridViewShifts.CurrentRow.Cells[1].Value.ToString();
+                    textBoxFrom.Text = dataGridViewShifts.CurrentRow.Cells[2].Value.ToString();
+                    textBoxTo.Text = dataGridViewShifts.CurrentRow.Cells[3].Value.ToString();
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

@@ -308,13 +308,16 @@
             // 
             // dataGridViewExistingStaff
             // 
+            this.dataGridViewExistingStaff.AllowUserToAddRows = false;
+            this.dataGridViewExistingStaff.AllowUserToDeleteRows = false;
             this.dataGridViewExistingStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExistingStaff.Location = new System.Drawing.Point(15, 33);
             this.dataGridViewExistingStaff.Name = "dataGridViewExistingStaff";
-            this.dataGridViewExistingStaff.Size = new System.Drawing.Size(1338, 150);
+            this.dataGridViewExistingStaff.Size = new System.Drawing.Size(1344, 150);
             this.dataGridViewExistingStaff.TabIndex = 28;
             this.dataGridViewExistingStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingStaff_CellClick);
             this.dataGridViewExistingStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingStaff_CellContentClick);
+            this.dataGridViewExistingStaff.SelectionChanged += new System.EventHandler(this.dataGridViewExistingStaff_SelectionChanged);
             // 
             // buttonInsert
             // 

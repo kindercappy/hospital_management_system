@@ -309,7 +309,6 @@
             this.labelUser.Size = new System.Drawing.Size(85, 13);
             this.labelUser.TabIndex = 29;
             this.labelUser.Text = "User: (Name):";
-            this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
             // 
             // textBoxSearch
             // 
@@ -318,7 +317,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(181, 20);
             this.textBoxSearch.TabIndex = 32;
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            
             // 
             // buttonSearch
             // 
@@ -335,13 +334,15 @@
             // 
             // dataGridViewExistingDoctor
             // 
+            this.dataGridViewExistingDoctor.AllowUserToAddRows = false;
+            this.dataGridViewExistingDoctor.AllowUserToDeleteRows = false;
             this.dataGridViewExistingDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExistingDoctor.Location = new System.Drawing.Point(15, 33);
             this.dataGridViewExistingDoctor.Name = "dataGridViewExistingDoctor";
+            this.dataGridViewExistingDoctor.ReadOnly = true;
             this.dataGridViewExistingDoctor.Size = new System.Drawing.Size(1364, 150);
             this.dataGridViewExistingDoctor.TabIndex = 34;
-            this.dataGridViewExistingDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingDoctor_CellClick);
-            this.dataGridViewExistingDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingDocotor_CellContentClick);
+            this.dataGridViewExistingDoctor.SelectionChanged += new System.EventHandler(this.dataGridViewExistingDoctor_SelectionChanged);
             // 
             // buttonInsert
             // 

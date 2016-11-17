@@ -56,6 +56,33 @@ namespace hospitalManagementSystem
             this.comboBoxSex.SelectedIndex = -1;
             this.comboBoxStaffShift.SelectedIndex = -1;
         }
+        //set headers of datGridViewExsitingStaff
+        private void setDataGridViewStaffHeaders()
+        {
+            this.dataGridViewExistingStaff.Columns[0].HeaderText = "Staff ID";
+            this.dataGridViewExistingStaff.Columns[1].HeaderText = "First Name";
+            this.dataGridViewExistingStaff.Columns[2].HeaderText = "Last Name";
+            this.dataGridViewExistingStaff.Columns[3].HeaderText = "Department";
+            this.dataGridViewExistingStaff.Columns[4].HeaderText = "Age";
+            this.dataGridViewExistingStaff.Columns[5].HeaderText = "Sex";
+            this.dataGridViewExistingStaff.Columns[6].HeaderText = "Height (Feet)";
+            this.dataGridViewExistingStaff.Columns[7].HeaderText = "Height (Inch)";
+            this.dataGridViewExistingStaff.Columns[8].HeaderText = "Weight";
+            this.dataGridViewExistingStaff.Columns[9].HeaderText = "Phone";
+            this.dataGridViewExistingStaff.Columns[10].HeaderText = "Email";
+            this.dataGridViewExistingStaff.Columns[11].HeaderText = "Address";
+            this.dataGridViewExistingStaff.Columns[12].HeaderText = "Nationality ID";
+            this.dataGridViewExistingStaff.Columns[13].HeaderText = "Staff Shift ID";
+        }
+        private void notSortableDataGridViewExsitingStaff()
+        {
+            foreach(DataGridViewColumn col in dataGridViewExistingStaff.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -63,10 +90,11 @@ namespace hospitalManagementSystem
 
         private void ExistingStaff_Load(object sender, EventArgs e)
         {
-            try
-            {
+            
                 //display staff in dataGridView
                 displayStaff();
+                //sets header for dataGridViewExistingStaff
+                setDataGridViewStaffHeaders();
                 //ExistingStaff Department comboBox
                 this.comboBoxDepartment.DisplayMember = "departmentName";
                 this.comboBoxDepartment.ValueMember = "departmentId";
@@ -81,16 +109,22 @@ namespace hospitalManagementSystem
                 this.comboBoxStaffShift.ValueMember = "shiftId";
                 //sets colour for alternate rowns for dataGridViewExsitingDoctor
                 this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+                //hide shift ID column
+                this.dataGridViewExistingStaff.Columns[0].Visible = false;
+                //datagridview full row select
+                this.dataGridViewExistingStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                //allowUsersToAddRows = false;
+                this.dataGridViewExistingStaff.AllowUserToAddRows = false;
+                //make dataGriDViewExistingStaff read only
+                this.dataGridViewExistingStaff.ReadOnly = true;
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
                 this.comboBoxStaffShift.SelectedIndex = -1;
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+                notSortableDataGridViewExsitingStaff();
+            
         }
 
 
@@ -150,6 +184,7 @@ namespace hospitalManagementSystem
                     staff.address = this.textBoxAddress.Text;
                     staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
                     staff.staffId = Int32.Parse(this.comboBoxStaffShift.SelectedValue.ToString());
+                    staff.staffShift = Int32.Parse(this.comboBoxStaffShift.SelectedValue.ToString());
                     StaffManager.staffSave(staff);
                     MessageBox.Show("Success");
                     displayStaff();
@@ -214,26 +249,34 @@ namespace hospitalManagementSystem
 
         private void dataGridViewExistingStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            
+        }
+
+        private void dataGridViewExistingStaff_SelectionChanged(object sender, EventArgs e)
+        {
+            if(this.dataGridViewExistingStaff.CurrentRow !=null && this.dataGridViewExistingStaff.CurrentRow.Index != -1)
             {
-                staffId = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[0].Value.ToString());
-                textBoxFirstName.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxLastName.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
-                comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[3].Value.ToString());
-                textBoxAge.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
-                comboBoxSex.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textBoxHeightFt.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textBoxHeightInch.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textBoxWeight.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[8].Value.ToString();
-                textBoxPhone.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[9].Value.ToString();
-                textBoxEmail.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[10].Value.ToString();
-                textBoxAddress.Text = dataGridViewExistingStaff.Rows[e.RowIndex].Cells[11].Value.ToString();
-                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[12].Value.ToString());
-                comboBoxStaffShift.SelectedValue = Convert.ToInt32(dataGridViewExistingStaff.Rows[e.RowIndex].Cells[13].Value.ToString());
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    staffId = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[0].Value.ToString());
+                    textBoxFirstName.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[1].Value.ToString();
+                    textBoxLastName.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxDepartment.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[3].Value.ToString());
+                    textBoxAge.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[4].Value.ToString();
+                    comboBoxSex.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[5].Value.ToString();
+                    textBoxHeightFt.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[6].Value.ToString();
+                    textBoxHeightInch.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[7].Value.ToString();
+                    textBoxWeight.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[8].Value.ToString();
+                    textBoxPhone.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[9].Value.ToString();
+                    textBoxEmail.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[10].Value.ToString();
+                    textBoxAddress.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[11].Value.ToString();
+                    comboBoxNationality.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[12].Value.ToString());
+                    comboBoxStaffShift.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[13].Value.ToString());
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

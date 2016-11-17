@@ -294,13 +294,17 @@
             // 
             // dataGridViewExistingPatient
             // 
+            this.dataGridViewExistingPatient.AllowUserToAddRows = false;
+            this.dataGridViewExistingPatient.AllowUserToDeleteRows = false;
             this.dataGridViewExistingPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExistingPatient.Location = new System.Drawing.Point(12, 33);
             this.dataGridViewExistingPatient.Name = "dataGridViewExistingPatient";
-            this.dataGridViewExistingPatient.Size = new System.Drawing.Size(1467, 150);
+            this.dataGridViewExistingPatient.ReadOnly = true;
+            this.dataGridViewExistingPatient.Size = new System.Drawing.Size(1360, 150);
             this.dataGridViewExistingPatient.TabIndex = 29;
             this.dataGridViewExistingPatient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingPatient_CellClick);
             this.dataGridViewExistingPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExistingPatient_CellContentClick);
+            this.dataGridViewExistingPatient.SelectionChanged += new System.EventHandler(this.dataGridViewExistingPatient_SelectionChanged);
             // 
             // buttonInsert
             // 
@@ -422,13 +426,17 @@
             // 
             // dataGridViewAppointmentHistory
             // 
+            this.dataGridViewAppointmentHistory.AllowUserToAddRows = false;
+            this.dataGridViewAppointmentHistory.AllowUserToDeleteRows = false;
             this.dataGridViewAppointmentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAppointmentHistory.Location = new System.Drawing.Point(277, 227);
             this.dataGridViewAppointmentHistory.Name = "dataGridViewAppointmentHistory";
+            this.dataGridViewAppointmentHistory.ReadOnly = true;
             this.dataGridViewAppointmentHistory.Size = new System.Drawing.Size(1073, 150);
             this.dataGridViewAppointmentHistory.TabIndex = 44;
             this.dataGridViewAppointmentHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointmentHistory_CellClick);
             this.dataGridViewAppointmentHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointmentHistory_CellContentClick);
+            this.dataGridViewAppointmentHistory.SelectionChanged += new System.EventHandler(this.dataGridViewAppointmentHistory_SelectionChanged);
             // 
             // label13
             // 
