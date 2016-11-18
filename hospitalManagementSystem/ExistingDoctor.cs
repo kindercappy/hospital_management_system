@@ -31,13 +31,7 @@ namespace hospitalManagementSystem
         //display data in dataGridView
         private void displayDoctor()
         {
-            cmd.Connection = Common.getConnection();
-            cmd.CommandText = "Doctor_Select";
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            da.Fill(dt);
-            dataGridViewExistingDoctor.DataSource = dt;
+            dataGridViewExistingDoctor.DataSource = DoctorManager.getDoctorList();
         }
         //clear data
         private void clearData()
@@ -57,6 +51,12 @@ namespace hospitalManagementSystem
             comboBoxNationality.SelectedIndex = -1;
             //comboBoxSex.SelectedIndex = -1;
 
+        }
+        private void clearSearchBoxes()
+        {
+            this.textBoxSearchName.Text = "";
+            this.textBoxSearchId.Text = "";
+            this.textBoxSearchPhone.Text = "";
         }
         private void notSortableDataGridViewExistingDoctor()
         {
@@ -95,7 +95,7 @@ namespace hospitalManagementSystem
                 displayDoctor();
                 notSortableDataGridViewExistingDoctor();
                 setdatGridViewEixsitngHeaders();
-                this.dataGridViewExistingDoctor.Columns[0].Visible = false;
+                //this.dataGridViewExistingDoctor.Columns[0].Visible = false;
                 //ExistingDoctor Depertment comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
@@ -128,30 +128,7 @@ namespace hospitalManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            if (textBoxSearch.Text.Length > 0)
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    Doctor doctor = new Doctor();
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    DataTable dt = new DataTable();
-                    cmd.Connection = Common.getConnection();
-                    cmd.CommandText = "Doctor_Search";
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                    SqlParameter sFirstName = new SqlParameter("@firstName", textBoxSearch.Text);
-                    sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                    cmd.Parameters.Add(sFirstName);
-                    da.SelectCommand = cmd;
-                    da.Fill(dt);
-                    dataGridViewExistingDoctor.DataSource = dt;
-                    //displayStaff();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter details");
-            }
+           
 
         }
 
@@ -364,6 +341,57 @@ namespace hospitalManagementSystem
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void buttonSearch_Click_1(object sender, EventArgs e)
+        {
+            if(this.textBoxSearchName.Text.Length > 0 || this.textBoxSearchId.Text.Length >0 || this.textBoxSearchPhone.Text.Length > 0)
+            {
+                //search by name
+                if(this.textBoxSearchName.Text.Length > 0)
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    using (SqlDataAdapter da = new SqlDataAdapter())
+                    using (DataTable dt = new DataTable())
+                    {
+                        cmd.Connection = Common.getConnection();
+                        cmd.CommandText = "Doctor_Search_Name";
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        SqlParameter sFirstName = new SqlParameter("@firstName", this.textBoxSearchName.Text);
+                        sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                        cmd.Parameters.Add(sFirstName);
+
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        dataGridViewExistingDoctor.DataSource = dt;
+                        clearSearchBoxes();
+                    }
+                }
+                //search by id
+                if(this.textBoxSearchId.Text.Length > 0)
+                {
+                    Doctor doc = new Doctor();
+                    doc.doctorId = Convert.ToInt32(this.textBoxSearchId.Text);
+                    DataTable dt = new DataTable();
+                    dt = DoctorManager.getDoctorListById(doc);
+                    dataGridViewExistingDoctor.DataSource = dt;
+                }
+                //search by phone
+                if(this.textBoxSearchPhone.Text.Length > 0)
+                {
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter details to search");
+            }
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            displayDoctor();
         }
     }
 }

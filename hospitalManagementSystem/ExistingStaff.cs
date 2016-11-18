@@ -81,8 +81,12 @@ namespace hospitalManagementSystem
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
-
-
+        private void clearSearchBoxes()
+        {
+            this.textBoxSearchName.Text = "";
+            this.textBoxSearchId.Text= "";
+            this.textBoxSearchPhone.Text = "";
+        }
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -278,6 +282,88 @@ namespace hospitalManagementSystem
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.textBoxSearchName.Text.Length >0 || this.textBoxSearchId.Text.Length >0 || this.textBoxSearchPhone.Text.Length > 0)
+                {
+                    //search by name
+                    if(this.textBoxSearchName.Text .Length > 0)
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Staff_Search_Name";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            SqlParameter sFirstName = new SqlParameter("@firstName", this.textBoxSearchName.Text);
+                            sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                            cmd.Parameters.Add(sFirstName);
+
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewExistingStaff.DataSource = dt;
+                            clearSearchBoxes();
+                        }
+                    }
+                    //search by id
+                    if(this.textBoxSearchId.Text.Length > 0)
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Staff_Search_Id";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            SqlParameter iStaffId = new SqlParameter("@staffId", this.textBoxSearchId.Text);
+                            iStaffId.SqlDbType = System.Data.SqlDbType.Int;
+                            cmd.Parameters.Add(iStaffId);
+
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewExistingStaff.DataSource = dt;
+                            clearSearchBoxes();
+
+                         }
+                    }
+                    //search by phone
+                    if(this.textBoxSearchPhone.Text.Length > 0)
+                    {
+                        cmd.Connection = Common.getConnection();
+                        cmd.CommandText = "Staff_Search_Phone";
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        SqlParameter bPhone = new SqlParameter("@phone", this.textBoxSearchPhone.Text);
+                        bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+                        cmd.Parameters.Add(bPhone);
+
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        dataGridViewExistingStaff.DataSource = dt;
+                        clearSearchBoxes();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter valid values to search");
+                }
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            displayStaff();
         }
     }
 }

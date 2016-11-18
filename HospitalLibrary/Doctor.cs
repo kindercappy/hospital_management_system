@@ -487,5 +487,35 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+        public static DataTable getDoctorList()
+        {
+            SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Select";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+            return dt;
+        }
+        public static DataTable getDoctorListById(Doctor doc)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Doctor_Search_Id";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter iDoctorId = new SqlParameter("@doctorId",doc.doctorId);
+            iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(iDoctorId);
+            
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }

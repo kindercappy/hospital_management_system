@@ -53,14 +53,10 @@
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.labelDepartment = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.dataGridViewExistingDoctor = new System.Windows.Forms.DataGridView();
             this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.comboBoxDoctorShift = new System.Windows.Forms.ComboBox();
             this.labelDoctorShift = new System.Windows.Forms.Label();
             this.labelStar = new System.Windows.Forms.Label();
@@ -70,6 +66,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonClearTextboxes = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.labelSearchPhone = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearchPhone = new System.Windows.Forms.TextBox();
+            this.labelSearchId = new System.Windows.Forms.Label();
+            this.textBoxSearchId = new System.Windows.Forms.TextBox();
+            this.labelSearchName = new System.Windows.Forms.Label();
+            this.textBoxSearchName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -300,38 +304,6 @@
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(12, 9);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(85, 13);
-            this.labelUser.TabIndex = 29;
-            this.labelUser.Text = "User: (Name):";
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxSearch.Location = new System.Drawing.Point(103, 6);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(181, 20);
-            this.textBoxSearch.TabIndex = 32;
-            
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSearch.Location = new System.Drawing.Point(290, 4);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
-            this.buttonSearch.TabIndex = 33;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
             // dataGridViewExistingDoctor
             // 
             this.dataGridViewExistingDoctor.AllowUserToAddRows = false;
@@ -382,19 +354,6 @@
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRefresh.ForeColor = System.Drawing.Color.Navy;
-            this.buttonRefresh.Location = new System.Drawing.Point(446, 4);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
-            this.buttonRefresh.TabIndex = 38;
-            this.buttonRefresh.Text = "Reset";
-            this.buttonRefresh.UseVisualStyleBackColor = false;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // comboBoxDoctorShift
             // 
@@ -482,12 +441,97 @@
             this.buttonClearTextboxes.UseVisualStyleBackColor = false;
             this.buttonClearTextboxes.Click += new System.EventHandler(this.buttonClearTextboxes_Click);
             // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonReset.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonReset.ForeColor = System.Drawing.Color.Navy;
+            this.buttonReset.Location = new System.Drawing.Point(748, 4);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(150, 23);
+            this.buttonReset.TabIndex = 88;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // labelSearchPhone
+            // 
+            this.labelSearchPhone.AutoSize = true;
+            this.labelSearchPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchPhone.Location = new System.Drawing.Point(389, 9);
+            this.labelSearchPhone.Name = "labelSearchPhone";
+            this.labelSearchPhone.Size = new System.Drawing.Size(91, 13);
+            this.labelSearchPhone.TabIndex = 87;
+            this.labelSearchPhone.Text = "Search Phone:";
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
+            this.buttonSearch.Location = new System.Drawing.Point(592, 4);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
+            this.buttonSearch.TabIndex = 86;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click_1);
+            // 
+            // textBoxSearchPhone
+            // 
+            this.textBoxSearchPhone.Location = new System.Drawing.Point(486, 6);
+            this.textBoxSearchPhone.Name = "textBoxSearchPhone";
+            this.textBoxSearchPhone.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchPhone.TabIndex = 85;
+            // 
+            // labelSearchId
+            // 
+            this.labelSearchId.AutoSize = true;
+            this.labelSearchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchId.Location = new System.Drawing.Point(211, 9);
+            this.labelSearchId.Name = "labelSearchId";
+            this.labelSearchId.Size = new System.Drawing.Size(68, 13);
+            this.labelSearchId.TabIndex = 84;
+            this.labelSearchId.Text = "Search ID:";
+            // 
+            // textBoxSearchId
+            // 
+            this.textBoxSearchId.Location = new System.Drawing.Point(283, 6);
+            this.textBoxSearchId.Name = "textBoxSearchId";
+            this.textBoxSearchId.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchId.TabIndex = 83;
+            // 
+            // labelSearchName
+            // 
+            this.labelSearchName.AutoSize = true;
+            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchName.Location = new System.Drawing.Point(12, 9);
+            this.labelSearchName.Name = "labelSearchName";
+            this.labelSearchName.Size = new System.Drawing.Size(87, 13);
+            this.labelSearchName.TabIndex = 82;
+            this.labelSearchName.Text = "Search Name:";
+            // 
+            // textBoxSearchName
+            // 
+            this.textBoxSearchName.Location = new System.Drawing.Point(105, 6);
+            this.textBoxSearchName.Name = "textBoxSearchName";
+            this.textBoxSearchName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchName.TabIndex = 81;
+            // 
             // ExistingDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1510, 813);
+            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.labelSearchPhone);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearchPhone);
+            this.Controls.Add(this.labelSearchId);
+            this.Controls.Add(this.textBoxSearchId);
+            this.Controls.Add(this.labelSearchName);
+            this.Controls.Add(this.textBoxSearchName);
             this.Controls.Add(this.buttonClearTextboxes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -497,14 +541,10 @@
             this.Controls.Add(this.labelStar);
             this.Controls.Add(this.labelDoctorShift);
             this.Controls.Add(this.comboBoxDoctorShift);
-            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.dataGridViewExistingDoctor);
-            this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.labelUser);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelDepartment);
             this.Controls.Add(this.comboBoxDepartment);
@@ -566,14 +606,10 @@
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Label labelDepartment;
         private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Label labelUser;
-        private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.DataGridView dataGridViewExistingDoctor;
         private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.ComboBox comboBoxDoctorShift;
         private System.Windows.Forms.Label labelDoctorShift;
         private System.Windows.Forms.Label labelStar;
@@ -583,5 +619,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonClearTextboxes;
+        private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Label labelSearchPhone;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearchPhone;
+        private System.Windows.Forms.Label labelSearchId;
+        private System.Windows.Forms.TextBox textBoxSearchId;
+        private System.Windows.Forms.Label labelSearchName;
+        private System.Windows.Forms.TextBox textBoxSearchName;
     }
 }

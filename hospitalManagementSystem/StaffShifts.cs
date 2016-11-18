@@ -65,6 +65,11 @@ namespace hospitalManagementSystem
             this.textBoxFrom.Text = "";
             this.textBoxTo.Text = "";
         }
+        private void clearSearchBoxes()
+        {
+            this.textBoxSearchName.Text = "";
+            this.textBoxSearchId.Text = "";
+        }
 
         private void StaffShifts_Load(object sender, EventArgs e)
         {
@@ -137,6 +142,72 @@ namespace hospitalManagementSystem
         private void buttonClearTextboxes_Click(object sender, EventArgs e)
         {
             clearTextBoxes();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.textBoxSearchName.Text.Length >0 ||this.textBoxSearchId.Text.Length > 0)
+                {
+                    //search by name
+                    if (this.textBoxSearchName.Text.Length > 0)
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Staff_Shift_Search_Name";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            SqlParameter sShiftName = new SqlParameter("@shiftName", this.textBoxSearchName.Text);
+                            sShiftName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                            cmd.Parameters.Add(sShiftName);
+
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewShifts.DataSource = dt;
+                            clearSearchBoxes();
+                        }
+                    }
+                    if (this.textBoxSearchId.Text.Length > 0)
+                    {
+                        //search by id
+                        using (SqlCommand cmd = new SqlCommand())
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        using (DataTable dt = new DataTable())
+                        {
+                            cmd.Connection = Common.getConnection();
+                            cmd.CommandText = "Staff_Shift_Search_Id";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            SqlParameter iShiftId = new SqlParameter("@shiftId", this.textBoxSearchId.Text);
+                            iShiftId.SqlDbType = System.Data.SqlDbType.Int;
+                            cmd.Parameters.Add(iShiftId);
+
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+                            dataGridViewShifts.DataSource = dt;
+                            clearSearchBoxes();
+                        }
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a value to search!");
+                }
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            displayStaffShift();
         }
     }
 }

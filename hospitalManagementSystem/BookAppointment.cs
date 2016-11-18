@@ -139,10 +139,10 @@ namespace hospitalManagementSystem
         {
             try
             {
-                if (textBoxSearchName.Text.Length > 0 || textBoxSearchId.Text.Length > 0 ||  textBoxSearchPhone.Text.Length > 0)
+                if (this.textBoxSearchName.Text.Length > 0 || this.textBoxSearchId.Text.Length > 0 || this.textBoxSearchPhone.Text.Length > 0)
                 {
                     //Search by Name
-                    if (textBoxSearchName.Text.Length > 0)
+                    if (this.textBoxSearchName.Text.Length > 0)
                     {
                         using (SqlCommand cmd = new SqlCommand())
                         using (SqlDataAdapter da = new SqlDataAdapter())
@@ -163,7 +163,7 @@ namespace hospitalManagementSystem
                         }
                     }
                     //Search by Id
-                    if (textBoxSearchId.Text.Length > 0)
+                    if (this.textBoxSearchId.Text.Length > 0)
                     {
                         using (SqlCommand cmd = new SqlCommand())
                         using (SqlDataAdapter da = new SqlDataAdapter())
