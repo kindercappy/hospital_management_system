@@ -215,32 +215,61 @@ namespace hospitalManagementSystem
 
         private void dataGridViewStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                staffId = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[0].Value.ToString());
-                textBoxFirstName.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxLastName.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
-                comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[3].Value.ToString());
-                textBoxAge.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
-                comboBoxSex.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textBoxHeightFt.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textBoxHeightInch.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textBoxWeight.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[8].Value.ToString();
-                textBoxPhone.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[9].Value.ToString();
-                textBoxEmail.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[10].Value.ToString();
-                textBoxAddress.Text = dataGridViewStaff.Rows[e.RowIndex].Cells[11].Value.ToString();
-                comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[12].Value.ToString());
-                comboBoxStaffShift.SelectedValue = Convert.ToInt32(dataGridViewStaff.Rows[e.RowIndex].Cells[13].Value.ToString());
-            }
-            catch(System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void dataGridViewStaffShift_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridViewStaff_SelectionChanged(object sender, EventArgs e)
+        {
+            if(this.dataGridViewStaff.CurrentRow != null && this.dataGridViewStaff.CurrentRow.Index != -1)
+            {
+                try
+                {
+                    staffId = Convert.ToInt32(dataGridViewStaff.CurrentRow.Cells[0].Value.ToString());
+                    textBoxFirstName.Text = dataGridViewStaff.CurrentRow.Cells[1].Value.ToString();
+                    textBoxLastName.Text = dataGridViewStaff.CurrentRow.Cells[2].Value.ToString();
+                    comboBoxDepartment.SelectedValue = Convert.ToInt32(dataGridViewStaff.CurrentRow.Cells[3].Value.ToString());
+                    textBoxAge.Text = dataGridViewStaff.CurrentRow.Cells[4].Value.ToString();
+                    comboBoxSex.Text = dataGridViewStaff.CurrentRow.Cells[5].Value.ToString();
+                    textBoxHeightFt.Text = dataGridViewStaff.CurrentRow.Cells[6].Value.ToString();
+                    textBoxHeightInch.Text = dataGridViewStaff.CurrentRow.Cells[7].Value.ToString();
+                    textBoxWeight.Text = dataGridViewStaff.CurrentRow.Cells[8].Value.ToString();
+                    textBoxPhone.Text = dataGridViewStaff.CurrentRow.Cells[9].Value.ToString();
+                    textBoxEmail.Text = dataGridViewStaff.CurrentRow.Cells[10].Value.ToString();
+                    textBoxAddress.Text = dataGridViewStaff.CurrentRow.Cells[11].Value.ToString();
+                    comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewStaff.CurrentRow.Cells[12].Value.ToString());
+                    comboBoxStaffShift.SelectedValue = Convert.ToInt32(dataGridViewStaff.CurrentRow.Cells[13].Value.ToString());
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

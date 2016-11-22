@@ -65,7 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonClearTextboxes = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.labelSearchPhone = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -428,19 +427,6 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "*";
             // 
-            // buttonClearTextboxes
-            // 
-            this.buttonClearTextboxes.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonClearTextboxes.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.buttonClearTextboxes.ForeColor = System.Drawing.Color.Navy;
-            this.buttonClearTextboxes.Location = new System.Drawing.Point(15, 217);
-            this.buttonClearTextboxes.Name = "buttonClearTextboxes";
-            this.buttonClearTextboxes.Size = new System.Drawing.Size(237, 29);
-            this.buttonClearTextboxes.TabIndex = 47;
-            this.buttonClearTextboxes.Text = "Clear Textboxes";
-            this.buttonClearTextboxes.UseVisualStyleBackColor = false;
-            this.buttonClearTextboxes.Click += new System.EventHandler(this.buttonClearTextboxes_Click);
-            // 
             // buttonReset
             // 
             this.buttonReset.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -483,6 +469,7 @@
             this.textBoxSearchPhone.Name = "textBoxSearchPhone";
             this.textBoxSearchPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchPhone.TabIndex = 85;
+            this.textBoxSearchPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchPhone_KeyPress);
             // 
             // labelSearchId
             // 
@@ -500,6 +487,7 @@
             this.textBoxSearchId.Name = "textBoxSearchId";
             this.textBoxSearchId.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchId.TabIndex = 83;
+            this.textBoxSearchId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchId_KeyPress);
             // 
             // labelSearchName
             // 
@@ -517,6 +505,7 @@
             this.textBoxSearchName.Name = "textBoxSearchName";
             this.textBoxSearchName.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchName.TabIndex = 81;
+            this.textBoxSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchName_KeyPress);
             // 
             // ExistingDoctor
             // 
@@ -532,7 +521,6 @@
             this.Controls.Add(this.textBoxSearchId);
             this.Controls.Add(this.labelSearchName);
             this.Controls.Add(this.textBoxSearchName);
-            this.Controls.Add(this.buttonClearTextboxes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -571,7 +559,7 @@
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.labelPhone);
             this.Name = "ExistingDoctor";
-            this.Text = "ExistingDoctor";
+            this.Text = "Existing Doctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ExistingDoctor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).EndInit();
@@ -618,7 +606,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonClearTextboxes;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Label labelSearchPhone;
         private System.Windows.Forms.Button buttonSearch;

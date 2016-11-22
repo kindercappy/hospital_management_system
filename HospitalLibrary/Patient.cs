@@ -471,6 +471,62 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+        public static DataTable getPatientListBYName(Patient pat)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Patient_Search_Name";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+            SqlParameter sFirstName = new SqlParameter("@firstName", pat.firstName);
+            sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+            cmd.Parameters.Add(sFirstName);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
+        public static DataTable getPatientListById(Patient pat)
+        {
+            SqlCommand cmd = new  SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Patient_Search_Id";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter iPatientId = new SqlParameter("@patientId", pat.patientId);
+            iPatientId.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(iPatientId);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+
+        }
+        public static DataTable getPatientListByPhone(Patient pat)
+        {
+            SqlCommand cmd = new  SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Patient_Search_Phone";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter bPhone = new SqlParameter("@phone", pat.phone);
+            bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+            cmd.Parameters.Add(bPhone);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }

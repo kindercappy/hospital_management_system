@@ -23,8 +23,8 @@ namespace hospitalManagementSystem
         public ExistingStaff()
         {
             InitializeComponent();
-            
-            
+
+
         }
         // METHODS
         //display staff in dataGridView
@@ -76,7 +76,7 @@ namespace hospitalManagementSystem
         }
         private void notSortableDataGridViewExsitingStaff()
         {
-            foreach(DataGridViewColumn col in dataGridViewExistingStaff.Columns)
+            foreach (DataGridViewColumn col in dataGridViewExistingStaff.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -84,7 +84,7 @@ namespace hospitalManagementSystem
         private void clearSearchBoxes()
         {
             this.textBoxSearchName.Text = "";
-            this.textBoxSearchId.Text= "";
+            this.textBoxSearchId.Text = "";
             this.textBoxSearchPhone.Text = "";
         }
         private void buttonBack_Click(object sender, EventArgs e)
@@ -94,48 +94,48 @@ namespace hospitalManagementSystem
 
         private void ExistingStaff_Load(object sender, EventArgs e)
         {
-            
-                //display staff in dataGridView
-                displayStaff();
-                //sets header for dataGridViewExistingStaff
-                setDataGridViewStaffHeaders();
-                //ExistingStaff Department comboBox
-                this.comboBoxDepartment.DisplayMember = "departmentName";
-                this.comboBoxDepartment.ValueMember = "departmentId";
-                this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
-                //ExistingStaff Nationality comboBox
-                this.comboBoxNationality.DisplayMember = "nationalityName";
-                this.comboBoxNationality.ValueMember = "nationalityId";
-                this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
-                //Staff shifts combobox
-                this.comboBoxStaffShift.DataSource = StaffShiftsManager.getStaffShifts();
-                this.comboBoxStaffShift.DisplayMember = "fullDetails";
-                this.comboBoxStaffShift.ValueMember = "shiftId";
-                //sets colour for alternate rowns for dataGridViewExsitingDoctor
-                this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
-                //hide shift ID column
-                this.dataGridViewExistingStaff.Columns[0].Visible = false;
-                //datagridview full row select
-                this.dataGridViewExistingStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                //allowUsersToAddRows = false;
-                this.dataGridViewExistingStaff.AllowUserToAddRows = false;
-                //make dataGriDViewExistingStaff read only
-                this.dataGridViewExistingStaff.ReadOnly = true;
-                //Setting comboboxes to -1 index so no item apperas on load
-                this.comboBoxDepartment.SelectedIndex = -1;
-                this.comboBoxNationality.SelectedIndex = -1;
-                this.comboBoxSex.SelectedIndex = -1;
-                this.comboBoxStaffShift.SelectedIndex = -1;
 
-                notSortableDataGridViewExsitingStaff();
-            
+            //display staff in dataGridView
+            displayStaff();
+            //sets header for dataGridViewExistingStaff
+            setDataGridViewStaffHeaders();
+            //ExistingStaff Department comboBox
+            this.comboBoxDepartment.DisplayMember = "departmentName";
+            this.comboBoxDepartment.ValueMember = "departmentId";
+            this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
+            //ExistingStaff Nationality comboBox
+            this.comboBoxNationality.DisplayMember = "nationalityName";
+            this.comboBoxNationality.ValueMember = "nationalityId";
+            this.comboBoxNationality.DataSource = NationalityManager.getNationalityList();
+            //Staff shifts combobox
+            this.comboBoxStaffShift.DataSource = StaffShiftsManager.getStaffShifts();
+            this.comboBoxStaffShift.DisplayMember = "fullDetails";
+            this.comboBoxStaffShift.ValueMember = "shiftId";
+            //sets colour for alternate rowns for dataGridViewExsitingDoctor
+            this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+            //hide shift ID column
+            //this.dataGridViewExistingStaff.Columns[0].Visible = false;
+            //datagridview full row select
+            this.dataGridViewExistingStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //allowUsersToAddRows = false;
+            this.dataGridViewExistingStaff.AllowUserToAddRows = false;
+            //make dataGriDViewExistingStaff read only
+            this.dataGridViewExistingStaff.ReadOnly = true;
+            //Setting comboboxes to -1 index so no item apperas on load
+            this.comboBoxDepartment.SelectedIndex = -1;
+            this.comboBoxNationality.SelectedIndex = -1;
+            this.comboBoxSex.SelectedIndex = -1;
+            this.comboBoxStaffShift.SelectedIndex = -1;
+
+            notSortableDataGridViewExsitingStaff();
+
         }
 
 
         //dataGridView cellContentClick
         private void dataGridViewExistingStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -245,7 +245,7 @@ namespace hospitalManagementSystem
                 displayStaff();
                 clearData();
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -253,12 +253,12 @@ namespace hospitalManagementSystem
 
         private void dataGridViewExistingStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridViewExistingStaff_SelectionChanged(object sender, EventArgs e)
         {
-            if(this.dataGridViewExistingStaff.CurrentRow !=null && this.dataGridViewExistingStaff.CurrentRow.Index != -1)
+            if (this.dataGridViewExistingStaff.CurrentRow != null && this.dataGridViewExistingStaff.CurrentRow.Index != -1)
             {
                 try
                 {
@@ -288,73 +288,40 @@ namespace hospitalManagementSystem
         {
             try
             {
-                if(this.textBoxSearchName.Text.Length >0 || this.textBoxSearchId.Text.Length >0 || this.textBoxSearchPhone.Text.Length > 0)
+                if (this.textBoxSearchName.Text.Length > 0 || this.textBoxSearchId.Text.Length > 0 || this.textBoxSearchPhone.Text.Length > 0)
                 {
                     //search by name
-                    if(this.textBoxSearchName.Text .Length > 0)
+                    if (this.textBoxSearchName.Text.Length > 0)
                     {
-                        using (SqlCommand cmd = new SqlCommand())
-                        using (SqlDataAdapter da = new SqlDataAdapter())
-                        using (DataTable dt = new DataTable())
-                        {
-                            cmd.Connection = Common.getConnection();
-                            cmd.CommandText = "Staff_Search_Name";
-                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                            SqlParameter sFirstName = new SqlParameter("@firstName", this.textBoxSearchName.Text);
-                            sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                            cmd.Parameters.Add(sFirstName);
-
-                            da.SelectCommand = cmd;
-                            da.Fill(dt);
-                            dataGridViewExistingStaff.DataSource = dt;
-                            clearSearchBoxes();
-                        }
-                    }
-                    //search by id
-                    if(this.textBoxSearchId.Text.Length > 0)
-                    {
-                        using (SqlCommand cmd = new SqlCommand())
-                        using (SqlDataAdapter da = new SqlDataAdapter())
-                        using (DataTable dt = new DataTable())
-                        {
-                            cmd.Connection = Common.getConnection();
-                            cmd.CommandText = "Staff_Search_Id";
-                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                            SqlParameter iStaffId = new SqlParameter("@staffId", this.textBoxSearchId.Text);
-                            iStaffId.SqlDbType = System.Data.SqlDbType.Int;
-                            cmd.Parameters.Add(iStaffId);
-
-                            da.SelectCommand = cmd;
-                            da.Fill(dt);
-                            dataGridViewExistingStaff.DataSource = dt;
-                            clearSearchBoxes();
-
-                         }
-                    }
-                    //search by phone
-                    if(this.textBoxSearchPhone.Text.Length > 0)
-                    {
-                        cmd.Connection = Common.getConnection();
-                        cmd.CommandText = "Staff_Search_Phone";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                        SqlParameter bPhone = new SqlParameter("@phone", this.textBoxSearchPhone.Text);
-                        bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
-                        cmd.Parameters.Add(bPhone);
-
-                        da.SelectCommand = cmd;
-                        da.Fill(dt);
+                        Staff staff = new Staff();
+                        staff.firstName = this.textBoxSearchName.Text;
+                        DataTable dt = new DataTable();
+                        dt = StaffManager.getStaffListByName(staff);
                         dataGridViewExistingStaff.DataSource = dt;
                         clearSearchBoxes();
                     }
                 }
-                else
+                //search by id
+                if (this.textBoxSearchId.Text.Length > 0)
                 {
-                    MessageBox.Show("Please enter valid values to search");
+                    Staff staff = new Staff();
+                    staff.staffId = Convert.ToInt32(this.textBoxSearchId.Text);
+                    DataTable dt = new DataTable();
+                    dt = StaffManager.getStaffListById(staff);
+                    dataGridViewExistingStaff.DataSource = dt;
+                    clearSearchBoxes();
                 }
-            }
+                //search by phone
+                if (this.textBoxSearchPhone.Text.Length > 0)
+                {
+                    Staff staff = new Staff();
+                    staff.phone = Convert.ToInt64(this.textBoxSearchPhone.Text);
+                    DataTable dt = new DataTable();
+                    dt = StaffManager.getStaffListByPhone(staff);
+                    dataGridViewExistingStaff.DataSource = dt;
+                    clearSearchBoxes();
+                }
+            } 
             catch(System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -364,6 +331,27 @@ namespace hospitalManagementSystem
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             displayStaff();
+        }
+
+        private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

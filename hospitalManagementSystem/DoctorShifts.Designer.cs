@@ -39,6 +39,12 @@
             this.dataGridViewShifts = new System.Windows.Forms.DataGridView();
             this.buttonUpdateShift = new System.Windows.Forms.Button();
             this.buttonDeleteShift = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.labelSearchId = new System.Windows.Forms.Label();
+            this.textBoxSearchId = new System.Windows.Forms.TextBox();
+            this.labelSearchName = new System.Windows.Forms.Label();
+            this.textBoxSearchName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShifts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +53,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(505, 155);
+            this.buttonBack.Location = new System.Drawing.Point(605, 182);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(123, 23);
             this.buttonBack.TabIndex = 55;
@@ -58,7 +64,7 @@
             // 
             this.labelShiftName.AutoSize = true;
             this.labelShiftName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShiftName.Location = new System.Drawing.Point(365, 12);
+            this.labelShiftName.Location = new System.Drawing.Point(465, 39);
             this.labelShiftName.Name = "labelShiftName";
             this.labelShiftName.Size = new System.Drawing.Size(69, 13);
             this.labelShiftName.TabIndex = 58;
@@ -66,14 +72,14 @@
             // 
             // textBoxShiftsName
             // 
-            this.textBoxShiftsName.Location = new System.Drawing.Point(471, 12);
+            this.textBoxShiftsName.Location = new System.Drawing.Point(571, 39);
             this.textBoxShiftsName.Name = "textBoxShiftsName";
             this.textBoxShiftsName.Size = new System.Drawing.Size(173, 20);
             this.textBoxShiftsName.TabIndex = 59;
             // 
             // textBoxFrom
             // 
-            this.textBoxFrom.Location = new System.Drawing.Point(471, 39);
+            this.textBoxFrom.Location = new System.Drawing.Point(571, 66);
             this.textBoxFrom.Name = "textBoxFrom";
             this.textBoxFrom.Size = new System.Drawing.Size(173, 20);
             this.textBoxFrom.TabIndex = 60;
@@ -82,7 +88,7 @@
             // 
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.Location = new System.Drawing.Point(365, 42);
+            this.labelFrom.Location = new System.Drawing.Point(465, 69);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(100, 13);
             this.labelFrom.TabIndex = 61;
@@ -92,7 +98,7 @@
             // 
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(365, 72);
+            this.labelTo.Location = new System.Drawing.Point(465, 99);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(88, 13);
             this.labelTo.TabIndex = 62;
@@ -100,7 +106,7 @@
             // 
             // textBoxTo
             // 
-            this.textBoxTo.Location = new System.Drawing.Point(471, 65);
+            this.textBoxTo.Location = new System.Drawing.Point(571, 92);
             this.textBoxTo.Name = "textBoxTo";
             this.textBoxTo.Size = new System.Drawing.Size(173, 20);
             this.textBoxTo.TabIndex = 63;
@@ -110,7 +116,7 @@
             this.buttonNewShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonNewShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewShift.Location = new System.Drawing.Point(368, 126);
+            this.buttonNewShift.Location = new System.Drawing.Point(468, 153);
             this.buttonNewShift.Name = "buttonNewShift";
             this.buttonNewShift.Size = new System.Drawing.Size(123, 23);
             this.buttonNewShift.TabIndex = 64;
@@ -123,10 +129,10 @@
             this.dataGridViewShifts.AllowUserToAddRows = false;
             this.dataGridViewShifts.AllowUserToDeleteRows = false;
             this.dataGridViewShifts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShifts.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewShifts.Location = new System.Drawing.Point(12, 39);
             this.dataGridViewShifts.Name = "dataGridViewShifts";
             this.dataGridViewShifts.ReadOnly = true;
-            this.dataGridViewShifts.Size = new System.Drawing.Size(347, 166);
+            this.dataGridViewShifts.Size = new System.Drawing.Size(447, 166);
             this.dataGridViewShifts.TabIndex = 65;
             this.dataGridViewShifts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellClick);
             this.dataGridViewShifts.SelectionChanged += new System.EventHandler(this.dataGridViewShifts_SelectionChanged);
@@ -136,7 +142,7 @@
             this.buttonUpdateShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonUpdateShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonUpdateShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonUpdateShift.Location = new System.Drawing.Point(505, 126);
+            this.buttonUpdateShift.Location = new System.Drawing.Point(605, 153);
             this.buttonUpdateShift.Name = "buttonUpdateShift";
             this.buttonUpdateShift.Size = new System.Drawing.Size(123, 23);
             this.buttonUpdateShift.TabIndex = 67;
@@ -149,7 +155,7 @@
             this.buttonDeleteShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDeleteShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonDeleteShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDeleteShift.Location = new System.Drawing.Point(368, 155);
+            this.buttonDeleteShift.Location = new System.Drawing.Point(468, 182);
             this.buttonDeleteShift.Name = "buttonDeleteShift";
             this.buttonDeleteShift.Size = new System.Drawing.Size(123, 23);
             this.buttonDeleteShift.TabIndex = 68;
@@ -157,12 +163,80 @@
             this.buttonDeleteShift.UseVisualStyleBackColor = false;
             this.buttonDeleteShift.Click += new System.EventHandler(this.buttonDeleteShift_Click);
             // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonReset.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonReset.ForeColor = System.Drawing.Color.Navy;
+            this.buttonReset.Location = new System.Drawing.Point(545, 4);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(150, 23);
+            this.buttonReset.TabIndex = 96;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
+            this.buttonSearch.Location = new System.Drawing.Point(389, 4);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
+            this.buttonSearch.TabIndex = 94;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // labelSearchId
+            // 
+            this.labelSearchId.AutoSize = true;
+            this.labelSearchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchId.Location = new System.Drawing.Point(211, 9);
+            this.labelSearchId.Name = "labelSearchId";
+            this.labelSearchId.Size = new System.Drawing.Size(68, 13);
+            this.labelSearchId.TabIndex = 92;
+            this.labelSearchId.Text = "Search ID:";
+            // 
+            // textBoxSearchId
+            // 
+            this.textBoxSearchId.Location = new System.Drawing.Point(283, 6);
+            this.textBoxSearchId.Name = "textBoxSearchId";
+            this.textBoxSearchId.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchId.TabIndex = 91;
+            this.textBoxSearchId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchId_KeyPress);
+            // 
+            // labelSearchName
+            // 
+            this.labelSearchName.AutoSize = true;
+            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchName.Location = new System.Drawing.Point(12, 9);
+            this.labelSearchName.Name = "labelSearchName";
+            this.labelSearchName.Size = new System.Drawing.Size(87, 13);
+            this.labelSearchName.TabIndex = 90;
+            this.labelSearchName.Text = "Search Name:";
+            // 
+            // textBoxSearchName
+            // 
+            this.textBoxSearchName.Location = new System.Drawing.Point(105, 6);
+            this.textBoxSearchName.Name = "textBoxSearchName";
+            this.textBoxSearchName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchName.TabIndex = 89;
+            this.textBoxSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchName_KeyPress);
+            // 
             // DoctorShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1458, 801);
+            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.labelSearchId);
+            this.Controls.Add(this.textBoxSearchId);
+            this.Controls.Add(this.labelSearchName);
+            this.Controls.Add(this.textBoxSearchName);
             this.Controls.Add(this.buttonDeleteShift);
             this.Controls.Add(this.buttonUpdateShift);
             this.Controls.Add(this.dataGridViewShifts);
@@ -195,5 +269,11 @@
         private System.Windows.Forms.DataGridView dataGridViewShifts;
         private System.Windows.Forms.Button buttonUpdateShift;
         private System.Windows.Forms.Button buttonDeleteShift;
+        private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Label labelSearchId;
+        private System.Windows.Forms.TextBox textBoxSearchId;
+        private System.Windows.Forms.Label labelSearchName;
+        private System.Windows.Forms.TextBox textBoxSearchName;
     }
 }

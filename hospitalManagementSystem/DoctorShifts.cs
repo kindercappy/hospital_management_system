@@ -47,6 +47,11 @@ namespace hospitalManagementSystem
             da.Fill(dt);
             
         }
+        private void clearSearchBoxes()
+        {
+            this.textBoxSearchName.Text = "";
+            this.textBoxSearchId.Text = "";
+        }
         private void setDataGridViewShiftsHeaders()
         {
             this.dataGridViewShifts.Columns[0].HeaderText = "Shift ID";
@@ -68,13 +73,14 @@ namespace hospitalManagementSystem
             dataGridViewShifts.Update();
         }
 
+
         private void DoctorShifts_Load(object sender, EventArgs e)
         {
             displayDoctor();
             displayDataShifts();
             setDataGridViewShiftsHeaders();
             notSortableDataGridViewShifts();
-            this.dataGridViewShifts.Columns[0].Visible = false;
+            //this.dataGridViewShifts.Columns[0].Visible = false;
             //sets alternate color of datagridviewshifts
             this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
             //datagridview shifts full row select
@@ -166,6 +172,55 @@ namespace hospitalManagementSystem
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if(this.textBoxSearchName.Text.Length>0 || this.textBoxSearchId.Text.Length > 0)
+            {
+                //Search by Name
+                if (this.textBoxSearchName.Text.Length > 0)
+                {
+                    DoctorShiftsHL docShi = new DoctorShiftsHL();
+                    docShi.shiftName = this.textBoxSearchName.Text;
+                    DataTable dt = new DataTable();
+                    dt = DoctorShiftsManager.getDoctorShiftListByName(docShi);
+                    dataGridViewShifts.DataSource = dt;
+                    clearSearchBoxes();
+                }
+                //Search by Id
+                if (this.textBoxSearchId.Text.Length > 0)
+                {
+                    DoctorShiftsHL docShi = new DoctorShiftsHL();
+                    docShi.shiftId = Convert.ToInt32(this.textBoxSearchId.Text);
+                    DataTable dt = new DataTable();
+                    dt = DoctorShiftsManager.getDoctorShiftListById(docShi);
+                    dataGridViewShifts.DataSource = dt;
+                    clearSearchBoxes();                   
+                }
+             }
+            else
+            {
+                MessageBox.Show("Please enter a value to search!");
+            }
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            displayDataShifts();
         }
     }
 }

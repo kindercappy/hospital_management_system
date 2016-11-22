@@ -264,7 +264,6 @@ namespace HospitalLibrary
             }
 
         }
-
         //updates doctor with shift
         public static void doctorUpdatesShift(Doctor doc)
         {
@@ -348,7 +347,6 @@ namespace HospitalLibrary
 
             }
         }
-
         //updates doctor
         public static void doctorUpdate(Doctor doctor)
         {
@@ -432,7 +430,6 @@ namespace HospitalLibrary
 
             }
         }
-
         //deletes doctor
         public static void doctorDelete(Doctor doctor)
         {
@@ -450,7 +447,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
         //search doctor
         public static void doctorSearch(Doctor doctor)
         {
@@ -469,7 +465,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
         //selects doctor by department
         public static void doctorSelectByDepartment(Doctor doctor)
         {
@@ -499,6 +494,24 @@ namespace HospitalLibrary
                 da.Fill(dt);
             return dt;
         }
+        public static DataTable getDoctorListByName(Doctor doc)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Doctor_Search_Name";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter sFirstName = new SqlParameter("@firstName", doc.firstName);
+            sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+            cmd.Parameters.Add(sFirstName);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
         public static DataTable getDoctorListById(Doctor doc)
         {
             SqlCommand cmd = new SqlCommand();
@@ -512,6 +525,24 @@ namespace HospitalLibrary
             iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
             cmd.Parameters.Add(iDoctorId);
             
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
+        public static DataTable getDoctorListByPhone(Doctor doc)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Doctor_Search_Phone";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter bPhone = new SqlParameter("@phone", doc.phone);
+            bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+            cmd.Parameters.Add(bPhone);
+
             da.SelectCommand = cmd;
             da.Fill(dt);
 

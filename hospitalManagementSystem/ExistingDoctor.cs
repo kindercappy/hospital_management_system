@@ -15,7 +15,7 @@ namespace hospitalManagementSystem
 {
     public partial class ExistingDoctor : Form
     {
-        SqlDataAdapter da;
+        //SqlDataAdapter da;
         SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         int Id = 0;
@@ -23,7 +23,7 @@ namespace hospitalManagementSystem
         public ExistingDoctor()
         {
             InitializeComponent();
-            
+            this.Text = "Existing Doctor";
         }
 
         // METHODS
@@ -34,7 +34,7 @@ namespace hospitalManagementSystem
             dataGridViewExistingDoctor.DataSource = DoctorManager.getDoctorList();
         }
         //clear data
-        private void clearData()
+        private void clearAllBoxes()
         {
             textBoxFirstName.Text = "";
             textBoxLastName.Text = "";
@@ -49,6 +49,7 @@ namespace hospitalManagementSystem
             comboBoxDepartment.SelectedIndex = -1;
             comboBoxDoctorShift.SelectedIndex = -1;
             comboBoxNationality.SelectedIndex = -1;
+            comboBoxSex.SelectedIndex = -1;
             //comboBoxSex.SelectedIndex = -1;
 
         }
@@ -212,7 +213,7 @@ namespace hospitalManagementSystem
                     DoctorManager.doctorSave(doc);
                     MessageBox.Show("Success");
                     displayDoctor();
-                    clearData();
+                    clearAllBoxes();
                 }
 
                 catch (System.Exception ex)
@@ -279,7 +280,7 @@ namespace hospitalManagementSystem
                     DoctorManager.doctorUpdate(doctor);
                     MessageBox.Show("Updated");
                     displayDoctor();
-                    clearData();
+                    clearAllBoxes();
                 }
                 catch (System.Exception ex)
                 {
@@ -297,7 +298,7 @@ namespace hospitalManagementSystem
                 DoctorManager.doctorDelete(doctor);
                 MessageBox.Show("Deleted");
                 displayDoctor();
-                clearData();
+                clearAllBoxes();
             }
             catch(System.Exception ex)
             {
@@ -309,12 +310,6 @@ namespace hospitalManagementSystem
         {
             displayDoctor();
         }
-
-        private void buttonClearTextboxes_Click(object sender, EventArgs e)
-        {
-            clearData();
-        }
-
         private void dataGridViewExistingDoctor_SelectionChanged(object sender, EventArgs e)
         {
             if(this.dataGridViewExistingDoctor.CurrentRow != null && this.dataGridViewExistingDoctor.CurrentRow.Index != -1)
@@ -350,23 +345,11 @@ namespace hospitalManagementSystem
                 //search by name
                 if(this.textBoxSearchName.Text.Length > 0)
                 {
-                    using (SqlCommand cmd = new SqlCommand())
-                    using (SqlDataAdapter da = new SqlDataAdapter())
-                    using (DataTable dt = new DataTable())
-                    {
-                        cmd.Connection = Common.getConnection();
-                        cmd.CommandText = "Doctor_Search_Name";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                        SqlParameter sFirstName = new SqlParameter("@firstName", this.textBoxSearchName.Text);
-                        sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                        cmd.Parameters.Add(sFirstName);
-
-                        da.SelectCommand = cmd;
-                        da.Fill(dt);
-                        dataGridViewExistingDoctor.DataSource = dt;
-                        clearSearchBoxes();
-                    }
+                    Doctor doc = new Doctor();
+                    doc.firstName = this.textBoxSearchName.Text;
+                    DataTable dt = new DataTable();
+                    dt = DoctorManager.getDoctorListByName(doc);
+                    dataGridViewExistingDoctor.DataSource = dt;
                 }
                 //search by id
                 if(this.textBoxSearchId.Text.Length > 0)
@@ -380,7 +363,11 @@ namespace hospitalManagementSystem
                 //search by phone
                 if(this.textBoxSearchPhone.Text.Length > 0)
                 {
-                    
+                    Doctor doc = new Doctor();
+                    doc.phone = Convert.ToInt64(this.textBoxSearchPhone.Text);
+                    DataTable dt = new DataTable();
+                    dt = DoctorManager.getDoctorListByPhone(doc);
+                    dataGridViewExistingDoctor.DataSource = dt;
                 }
             }
             else
@@ -392,6 +379,27 @@ namespace hospitalManagementSystem
         private void buttonReset_Click(object sender, EventArgs e)
         {
             displayDoctor();
+        }
+
+        private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

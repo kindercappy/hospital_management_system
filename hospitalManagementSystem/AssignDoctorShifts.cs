@@ -93,7 +93,7 @@ namespace hospitalManagementSystem
         }
         private void fullRowSelectDataGridViewDoctorShift()
         {
-            this.dataGridViewDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewDoctorShift.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
 
@@ -358,6 +358,27 @@ namespace hospitalManagementSystem
         private void dataGridViewDoctorShift_SelectionChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

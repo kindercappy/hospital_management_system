@@ -125,5 +125,45 @@ namespace HospitalLibrary
         //updates doctor shift
 
         //deletes doctor shift 
+        public static DataTable getStaffShiftListByName(StaffShiftsHL staffShift)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Staff_Shift_Search_Name";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter sShiftName = new SqlParameter("@shiftName", staffShift.shiftName);
+            sShiftName.SqlDbType = System.Data.SqlDbType.NVarChar;
+            cmd.Parameters.Add(sShiftName);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+
+            return dt;
+        }
+        public static DataTable getStaffShiftListById(StaffShiftsHL staffShift)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Staff_Shift_Search_Id";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter iStafShiftId = new SqlParameter();
+            iStafShiftId.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(iStafShiftId);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            
+                
+            return dt;
+        }
     }
 }

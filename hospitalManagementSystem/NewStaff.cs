@@ -21,16 +21,20 @@ namespace hospitalManagementSystem
         //clear data
         private void clearData()
         {
-            textBoxFirstName.Text = "";
-            textBoxLastName.Text = "";
-            textBoxAge.Text = "";
-            textBoxHeightFt.Text = "";
-            textBoxHeightInch.Text = "";
-            textBoxPhone.Text = "";
-            textBoxWeight.Text = "";
-            textBoxEmail.Text = "";
-            textBoxAddress.Text = "";
-            
+            this.textBoxFirstName.Text = "";
+            this.textBoxLastName.Text = "";
+            this.textBoxAge.Text = "";
+            this.textBoxHeightFt.Text = "";
+            this.textBoxHeightInch.Text = "";
+            this.textBoxPhone.Text = "";
+            this.textBoxWeight.Text = "";
+            this.textBoxEmail.Text = "";
+            this.textBoxAddress.Text = "";
+            this.comboBoxDepartment.SelectedIndex = -1;
+            this.comboBoxNationality.SelectedIndex = -1;
+            this.comboBoxSex.SelectedIndex = -1;
+            this.comboBoxStaffShift.SelectedIndex = -1;
+
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -41,29 +45,41 @@ namespace hospitalManagementSystem
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             string str = "";
-            if (textBoxFirstName.Text == "")
+            if (this.textBoxFirstName.Text == "")
             {
                 str = str + "First Name ";
             }
-            if (textBoxLastName.Text == "")
+            if (this.textBoxLastName.Text == "")
             {
                 str = str + Environment.NewLine + "Last Name ";
             }
-            if (comboBoxDepartment.SelectedIndex < 0)
+            if (this.comboBoxDepartment.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Department ";
             }
-            if (textBoxAge.Text == "")
+            if (this.textBoxAge.Text == "")
             {
                 str = str + Environment.NewLine + "Age ";
             }
-            if (comboBoxSex.SelectedIndex < 0)
+            if (this.comboBoxSex.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Sex ";
             }
-            if (comboBoxNationality.SelectedIndex < 0)
+            //if(this.textBoxHeightFt.Text == "")
+            //{
+            //    this.textBoxHeightFt.Text = "0";
+            //}
+            //if(this.textBoxHeightInch.Text == "")
+            //{
+            //    this.textBoxHeightInch.Text = "0";
+            //}
+            if (this.comboBoxNationality.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Nationality";
+            }
+            if(this.comboBoxStaffShift.SelectedIndex < 0)
+            {
+                str = str + Environment.NewLine + "Staff Shift";
             }
             if (str.Length > 0)
             {
@@ -71,6 +87,11 @@ namespace hospitalManagementSystem
             }
             else
             {
+                int resultHeightFt;
+                int resultHeightinch;
+                int resultWeight;
+                long resultPhone;
+      
                 Staff staff = new Staff();
                 try
                 {
@@ -79,10 +100,41 @@ namespace hospitalManagementSystem
                     staff.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
                     staff.age = Convert.ToInt32(this.textBoxAge.Text);
                     staff.sex = this.comboBoxSex.Text;
-                    staff.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
-                    staff.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                    staff.weight = Convert.ToInt32(this.textBoxWeight.Text);
-                    staff.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                    if (Int32.TryParse(this.textBoxHeightFt.Text, out resultHeightFt))
+                         {
+                            staff.heightFt = Int32.Parse(this.textBoxHeightFt.Text);
+                         }
+                     else
+                         {
+                            staff.heightFt = Int32.Parse(resultHeightFt.ToString());
+                         }
+                    if(Int32.TryParse(this.textBoxHeightInch.Text,out resultHeightinch))
+                    {
+
+                    staff.heightInch = Int32.Parse(this.textBoxHeightInch.Text);
+                    }
+                    else
+                    {
+                        staff.heightInch = Int32.Parse(resultHeightinch.ToString());
+                    }
+                    if(Int32.TryParse(this.textBoxWeight.Text,out resultWeight))
+                    {
+
+                    staff.weight = Int32.Parse(this.textBoxWeight.Text);
+                    }
+                    else
+                    {
+                        staff.weight = Int32.Parse(resultWeight.ToString());
+                    }
+                    if(Int64.TryParse(this.textBoxPhone.Text ,out resultPhone))
+                    {
+
+                    staff.phone = Int64.Parse(this.textBoxPhone.Text);
+                    }
+                    else
+                    {
+                        staff.phone = Int64.Parse(resultPhone.ToString());
+                    }
                     staff.email = this.textBoxEmail.Text;
                     staff.address = this.textBoxAddress.Text;
                     staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());

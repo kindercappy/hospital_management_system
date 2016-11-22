@@ -84,8 +84,6 @@
             this.dataGridViewPatient.ReadOnly = true;
             this.dataGridViewPatient.Size = new System.Drawing.Size(1494, 150);
             this.dataGridViewPatient.TabIndex = 0;
-            this.dataGridViewPatient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPatient_CellClick);
-            this.dataGridViewPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPatient_CellContentClick);
             this.dataGridViewPatient.SelectionChanged += new System.EventHandler(this.dataGridViewPatient_SelectionChanged);
             // 
             // textBoxSearchName
@@ -328,8 +326,6 @@
             this.dataGridViewDoctor.ReadOnly = true;
             this.dataGridViewDoctor.Size = new System.Drawing.Size(344, 159);
             this.dataGridViewDoctor.TabIndex = 47;
-            this.dataGridViewDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellClick);
-            this.dataGridViewDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellContentClick);
             this.dataGridViewDoctor.SelectionChanged += new System.EventHandler(this.dataGridViewDoctor_SelectionChanged);
             // 
             // label18

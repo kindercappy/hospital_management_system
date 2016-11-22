@@ -173,5 +173,45 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+        public static DataTable getDoctorShiftListByName(DoctorShiftsHL docShift)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Doctor_Shift_Search_Name";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter sShiftName = new SqlParameter("@shiftName", docShift.shiftName);
+            sShiftName.SqlDbType = System.Data.SqlDbType.NVarChar;
+            cmd.Parameters.Add(sShiftName);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
+        public static DataTable getDoctorShiftListById(DoctorShiftsHL docShift)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Doctor_Shift_Search_Id";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter iShiftId = new SqlParameter("@shiftId",docShift.shiftId);
+            iShiftId.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(iShiftId);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
     }
+
+    
 }

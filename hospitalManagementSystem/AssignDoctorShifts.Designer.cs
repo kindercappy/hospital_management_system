@@ -413,6 +413,7 @@
             this.textBoxSearchPhone.Name = "textBoxSearchPhone";
             this.textBoxSearchPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchPhone.TabIndex = 141;
+            this.textBoxSearchPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchPhone_KeyPress);
             // 
             // labelSearchId
             // 
@@ -430,6 +431,7 @@
             this.textBoxSearchId.Name = "textBoxSearchId";
             this.textBoxSearchId.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchId.TabIndex = 139;
+            this.textBoxSearchId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchId_KeyPress);
             // 
             // labelSearchName
             // 
@@ -447,6 +449,7 @@
             this.textBoxSearchName.Name = "textBoxSearchName";
             this.textBoxSearchName.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchName.TabIndex = 137;
+            this.textBoxSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchName_KeyPress);
             // 
             // buttonRefresh
             // 

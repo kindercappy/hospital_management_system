@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -227,27 +228,27 @@ namespace HospitalLibrary
                 //HeightFt
                 SqlParameter iHeightFt = new SqlParameter("@heightFt", staff.heightFt);
                 iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightFt);
+                cmd.Parameters.Add(iHeightFt).Value = DBNull.Value; ;
                 //HeightInches
                 SqlParameter iHeightInch = new SqlParameter("@heightInch", staff.heightInch);
                 iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightInch);
+                cmd.Parameters.Add(iHeightInch).Value = DBNull.Value; ;
                 //Weight
                 SqlParameter iWeight = new SqlParameter("@weight", staff.weight);
                 iWeight.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iWeight);
+                cmd.Parameters.Add(iWeight).Value = DBNull.Value; ;
                 //Phone
                 SqlParameter iPhone = new SqlParameter("@phone", staff.phone);
                 iPhone.SqlDbType = System.Data.SqlDbType.BigInt;
-                cmd.Parameters.Add(iPhone);
+                cmd.Parameters.Add(iPhone).Value = DBNull.Value; ;
                 //Email
                 SqlParameter sEmail = new SqlParameter("@email", staff.email);
                 iPhone.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sEmail);
+                cmd.Parameters.Add(sEmail).Value = DBNull.Value; ;
                 //Address
                 SqlParameter sAddress = new SqlParameter("@address", staff.address);
                 sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sAddress);
+                cmd.Parameters.Add(sAddress).Value = DBNull.Value; ;
                 //Nationality
                 SqlParameter iNationality = new SqlParameter("@nationality", staff.natioinality);
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;
@@ -260,7 +261,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
         //updates staff
         public static void staffUpdate(Staff staff)
         {
@@ -343,7 +343,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
         //deletes staff
         public static void staffDelete(Staff staff)
         {
@@ -360,6 +359,66 @@ namespace HospitalLibrary
 
                 cmd.ExecuteNonQuery();
             }
+        }
+        public static DataTable getStaffListByName(Staff staff)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Staff_Search_Name";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter sFirstName = new SqlParameter("@firstName", staff.firstName);
+            sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
+            cmd.Parameters.Add(sFirstName);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+
+        }
+        public static DataTable getStaffListById(Staff staff)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Staff_Search_Id";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter iStaffId = new SqlParameter("@staffId", staff.staffId);
+            iStaffId.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(iStaffId);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+
+        }
+
+        public static DataTable getStaffListByPhone(Staff staff)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Staff_Search_Phone";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter bPhone = new SqlParameter("@phone", staff.phone);
+            bPhone.SqlDbType = System.Data.SqlDbType.BigInt;
+            cmd.Parameters.Add(bPhone);
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+
         }
     }
 }
