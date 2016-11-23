@@ -54,24 +54,12 @@
             this.comboBoxNationality = new System.Windows.Forms.ComboBox();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
-            this.textBoxFrom = new System.Windows.Forms.TextBox();
-            this.labelFrom = new System.Windows.Forms.Label();
-            this.labelTo = new System.Windows.Forms.Label();
-            this.textBoxTo = new System.Windows.Forms.TextBox();
             this.labelStar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -143,6 +131,7 @@
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(121, 20);
             this.textBoxAge.TabIndex = 7;
+            this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
             // 
             // lblSex
             // 
@@ -183,6 +172,7 @@
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightFt.TabIndex = 11;
+            this.textBoxHeightFt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeightFt_KeyPress);
             // 
             // lblHeightInch
             // 
@@ -200,6 +190,7 @@
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightInch.TabIndex = 13;
+            this.textBoxHeightInch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeightInch_KeyPress);
             // 
             // lblWeight
             // 
@@ -217,6 +208,7 @@
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(121, 20);
             this.textBoxWeight.TabIndex = 15;
+            this.textBoxWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxWeight_KeyPress);
             // 
             // lblPhone
             // 
@@ -234,6 +226,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(121, 20);
             this.textBoxPhone.TabIndex = 17;
+            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
             // lblEmail
             // 
@@ -294,7 +287,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(15, 427);
+            this.buttonBack.Location = new System.Drawing.Point(15, 453);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(200, 41);
             this.buttonBack.TabIndex = 25;
@@ -307,47 +300,13 @@
             this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSubmit.Location = new System.Drawing.Point(15, 380);
+            this.buttonSubmit.Location = new System.Drawing.Point(15, 406);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(200, 41);
             this.buttonSubmit.TabIndex = 26;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
-            // 
-            // textBoxFrom
-            // 
-            this.textBoxFrom.Location = new System.Drawing.Point(131, 328);
-            this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.Size = new System.Drawing.Size(121, 20);
-            this.textBoxFrom.TabIndex = 27;
-            // 
-            // labelFrom
-            // 
-            this.labelFrom.AutoSize = true;
-            this.labelFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.Location = new System.Drawing.Point(12, 331);
-            this.labelFrom.Name = "labelFrom";
-            this.labelFrom.Size = new System.Drawing.Size(102, 13);
-            this.labelFrom.TabIndex = 28;
-            this.labelFrom.Text = "From (hh:mm:ss):";
-            // 
-            // labelTo
-            // 
-            this.labelTo.AutoSize = true;
-            this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(12, 357);
-            this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(90, 13);
-            this.labelTo.TabIndex = 30;
-            this.labelTo.Text = "To (hh:mm:ss):";
-            // 
-            // textBoxTo
-            // 
-            this.textBoxTo.Location = new System.Drawing.Point(131, 354);
-            this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.Size = new System.Drawing.Size(121, 20);
-            this.textBoxTo.TabIndex = 29;
             // 
             // labelStar
             // 
@@ -403,102 +362,18 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "*";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(346, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(11, 13);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "*";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(346, 168);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 13);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "*";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(346, 198);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(11, 13);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "*";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(346, 224);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 13);
-            this.label9.TabIndex = 40;
-            this.label9.Text = "*";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(346, 250);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 13);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "*";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(346, 276);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(11, 13);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "*";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(346, 328);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(11, 13);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(346, 354);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 13);
-            this.label13.TabIndex = 44;
-            this.label13.Text = "*";
-            // 
             // NewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(590, 504);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(675, 674);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelStar);
-            this.Controls.Add(this.labelTo);
-            this.Controls.Add(this.textBoxTo);
-            this.Controls.Add(this.labelFrom);
-            this.Controls.Add(this.textBoxFrom);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBoxNationality);
@@ -562,23 +437,11 @@
         private System.Windows.Forms.ComboBox comboBoxNationality;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonSubmit;
-        private System.Windows.Forms.TextBox textBoxFrom;
-        private System.Windows.Forms.Label labelFrom;
-        private System.Windows.Forms.Label labelTo;
-        private System.Windows.Forms.TextBox textBoxTo;
         private System.Windows.Forms.Label labelStar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
     }
 }

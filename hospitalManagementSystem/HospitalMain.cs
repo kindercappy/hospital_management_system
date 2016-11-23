@@ -180,8 +180,12 @@ namespace hospitalManagementSystem
         {
            
         }
-
-        
+        //Nationality
+        private void buttonNationality_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.nationality, this);
+            panelHospitalMain.SendToBack();
+        }
     }
 }
 

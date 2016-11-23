@@ -27,7 +27,8 @@ namespace hospitalManagementSystem
         private static AssignStaffShifts fAssignStaffShifts;
         //Hospital
         private static HospitalMain fHospitalMain;
-
+        //Nationality
+        private static Nationality fNationality;
         //Patient
         public static NewPatient newPatient
             {
@@ -166,7 +167,18 @@ namespace hospitalManagementSystem
                 return fHospitalMain;
             }
         }
-
+        //Nationality
+        public static Nationality nationality
+        {
+            get
+            {
+                if(fNationality==null || fNationality.IsDisposed)
+                {
+                    fNationality = new Nationality();
+                }
+                return fNationality;
+            }
+        }
 
         public static void ShowMaximizeSubForm(Form frm, Form mdi)
             {

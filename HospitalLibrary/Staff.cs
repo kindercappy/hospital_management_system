@@ -228,27 +228,27 @@ namespace HospitalLibrary
                 //HeightFt
                 SqlParameter iHeightFt = new SqlParameter("@heightFt", staff.heightFt);
                 iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightFt).Value = DBNull.Value; ;
+                cmd.Parameters.Add(iHeightFt);
                 //HeightInches
                 SqlParameter iHeightInch = new SqlParameter("@heightInch", staff.heightInch);
                 iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightInch).Value = DBNull.Value; ;
+                cmd.Parameters.Add(iHeightInch);
                 //Weight
                 SqlParameter iWeight = new SqlParameter("@weight", staff.weight);
                 iWeight.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iWeight).Value = DBNull.Value; ;
+                cmd.Parameters.Add(iWeight);
                 //Phone
                 SqlParameter iPhone = new SqlParameter("@phone", staff.phone);
                 iPhone.SqlDbType = System.Data.SqlDbType.BigInt;
-                cmd.Parameters.Add(iPhone).Value = DBNull.Value; ;
+                cmd.Parameters.Add(iPhone);
                 //Email
                 SqlParameter sEmail = new SqlParameter("@email", staff.email);
                 iPhone.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sEmail).Value = DBNull.Value; ;
+                cmd.Parameters.Add(sEmail);
                 //Address
                 SqlParameter sAddress = new SqlParameter("@address", staff.address);
                 sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sAddress).Value = DBNull.Value; ;
+                cmd.Parameters.Add(sAddress);
                 //Nationality
                 SqlParameter iNationality = new SqlParameter("@nationality", staff.natioinality);
                 iNationality.SqlDbType = System.Data.SqlDbType.Int;

@@ -52,8 +52,7 @@ namespace hospitalManagementSystem
             textBoxEmail.Text = "";
             textBoxAddress.Text = "";
             comboBoxNationality.SelectedIndex = -1;
-            textBoxFrom.Text = "";
-            textBoxTo.Text = "";
+            
             Id = 0;
         }
         private void clearSearchBoxes()
@@ -108,8 +107,6 @@ namespace hospitalManagementSystem
             this.dataGridViewExistingPatient.Columns[9].HeaderText = "Email";
             this.dataGridViewExistingPatient.Columns[10].HeaderText = "Address";
             this.dataGridViewExistingPatient.Columns[11].HeaderText = "Nationality ID";
-            this.dataGridViewExistingPatient.Columns[12].HeaderText = "From";
-            this.dataGridViewExistingPatient.Columns[13].HeaderText = "To";
         }
         private void setDataGridViewAppointmentHeaders()
         {
@@ -130,7 +127,9 @@ namespace hospitalManagementSystem
         {
             try
             {
-
+                //dateTimePickerPatientEntryTime.ShowUpDown = true;              
+                //dateTimePickerPatientEntryTime.Format = DateTimePickerFormat.Custom;
+                //dateTimePickerPatientEntryTime.CustomFormat = "MM/dd/yyyy  hh:mm";
                 displayPatient();
                 notSortableDataGridViewExistingPatient();
                 notSortableDataGridViewAppointmentHistory();
@@ -215,8 +214,7 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    patient.from = TimeSpan.Parse(this.textBoxFrom.Text);
-                    patient.to = TimeSpan.Parse(this.textBoxTo.Text);
+                    //patient.entryTime = DateTime.Parse(this.dateTimePickerPatientEntryTime.Value.ToString());
                     PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
                     displayPatient();
@@ -280,8 +278,7 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    patient.from = TimeSpan.Parse(this.textBoxFrom.Text);
-                    patient.to = TimeSpan.Parse(this.textBoxTo.Text);
+                    //patient.entryTime = DateTime.Parse(this.dateTimePickerPatientEntryTime.Value.ToString());
                     //appointment
                     appointment.patientId = Id;
                     appointment.firstName = this.textBoxFirstName.Text;
@@ -368,8 +365,7 @@ namespace hospitalManagementSystem
                     textBoxEmail.Text = dataGridViewExistingPatient.CurrentRow.Cells[9].Value.ToString();
                     textBoxAddress.Text = dataGridViewExistingPatient.CurrentRow.Cells[10].Value.ToString();
                     comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingPatient.CurrentRow.Cells[11].Value.ToString());
-                    textBoxFrom.Text = dataGridViewExistingPatient.CurrentRow.Cells[12].Value.ToString();
-                    textBoxTo.Text = dataGridViewExistingPatient.CurrentRow.Cells[13].Value.ToString();
+                    //this.dateTimePickerPatientEntryTime.Value = DateTime.Parse(dataGridViewExistingPatient.CurrentRow.Cells[12].Value.ToString());
                     this.comboBoxDepartment.SelectedIndex = -1;
 
                 }
@@ -466,6 +462,11 @@ namespace hospitalManagementSystem
             {
                 e.Handled = true;
             }
+        }
+
+        private void dateTimePickerPatientEntryTime_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) SendKeys.Send("%{down}");
         }
     }
 }

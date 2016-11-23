@@ -17,7 +17,7 @@ namespace HospitalLibrary
         private string sSex;
         private long iPhone;
         private int iPatientId;
-        private TimeSpan tAppTime;
+        private DateTime tAppTime;
 
         public string firstName
         {
@@ -107,7 +107,7 @@ namespace HospitalLibrary
                 iPatientId = value;
             }
         }
-        public TimeSpan appTime
+        public DateTime appTime
         {
             get
             {
@@ -168,7 +168,7 @@ namespace HospitalLibrary
 
                 //appTime Time param
                 SqlParameter tAppTime = new SqlParameter("@appTime", app.appTime);
-                tAppTime.SqlDbType = System.Data.SqlDbType.Time;
+                tAppTime.SqlDbType = System.Data.SqlDbType.DateTime;
                 cmd.Parameters.Add(tAppTime);
 
                 //patientId Integer param

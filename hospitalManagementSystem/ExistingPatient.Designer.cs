@@ -55,10 +55,6 @@
             this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.labelFrom = new System.Windows.Forms.Label();
-            this.textBoxFrom = new System.Windows.Forms.TextBox();
-            this.labelTo = new System.Windows.Forms.Label();
-            this.textBoxTo = new System.Windows.Forms.TextBox();
             this.dataGridViewAppointmentHistory = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,10 +68,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelStar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.buttonReset = new System.Windows.Forms.Button();
             this.labelSearchPhone = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -349,42 +343,6 @@
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // labelFrom
-            // 
-            this.labelFrom.AutoSize = true;
-            this.labelFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.Location = new System.Drawing.Point(13, 542);
-            this.labelFrom.Name = "labelFrom";
-            this.labelFrom.Size = new System.Drawing.Size(102, 13);
-            this.labelFrom.TabIndex = 40;
-            this.labelFrom.Text = "From (hh:mm:ss):";
-            // 
-            // textBoxFrom
-            // 
-            this.textBoxFrom.Location = new System.Drawing.Point(132, 539);
-            this.textBoxFrom.Multiline = true;
-            this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.Size = new System.Drawing.Size(121, 21);
-            this.textBoxFrom.TabIndex = 41;
-            // 
-            // labelTo
-            // 
-            this.labelTo.AutoSize = true;
-            this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(13, 568);
-            this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(90, 13);
-            this.labelTo.TabIndex = 42;
-            this.labelTo.Text = "To (hh:mm:ss):";
-            // 
-            // textBoxTo
-            // 
-            this.textBoxTo.Location = new System.Drawing.Point(132, 565);
-            this.textBoxTo.Multiline = true;
-            this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.Size = new System.Drawing.Size(121, 21);
-            this.textBoxTo.TabIndex = 43;
-            // 
             // dataGridViewAppointmentHistory
             // 
             this.dataGridViewAppointmentHistory.AllowUserToAddRows = false;
@@ -507,15 +465,6 @@
             this.labelStar.TabIndex = 57;
             this.labelStar.Text = "*";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 538);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 13);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "*";
-            // 
             // comboBoxDepartment
             // 
             this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -534,15 +483,6 @@
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 70;
             this.label7.Text = "Department:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(259, 565);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(11, 13);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "*";
             // 
             // buttonReset
             // 
@@ -638,10 +578,8 @@
             this.Controls.Add(this.textBoxSearchId);
             this.Controls.Add(this.labelSearchName);
             this.Controls.Add(this.textBoxSearchName);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -655,10 +593,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelStar);
             this.Controls.Add(this.dataGridViewAppointmentHistory);
-            this.Controls.Add(this.labelTo);
-            this.Controls.Add(this.textBoxTo);
-            this.Controls.Add(this.labelFrom);
-            this.Controls.Add(this.textBoxFrom);
             this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.textBoxHeightFt);
             this.Controls.Add(this.textBoxAge);
@@ -724,10 +658,6 @@
         private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Label labelFrom;
-        private System.Windows.Forms.TextBox textBoxFrom;
-        private System.Windows.Forms.Label labelTo;
-        private System.Windows.Forms.TextBox textBoxTo;
         private System.Windows.Forms.DataGridView dataGridViewAppointmentHistory;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
@@ -741,10 +671,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelStar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Label labelSearchPhone;
         private System.Windows.Forms.Button buttonSearch;

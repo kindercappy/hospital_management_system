@@ -60,6 +60,7 @@
             this.buttonDoctorAssignShifts = new System.Windows.Forms.Button();
             this.buttonStaffAssignShift = new System.Windows.Forms.Button();
             this.buttonNewShift = new System.Windows.Forms.Button();
+            this.buttonNationality = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelHospitalMain.SuspendLayout();
             this.SuspendLayout();
@@ -323,6 +324,7 @@
             // panelHospitalMain
             // 
             this.panelHospitalMain.BackColor = System.Drawing.Color.DarkGray;
+            this.panelHospitalMain.Controls.Add(this.buttonNationality);
             this.panelHospitalMain.Controls.Add(this.buttonBookAppointment);
             this.panelHospitalMain.Controls.Add(this.buttonDoctorAssignShifts);
             this.panelHospitalMain.Controls.Add(this.buttonStaffAssignShift);
@@ -339,7 +341,7 @@
             this.panelHospitalMain.Controls.Add(this.btnNewDoctor);
             this.panelHospitalMain.Location = new System.Drawing.Point(12, 27);
             this.panelHospitalMain.Name = "panelHospitalMain";
-            this.panelHospitalMain.Size = new System.Drawing.Size(1221, 598);
+            this.panelHospitalMain.Size = new System.Drawing.Size(1329, 598);
             this.panelHospitalMain.TabIndex = 22;
             // 
             // buttonBookAppointment
@@ -393,6 +395,19 @@
             this.buttonNewShift.Text = "New Shift";
             this.buttonNewShift.UseVisualStyleBackColor = false;
             this.buttonNewShift.Click += new System.EventHandler(this.buttonNewShift_Click);
+            // 
+            // buttonNationality
+            // 
+            this.buttonNationality.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonNationality.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonNationality.ForeColor = System.Drawing.Color.Navy;
+            this.buttonNationality.Location = new System.Drawing.Point(1150, 54);
+            this.buttonNationality.Name = "buttonNationality";
+            this.buttonNationality.Size = new System.Drawing.Size(162, 33);
+            this.buttonNationality.TabIndex = 12;
+            this.buttonNationality.Text = "Nationality";
+            this.buttonNationality.UseVisualStyleBackColor = false;
+            this.buttonNationality.Click += new System.EventHandler(this.buttonNationality_Click);
             // 
             // HospitalMain
             // 
@@ -451,6 +466,7 @@
         private System.Windows.Forms.ToolStripMenuItem newShiftToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem assignShiftToolStripMenuItem;
+        private System.Windows.Forms.Button buttonNationality;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalLibrary;
+using System.Globalization;
 
 namespace hospitalManagementSystem
 {
@@ -22,23 +23,25 @@ namespace hospitalManagementSystem
         //clear entered data
         private void clearData()
         {
-            textBoxFirstName.Text = "";
-            textBoxLastName.Text = "";
-            comboBoxDepartment.SelectedIndex = -1;
-            textBoxAge.Text = "";
-            comboBoxSex.SelectedIndex = -1;
-            textBoxHeightFt.Text = "";
-            textBoxHeightInch.Text = "";
-            textBoxWeight.Text = "";
-            textBoxPhone.Text = "";
-            comboBoxNationality.SelectedIndex = -1;
-            textBoxFrom.Text = "";
-            textBoxTo.Text = "";
+            this.textBoxFirstName.Text = "";
+            this.textBoxLastName.Text = "";
+            this.comboBoxDepartment.SelectedIndex = -1;
+            this.textBoxAge.Text = "";
+            this.comboBoxSex.SelectedIndex = -1;
+            this.textBoxHeightFt.Text = "";
+            this.textBoxHeightInch.Text = "";
+            this.textBoxWeight.Text = "";
+            this.textBoxPhone.Text = "";
+            this.textBoxEmail.Text = "";
+            this.comboBoxNationality.SelectedIndex = -1;
         }
+        
         private void NewPatient_Load(object sender, EventArgs e)
         {
             try
             {
+                
+
                 //NewPatient Department comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
@@ -67,6 +70,7 @@ namespace hospitalManagementSystem
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             string str = "";
+            //DateTime myDate;
             if (textBoxFirstName.Text == "")
             {
                 str = str + "First Name ";
@@ -83,33 +87,17 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Sex ";
             }
-            if (textBoxHeightFt.Text == "")
-            {
-                textBoxHeightFt.Text = "0";
-            }
-            if (textBoxHeightInch.Text == "")
-            {
-                textBoxHeightInch.Text = "0";
-            }
-            if (textBoxWeight.Text == "")
-            {
-                textBoxWeight.Text = "0";
-            }
-            if (textBoxPhone.Text == "")
-            {
-                textBoxPhone.Text = "0";
-            }
+            
             if (comboBoxNationality.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Nationality";
             }
-            if (textBoxFrom.Text == "")
+            if(this.textBoxEmail.Text.Length > 0)
             {
-                textBoxFrom.Text = "00:00:00";
-            }
-            if (textBoxTo.Text == "")
-            {
-                textBoxTo.Text = "00:00:00";
+                if (!Common.isValidEmail(this.textBoxEmail.Text))
+                {
+                    str = str + Environment.NewLine + "Pleaser enter valid Email";
+                }
             }
             if (str.Length > 0)
             {
@@ -117,6 +105,10 @@ namespace hospitalManagementSystem
             }
             else
             {
+                int resultHeightFt;
+                int resultHeightInch;
+                int resultWeight;
+                long resultPhone;
                 Patient patient = new Patient();
                 try
                 {
@@ -125,15 +117,48 @@ namespace hospitalManagementSystem
                     //patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
                     patient.age = Convert.ToInt32(this.textBoxAge.Text);
                     patient.sex = this.comboBoxSex.Text;
-                    patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
-                    patient.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                    patient.weight = Convert.ToInt32(this.textBoxWeight.Text);
-                    patient.phone = Convert.ToInt64(this.textBoxPhone.Text);
+                    //heightFt
+                    if(Int32.TryParse(this.textBoxHeightFt.Text,out resultHeightFt))
+                    {
+                    patient.heightFt = Int32.Parse(this.textBoxHeightFt.Text);
+                    }
+                    else
+                    {
+                        patient.heightFt = Int32.Parse(resultHeightFt.ToString());
+                    }
+                    
+                    //heightInch
+                    if(Int32.TryParse(this.textBoxHeightInch.Text,out resultHeightInch))
+                    {
+                    patient.heightInch = Int32.Parse(this.textBoxHeightInch.Text);
+                    }
+                    else
+                    {
+                        patient.heightInch = Int32.Parse(resultHeightInch.ToString());
+                    }
+
+                    //weight
+                    if(Int32.TryParse(this.textBoxWeight.Text,out resultWeight))
+                    {
+                    patient.weight = Int32.Parse(this.textBoxWeight.Text);
+                    }
+                    else
+                    {
+                        patient.weight = Int32.Parse(resultWeight.ToString());
+                    }
+                    //phone
+                    if(Int64.TryParse(this.textBoxPhone.Text,out resultPhone))
+                    {
+                    patient.phone = Int64.Parse(this.textBoxPhone.Text);
+                    }
+                    else
+                    {
+                        patient.phone = Int64.Parse(resultPhone.ToString());
+                    }
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    patient.from = TimeSpan.Parse(this.textBoxFrom.Text);
-                    patient.to = TimeSpan.Parse(this.textBoxTo.Text);
+                    //patient.entryTime = DateTime.Parse(this.dateTimePickerPatientEntryTime.Value.ToString());
                     PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
                     clearData();
@@ -149,6 +174,43 @@ namespace hospitalManagementSystem
         private void comboBoxSex_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxHeightFt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxHeightInch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

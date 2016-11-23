@@ -72,8 +72,6 @@ namespace hospitalManagementSystem
             this.dataGridViewPatient.Columns[9].HeaderText = "Email";
             this.dataGridViewPatient.Columns[10].HeaderText = "Address";
             this.dataGridViewPatient.Columns[11].HeaderText = "Nationality ID";
-            this.dataGridViewPatient.Columns[12].HeaderText = "From";
-            this.dataGridViewPatient.Columns[13].HeaderText = "To";
         }
         private void setDataGridViewDoctorHeaders()
         {
@@ -106,7 +104,9 @@ namespace hospitalManagementSystem
       
         private void BookAppointment_Load(object sender, EventArgs e)
         {
-            
+
+            dateTimePickerAppointmentTime.Format = DateTimePickerFormat.Time;
+            //dateTimePickerAppointmentTime.CustomFormat = "MM/ dd/ yyyy | hh:mm:ss";
             //displaying Patient list in dataGridViewPatient
             displayPatient();
             setDatagridViewPatientHeaders();
@@ -206,7 +206,7 @@ namespace hospitalManagementSystem
                 app.doctorId = docId;
                 app.sex = this.comboBoxSex.Text;
                 app.phone = Convert.ToInt64(this.textBoxPhone.Text);
-                app.appTime = TimeSpan.Parse(this.textBoxAppTime.Text);
+                app.appTime = DateTime.Parse(this.dateTimePickerAppointmentTime.Value.ToString());
                 app.patientId = patId;
                 AppointmentManager.appointmentSave(app);
                 MessageBox.Show("Success");
@@ -271,6 +271,7 @@ namespace hospitalManagementSystem
                 patient.phone = Convert.ToInt64("0");
                 patient.email = null;
                 patient.address = null;
+                //patient.entryTime = DateTime.Parse(null);
                 patient.natioinality = Int32.Parse(this.comboBoxNewNationality.SelectedValue.ToString());
                 
 
@@ -340,5 +341,28 @@ namespace hospitalManagementSystem
             }
         }
 
+        private void textBoxNewAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

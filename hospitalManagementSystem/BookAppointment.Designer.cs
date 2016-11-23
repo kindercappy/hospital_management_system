@@ -52,7 +52,7 @@
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxAppTime = new System.Windows.Forms.TextBox();
-            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.buttonBookAppointment = new System.Windows.Forms.Button();
             this.dataGridViewDoctor = new System.Windows.Forms.DataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -69,7 +69,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxNewNationality = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonNewPatient = new System.Windows.Forms.Button();
+            this.dateTimePickerAppointmentTime = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).BeginInit();
             this.SuspendLayout();
@@ -246,6 +247,7 @@
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(177, 20);
             this.textBoxAge.TabIndex = 18;
+            this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
             // 
             // comboBoxSex
             // 
@@ -285,6 +287,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(177, 20);
             this.textBoxPhone.TabIndex = 28;
+            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
             // label16
             // 
@@ -298,23 +301,23 @@
             // 
             // textBoxAppTime
             // 
-            this.textBoxAppTime.Location = new System.Drawing.Point(1188, 316);
+            this.textBoxAppTime.Location = new System.Drawing.Point(1188, 342);
             this.textBoxAppTime.Name = "textBoxAppTime";
             this.textBoxAppTime.Size = new System.Drawing.Size(177, 20);
             this.textBoxAppTime.TabIndex = 42;
             // 
-            // buttonSubmit
+            // buttonBookAppointment
             // 
-            this.buttonSubmit.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonSubmit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSubmit.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSubmit.Location = new System.Drawing.Point(707, 342);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(278, 52);
-            this.buttonSubmit.TabIndex = 46;
-            this.buttonSubmit.Text = "Submit";
-            this.buttonSubmit.UseVisualStyleBackColor = false;
-            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            this.buttonBookAppointment.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBookAppointment.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBookAppointment.ForeColor = System.Drawing.Color.Navy;
+            this.buttonBookAppointment.Location = new System.Drawing.Point(707, 342);
+            this.buttonBookAppointment.Name = "buttonBookAppointment";
+            this.buttonBookAppointment.Size = new System.Drawing.Size(278, 52);
+            this.buttonBookAppointment.TabIndex = 46;
+            this.buttonBookAppointment.Text = "Book Appointment";
+            this.buttonBookAppointment.UseVisualStyleBackColor = false;
+            this.buttonBookAppointment.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // dataGridViewDoctor
             // 
@@ -425,6 +428,7 @@
             this.textBoxNewAge.Name = "textBoxNewAge";
             this.textBoxNewAge.Size = new System.Drawing.Size(177, 20);
             this.textBoxNewAge.TabIndex = 57;
+            this.textBoxNewAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewAge_KeyPress);
             // 
             // comboBoxNewSex
             // 
@@ -467,18 +471,25 @@
             this.label13.TabIndex = 61;
             this.label13.Text = "Natiionality:";
             // 
-            // button1
+            // buttonNewPatient
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(15, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(275, 52);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "New Patient";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonNewPatient.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonNewPatient.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNewPatient.ForeColor = System.Drawing.Color.Navy;
+            this.buttonNewPatient.Location = new System.Drawing.Point(15, 314);
+            this.buttonNewPatient.Name = "buttonNewPatient";
+            this.buttonNewPatient.Size = new System.Drawing.Size(275, 52);
+            this.buttonNewPatient.TabIndex = 63;
+            this.buttonNewPatient.Text = "New Patient";
+            this.buttonNewPatient.UseVisualStyleBackColor = false;
+            this.buttonNewPatient.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dateTimePickerAppointmentTime
+            // 
+            this.dateTimePickerAppointmentTime.Location = new System.Drawing.Point(1188, 317);
+            this.dateTimePickerAppointmentTime.Name = "dateTimePickerAppointmentTime";
+            this.dateTimePickerAppointmentTime.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAppointmentTime.TabIndex = 64;
             // 
             // BookAppointment
             // 
@@ -486,7 +497,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1954, 799);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePickerAppointmentTime);
+            this.Controls.Add(this.buttonNewPatient);
             this.Controls.Add(this.comboBoxNewNationality);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.comboBoxNewSex);
@@ -503,7 +515,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.dataGridViewDoctor);
-            this.Controls.Add(this.buttonSubmit);
+            this.Controls.Add(this.buttonBookAppointment);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBoxAppTime);
             this.Controls.Add(this.label10);
@@ -564,7 +576,7 @@
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxAppTime;
-        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.Button buttonBookAppointment;
         private System.Windows.Forms.DataGridView dataGridViewDoctor;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -581,6 +593,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBoxNewNationality;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonNewPatient;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAppointmentTime;
     }
 }

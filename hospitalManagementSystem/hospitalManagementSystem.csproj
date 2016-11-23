@@ -105,6 +105,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>hospitalManagementSystemDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Nationality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nationality.Designer.cs">
+      <DependentUpon>Nationality.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HospitalMain.resx">
       <DependentUpon>HospitalMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nationality.resx">
+      <DependentUpon>Nationality.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewDoctor.resx">
       <DependentUpon>NewDoctor.cs</DependentUpon>

@@ -333,6 +333,7 @@
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(121, 20);
             this.textBoxWeight.TabIndex = 99;
+            this.textBoxWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxWeight_KeyPress);
             // 
             // textBoxHeightInch
             // 
@@ -340,6 +341,7 @@
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightInch.TabIndex = 98;
+            this.textBoxHeightInch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeightInch_KeyPress);
             // 
             // textBoxHeightFt
             // 
@@ -347,6 +349,7 @@
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightFt.TabIndex = 97;
+            this.textBoxHeightFt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeightFt_KeyPress);
             // 
             // textBoxAge
             // 
@@ -354,6 +357,7 @@
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(121, 20);
             this.textBoxAge.TabIndex = 96;
+            this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
             // 
             // textBoxLastName
             // 
@@ -375,6 +379,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(121, 20);
             this.textBoxPhone.TabIndex = 93;
+            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
             // labelPhone
             // 

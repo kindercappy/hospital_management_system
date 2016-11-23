@@ -37,6 +37,15 @@ namespace hospitalManagementSystem
 
         }
 
+        private void entries()
+        {
+            this.textBoxFirstName.Text = "Cappy";
+            this.textBoxLastName.Text = " Preet";
+            this.textBoxAge.Text = "23";
+
+        }
+        
+
         private void buttonBack_Click(object sender, EventArgs e)
         {
             
@@ -44,6 +53,7 @@ namespace hospitalManagementSystem
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            
             string str = "";
             if (this.textBoxFirstName.Text == "")
             {
@@ -65,33 +75,37 @@ namespace hospitalManagementSystem
             {
                 str = str + Environment.NewLine + "Sex ";
             }
-            //if(this.textBoxHeightFt.Text == "")
-            //{
-            //    this.textBoxHeightFt.Text = "0";
-            //}
-            //if(this.textBoxHeightInch.Text == "")
-            //{
-            //    this.textBoxHeightInch.Text = "0";
-            //}
+
             if (this.comboBoxNationality.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Nationality";
             }
-            if(this.comboBoxStaffShift.SelectedIndex < 0)
+            if (this.comboBoxStaffShift.SelectedIndex < 0)
             {
                 str = str + Environment.NewLine + "Staff Shift";
+            }
+            //validate email
+            if (this.textBoxEmail.Text.Length > 0)
+            {
+                if (!Common.isValidEmail(this.textBoxEmail.Text))
+                {
+                    
+                    str = str + Environment.NewLine +"Please enter valid Email" ;
+                }
             }
             if (str.Length > 0)
             {
                 MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
             }
+
             else
             {
+                
+                
                 int resultHeightFt;
-                int resultHeightinch;
+                int resultHeightInch;
                 int resultWeight;
                 long resultPhone;
-      
                 Staff staff = new Staff();
                 try
                 {
@@ -100,41 +114,48 @@ namespace hospitalManagementSystem
                     staff.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
                     staff.age = Convert.ToInt32(this.textBoxAge.Text);
                     staff.sex = this.comboBoxSex.Text;
+
+                    //heightFt
                     if (Int32.TryParse(this.textBoxHeightFt.Text, out resultHeightFt))
                          {
-                            staff.heightFt = Int32.Parse(this.textBoxHeightFt.Text);
+                        staff.heightFt = Int32.Parse(this.textBoxHeightFt.Text);
                          }
                      else
                          {
-                            staff.heightFt = Int32.Parse(resultHeightFt.ToString());
+                        staff.heightFt = Int32.Parse(resultHeightFt.ToString());
                          }
-                    if(Int32.TryParse(this.textBoxHeightInch.Text,out resultHeightinch))
-                    {
 
+                    //heightInch
+                    if(Int32.TryParse(this.textBoxHeightInch.Text,out resultHeightInch))
+                    {
                     staff.heightInch = Int32.Parse(this.textBoxHeightInch.Text);
                     }
                     else
                     {
-                        staff.heightInch = Int32.Parse(resultHeightinch.ToString());
+                        staff.heightInch = Int32.Parse(resultHeightInch.ToString());
                     }
+
+                    //weight
                     if(Int32.TryParse(this.textBoxWeight.Text,out resultWeight))
                     {
-
-                    staff.weight = Int32.Parse(this.textBoxWeight.Text);
+                        staff.weight = Int32.Parse(this.textBoxWeight.Text);
                     }
                     else
                     {
                         staff.weight = Int32.Parse(resultWeight.ToString());
                     }
+
+                    //phone
                     if(Int64.TryParse(this.textBoxPhone.Text ,out resultPhone))
                     {
-
-                    staff.phone = Int64.Parse(this.textBoxPhone.Text);
+                        staff.phone = Int64.Parse(this.textBoxPhone.Text);
                     }
                     else
                     {
                         staff.phone = Int64.Parse(resultPhone.ToString());
                     }
+
+
                     staff.email = this.textBoxEmail.Text;
                     staff.address = this.textBoxAddress.Text;
                     staff.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
@@ -155,6 +176,7 @@ namespace hospitalManagementSystem
         {
             try
             {
+                entries();
                 //NewPatient Department comboBox
                 this.comboBoxDepartment.DataSource = DepartmentStaffManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
@@ -190,6 +212,43 @@ namespace hospitalManagementSystem
         private void comboBoxSex_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxHeightFt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxHeightInch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

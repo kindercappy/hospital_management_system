@@ -99,6 +99,7 @@ namespace hospitalManagementSystem
             displayStaff();
             //sets header for dataGridViewExistingStaff
             setDataGridViewStaffHeaders();
+            notSortableDataGridViewExsitingStaff();
             //ExistingStaff Department comboBox
             this.comboBoxDepartment.DisplayMember = "departmentName";
             this.comboBoxDepartment.ValueMember = "departmentId";
@@ -127,7 +128,6 @@ namespace hospitalManagementSystem
             this.comboBoxSex.SelectedIndex = -1;
             this.comboBoxStaffShift.SelectedIndex = -1;
 
-            notSortableDataGridViewExsitingStaff();
 
         }
 
@@ -262,20 +262,20 @@ namespace hospitalManagementSystem
             {
                 try
                 {
-                    staffId = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[0].Value.ToString());
-                    textBoxFirstName.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[1].Value.ToString();
-                    textBoxLastName.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[2].Value.ToString();
-                    comboBoxDepartment.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[3].Value.ToString());
-                    textBoxAge.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[4].Value.ToString();
-                    comboBoxSex.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[5].Value.ToString();
-                    textBoxHeightFt.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[6].Value.ToString();
-                    textBoxHeightInch.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[7].Value.ToString();
-                    textBoxWeight.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[8].Value.ToString();
-                    textBoxPhone.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[9].Value.ToString();
-                    textBoxEmail.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[10].Value.ToString();
-                    textBoxAddress.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[11].Value.ToString();
-                    comboBoxNationality.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[12].Value.ToString());
-                    comboBoxStaffShift.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[13].Value.ToString());
+                    this.staffId = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[0].Value.ToString());
+                    this.textBoxFirstName.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[1].Value.ToString();
+                    this.textBoxLastName.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[2].Value.ToString();
+                    this.comboBoxDepartment.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[3].Value.ToString());
+                    this.textBoxAge.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[4].Value.ToString();
+                    this.comboBoxSex.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[5].Value.ToString();
+                    this.textBoxHeightFt.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[6].Value.ToString();
+                    this.textBoxHeightInch.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[7].Value.ToString();
+                    this.textBoxWeight.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[8].Value.ToString();
+                    this.textBoxPhone.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[9].Value.ToString();
+                    this.textBoxEmail.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[10].Value.ToString();
+                    this.textBoxAddress.Text = this.dataGridViewExistingStaff.CurrentRow.Cells[11].Value.ToString();
+                    this.comboBoxNationality.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[12].Value.ToString());
+                    this.comboBoxStaffShift.SelectedValue = Convert.ToInt32(this.dataGridViewExistingStaff.CurrentRow.Cells[13].Value.ToString());
                 }
                 catch (System.Exception ex)
                 {
@@ -352,6 +352,11 @@ namespace hospitalManagementSystem
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
