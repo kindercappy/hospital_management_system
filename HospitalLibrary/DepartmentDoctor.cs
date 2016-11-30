@@ -62,6 +62,72 @@ namespace HospitalLibrary
                 }
                 return DepartmentList;
             }
+
+            public static DataTable doctorDepartmentSelect()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Doctor_Department_Select";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
+            public static void doctorDepartmentInsert(DepartmentDoctor depDoc)
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Department_Insert";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter sDepartmentName = new SqlParameter("@departmentName", depDoc.departmentName);
+                sDepartmentName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sDepartmentName);
+
+                cmd.ExecuteNonQuery();
+            }
+            }
+            
+        public static void doctorDepartmentUpdate(DepartmentDoctor depDoc)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Department_Update";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter sDepartmentName = new SqlParameter("@departmentName", depDoc.departmentName);
+                sDepartmentName.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sDepartmentName);
+
+                SqlParameter iDepartmentId = new SqlParameter("@departmentId", depDoc.departmentId);
+                iDepartmentId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDepartmentId);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public static void doctorDepartmentDelete(DepartmentDoctor depDoc)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Doctor_Department_Delete";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iDepartmentId = new SqlParameter("@departmentId", depDoc.departmentId);
+                iDepartmentId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iDepartmentId);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
         }
     
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace HospitalLibrary
 {
@@ -18,7 +19,19 @@ namespace HospitalLibrary
         private long iPhone;
         private int iPatientId;
         private DateTime tAppTime;
+        private int iappId;
 
+        public int appId
+        {
+            get
+            {
+                return iappId;
+            }
+            set
+            {
+                iappId = value;
+            }
+        }
         public string firstName
         {
             get
@@ -227,5 +240,43 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+        public static DataTable displayAppointmentByDoctorId(Appointment app)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = Common.getConnection();
+            cmd.CommandText = "Appointment_Select_By_DoctorId";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlParameter iDoctorId = new SqlParameter("@doctorId", app.doctorId);
+            iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
+            cmd.Parameters.Add(iDoctorId);
+
+            cmd.ExecuteNonQuery();
+
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static void deleteAppointmentByAppointmentId(Appointment app)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "Appointment_Delete_By_AppointmentId";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iAppointmentId = new SqlParameter("@appId", app.appId);
+                iAppointmentId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iAppointmentId);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }

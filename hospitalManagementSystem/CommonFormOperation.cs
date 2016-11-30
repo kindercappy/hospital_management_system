@@ -20,15 +20,20 @@ namespace hospitalManagementSystem
         private static ExistingDoctor fExistingDoctor;
         private static DoctorShifts fDoctorShifts;
         private static AssignDoctorShifts fAssignDoctorShifts;
+        private static DoctorDepartment fDoctorDepartment;
         //Staff
         private static NewStaff fNewStaff;
         private static ExistingStaff fExistingStaff;
         private static StaffShifts fStaffSfhits;
         private static AssignStaffShifts fAssignStaffShifts;
+        private static StaffDepartment fStaffDepartment;
         //Hospital
         private static HospitalMain fHospitalMain;
         //Nationality
         private static Nationality fNationality;
+        //Create NEw account
+        private static CreateNewAccount fCreateNewAccount;
+
         //Patient
         public static NewPatient newPatient
             {
@@ -109,6 +114,17 @@ namespace hospitalManagementSystem
                 return fAssignDoctorShifts;
             }
         }
+        public static DoctorDepartment doctorDepartment
+        {
+            get
+            {
+                if(fDoctorDepartment==null || fDoctorDepartment.IsDisposed)
+                {
+                    fDoctorDepartment = new DoctorDepartment();
+                }
+                return fDoctorDepartment;
+            }
+        }
 
         //Staff
         public static NewStaff newStaff
@@ -155,6 +171,17 @@ namespace hospitalManagementSystem
                 return fAssignStaffShifts;
             }
         }
+        public static StaffDepartment staffDepartment
+        {
+            get
+            {
+                if(fStaffDepartment==null || fStaffDepartment.IsDisposed)
+                {
+                    fStaffDepartment = new StaffDepartment();
+                }
+                return fStaffDepartment;
+            }
+        }
         //HospitalMain
         public static HospitalMain hospitalMain
         {
@@ -179,6 +206,18 @@ namespace hospitalManagementSystem
                 return fNationality;
             }
         }
+        //Create new account
+        public static CreateNewAccount createNewAccount
+        {
+            get
+            {
+                if(fCreateNewAccount == null || fCreateNewAccount.IsDisposed)
+                {
+                    fCreateNewAccount = new CreateNewAccount();
+                }
+                return fCreateNewAccount;
+            }
+        }
 
         public static void ShowMaximizeSubForm(Form frm, Form mdi)
             {
@@ -187,6 +226,13 @@ namespace hospitalManagementSystem
                 frm.BringToFront();
                 frm.WindowState = FormWindowState.Maximized;
            }
+        public static void ShowDialogSubForm(Form frm , Form mdi)
+        {
+            frm.MdiParent = mdi;
+            frm.ShowDialog();
+            frm.BringToFront();
+            frm.WindowState = FormWindowState.Normal;
+        }
      }
 }
 

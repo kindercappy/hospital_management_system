@@ -230,6 +230,7 @@
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(121, 20);
             this.textBoxWeight.TabIndex = 19;
+            this.textBoxWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxWeight_KeyPress);
             // 
             // textBoxEmail
             // 

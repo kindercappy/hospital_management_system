@@ -97,7 +97,7 @@ namespace hospitalManagementSystem
             {
                 int resultHeightFt;
                 int resultHeightInch;
-                int resultWeight;
+                decimal resultWeight;
                 long resultPhone;
                 Doctor doc = new Doctor();
                 try
@@ -129,13 +129,13 @@ namespace hospitalManagementSystem
                     }
 
                     //weight
-                    if(Int32.TryParse(this.textBoxWeight.Text,out resultWeight))
+                    if(Decimal.TryParse(this.textBoxWeight.Text,out resultWeight))
                     {
-                    doc.weight = Int32.Parse(this.textBoxWeight.Text);
+                    doc.weight = Convert.ToDecimal(this.textBoxWeight.Text);
                     }
                     else
                     {
-                        doc.weight = Int32.Parse(resultWeight.ToString());
+                        doc.weight = Convert.ToDecimal(resultWeight.ToString());
                     }
 
                     //phone
@@ -228,7 +228,18 @@ namespace hospitalManagementSystem
 
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

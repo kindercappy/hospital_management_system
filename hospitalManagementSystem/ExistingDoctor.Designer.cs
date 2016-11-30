@@ -73,7 +73,10 @@
             this.textBoxSearchId = new System.Windows.Forms.TextBox();
             this.labelSearchName = new System.Windows.Forms.Label();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
+            this.dataGridViewAppointmentHistory = new System.Windows.Forms.DataGridView();
+            this.buttonDeleteAppointment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // labelPhone
@@ -508,12 +511,39 @@
             this.textBoxSearchName.TabIndex = 81;
             this.textBoxSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchName_KeyPress);
             // 
+            // dataGridViewAppointmentHistory
+            // 
+            this.dataGridViewAppointmentHistory.AllowUserToAddRows = false;
+            this.dataGridViewAppointmentHistory.AllowUserToDeleteRows = false;
+            this.dataGridViewAppointmentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAppointmentHistory.Location = new System.Drawing.Point(486, 256);
+            this.dataGridViewAppointmentHistory.Name = "dataGridViewAppointmentHistory";
+            this.dataGridViewAppointmentHistory.ReadOnly = true;
+            this.dataGridViewAppointmentHistory.Size = new System.Drawing.Size(1073, 150);
+            this.dataGridViewAppointmentHistory.TabIndex = 89;
+            this.dataGridViewAppointmentHistory.SelectionChanged += new System.EventHandler(this.dataGridViewAppointmentHistory_SelectionChanged);
+            // 
+            // buttonDeleteAppointment
+            // 
+            this.buttonDeleteAppointment.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDeleteAppointment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDeleteAppointment.ForeColor = System.Drawing.Color.Navy;
+            this.buttonDeleteAppointment.Location = new System.Drawing.Point(486, 413);
+            this.buttonDeleteAppointment.Name = "buttonDeleteAppointment";
+            this.buttonDeleteAppointment.Size = new System.Drawing.Size(150, 23);
+            this.buttonDeleteAppointment.TabIndex = 90;
+            this.buttonDeleteAppointment.Text = "Delete";
+            this.buttonDeleteAppointment.UseVisualStyleBackColor = false;
+            this.buttonDeleteAppointment.Click += new System.EventHandler(this.buttonDeleteAppointment_Click);
+            // 
             // ExistingDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1510, 813);
+            this.Controls.Add(this.buttonDeleteAppointment);
+            this.Controls.Add(this.dataGridViewAppointmentHistory);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.labelSearchPhone);
             this.Controls.Add(this.buttonSearch);
@@ -564,6 +594,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ExistingDoctor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,5 +646,7 @@
         private System.Windows.Forms.TextBox textBoxSearchId;
         private System.Windows.Forms.Label labelSearchName;
         private System.Windows.Forms.TextBox textBoxSearchName;
+        private System.Windows.Forms.DataGridView dataGridViewAppointmentHistory;
+        private System.Windows.Forms.Button buttonDeleteAppointment;
     }
 }

@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,6 +69,18 @@
       <DependentUpon>BookAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonFormOperation.cs" />
+    <Compile Include="CreateNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewAccount.Designer.cs">
+      <DependentUpon>CreateNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorDepartment.Designer.cs">
+      <DependentUpon>DoctorDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorShifts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +121,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>hospitalManagementSystemDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nationality.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +159,12 @@
     <Compile Include="Shifts.Designer.cs">
       <DependentUpon>Shifts.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDepartment.Designer.cs">
+      <DependentUpon>StaffDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffShifts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +180,12 @@
     <EmbeddedResource Include="BookAppointment.resx">
       <DependentUpon>BookAppointment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewAccount.resx">
+      <DependentUpon>CreateNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorDepartment.resx">
+      <DependentUpon>DoctorDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorShifts.resx">
       <DependentUpon>DoctorShifts.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HospitalMain.resx">
       <DependentUpon>HospitalMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nationality.resx">
       <DependentUpon>Nationality.cs</DependentUpon>
@@ -190,6 +227,9 @@
     </Compile>
     <EmbeddedResource Include="Shifts.resx">
       <DependentUpon>Shifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffDepartment.resx">
+      <DependentUpon>StaffDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffShifts.resx">
       <DependentUpon>StaffShifts.cs</DependentUpon>

@@ -18,7 +18,7 @@ namespace HospitalLibrary
         private string sSex;
         private int iHeightFt;
         private int iHeightInch;
-        private int iWeight;
+        private decimal iWeight;
         private long iPhone;
         private string sEmail;
         private string sAddress;
@@ -122,7 +122,7 @@ namespace HospitalLibrary
             }
         }
 
-        public int weight
+        public decimal weight
         {
             get
             {
@@ -259,7 +259,7 @@ namespace HospitalLibrary
                 cmd.Parameters.Add(iHeightInch);
                 //Weight
                 SqlParameter iWeight = new SqlParameter("@weight", patient.weight);
-                iWeight.SqlDbType = System.Data.SqlDbType.Int;
+                iWeight.SqlDbType = System.Data.SqlDbType.Decimal;
                 cmd.Parameters.Add(iWeight);
                 //Phone
                 SqlParameter iPhone = new SqlParameter("@phone", patient.phone);

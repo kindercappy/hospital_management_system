@@ -19,6 +19,8 @@ namespace hospitalManagementSystem
         SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         int Id = 0;
+        int patId = 0;
+        int appId = 0;
 
         public ExistingDoctor()
         {
@@ -32,6 +34,20 @@ namespace hospitalManagementSystem
         private void displayDoctor()
         {
             dataGridViewExistingDoctor.DataSource = DoctorManager.getDoctorList();
+        }
+        private void appointmentDisplayByDoctorId()
+        {
+            Appointment app = new Appointment();
+            app.doctorId = Id;
+            dt = new DataTable();
+            dt = AppointmentManager.displayAppointmentByDoctorId(app);
+            this.dataGridViewAppointmentHistory.DataSource = dt;
+            
+        }
+        private void appointmentDeleteByAppointmentId()
+        {
+            
+
         }
         //clear data
         private void clearAllBoxes()
@@ -83,6 +99,22 @@ namespace hospitalManagementSystem
             this.dataGridViewExistingDoctor.Columns[12].HeaderText = "Nationality ID";
             this.dataGridViewExistingDoctor.Columns[13].HeaderText = "Doctor Shift";
         }
+        private void notSortableDataGridViewAppointmentHistory()
+        {
+            foreach(DataGridViewColumn col in this.dataGridViewAppointmentHistory.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+        private void fullRowSelectDataGridViewExistingDoctor()
+        {
+            this.dataGridViewExistingDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void fullRowSelectDataGridViewAppointmentHistory()
+        {
+            this.dataGridViewAppointmentHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
 
         private void buttonBack_Click(object sender, EventArgs e)
         {            
@@ -94,8 +126,12 @@ namespace hospitalManagementSystem
             try
             {
                 displayDoctor();
+                
                 notSortableDataGridViewExistingDoctor();
+                notSortableDataGridViewAppointmentHistory();
                 setdatGridViewEixsitngHeaders();
+                fullRowSelectDataGridViewExistingDoctor();
+                fullRowSelectDataGridViewAppointmentHistory();
                 //this.dataGridViewExistingDoctor.Columns[0].Visible = false;
                 //ExistingDoctor Depertment comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
@@ -113,13 +149,14 @@ namespace hospitalManagementSystem
                 this.comboBoxDoctorShift.ValueMember = "shiftId";
                 //sets colour for alternate rowns for dataGridViewExsitingDoctor
                 this.dataGridViewExistingDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
+                this.dataGridViewAppointmentHistory.AlternatingRowsDefaultCellStyle.BackColor = Color.DodgerBlue;
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
                 this.comboBoxDoctorShift.SelectedIndex = -1;
                 //datagridview full row select
-                this.dataGridViewExistingDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                
             }
             catch(System.Exception ex)
             {
@@ -204,7 +241,7 @@ namespace hospitalManagementSystem
                     doc.sex = this.comboBoxSex.Text;
                     doc.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
                     doc.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                    doc.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    doc.weight = Convert.ToDecimal(this.textBoxWeight.Text);
                     doc.phone = Convert.ToInt64(this.textBoxPhone.Text);
                     doc.email = this.textBoxEmail.Text;
                     doc.address = this.textBoxAddress.Text;
@@ -255,7 +292,7 @@ namespace hospitalManagementSystem
                 str = str + Environment.NewLine + "Doctor Shift";
             }
             if (str.Length > 0)
-            {
+            { 
                 MessageBox.Show(str + Environment.NewLine + "(REQUIRED)");
             }
             else
@@ -271,7 +308,7 @@ namespace hospitalManagementSystem
                     doctor.sex = this.comboBoxSex.Text;
                     doctor.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
                     doctor.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                    doctor.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    doctor.weight = Convert.ToDecimal(this.textBoxWeight.Text);
                     doctor.phone = Convert.ToInt64(this.textBoxPhone.Text);
                     doctor.email = this.textBoxEmail.Text;
                     doctor.address = this.textBoxAddress.Text;
@@ -330,11 +367,13 @@ namespace hospitalManagementSystem
                     textBoxAddress.Text = dataGridViewExistingDoctor.CurrentRow.Cells[11].Value.ToString();
                     comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingDoctor.CurrentRow.Cells[12].Value.ToString());
                     comboBoxDoctorShift.SelectedValue = Int32.Parse(dataGridViewExistingDoctor.CurrentRow.Cells[13].Value.ToString());
+                    appointmentDisplayByDoctorId();
                 }
                 catch (System.Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+                
             }
         }
 
@@ -404,7 +443,52 @@ namespace hospitalManagementSystem
 
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void dataGridViewAppointmentHistory_SelectionChanged(object sender, EventArgs e)
+        {
+            if(this.dataGridViewAppointmentHistory.CurrentRow != null && this.dataGridViewAppointmentHistory.CurrentRow.Index != -1)
+            {
+                try
+                {
+                    appId = Convert.ToInt32(this.dataGridViewAppointmentHistory.CurrentRow.Cells[0].Value.ToString());
+                    patId = Convert.ToInt32(this.dataGridViewAppointmentHistory.CurrentRow.Cells[7].Value.ToString());
+                    
+                }
+                catch(System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void buttonDeleteAppointment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            Appointment app = new Appointment();
+            app.appId = appId;
+            AppointmentManager.deleteAppointmentByAppointmentId(app);
+            MessageBox.Show("Deleted");
+            appointmentDisplayByDoctorId();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

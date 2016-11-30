@@ -49,8 +49,10 @@
     <Compile Include="NationalityHL.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="StaffShiftsHL.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

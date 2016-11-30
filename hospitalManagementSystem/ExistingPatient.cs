@@ -209,7 +209,7 @@ namespace hospitalManagementSystem
                     patient.sex = this.comboBoxSex.Text;
                     patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
                     patient.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                    patient.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    patient.weight = Convert.ToDecimal(this.textBoxWeight.Text);
                     patient.phone = Convert.ToInt64(this.textBoxPhone.Text);
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
@@ -273,7 +273,7 @@ namespace hospitalManagementSystem
                     patient.sex = this.comboBoxSex.Text;
                     patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
                     patient.heightInch = Convert.ToInt32(this.textBoxHeightInch.Text);
-                    patient.weight = Convert.ToInt32(this.textBoxWeight.Text);
+                    patient.weight = Convert.ToDecimal(this.textBoxWeight.Text);
                     patient.phone = Convert.ToInt64(this.textBoxPhone.Text);
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
@@ -367,13 +367,13 @@ namespace hospitalManagementSystem
                     comboBoxNationality.SelectedValue = Convert.ToInt32(dataGridViewExistingPatient.CurrentRow.Cells[11].Value.ToString());
                     //this.dateTimePickerPatientEntryTime.Value = DateTime.Parse(dataGridViewExistingPatient.CurrentRow.Cells[12].Value.ToString());
                     this.comboBoxDepartment.SelectedIndex = -1;
+                displayAppointment();
 
                 }
                 catch (System.Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                displayAppointment();
             }
         }
 
@@ -467,6 +467,21 @@ namespace hospitalManagementSystem
         private void dateTimePickerPatientEntryTime_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right) SendKeys.Send("%{down}");
+        }
+
+        private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

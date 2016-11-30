@@ -38,15 +38,16 @@
             this.btnNewStaff = new System.Windows.Forms.Button();
             this.btnExistingStaff = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.existingPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existingDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeShiftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignShiftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.existingPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existingStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,13 +55,19 @@
             this.newShiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.assignShiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nationalityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNewShifts = new System.Windows.Forms.Button();
             this.panelHospitalMain = new System.Windows.Forms.Panel();
+            this.buttonStaffDepartment = new System.Windows.Forms.Button();
+            this.buttonDoctorDepartment = new System.Windows.Forms.Button();
+            this.buttonNationality = new System.Windows.Forms.Button();
             this.buttonBookAppointment = new System.Windows.Forms.Button();
             this.buttonDoctorAssignShifts = new System.Windows.Forms.Button();
             this.buttonStaffAssignShift = new System.Windows.Forms.Button();
             this.buttonNewShift = new System.Windows.Forms.Button();
-            this.buttonNationality = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelHospitalMain.SuspendLayout();
             this.SuspendLayout();
@@ -70,9 +77,9 @@
             this.btnNewPatient.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnNewPatient.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnNewPatient.ForeColor = System.Drawing.Color.Navy;
-            this.btnNewPatient.Location = new System.Drawing.Point(3, 32);
+            this.btnNewPatient.Location = new System.Drawing.Point(15, 49);
             this.btnNewPatient.Name = "btnNewPatient";
-            this.btnNewPatient.Size = new System.Drawing.Size(162, 33);
+            this.btnNewPatient.Size = new System.Drawing.Size(162, 23);
             this.btnNewPatient.TabIndex = 1;
             this.btnNewPatient.Text = "New Patient";
             this.btnNewPatient.UseVisualStyleBackColor = false;
@@ -83,9 +90,9 @@
             this.btnExistingPatient.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnExistingPatient.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnExistingPatient.ForeColor = System.Drawing.Color.Navy;
-            this.btnExistingPatient.Location = new System.Drawing.Point(171, 32);
+            this.btnExistingPatient.Location = new System.Drawing.Point(15, 78);
             this.btnExistingPatient.Name = "btnExistingPatient";
-            this.btnExistingPatient.Size = new System.Drawing.Size(162, 33);
+            this.btnExistingPatient.Size = new System.Drawing.Size(162, 23);
             this.btnExistingPatient.TabIndex = 2;
             this.btnExistingPatient.Text = "Existing Patient";
             this.btnExistingPatient.UseVisualStyleBackColor = false;
@@ -95,7 +102,7 @@
             // 
             this.lblPatient.AutoSize = true;
             this.lblPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatient.Location = new System.Drawing.Point(126, 12);
+            this.lblPatient.Location = new System.Drawing.Point(12, 0);
             this.lblPatient.Name = "lblPatient";
             this.lblPatient.Size = new System.Drawing.Size(59, 17);
             this.lblPatient.TabIndex = 4;
@@ -106,9 +113,9 @@
             this.btnNewDoctor.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnNewDoctor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnNewDoctor.ForeColor = System.Drawing.Color.Navy;
-            this.btnNewDoctor.Location = new System.Drawing.Point(368, 32);
+            this.btnNewDoctor.Location = new System.Drawing.Point(15, 124);
             this.btnNewDoctor.Name = "btnNewDoctor";
-            this.btnNewDoctor.Size = new System.Drawing.Size(162, 33);
+            this.btnNewDoctor.Size = new System.Drawing.Size(162, 23);
             this.btnNewDoctor.TabIndex = 4;
             this.btnNewDoctor.Text = "New Doctor";
             this.btnNewDoctor.UseVisualStyleBackColor = false;
@@ -118,7 +125,7 @@
             // 
             this.lblDoctor.AutoSize = true;
             this.lblDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoctor.Location = new System.Drawing.Point(509, 12);
+            this.lblDoctor.Location = new System.Drawing.Point(12, 104);
             this.lblDoctor.Name = "lblDoctor";
             this.lblDoctor.Size = new System.Drawing.Size(56, 17);
             this.lblDoctor.TabIndex = 6;
@@ -129,9 +136,9 @@
             this.btnExistingDoctor.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnExistingDoctor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnExistingDoctor.ForeColor = System.Drawing.Color.Navy;
-            this.btnExistingDoctor.Location = new System.Drawing.Point(536, 32);
+            this.btnExistingDoctor.Location = new System.Drawing.Point(15, 153);
             this.btnExistingDoctor.Name = "btnExistingDoctor";
-            this.btnExistingDoctor.Size = new System.Drawing.Size(162, 33);
+            this.btnExistingDoctor.Size = new System.Drawing.Size(162, 23);
             this.btnExistingDoctor.TabIndex = 5;
             this.btnExistingDoctor.Text = "Existing Doctor";
             this.btnExistingDoctor.UseVisualStyleBackColor = false;
@@ -141,7 +148,7 @@
             // 
             this.lblStaff.AutoSize = true;
             this.lblStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaff.Location = new System.Drawing.Point(879, 12);
+            this.lblStaff.Location = new System.Drawing.Point(12, 266);
             this.lblStaff.Name = "lblStaff";
             this.lblStaff.Size = new System.Drawing.Size(42, 17);
             this.lblStaff.TabIndex = 10;
@@ -152,9 +159,9 @@
             this.btnNewStaff.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnNewStaff.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnNewStaff.ForeColor = System.Drawing.Color.Navy;
-            this.btnNewStaff.Location = new System.Drawing.Point(734, 32);
+            this.btnNewStaff.Location = new System.Drawing.Point(15, 286);
             this.btnNewStaff.Name = "btnNewStaff";
-            this.btnNewStaff.Size = new System.Drawing.Size(162, 33);
+            this.btnNewStaff.Size = new System.Drawing.Size(162, 23);
             this.btnNewStaff.TabIndex = 8;
             this.btnNewStaff.Text = "New Staff";
             this.btnNewStaff.UseVisualStyleBackColor = false;
@@ -165,9 +172,9 @@
             this.btnExistingStaff.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnExistingStaff.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnExistingStaff.ForeColor = System.Drawing.Color.Navy;
-            this.btnExistingStaff.Location = new System.Drawing.Point(902, 32);
+            this.btnExistingStaff.Location = new System.Drawing.Point(15, 315);
             this.btnExistingStaff.Name = "btnExistingStaff";
-            this.btnExistingStaff.Size = new System.Drawing.Size(162, 33);
+            this.btnExistingStaff.Size = new System.Drawing.Size(162, 23);
             this.btnExistingStaff.TabIndex = 9;
             this.btnExistingStaff.Text = "Existing Staff";
             this.btnExistingStaff.UseVisualStyleBackColor = false;
@@ -176,53 +183,15 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.doctorToolStripMenuItem,
             this.patientToolStripMenuItem,
-            this.staffToolStripMenuItem});
+            this.doctorToolStripMenuItem,
+            this.staffToolStripMenuItem,
+            this.nationalityToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1372, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1462, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // doctorToolStripMenuItem
-            // 
-            this.doctorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newDoctorToolStripMenuItem,
-            this.existingDoctorToolStripMenuItem,
-            this.makeShiftsToolStripMenuItem,
-            this.assignShiftsToolStripMenuItem});
-            this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
-            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.doctorToolStripMenuItem.Text = "Doctor";
-            // 
-            // newDoctorToolStripMenuItem
-            // 
-            this.newDoctorToolStripMenuItem.Name = "newDoctorToolStripMenuItem";
-            this.newDoctorToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.newDoctorToolStripMenuItem.Text = "New Doctor";
-            this.newDoctorToolStripMenuItem.Click += new System.EventHandler(this.newDoctorToolStripMenuItem_Click);
-            // 
-            // existingDoctorToolStripMenuItem
-            // 
-            this.existingDoctorToolStripMenuItem.Name = "existingDoctorToolStripMenuItem";
-            this.existingDoctorToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.existingDoctorToolStripMenuItem.Text = "Existing Doctor";
-            this.existingDoctorToolStripMenuItem.Click += new System.EventHandler(this.existingDoctorToolStripMenuItem_Click);
-            // 
-            // makeShiftsToolStripMenuItem
-            // 
-            this.makeShiftsToolStripMenuItem.Name = "makeShiftsToolStripMenuItem";
-            this.makeShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.makeShiftsToolStripMenuItem.Text = "New Shifts";
-            this.makeShiftsToolStripMenuItem.Click += new System.EventHandler(this.makeShiftsToolStripMenuItem_Click);
-            // 
-            // assignShiftsToolStripMenuItem
-            // 
-            this.assignShiftsToolStripMenuItem.Name = "assignShiftsToolStripMenuItem";
-            this.assignShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.assignShiftsToolStripMenuItem.Text = "Assign shifts";
-            this.assignShiftsToolStripMenuItem.Click += new System.EventHandler(this.assignShiftsToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem
             // 
@@ -255,12 +224,60 @@
             this.bookAppointmentToolStripMenuItem.Text = "Book Appointment";
             this.bookAppointmentToolStripMenuItem.Click += new System.EventHandler(this.bookAppointmentToolStripMenuItem_Click);
             // 
+            // doctorToolStripMenuItem
+            // 
+            this.doctorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newDoctorToolStripMenuItem,
+            this.existingDoctorToolStripMenuItem,
+            this.makeShiftsToolStripMenuItem,
+            this.assignShiftsToolStripMenuItem,
+            this.departmentToolStripMenuItem});
+            this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
+            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.doctorToolStripMenuItem.Text = "Doctor";
+            // 
+            // newDoctorToolStripMenuItem
+            // 
+            this.newDoctorToolStripMenuItem.Name = "newDoctorToolStripMenuItem";
+            this.newDoctorToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newDoctorToolStripMenuItem.Text = "New Doctor";
+            this.newDoctorToolStripMenuItem.Click += new System.EventHandler(this.newDoctorToolStripMenuItem_Click);
+            // 
+            // existingDoctorToolStripMenuItem
+            // 
+            this.existingDoctorToolStripMenuItem.Name = "existingDoctorToolStripMenuItem";
+            this.existingDoctorToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.existingDoctorToolStripMenuItem.Text = "Existing Doctor";
+            this.existingDoctorToolStripMenuItem.Click += new System.EventHandler(this.existingDoctorToolStripMenuItem_Click);
+            // 
+            // makeShiftsToolStripMenuItem
+            // 
+            this.makeShiftsToolStripMenuItem.Name = "makeShiftsToolStripMenuItem";
+            this.makeShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.makeShiftsToolStripMenuItem.Text = "New Shifts";
+            this.makeShiftsToolStripMenuItem.Click += new System.EventHandler(this.makeShiftsToolStripMenuItem_Click);
+            // 
+            // assignShiftsToolStripMenuItem
+            // 
+            this.assignShiftsToolStripMenuItem.Name = "assignShiftsToolStripMenuItem";
+            this.assignShiftsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.assignShiftsToolStripMenuItem.Text = "Assign shifts";
+            this.assignShiftsToolStripMenuItem.Click += new System.EventHandler(this.assignShiftsToolStripMenuItem_Click);
+            // 
+            // departmentToolStripMenuItem
+            // 
+            this.departmentToolStripMenuItem.Name = "departmentToolStripMenuItem";
+            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.departmentToolStripMenuItem.Text = "Department";
+            this.departmentToolStripMenuItem.Click += new System.EventHandler(this.departmentToolStripMenuItem_Click);
+            // 
             // staffToolStripMenuItem
             // 
             this.staffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newStaffToolStripMenuItem,
             this.existingStaffToolStripMenuItem,
-            this.shiftsToolStripMenuItem});
+            this.shiftsToolStripMenuItem,
+            this.departmentToolStripMenuItem1});
             this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
             this.staffToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.staffToolStripMenuItem.Text = "Staff";
@@ -308,14 +325,28 @@
             this.assignShiftToolStripMenuItem.Text = "Assign Shift";
             this.assignShiftToolStripMenuItem.Click += new System.EventHandler(this.assignShiftToolStripMenuItem_Click);
             // 
+            // departmentToolStripMenuItem1
+            // 
+            this.departmentToolStripMenuItem1.Name = "departmentToolStripMenuItem1";
+            this.departmentToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
+            this.departmentToolStripMenuItem1.Text = "Department";
+            this.departmentToolStripMenuItem1.Click += new System.EventHandler(this.departmentToolStripMenuItem1_Click);
+            // 
+            // nationalityToolStripMenuItem
+            // 
+            this.nationalityToolStripMenuItem.Name = "nationalityToolStripMenuItem";
+            this.nationalityToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.nationalityToolStripMenuItem.Text = "Nationality";
+            this.nationalityToolStripMenuItem.Click += new System.EventHandler(this.nationalityToolStripMenuItem_Click);
+            // 
             // buttonNewShifts
             // 
             this.buttonNewShifts.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewShifts.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonNewShifts.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewShifts.Location = new System.Drawing.Point(368, 71);
+            this.buttonNewShifts.Location = new System.Drawing.Point(15, 182);
             this.buttonNewShifts.Name = "buttonNewShifts";
-            this.buttonNewShifts.Size = new System.Drawing.Size(162, 33);
+            this.buttonNewShifts.Size = new System.Drawing.Size(162, 23);
             this.buttonNewShifts.TabIndex = 6;
             this.buttonNewShifts.Text = "New Shifts";
             this.buttonNewShifts.UseVisualStyleBackColor = false;
@@ -324,6 +355,10 @@
             // panelHospitalMain
             // 
             this.panelHospitalMain.BackColor = System.Drawing.Color.DarkGray;
+            this.panelHospitalMain.Controls.Add(this.label1);
+            this.panelHospitalMain.Controls.Add(this.buttonStaffDepartment);
+            this.panelHospitalMain.Controls.Add(this.buttonDoctorDepartment);
+            this.panelHospitalMain.Controls.Add(this.btnExistingPatient);
             this.panelHospitalMain.Controls.Add(this.buttonNationality);
             this.panelHospitalMain.Controls.Add(this.buttonBookAppointment);
             this.panelHospitalMain.Controls.Add(this.buttonDoctorAssignShifts);
@@ -332,26 +367,65 @@
             this.panelHospitalMain.Controls.Add(this.btnNewPatient);
             this.panelHospitalMain.Controls.Add(this.lblStaff);
             this.panelHospitalMain.Controls.Add(this.btnExistingDoctor);
-            this.panelHospitalMain.Controls.Add(this.btnExistingPatient);
             this.panelHospitalMain.Controls.Add(this.btnNewStaff);
             this.panelHospitalMain.Controls.Add(this.lblPatient);
             this.panelHospitalMain.Controls.Add(this.lblDoctor);
             this.panelHospitalMain.Controls.Add(this.buttonNewShifts);
             this.panelHospitalMain.Controls.Add(this.btnExistingStaff);
             this.panelHospitalMain.Controls.Add(this.btnNewDoctor);
-            this.panelHospitalMain.Location = new System.Drawing.Point(12, 27);
+            this.panelHospitalMain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelHospitalMain.Location = new System.Drawing.Point(0, 24);
             this.panelHospitalMain.Name = "panelHospitalMain";
-            this.panelHospitalMain.Size = new System.Drawing.Size(1329, 598);
+            this.panelHospitalMain.Size = new System.Drawing.Size(190, 710);
             this.panelHospitalMain.TabIndex = 22;
+            // 
+            // buttonStaffDepartment
+            // 
+            this.buttonStaffDepartment.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonStaffDepartment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonStaffDepartment.ForeColor = System.Drawing.Color.Navy;
+            this.buttonStaffDepartment.Location = new System.Drawing.Point(15, 402);
+            this.buttonStaffDepartment.Name = "buttonStaffDepartment";
+            this.buttonStaffDepartment.Size = new System.Drawing.Size(162, 23);
+            this.buttonStaffDepartment.TabIndex = 14;
+            this.buttonStaffDepartment.Text = "Staff Department";
+            this.buttonStaffDepartment.UseVisualStyleBackColor = false;
+            this.buttonStaffDepartment.Click += new System.EventHandler(this.buttonStaffDepartment_Click);
+            // 
+            // buttonDoctorDepartment
+            // 
+            this.buttonDoctorDepartment.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDoctorDepartment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDoctorDepartment.ForeColor = System.Drawing.Color.Navy;
+            this.buttonDoctorDepartment.Location = new System.Drawing.Point(15, 240);
+            this.buttonDoctorDepartment.Name = "buttonDoctorDepartment";
+            this.buttonDoctorDepartment.Size = new System.Drawing.Size(162, 23);
+            this.buttonDoctorDepartment.TabIndex = 13;
+            this.buttonDoctorDepartment.Text = "Doctor Department";
+            this.buttonDoctorDepartment.UseVisualStyleBackColor = false;
+            this.buttonDoctorDepartment.Click += new System.EventHandler(this.buttonDoctorDepartment_Click);
+            // 
+            // buttonNationality
+            // 
+            this.buttonNationality.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonNationality.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonNationality.ForeColor = System.Drawing.Color.Navy;
+            this.buttonNationality.Location = new System.Drawing.Point(15, 448);
+            this.buttonNationality.Name = "buttonNationality";
+            this.buttonNationality.Size = new System.Drawing.Size(162, 23);
+            this.buttonNationality.TabIndex = 12;
+            this.buttonNationality.Text = "Nationality";
+            this.buttonNationality.UseVisualStyleBackColor = false;
+            this.buttonNationality.Click += new System.EventHandler(this.buttonNationality_Click);
             // 
             // buttonBookAppointment
             // 
             this.buttonBookAppointment.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBookAppointment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonBookAppointment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBookAppointment.Location = new System.Drawing.Point(3, 71);
+            this.buttonBookAppointment.Location = new System.Drawing.Point(15, 20);
             this.buttonBookAppointment.Name = "buttonBookAppointment";
-            this.buttonBookAppointment.Size = new System.Drawing.Size(162, 33);
+            this.buttonBookAppointment.Size = new System.Drawing.Size(162, 23);
             this.buttonBookAppointment.TabIndex = 3;
             this.buttonBookAppointment.Text = "Book Appointment";
             this.buttonBookAppointment.UseVisualStyleBackColor = false;
@@ -362,9 +436,9 @@
             this.buttonDoctorAssignShifts.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDoctorAssignShifts.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonDoctorAssignShifts.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDoctorAssignShifts.Location = new System.Drawing.Point(536, 71);
+            this.buttonDoctorAssignShifts.Location = new System.Drawing.Point(15, 211);
             this.buttonDoctorAssignShifts.Name = "buttonDoctorAssignShifts";
-            this.buttonDoctorAssignShifts.Size = new System.Drawing.Size(162, 33);
+            this.buttonDoctorAssignShifts.Size = new System.Drawing.Size(162, 23);
             this.buttonDoctorAssignShifts.TabIndex = 7;
             this.buttonDoctorAssignShifts.Text = "Assign Shifts";
             this.buttonDoctorAssignShifts.UseVisualStyleBackColor = false;
@@ -375,9 +449,9 @@
             this.buttonStaffAssignShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonStaffAssignShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonStaffAssignShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonStaffAssignShift.Location = new System.Drawing.Point(902, 71);
+            this.buttonStaffAssignShift.Location = new System.Drawing.Point(15, 373);
             this.buttonStaffAssignShift.Name = "buttonStaffAssignShift";
-            this.buttonStaffAssignShift.Size = new System.Drawing.Size(162, 33);
+            this.buttonStaffAssignShift.Size = new System.Drawing.Size(162, 23);
             this.buttonStaffAssignShift.TabIndex = 11;
             this.buttonStaffAssignShift.Text = "Assign Shift";
             this.buttonStaffAssignShift.UseVisualStyleBackColor = false;
@@ -388,32 +462,42 @@
             this.buttonNewShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonNewShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewShift.Location = new System.Drawing.Point(734, 71);
+            this.buttonNewShift.Location = new System.Drawing.Point(15, 344);
             this.buttonNewShift.Name = "buttonNewShift";
-            this.buttonNewShift.Size = new System.Drawing.Size(162, 33);
+            this.buttonNewShift.Size = new System.Drawing.Size(162, 23);
             this.buttonNewShift.TabIndex = 10;
             this.buttonNewShift.Text = "New Shift";
             this.buttonNewShift.UseVisualStyleBackColor = false;
             this.buttonNewShift.Click += new System.EventHandler(this.buttonNewShift_Click);
             // 
-            // buttonNationality
+            // label1
             // 
-            this.buttonNationality.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonNationality.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonNationality.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNationality.Location = new System.Drawing.Point(1150, 54);
-            this.buttonNationality.Name = "buttonNationality";
-            this.buttonNationality.Size = new System.Drawing.Size(162, 33);
-            this.buttonNationality.TabIndex = 12;
-            this.buttonNationality.Text = "Nationality";
-            this.buttonNationality.UseVisualStyleBackColor = false;
-            this.buttonNationality.Click += new System.EventHandler(this.buttonNationality_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Nationality";
+            // 
+            // buttonLogOut
+            // 
+            this.buttonLogOut.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogOut.ForeColor = System.Drawing.Color.Cornsilk;
+            this.buttonLogOut.Location = new System.Drawing.Point(1323, 44);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(127, 35);
+            this.buttonLogOut.TabIndex = 24;
+            this.buttonLogOut.Text = "Log Out";
+            this.buttonLogOut.UseVisualStyleBackColor = false;
             // 
             // HospitalMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1372, 734);
+            this.ClientSize = new System.Drawing.Size(1462, 734);
+            this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.panelHospitalMain);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -467,6 +551,13 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem assignShiftToolStripMenuItem;
         private System.Windows.Forms.Button buttonNationality;
+        private System.Windows.Forms.ToolStripMenuItem departmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departmentToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem nationalityToolStripMenuItem;
+        private System.Windows.Forms.Button buttonStaffDepartment;
+        private System.Windows.Forms.Button buttonDoctorDepartment;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonLogOut;
     }
 }
 

@@ -33,6 +33,7 @@ namespace hospitalManagementSystem
             this.textBoxWeight.Text = "";
             this.textBoxPhone.Text = "";
             this.textBoxEmail.Text = "";
+            this.textBoxAddress.Text = "";
             this.comboBoxNationality.SelectedIndex = -1;
         }
         
@@ -64,7 +65,16 @@ namespace hospitalManagementSystem
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
+            try
+            {
             this.Close();
+                //((Form)this.Parent).Controls["panelHospitalMain"].BringToFront();
+                
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -107,7 +117,7 @@ namespace hospitalManagementSystem
             {
                 int resultHeightFt;
                 int resultHeightInch;
-                int resultWeight;
+                decimal resultWeight;
                 long resultPhone;
                 Patient patient = new Patient();
                 try
@@ -138,13 +148,13 @@ namespace hospitalManagementSystem
                     }
 
                     //weight
-                    if(Int32.TryParse(this.textBoxWeight.Text,out resultWeight))
+                    if(decimal.TryParse(this.textBoxWeight.Text,out resultWeight))
                     {
-                    patient.weight = Int32.Parse(this.textBoxWeight.Text);
+                    patient.weight = Convert.ToDecimal(this.textBoxWeight.Text);
                     }
                     else
                     {
-                        patient.weight = Int32.Parse(resultWeight.ToString());
+                        patient.weight = Convert.ToDecimal(resultWeight.ToString());
                     }
                     //phone
                     if(Int64.TryParse(this.textBoxPhone.Text,out resultPhone))
@@ -210,7 +220,18 @@ namespace hospitalManagementSystem
 
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
