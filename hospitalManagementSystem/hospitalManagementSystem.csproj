@@ -68,6 +68,12 @@
     <Compile Include="BookAppointment.Designer.cs">
       <DependentUpon>BookAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassowrd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassowrd.Designer.cs">
+      <DependentUpon>ChangePassowrd.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonFormOperation.cs" />
     <Compile Include="CreateNewAccount.cs">
       <SubType>Form</SubType>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BookAppointment.resx">
       <DependentUpon>BookAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassowrd.resx">
+      <DependentUpon>ChangePassowrd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateNewAccount.resx">
       <DependentUpon>CreateNewAccount.cs</DependentUpon>

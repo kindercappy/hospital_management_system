@@ -33,6 +33,8 @@ namespace hospitalManagementSystem
         private static Nationality fNationality;
         //Create NEw account
         private static CreateNewAccount fCreateNewAccount;
+        //Change password
+        private static ChangePassowrd fChangePassword;
 
         //Patient
         public static NewPatient newPatient
@@ -218,6 +220,18 @@ namespace hospitalManagementSystem
                 return fCreateNewAccount;
             }
         }
+        public static ChangePassowrd changePassword
+        {
+            get
+            {
+                if(fChangePassword ==  null || fChangePassword.IsDisposed)
+                {
+                    fChangePassword = new ChangePassowrd();
+                }
+                return fChangePassword;
+            }
+        }
+
 
         public static void ShowMaximizeSubForm(Form frm, Form mdi)
             {

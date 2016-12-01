@@ -26,15 +26,19 @@ namespace hospitalManagementSystem
         {
             try
             {
-
-                int userId = UsersManager.getUserByIdUserNameAndPassword(this.textBoxUserName.Text, this.textBoxPassword.Text);
+                Users user = new Users();
+                user.userName = this.textBoxUserName.Text;
+                user.password = this.textBoxPassword.Text;
+                int userId = UsersManager.getUserByIdUserNameAndPassword(user);
             if(userId > 0)
             {
-                this.labelLogin.Text = string.Format("You are userId : {0}", userId);
+                    this.labelLogin.Text = string.Format("You are userId : {0}", userId);
+                    
             }
             else
             {
                 labelLogin.Text = "Wrong username or password";
+
             }
             }
             catch(System.Exception ex)
@@ -47,8 +51,17 @@ namespace hospitalManagementSystem
         {
             
             CommonFormOperation.ShowDialogSubForm(CommonFormOperation.createNewAccount, this.MdiParent);
-            //this.Close();
-            //Application.Exit();
+            
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void buttonChangePassword_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowDialogSubForm(CommonFormOperation.changePassword, this.MdiParent);
         }
     }
 }
