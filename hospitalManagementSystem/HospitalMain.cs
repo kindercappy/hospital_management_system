@@ -25,7 +25,6 @@ namespace hospitalManagementSystem
         }
         private void HospitalMain_Load(object sender, EventArgs e)
         {
-            panelHospitalMain.BringToFront();
             LoginForm form = new LoginForm();
             form.ShowDialog();
         }
@@ -223,8 +222,16 @@ namespace hospitalManagementSystem
             panelHospitalMain.SendToBack();
         }
 
+        private void panelHospitalMain_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void buttonUser_Click(object sender, EventArgs e)
+        {
+            CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.user, this);
+            panelHospitalMain.SendToBack();
+        }
     }
 }
 

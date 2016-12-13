@@ -139,8 +139,30 @@ namespace HospitalLibrary
                 cmd.CommandText = "User_Update_Password";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                
+                SqlParameter sPassword = new SqlParameter("@password", user.password);
+                sPassword.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sPassword);
+
+                SqlParameter iUserId = new SqlParameter("@userId", user.userId);
+                iUserId.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(iUserId);                
             }
         }
+
+        public static DataTable userSelect()
+        {
+            SqlCommand cmd = new SqlCommand();
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "User_Select";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+            da.SelectCommand = cmd;
+                da.Fill(dt);
+
+            return dt;
+        }
+        
     }
 }

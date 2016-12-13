@@ -59,6 +59,7 @@
             this.nationalityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNewShifts = new System.Windows.Forms.Button();
             this.panelHospitalMain = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonStaffDepartment = new System.Windows.Forms.Button();
             this.buttonDoctorDepartment = new System.Windows.Forms.Button();
             this.buttonNationality = new System.Windows.Forms.Button();
@@ -66,8 +67,12 @@
             this.buttonDoctorAssignShifts = new System.Windows.Forms.Button();
             this.buttonStaffAssignShift = new System.Windows.Forms.Button();
             this.buttonNewShift = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonLogOut = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonUser = new System.Windows.Forms.Button();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelHospitalMain.SuspendLayout();
             this.SuspendLayout();
@@ -186,7 +191,8 @@
             this.patientToolStripMenuItem,
             this.doctorToolStripMenuItem,
             this.staffToolStripMenuItem,
-            this.nationalityToolStripMenuItem});
+            this.nationalityToolStripMenuItem,
+            this.userToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1462, 24);
@@ -355,6 +361,8 @@
             // panelHospitalMain
             // 
             this.panelHospitalMain.BackColor = System.Drawing.Color.DarkGray;
+            this.panelHospitalMain.Controls.Add(this.label2);
+            this.panelHospitalMain.Controls.Add(this.buttonUser);
             this.panelHospitalMain.Controls.Add(this.label1);
             this.panelHospitalMain.Controls.Add(this.buttonStaffDepartment);
             this.panelHospitalMain.Controls.Add(this.buttonDoctorDepartment);
@@ -378,6 +386,17 @@
             this.panelHospitalMain.Name = "panelHospitalMain";
             this.panelHospitalMain.Size = new System.Drawing.Size(190, 710);
             this.panelHospitalMain.TabIndex = 22;
+            this.panelHospitalMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHospitalMain_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Nationality";
             // 
             // buttonStaffDepartment
             // 
@@ -470,34 +489,62 @@
             this.buttonNewShift.UseVisualStyleBackColor = false;
             this.buttonNewShift.Click += new System.EventHandler(this.buttonNewShift_Click);
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 428);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Nationality";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 474);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "User";
             // 
-            // buttonLogOut
+            // buttonUser
             // 
-            this.buttonLogOut.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogOut.ForeColor = System.Drawing.Color.Cornsilk;
-            this.buttonLogOut.Location = new System.Drawing.Point(1323, 44);
-            this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(127, 35);
-            this.buttonLogOut.TabIndex = 24;
-            this.buttonLogOut.Text = "Log Out";
-            this.buttonLogOut.UseVisualStyleBackColor = false;
+            this.buttonUser.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonUser.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonUser.ForeColor = System.Drawing.Color.Navy;
+            this.buttonUser.Location = new System.Drawing.Point(15, 494);
+            this.buttonUser.Name = "buttonUser";
+            this.buttonUser.Size = new System.Drawing.Size(162, 23);
+            this.buttonUser.TabIndex = 16;
+            this.buttonUser.Text = "User";
+            this.buttonUser.UseVisualStyleBackColor = false;
+            this.buttonUser.Click += new System.EventHandler(this.buttonUser_Click);
+            // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.userToolStripMenuItem.Text = "User";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // HospitalMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1462, 734);
-            this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.panelHospitalMain);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -557,7 +604,12 @@
         private System.Windows.Forms.Button buttonStaffDepartment;
         private System.Windows.Forms.Button buttonDoctorDepartment;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonLogOut;
+        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonUser;
     }
 }
 

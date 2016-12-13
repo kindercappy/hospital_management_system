@@ -75,11 +75,11 @@
       <DependentUpon>ChangePassowrd.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonFormOperation.cs" />
-    <Compile Include="CreateNewAccount.cs">
+    <Compile Include="User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewAccount.Designer.cs">
-      <DependentUpon>CreateNewAccount.cs</DependentUpon>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
     </Compile>
     <Compile Include="DoctorDepartment.cs">
       <SubType>Form</SubType>
@@ -189,8 +189,8 @@
     <EmbeddedResource Include="ChangePassowrd.resx">
       <DependentUpon>ChangePassowrd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNewAccount.resx">
-      <DependentUpon>CreateNewAccount.cs</DependentUpon>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorDepartment.resx">
       <DependentUpon>DoctorDepartment.cs</DependentUpon>

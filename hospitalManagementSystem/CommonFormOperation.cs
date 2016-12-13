@@ -31,8 +31,8 @@ namespace hospitalManagementSystem
         private static HospitalMain fHospitalMain;
         //Nationality
         private static Nationality fNationality;
-        //Create NEw account
-        private static CreateNewAccount fCreateNewAccount;
+        //User
+        private static User fUser;
         //Change password
         private static ChangePassowrd fChangePassword;
 
@@ -208,16 +208,16 @@ namespace hospitalManagementSystem
                 return fNationality;
             }
         }
-        //Create new account
-        public static CreateNewAccount createNewAccount
+        //User
+        public static User user
         {
             get
             {
-                if(fCreateNewAccount == null || fCreateNewAccount.IsDisposed)
+                if(fUser == null || fUser.IsDisposed)
                 {
-                    fCreateNewAccount = new CreateNewAccount();
+                    fUser = new User();
                 }
-                return fCreateNewAccount;
+                return fUser;
             }
         }
         public static ChangePassowrd changePassword
@@ -243,6 +243,7 @@ namespace hospitalManagementSystem
         public static void ShowDialogSubForm(Form frm , Form mdi)
         {
             frm.MdiParent = mdi;
+            frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
             frm.BringToFront();
             frm.WindowState = FormWindowState.Normal;
