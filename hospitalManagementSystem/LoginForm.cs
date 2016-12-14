@@ -12,12 +12,12 @@ namespace hospitalManagementSystem
 {
     public partial class LoginForm : Form
     {
-        //public bool UserClosing { get; set; }
+        public bool UserClosing { get; set; }
 
         public LoginForm()
         {
             InitializeComponent();
-            //UserClosing = false;
+            UserClosing = false;
 
             //this.buttonLogin.Click += new EventHandler(buttonLogin_Click);
             //this.FormClosing += new FormClosingEventHandler(LoginForm_FormClosing);
@@ -40,7 +40,7 @@ namespace hospitalManagementSystem
                     if (userId > 0)
                     {
                         //this.labelLogin.Text = string.Format("You are userId : {0}", userId);
-                        //UserClosing = true;
+                        UserClosing = true;
                         this.Close();
                     }
                     else
@@ -66,42 +66,42 @@ namespace hospitalManagementSystem
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //try
-            //{
+            try
+            {
 
-            //switch (e.CloseReason)
-            //{
-            //    case CloseReason.ApplicationExitCall:
-            //        break;
-            //    case CloseReason.FormOwnerClosing:
-            //        break;
-            //    case CloseReason.MdiFormClosing:
-            //        break;
-            //    case CloseReason.None:
-            //        break;
-            //    case CloseReason.TaskManagerClosing:
-            //        break;
-            //    case CloseReason.UserClosing:
-            //        if (UserClosing == true)
-            //        {
-            //                this.Close();
-            //        }
-            //            else
-            //            {
-            //                Application.Exit();
-            //            }
-            //        break;
-            //    case CloseReason.WindowsShutDown:
-            //        break;
-            //    default:
-            //        break;
-            //}
-            //UserClosing = false;
-            //}
-            //catch(System.Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+                switch (e.CloseReason)
+                {
+                    case CloseReason.ApplicationExitCall:
+                        break;
+                    case CloseReason.FormOwnerClosing:
+                        break;
+                    case CloseReason.MdiFormClosing:
+                        break;
+                    case CloseReason.None:
+                        break;
+                    case CloseReason.TaskManagerClosing:
+                        break;
+                    case CloseReason.UserClosing:
+                        if (UserClosing)
+                        {
+                            this.Close();
+                        }
+                        else
+                        {
+                            Application.Exit();
+                        }
+                        break;
+                    case CloseReason.WindowsShutDown:
+                        break;
+                    default:
+                        break;
+                }
+                UserClosing = false;
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonChangePassword_Click(object sender, EventArgs e)
