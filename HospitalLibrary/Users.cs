@@ -53,6 +53,7 @@ namespace HospitalLibrary
     }
     public class UsersManager
     {
+        //inserts new user
         public static void userInsert(Users user)
         {
             Guid userGuid = System.Guid.NewGuid();
@@ -82,6 +83,7 @@ namespace HospitalLibrary
             }
         }
 
+        //get user by id, name , password
         public static int getUserByIdUserNameAndPassword(Users user)
         {
             int userId = 0;
@@ -112,6 +114,7 @@ namespace HospitalLibrary
             }
         }
 
+        //gets user by id
         public static DataTable getUserIdByUserId(Users user)
         {
             SqlCommand cmd = new SqlCommand();
@@ -131,24 +134,38 @@ namespace HospitalLibrary
             return dt;
         }
 
+        //updates password
         public static void userUpdatePassword(Users user)
         {
-            using(SqlCommand cmd = new SqlCommand())
+            Guid userGuid = System.Guid.NewGuid();
+            using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Common.getConnection();
                 cmd.CommandText = "User_Update_Password";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                SqlParameter sPassword = new SqlParameter("@password", user.password);
+                SqlParameter iUserId = new SqlParameter("@userId", user.userId);
+                iUserId.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(iUserId);
+
+
+                SqlParameter sPassword = new SqlParameter("@password", Security.HashSHA1(user.password));
                 sPassword.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sPassword);
 
-                SqlParameter iUserId = new SqlParameter("@userId", user.userId);
-                iUserId.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(iUserId);                
+                SqlParameter gUserGuid = new SqlParameter("@userGuid", userGuid);
+                gUserGuid.SqlDbType = System.Data.SqlDbType.UniqueIdentifier;
+                cmd.Parameters.Add(gUserGuid);
+
+                SqlParameter sRealPassword = new SqlParameter("@realPassword", user.password);
+                sRealPassword.SqlDbType = System.Data.SqlDbType.NVarChar;
+                cmd.Parameters.Add(sRealPassword);
+
+                cmd.ExecuteNonQuery();
             }
         }
 
+        //selects id, userName
         public static DataTable userSelect()
         {
             SqlCommand cmd = new SqlCommand();
@@ -162,6 +179,22 @@ namespace HospitalLibrary
                 da.Fill(dt);
 
             return dt;
+        }
+
+        public static void userDelete(Users user)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Common.getConnection();
+                cmd.CommandText = "User_Delete";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter iUserId = new SqlParameter("@userId", user.userId);
+                iUserId.SqlDbType = System.Data.SqlDbType.Int;
+                cmd.Parameters.Add(iUserId);
+
+                cmd.ExecuteNonQuery();
+            }
         }
         
     }

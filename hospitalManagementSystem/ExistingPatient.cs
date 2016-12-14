@@ -127,17 +127,11 @@ namespace hospitalManagementSystem
         {
             try
             {
-                //dateTimePickerPatientEntryTime.ShowUpDown = true;              
-                //dateTimePickerPatientEntryTime.Format = DateTimePickerFormat.Custom;
-                //dateTimePickerPatientEntryTime.CustomFormat = "MM/dd/yyyy  hh:mm";
                 displayPatient();
                 notSortableDataGridViewExistingPatient();
                 notSortableDataGridViewAppointmentHistory();
                 setDataGridViewExistingPatientHeaders();
                 setDataGridViewAppointmentHeaders();
-                //patientId hide in grid
-                //this.dataGridViewExistingPatient.Columns[0].Visible = false;
-                //ExistingPatient Depertment comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
                 this.comboBoxDepartment.ValueMember = "departmentId";
@@ -204,7 +198,6 @@ namespace hospitalManagementSystem
                 {
                     patient.firstName = this.textBoxFirstName.Text;
                     patient.lastName = this.textBoxLastName.Text;
-                    //patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
                     patient.age = Convert.ToInt32(this.textBoxAge.Text);
                     patient.sex = this.comboBoxSex.Text;
                     patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
@@ -214,7 +207,6 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    //patient.entryTime = DateTime.Parse(this.dateTimePickerPatientEntryTime.Value.ToString());
                     PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
                     displayPatient();
@@ -268,7 +260,6 @@ namespace hospitalManagementSystem
                     patient.patientId = Id;
                     patient.firstName = this.textBoxFirstName.Text;
                     patient.lastName = this.textBoxLastName.Text;
-                    //patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
                     patient.age = Convert.ToInt32(this.textBoxAge.Text);
                     patient.sex = this.comboBoxSex.Text;
                     patient.heightFt = Convert.ToInt32(this.textBoxHeightFt.Text);
@@ -278,7 +269,6 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    //patient.entryTime = DateTime.Parse(this.dateTimePickerPatientEntryTime.Value.ToString());
                     //appointment
                     appointment.patientId = Id;
                     appointment.firstName = this.textBoxFirstName.Text;

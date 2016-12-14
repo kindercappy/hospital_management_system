@@ -70,6 +70,7 @@
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctorShift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +93,7 @@
             this.buttonAssign.ForeColor = System.Drawing.Color.Navy;
             this.buttonAssign.Location = new System.Drawing.Point(12, 587);
             this.buttonAssign.Name = "buttonAssign";
-            this.buttonAssign.Size = new System.Drawing.Size(275, 52);
+            this.buttonAssign.Size = new System.Drawing.Size(193, 29);
             this.buttonAssign.TabIndex = 3;
             this.buttonAssign.Text = "Assign";
             this.buttonAssign.UseVisualStyleBackColor = false;
@@ -482,12 +483,26 @@
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click_1);
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
+            this.buttonBack.Location = new System.Drawing.Point(12, 678);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 43);
+            this.buttonBack.TabIndex = 143;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // AssignDoctorShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1602, 831);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelSearchPhone);
             this.Controls.Add(this.textBoxSearchPhone);
             this.Controls.Add(this.labelSearchId);
@@ -584,5 +599,6 @@
         private System.Windows.Forms.TextBox textBoxSearchName;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

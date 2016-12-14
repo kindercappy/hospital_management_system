@@ -91,6 +91,10 @@ namespace hospitalManagementSystem
         {
             this.Close();
         }
+        private void fullRowSelectDataGridViewExistingStaff()
+        {
+            this.dataGridViewExistingStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
 
         private void ExistingStaff_Load(object sender, EventArgs e)
         {
@@ -117,7 +121,7 @@ namespace hospitalManagementSystem
             //hide shift ID column
             //this.dataGridViewExistingStaff.Columns[0].Visible = false;
             //datagridview full row select
-            this.dataGridViewExistingStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            fullRowSelectDataGridViewExistingStaff();
             //allowUsersToAddRows = false;
             this.dataGridViewExistingStaff.AllowUserToAddRows = false;
             //make dataGriDViewExistingStaff read only

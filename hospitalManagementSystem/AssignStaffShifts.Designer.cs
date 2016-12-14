@@ -69,6 +69,7 @@
             this.textBoxSearchId = new System.Windows.Forms.TextBox();
             this.labelSearchName = new System.Windows.Forms.Label();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffShift)).BeginInit();
             this.SuspendLayout();
@@ -398,7 +399,7 @@
             this.buttonAssign.ForeColor = System.Drawing.Color.Navy;
             this.buttonAssign.Location = new System.Drawing.Point(11, 589);
             this.buttonAssign.Name = "buttonAssign";
-            this.buttonAssign.Size = new System.Drawing.Size(275, 52);
+            this.buttonAssign.Size = new System.Drawing.Size(172, 25);
             this.buttonAssign.TabIndex = 91;
             this.buttonAssign.Text = "Assign";
             this.buttonAssign.UseVisualStyleBackColor = false;
@@ -466,12 +467,26 @@
             this.textBoxSearchName.TabIndex = 129;
             this.textBoxSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchName_KeyPress);
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
+            this.buttonBack.Location = new System.Drawing.Point(11, 643);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 43);
+            this.buttonBack.TabIndex = 135;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // AssignStaffShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1381, 756);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelSearchPhone);
             this.Controls.Add(this.textBoxSearchPhone);
             this.Controls.Add(this.labelSearchId);
@@ -566,5 +581,6 @@
         private System.Windows.Forms.TextBox textBoxSearchId;
         private System.Windows.Forms.Label labelSearchName;
         private System.Windows.Forms.TextBox textBoxSearchName;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

@@ -432,5 +432,10 @@ namespace hospitalManagementSystem
             }
             //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

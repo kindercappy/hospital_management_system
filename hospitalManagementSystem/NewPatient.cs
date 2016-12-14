@@ -124,7 +124,6 @@ namespace hospitalManagementSystem
                 {
                     patient.firstName = this.textBoxFirstName.Text;
                     patient.lastName = this.textBoxLastName.Text;
-                    //patient.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
                     patient.age = Convert.ToInt32(this.textBoxAge.Text);
                     patient.sex = this.comboBoxSex.Text;
                     //heightFt
@@ -168,7 +167,6 @@ namespace hospitalManagementSystem
                     patient.email = this.textBoxEmail.Text;
                     patient.address = this.textBoxAddress.Text;
                     patient.natioinality = Int32.Parse(this.comboBoxNationality.SelectedValue.ToString());
-                    //patient.entryTime = DateTime.Parse(this.dateTimePickerPatientEntryTime.Value.ToString());
                     PatientManager.patientSave(patient);
                     MessageBox.Show("Success");
                     clearData();
@@ -231,7 +229,7 @@ namespace hospitalManagementSystem
             {
                 e.Handled = true;
             }
-            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            
         }
     }
 }

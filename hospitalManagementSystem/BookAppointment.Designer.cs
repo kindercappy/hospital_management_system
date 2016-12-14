@@ -71,6 +71,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.buttonNewPatient = new System.Windows.Forms.Button();
             this.dateTimePickerAppointmentTime = new System.Windows.Forms.DateTimePicker();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).BeginInit();
             this.SuspendLayout();
@@ -491,12 +492,26 @@
             this.dateTimePickerAppointmentTime.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerAppointmentTime.TabIndex = 64;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
+            this.buttonBack.Location = new System.Drawing.Point(11, 629);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 43);
+            this.buttonBack.TabIndex = 65;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // BookAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1954, 799);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.dateTimePickerAppointmentTime);
             this.Controls.Add(this.buttonNewPatient);
             this.Controls.Add(this.comboBoxNewNationality);
@@ -595,5 +610,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button buttonNewPatient;
         private System.Windows.Forms.DateTimePicker dateTimePickerAppointmentTime;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

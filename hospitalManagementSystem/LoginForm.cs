@@ -39,7 +39,7 @@ namespace hospitalManagementSystem
                    int userId = UsersManager.getUserByIdUserNameAndPassword(user);
                     if (userId > 0)
                     {
-                        //this.labelLogin.Text = string.Format("You are userId : {0}", userId);
+                        //this.labelLogin.Text = string.Format("You are userID : {0}", userID);
                         UserClosing = true;
                         this.Close();
                     }
