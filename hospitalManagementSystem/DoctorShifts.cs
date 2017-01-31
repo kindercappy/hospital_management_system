@@ -72,6 +72,10 @@ namespace hospitalManagementSystem
             
             dataGridViewShifts.Update();
         }
+        private void toUpperCaseLabels()
+        {
+            labelShifts.Text = labelShifts.Text.ToUpper();
+        }
 
 
         private void DoctorShifts_Load(object sender, EventArgs e)
@@ -80,16 +84,12 @@ namespace hospitalManagementSystem
             displayDataShifts();
             setDataGridViewShiftsHeaders();
             notSortableDataGridViewShifts();
+            toUpperCaseLabels();
             //this.dataGridViewShifts.Columns[0].Visible = false;
             //sets alternate color of datagridviewshifts
             this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
             //datagridview shifts full row select
             this.dataGridViewShifts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-
-        private void dataGridViewDoctorShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void buttonNewShift_Click(object sender, EventArgs e)
@@ -108,12 +108,6 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-
-        private void comboBoxShifts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonUpdateShift_Click(object sender, EventArgs e)
@@ -149,11 +143,6 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void dataGridViewShifts_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void dataGridViewShifts_SelectionChanged(object sender, EventArgs e)
@@ -221,6 +210,23 @@ namespace hospitalManagementSystem
         private void buttonReset_Click(object sender, EventArgs e)
         {
             displayDataShifts();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DoctorShifts_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

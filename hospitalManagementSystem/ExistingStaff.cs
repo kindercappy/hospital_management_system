@@ -23,8 +23,6 @@ namespace hospitalManagementSystem
         public ExistingStaff()
         {
             InitializeComponent();
-
-
         }
         // METHODS
         //display staff in dataGridView
@@ -89,21 +87,31 @@ namespace hospitalManagementSystem
         }
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void fullRowSelectDataGridViewExistingStaff()
         {
             this.dataGridViewExistingStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-
+        private void toUpperCaseLabels()
+        {
+            labelStaff.Text = labelStaff.Text.ToUpper();
+        }
         private void ExistingStaff_Load(object sender, EventArgs e)
         {
-
             //display staff in dataGridView
             displayStaff();
             //sets header for dataGridViewExistingStaff
             setDataGridViewStaffHeaders();
             notSortableDataGridViewExsitingStaff();
+            toUpperCaseLabels();
             //ExistingStaff Department comboBox
             this.comboBoxDepartment.DisplayMember = "departmentName";
             this.comboBoxDepartment.ValueMember = "departmentId";
@@ -134,14 +142,7 @@ namespace hospitalManagementSystem
 
 
         }
-
-
-        //dataGridView cellContentClick
-        private void dataGridViewExistingStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        //dataGridView cellContentClick        
         private void buttonInsert_Click(object sender, EventArgs e)
         {
             string str = "";
@@ -206,7 +207,6 @@ namespace hospitalManagementSystem
 
             }
         }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             //updates staff data
@@ -237,7 +237,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Staff staff = new Staff();
@@ -254,12 +253,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void dataGridViewExistingStaff_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridViewExistingStaff_SelectionChanged(object sender, EventArgs e)
         {
             if (this.dataGridViewExistingStaff.CurrentRow != null && this.dataGridViewExistingStaff.CurrentRow.Index != -1)
@@ -287,7 +280,6 @@ namespace hospitalManagementSystem
                 }
             }
         }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             try
@@ -331,17 +323,14 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             displayStaff();
         }
-
         private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
-
         private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -349,7 +338,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -357,7 +345,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -372,6 +359,11 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
             //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void ExistingStaff_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

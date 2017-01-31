@@ -12,7 +12,6 @@ namespace HospitalLibrary
     {
         private string sDepartmentName;
         private int sDepartmentId;
-
         public string departmentName
         {
             get
@@ -34,10 +33,8 @@ namespace HospitalLibrary
             {
                 sDepartmentId = value;
             }
-        }
-       
+        }       
     }
-
     public class DepartmentDoctorManager
         {
             public static List<DepartmentDoctor> getDepartmentList()
@@ -62,7 +59,6 @@ namespace HospitalLibrary
                 }
                 return DepartmentList;
             }
-
             public static DataTable doctorDepartmentSelect()
         {
             SqlCommand cmd = new SqlCommand();
@@ -92,9 +88,8 @@ namespace HospitalLibrary
 
                 cmd.ExecuteNonQuery();
             }
-            }
-            
-        public static void doctorDepartmentUpdate(DepartmentDoctor depDoc)
+            }            
+            public static void doctorDepartmentUpdate(DepartmentDoctor depDoc)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -113,7 +108,7 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-        public static void doctorDepartmentDelete(DepartmentDoctor depDoc)
+            public static void doctorDepartmentDelete(DepartmentDoctor depDoc)
         {
             using (SqlCommand cmd = new SqlCommand())
             {

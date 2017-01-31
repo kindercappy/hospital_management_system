@@ -42,8 +42,10 @@ namespace hospitalManagementSystem
         {
             this.textBoxDepartmentName.Text = "";
         }
-
-
+        private void toUpperCaseLabels()
+        {
+            labelStaffDepartment.Text = labelStaffDepartment.Text.ToUpper();
+        }
         public StaffDepartment()
         {
             InitializeComponent();
@@ -57,6 +59,7 @@ namespace hospitalManagementSystem
                 notSortableDataGridViewStaffDepartment();
                 fullRowSelectDataGridViewStaffDepartment();
                 setDataGridViewStaffDepartmentHeaders();
+                toUpperCaseLabels();
                 this.dataGridViewStaffDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
             }
             catch (System.Exception ex)
@@ -64,7 +67,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonNewDepatment_Click(object sender, EventArgs e)
         {
             try
@@ -81,7 +83,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -100,7 +101,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             try
@@ -118,12 +118,10 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clearTextBoxes();
         }
-
         private void dataGridViewStaffDepartment_SelectionChanged(object sender, EventArgs e)
         {
             if(this.dataGridViewStaffDepartment.CurrentRow != null || this.dataGridViewStaffDepartment.CurrentRow.Index != -1)
@@ -139,6 +137,22 @@ namespace hospitalManagementSystem
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void StaffDepartment_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

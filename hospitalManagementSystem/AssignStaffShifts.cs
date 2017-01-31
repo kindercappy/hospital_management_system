@@ -35,7 +35,6 @@ namespace hospitalManagementSystem
             da.Fill(dt);
             dataGridViewStaffShift.DataSource = dt;
         }
-
         //displays staff
         private void displayStaff()
         {
@@ -54,14 +53,19 @@ namespace hospitalManagementSystem
             textBoxSearchId.Text = "";
             textBoxSearchPhone.Text = "";
         }
-        private void AssignStaffShifts_Load(object sender, EventArgs e)
+        private void toUpperCaseLabels()
         {
-            
+            labelStaff.Text = labelStaff.Text.ToUpper();
+            labelStaffShifts.Text = labelStaffShifts.Text.ToUpper();
+        }
+        private void AssignStaffShifts_Load(object sender, EventArgs e)
+        {           
             try
             {
                 //display staff in dataGridView
                 displayStaff();
                 displayShifts();
+                toUpperCaseLabels();
                 // Department comboBox
                 this.comboBoxDepartment.DisplayMember = "departmentName";
                 this.comboBoxDepartment.ValueMember = "departmentId";
@@ -89,12 +93,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-        
-        private void dataGridViewStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             try
@@ -172,12 +170,10 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             displayStaff();
         }
-
         private void buttonShiftSearch_Click(object sender, EventArgs e)
         {
             try
@@ -207,22 +203,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void buttonShiftRefresh_Click(object sender, EventArgs e)
-        {
-            displayShifts();
-        }
-
-        private void dataGridViewStaff_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dataGridViewStaffShift_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridViewStaff_SelectionChanged(object sender, EventArgs e)
         {
             if(this.dataGridViewStaff.CurrentRow != null && this.dataGridViewStaff.CurrentRow.Index != -1)
@@ -250,12 +230,10 @@ namespace hospitalManagementSystem
                 }
             }
         }
-
         private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
-
         private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -263,7 +241,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -271,7 +248,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -279,7 +255,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightFt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -287,7 +262,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightInch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -295,7 +269,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -303,13 +276,23 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
         private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AssignStaffShifts_Deactivate(object sender, EventArgs e)
         {
             this.Close();
         }

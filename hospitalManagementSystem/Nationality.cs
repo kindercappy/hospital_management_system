@@ -44,16 +44,18 @@ namespace hospitalManagementSystem
             this.dataGridViewNationalities.Columns[0].HeaderText = "Nationality";
             this.dataGridViewNationalities.Columns[1].HeaderText = "Nationality ID";
         }
-
-
+        private void toUpperCaseLabels()
+        {
+            labelNationality.Text = labelNationality.Text.ToUpper(); 
+        }
         private void Nationality_Load(object sender, EventArgs e)
         {
             displayNationality();
             notSortableDataGridViewNationalities();
             fullRowSelectDataGridViewNationalities();
             setDataGridViewNationalitiesHeaders();
+            toUpperCaseLabels();
         }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -70,7 +72,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void dataGridViewNationalities_SelectionChanged(object sender, EventArgs e)
         {
             if (this.dataGridViewNationalities.CurrentRow != null && this.dataGridViewNationalities.CurrentRow.Index != -1)
@@ -86,7 +87,6 @@ namespace hospitalManagementSystem
                 }
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             NationalityHL nation = new NationalityHL();
@@ -96,12 +96,10 @@ namespace hospitalManagementSystem
             clearTextBoxes();
             displayNationality();
         }
-
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clearTextBoxes();
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             NationalityHL nation = new NationalityHL();
@@ -110,6 +108,22 @@ namespace hospitalManagementSystem
             MessageBox.Show("Success");
             clearTextBoxes();
             displayNationality();
+        }
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Nationality_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

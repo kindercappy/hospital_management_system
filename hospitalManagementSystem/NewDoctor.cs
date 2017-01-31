@@ -46,9 +46,15 @@ namespace hospitalManagementSystem
         }
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             string str = "";
@@ -102,7 +108,6 @@ namespace hospitalManagementSystem
                 Doctor doc = new Doctor();
                 try
                 {
-
                     doc.firstName = this.textBoxFirstName.Text;
                     doc.lastName = this.textBoxLastName.Text;
                     doc.department = Int32.Parse(this.comboBoxDepartment.SelectedValue.ToString());
@@ -117,7 +122,6 @@ namespace hospitalManagementSystem
                     {
                         doc.heightFt = Int32.Parse(resultHeightFt.ToString());
                     }
-
                     //heightInch
                     if(Int32.TryParse(this.textBoxHeightInch.Text,out resultHeightInch))
                     {
@@ -127,7 +131,6 @@ namespace hospitalManagementSystem
                     {
                         doc.heightInch = Int32.Parse(resultHeightInch.ToString());
                     }
-
                     //weight
                     if(Decimal.TryParse(this.textBoxWeight.Text,out resultWeight))
                     {
@@ -240,6 +243,11 @@ namespace hospitalManagementSystem
             {
                 e.Handled = true;
             }
+        }
+
+        private void NewDoctor_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

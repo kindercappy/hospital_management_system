@@ -46,6 +46,8 @@
             this.textBoxSearchId = new System.Windows.Forms.TextBox();
             this.labelSearchName = new System.Windows.Forms.Label();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
+            this.labelStaffShifts = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShifts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,15 +80,12 @@
             this.dataGridViewShifts.AllowUserToAddRows = false;
             this.dataGridViewShifts.AllowUserToDeleteRows = false;
             this.dataGridViewShifts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShifts.Location = new System.Drawing.Point(15, 42);
+            this.dataGridViewShifts.Location = new System.Drawing.Point(15, 70);
             this.dataGridViewShifts.Name = "dataGridViewShifts";
             this.dataGridViewShifts.ReadOnly = true;
             this.dataGridViewShifts.Size = new System.Drawing.Size(449, 332);
             this.dataGridViewShifts.TabIndex = 77;
-            this.dataGridViewShifts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellClick);
-            this.dataGridViewShifts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellContentClick);
             this.dataGridViewShifts.SelectionChanged += new System.EventHandler(this.dataGridViewShifts_SelectionChanged);
-            this.dataGridViewShifts.Click += new System.EventHandler(this.dataGridViewShifts_Click);
             // 
             // buttonNewShift
             // 
@@ -239,12 +238,37 @@
             this.textBoxSearchName.TabIndex = 83;
             this.textBoxSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchName_KeyPress);
             // 
+            // labelStaffShifts
+            // 
+            this.labelStaffShifts.AutoSize = true;
+            this.labelStaffShifts.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelStaffShifts.Location = new System.Drawing.Point(12, 44);
+            this.labelStaffShifts.Name = "labelStaffShifts";
+            this.labelStaffShifts.Size = new System.Drawing.Size(100, 22);
+            this.labelStaffShifts.TabIndex = 91;
+            this.labelStaffShifts.Text = "Staff Shifts";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Navy;
+            this.button1.Location = new System.Drawing.Point(16, 624);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(209, 43);
+            this.button1.TabIndex = 144;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // StaffShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1342, 739);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelStaffShifts);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.labelSearchId);
@@ -265,6 +289,7 @@
             this.Controls.Add(this.buttonBack);
             this.Name = "StaffShifts";
             this.Text = "StaffShifts";
+            this.Deactivate += new System.EventHandler(this.StaffShifts_Deactivate);
             this.Load += new System.EventHandler(this.StaffShifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShifts)).EndInit();
             this.ResumeLayout(false);
@@ -292,5 +317,7 @@
         private System.Windows.Forms.TextBox textBoxSearchId;
         private System.Windows.Forms.Label labelSearchName;
         private System.Windows.Forms.TextBox textBoxSearchName;
+        private System.Windows.Forms.Label labelStaffShifts;
+        private System.Windows.Forms.Button button1;
     }
 }

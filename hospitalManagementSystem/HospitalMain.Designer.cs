@@ -195,7 +195,7 @@
             this.userToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1462, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1479, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -412,9 +412,8 @@
             this.panelHospitalMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelHospitalMain.Location = new System.Drawing.Point(0, 24);
             this.panelHospitalMain.Name = "panelHospitalMain";
-            this.panelHospitalMain.Size = new System.Drawing.Size(162, 710);
+            this.panelHospitalMain.Size = new System.Drawing.Size(162, 700);
             this.panelHospitalMain.TabIndex = 22;
-            this.panelHospitalMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHospitalMain_Paint);
             // 
             // label2
             // 
@@ -544,17 +543,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1462, 734);
+            this.BackgroundImage = global::hospitalManagementSystem.Properties.Resources.healthcare_loop;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1479, 724);
             this.Controls.Add(this.panelHospitalMain);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "HospitalMain";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Activated += new System.EventHandler(this.HospitalMain_Activated);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HospitalMain_FormClosed);
             this.Load += new System.EventHandler(this.HospitalMain_Load);
-            this.Shown += new System.EventHandler(this.HospitalMain_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelHospitalMain.ResumeLayout(false);

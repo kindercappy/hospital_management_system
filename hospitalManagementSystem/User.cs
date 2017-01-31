@@ -95,14 +95,17 @@ namespace hospitalManagementSystem
         {
             this.dataGridViewUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-
-
+        private void toUpperCaseLabels()
+        {
+            labelChangePassword.Text = labelChangePassword.Text.ToUpper();
+            labelCreateNewUser.Text = labelCreateNewUser.Text.ToUpper();
+            labelUser.Text = labelUser.Text.ToUpper();
+        }
         private void buttonNewAccount_Click(object sender, EventArgs e)
         {
             userInsert();
             userSelect();
         }
-
         private void User_Load(object sender, EventArgs e)
         {
             this.labelDontMatch.Visible = false;
@@ -114,8 +117,8 @@ namespace hospitalManagementSystem
             notSortableDataGridViewUser();
             setDataGridViewUserHeaders();
             fullRowSelectDataGridViewUser();
+            toUpperCaseLabels();
         }
-
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {
             if (string.Compare(this.textBoxPassword.Text, this.textBoxConfirmPassword.Text, true) != 0)
@@ -123,7 +126,6 @@ namespace hospitalManagementSystem
             else
                 labelDontMatch.Visible = false;
         }
-
         private void textBoxConfirmPassword_TextChanged(object sender, EventArgs e)
         {
             if (string.Compare(this.textBoxPassword.Text, this.textBoxConfirmPassword.Text, true) != 0)
@@ -131,7 +133,6 @@ namespace hospitalManagementSystem
             else
                 labelDontMatch.Visible = false;
         }
-
         private void dataGridViewUser_SelectionChanged(object sender, EventArgs e)
         {
             if (this.dataGridViewUser.CurrentRow != null && this.dataGridViewUser.CurrentRow.Index != -1)
@@ -153,12 +154,10 @@ namespace hospitalManagementSystem
 
             }
         }
-
         private void buttonUpdateUser_Click(object sender, EventArgs e)
         {
             userUpdatePassword();
         }
-
         private void textBoxUpdateNewPassword_TextChanged(object sender, EventArgs e)
         {
             if (string.Compare(this.textBoxUpdateNewPassword.Text, this.textBoxUpdateConfirmPassword.Text, true) != 0)
@@ -166,7 +165,6 @@ namespace hospitalManagementSystem
             else
                 this.labelUpdateDontMatch.Visible = false;
         }
-
         private void textBoxUpdateConfirmPassword_TextChanged(object sender, EventArgs e)
         {
             if (string.Compare(this.textBoxUpdateNewPassword.Text, this.textBoxUpdateConfirmPassword.Text, true) != 0)
@@ -174,7 +172,6 @@ namespace hospitalManagementSystem
             else
                 this.labelUpdateDontMatch.Visible = false;
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             try
@@ -190,6 +187,22 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void User_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -121,6 +121,11 @@ namespace hospitalManagementSystem
             this.dataGridViewAppointmentHistory.Columns[8].HeaderText = "Appointment Time";
             this.dataGridViewAppointmentHistory.Columns[9].HeaderText = "Sex";
         }
+        private void toUpperCaseLabels()
+        {
+            labelAppointmentRecord.Text = labelAppointmentRecord.Text.ToUpper();
+            labelPatient.Text = labelPatient.Text.ToUpper();
+        }
 
         // EVENTS
         private void ExistingPatient_Load(object sender, EventArgs e)
@@ -132,6 +137,7 @@ namespace hospitalManagementSystem
                 notSortableDataGridViewAppointmentHistory();
                 setDataGridViewExistingPatientHeaders();
                 setDataGridViewAppointmentHeaders();
+                toUpperCaseLabels();
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
                 this.comboBoxDepartment.ValueMember = "departmentId";
@@ -145,6 +151,7 @@ namespace hospitalManagementSystem
                 this.dataGridViewAppointmentHistory.AlternatingRowsDefaultCellStyle.BackColor = Color.DodgerBlue;
                 //datagridview row select
                 this.dataGridViewExistingPatient.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                this.dataGridViewAppointmentHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
@@ -154,11 +161,6 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void dataGridViewExistingPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -317,23 +319,14 @@ namespace hospitalManagementSystem
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        //DataGridView Appointment History CellContentClick
-        private void dataGridViewAppointmentHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridViewExistingPatient_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridViewAppointmentHistory_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridViewExistingPatient_SelectionChanged(object sender, EventArgs e)
@@ -472,6 +465,11 @@ namespace hospitalManagementSystem
             {
                 e.Handled = true;
             }
+        }
+
+        private void ExistingPatient_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -35,6 +35,8 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.labelNationality = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNationalities)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             this.dataGridViewNationalities.AllowUserToAddRows = false;
             this.dataGridViewNationalities.AllowUserToDeleteRows = false;
             this.dataGridViewNationalities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewNationalities.Location = new System.Drawing.Point(12, 41);
+            this.dataGridViewNationalities.Location = new System.Drawing.Point(12, 64);
             this.dataGridViewNationalities.Name = "dataGridViewNationalities";
             this.dataGridViewNationalities.ReadOnly = true;
             this.dataGridViewNationalities.Size = new System.Drawing.Size(333, 211);
@@ -54,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(11, 261);
+            this.label1.Location = new System.Drawing.Point(11, 284);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 1;
@@ -62,7 +64,7 @@
             // 
             // textBoxNationalityName
             // 
-            this.textBoxNationalityName.Location = new System.Drawing.Point(88, 258);
+            this.textBoxNationalityName.Location = new System.Drawing.Point(88, 281);
             this.textBoxNationalityName.Name = "textBoxNationalityName";
             this.textBoxNationalityName.Size = new System.Drawing.Size(129, 20);
             this.textBoxNationalityName.TabIndex = 2;
@@ -72,7 +74,7 @@
             this.buttonNewNationality.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewNationality.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonNewNationality.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewNationality.Location = new System.Drawing.Point(14, 284);
+            this.buttonNewNationality.Location = new System.Drawing.Point(14, 307);
             this.buttonNewNationality.Name = "buttonNewNationality";
             this.buttonNewNationality.Size = new System.Drawing.Size(203, 30);
             this.buttonNewNationality.TabIndex = 3;
@@ -111,7 +113,7 @@
             this.buttonClear.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonClear.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonClear.ForeColor = System.Drawing.Color.Navy;
-            this.buttonClear.Location = new System.Drawing.Point(223, 258);
+            this.buttonClear.Location = new System.Drawing.Point(223, 281);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(122, 20);
             this.buttonClear.TabIndex = 11;
@@ -119,12 +121,37 @@
             this.buttonClear.UseVisualStyleBackColor = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // labelNationality
+            // 
+            this.labelNationality.AutoSize = true;
+            this.labelNationality.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelNationality.Location = new System.Drawing.Point(12, 38);
+            this.labelNationality.Name = "labelNationality";
+            this.labelNationality.Size = new System.Drawing.Size(100, 22);
+            this.labelNationality.TabIndex = 12;
+            this.labelNationality.Text = "Nationality";
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
+            this.buttonBack.Location = new System.Drawing.Point(16, 530);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 43);
+            this.buttonBack.TabIndex = 144;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // Nationality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1398, 745);
+            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.labelNationality);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUpdate);
@@ -134,6 +161,7 @@
             this.Controls.Add(this.dataGridViewNationalities);
             this.Name = "Nationality";
             this.Text = "Nationality";
+            this.Deactivate += new System.EventHandler(this.Nationality_Deactivate);
             this.Load += new System.EventHandler(this.Nationality_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNationalities)).EndInit();
             this.ResumeLayout(false);
@@ -150,5 +178,7 @@
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Label labelNationality;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

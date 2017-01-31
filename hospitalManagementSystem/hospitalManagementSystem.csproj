@@ -233,6 +233,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Shifts.resx">
       <DependentUpon>Shifts.cs</DependentUpon>
@@ -283,6 +284,51 @@
       <Project>{8dd6fb38-3580-4245-a5ff-c29d5c5cc397}</Project>
       <Name>HospitalLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Me-min.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cure-Logo-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\front pic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hospital-Management-System-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infrastructure-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1 %283%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cure-Logo-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\front pic1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\healthcare-loop1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital-management-information-software1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hospital-Management-System-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infrastructure-21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infrastructure-211.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

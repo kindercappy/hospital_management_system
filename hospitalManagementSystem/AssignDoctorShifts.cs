@@ -99,6 +99,11 @@ namespace hospitalManagementSystem
         {
             this.dataGridViewDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+        private void toUpperCaseLabels()
+        {
+            labelDoctor.Text = labelDoctor.Text.ToUpper();
+            labelDoctorShifts.Text = labelDoctorShifts.Text.ToUpper();
+        }
 
 
         private void AssignDoctorShifts_Load(object sender, EventArgs e)
@@ -110,6 +115,7 @@ namespace hospitalManagementSystem
             notSortableDataGridViewDoctor();
             fullRowSelectDataGridViewDoctorShift();
             fullRowSelectDataGridViewDoctor();
+            toUpperCaseLabels();
             //dataGridViewDoctor.Columns[0].Visible = false;
             //dataGridViewDoctorShift.Columns[0].Visible = false;
             //ExistingDoctor Depertment comboBox
@@ -140,13 +146,8 @@ namespace hospitalManagementSystem
             //make datagridview readonly
             this.dataGridViewDoctor.ReadOnly = true;
             this.dataGridViewDoctorShift.ReadOnly = true;
-            //datagrid full row select
-        }
-        //dataGridView Doctor
-        private void dataGridViewDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-
+            //For flickering problem
+            this.DoubleBuffered = true;
         }
 
         // Doctor
@@ -179,19 +180,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-    
-
-        private void dataGridViewAssignDoctorShift_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        //button doctor search
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             displayDoctor();
@@ -231,7 +219,6 @@ namespace hospitalManagementSystem
         {
             displayShifts();
         }
-
         private void buttonSearch_Click_1(object sender, EventArgs e)
         {
             try
@@ -308,27 +295,10 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonRefresh_Click_1(object sender, EventArgs e)
         {
             displayDoctor();
         }
-
-        private void dataGridViewDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-        private void dataGridViewDoctor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewDoctorShift_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void dataGridViewDoctor_SelectionChanged(object sender, EventArgs e)
         {
             
@@ -358,17 +328,10 @@ namespace hospitalManagementSystem
                 }
             }
         }
-
-        private void dataGridViewDoctorShift_SelectionChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
-
         private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -376,7 +339,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxSearchPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -384,7 +346,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -392,7 +353,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -400,7 +360,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightFt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -408,7 +367,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightInch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -416,7 +374,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -432,8 +389,24 @@ namespace hospitalManagementSystem
             }
             //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
         private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AssignDoctorShifts_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AssignDoctorShifts_Deactivate(object sender, EventArgs e)
         {
             this.Close();
         }

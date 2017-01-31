@@ -24,7 +24,6 @@ namespace HospitalLibrary
         private string sAddress;
         private int iNationality;
         private int iShift;
-
         public int doctorId
         {
             get
@@ -47,7 +46,6 @@ namespace HospitalLibrary
                 sFirstName = value;
             }
         }
-
         public string lastName
         {
             get
@@ -59,7 +57,6 @@ namespace HospitalLibrary
                 sLastName = value;
             }
         }
-
         public int department
         {
             get
@@ -71,7 +68,6 @@ namespace HospitalLibrary
                 iDepartment = value;
             }
         }
-
         public int age
         {
             get
@@ -83,7 +79,6 @@ namespace HospitalLibrary
                 iAge = value;
             }
         }
-
         public string sex
         {
             get
@@ -95,7 +90,6 @@ namespace HospitalLibrary
                 sSex = value;
             }
         }
-
         public int heightFt
         {
             get
@@ -107,7 +101,6 @@ namespace HospitalLibrary
                 iHeightFt = value;
             }
         }
-
         public int heightInch
         {
             get
@@ -119,7 +112,6 @@ namespace HospitalLibrary
                 iHeightInch = value;
             }
         }
-
         public decimal weight
         {
             get
@@ -131,7 +123,6 @@ namespace HospitalLibrary
                 iWeight = value;
             }
         }
-
         public long phone
         {
             get
@@ -143,7 +134,6 @@ namespace HospitalLibrary
                 iPhone = value;
             }
         }
-
         public string email
         {
             get
@@ -155,7 +145,6 @@ namespace HospitalLibrary
                 sEmail = value;
             }
         }
-
         public string address
         {
             get
@@ -167,7 +156,6 @@ namespace HospitalLibrary
                 sAddress = value; 
             }
         }
-
         public int natioinality
         {
             get
@@ -179,7 +167,6 @@ namespace HospitalLibrary
                 iNationality = value;
             }
         }
-
         public int shift
         {
             get
@@ -191,12 +178,9 @@ namespace HospitalLibrary
                 iShift = value;
             }
         }
-
     }
-
     public class DoctorManager
     {
-        //saves doctor
         public static void doctorSave(Doctor doc)
         {
 
@@ -264,90 +248,6 @@ namespace HospitalLibrary
             }
 
         }
-        //updates doctor with shift
-        public static void doctorUpdatesShift(Doctor doc)
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = Common.getConnection();
-                cmd.CommandText = "[Doctor_Shift_Update]";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                //doctorId Integer Param
-                SqlParameter iDoctor = new SqlParameter("@doctorId", doc.doctorId);
-                iDoctor.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDoctor);
-
-                //firstName NVarChar param
-                SqlParameter sFirstName = new SqlParameter("@firstName", doc.firstName);
-                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sFirstName);
-
-                //lastName NVarChar param
-                SqlParameter sLastName = new SqlParameter("@lastName", doc.lastName);
-                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sLastName);
-
-                //department Integer param
-                SqlParameter iDepartment = new SqlParameter("@department", doc.department);
-                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDepartment);
-
-                //age Integer param
-                SqlParameter iAge = new SqlParameter("@age", doc.age);
-                iAge.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iAge);
-
-                //sex NVarChar param
-                SqlParameter sSex = new SqlParameter("@sex", doc.sex);
-                sSex.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sSex);
-
-                //heightFt Integer param
-                SqlParameter iHeightFt = new SqlParameter("@heightFt", doc.heightFt);
-                iHeightFt.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightFt);
-
-                //heightInch Integer param 
-                SqlParameter iHeightInch = new SqlParameter("@heightInch", doc.heightInch);
-                iHeightInch.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iHeightInch);
-
-                //weight Integer param
-                SqlParameter iWeight = new SqlParameter("@weight", doc.weight);
-                iWeight.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iWeight);
-
-                //phone BigInt param
-                SqlParameter iPhone = new SqlParameter("@phone", doc.phone);
-                iPhone.SqlDbType = System.Data.SqlDbType.BigInt;
-                cmd.Parameters.Add(iPhone);
-
-                //email NVarChar param
-                SqlParameter sEmail = new SqlParameter("@email", doc.email);
-                sEmail.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sEmail);
-
-                //address NVarChar param
-                SqlParameter sAddress = new SqlParameter("@address", doc.address);
-                sAddress.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sAddress);
-
-                //nationalityId Integer param
-                SqlParameter iNationalityId = new SqlParameter("nationalityId", doc.natioinality);
-                iNationalityId.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iNationalityId);
-
-                //doctorShift Integer param
-                SqlParameter iDoctorShift = new SqlParameter("@doctorShift", doc.shift);
-                iDoctorShift.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDoctorShift);
-
-                cmd.ExecuteNonQuery();
-
-            }
-        }
-        //updates doctor
         public static void doctorUpdate(Doctor doctor)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -430,7 +330,6 @@ namespace HospitalLibrary
 
             }
         }
-        //deletes doctor
         public static void doctorDelete(Doctor doctor)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -443,41 +342,6 @@ namespace HospitalLibrary
                 SqlParameter iDoctorId = new SqlParameter("@doctorId", doctor.doctorId);
                 iDoctorId.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iDoctorId);
-
-                cmd.ExecuteNonQuery();
-            }
-        }
-        //search doctor
-        public static void doctorSearch(Doctor doctor)
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                SqlDataAdapter da = new SqlDataAdapter();
-                cmd.Connection = Common.getConnection();
-                cmd.CommandText = "doctorSearch";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                SqlParameter sFirstName = new SqlParameter("@firstName", doctor.firstName);
-                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sFirstName);
-                da.SelectCommand = cmd;
-
-                cmd.ExecuteNonQuery();
-            }
-        }
-        //selects doctor by department
-        public static void doctorSelectByDepartment(Doctor doctor)
-        {
-            using(SqlCommand cmd = new SqlCommand())
-                using(SqlDataAdapter da = new SqlDataAdapter())
-            {
-                cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Doctor_Select_By_Department";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                SqlParameter iDepartment = new SqlParameter("department", doctor.department);
-                iDepartment.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iDepartment);
 
                 cmd.ExecuteNonQuery();
             }

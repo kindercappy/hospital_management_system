@@ -24,10 +24,7 @@ namespace HospitalLibrary
         private string sAddress;
         private int iNationality;
         private int iStaffShift;
-
-
         //Properties
-
         public int staffId
         {
             get
@@ -399,7 +396,6 @@ namespace HospitalLibrary
             return dt;
 
         }
-
         public static DataTable getStaffListByPhone(Staff staff)
         {
             SqlCommand cmd = new SqlCommand();

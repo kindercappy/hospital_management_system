@@ -101,6 +101,12 @@ namespace hospitalManagementSystem
         {
             this.dataGridViewDoctor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+        private void toUpperCaseLabels()
+        {
+            labelBookAppointment.Text = labelBookAppointment.Text.ToUpper();
+            labelDoctor.Text = labelDoctor.Text.ToUpper();
+            labelPatient.Text = labelPatient.Text.ToUpper();
+        }
       
         private void BookAppointment_Load(object sender, EventArgs e)
         {
@@ -112,6 +118,7 @@ namespace hospitalManagementSystem
             setDatagridViewPatientHeaders();
             notSortableDataGirdViewPatient();
             fullRowSelectDataGridViewPatient();
+            toUpperCaseLabels();
             //Department ComboBox
             this.comboBoxDepartment.DisplayMember = "departmentName";
             this.comboBoxDepartment.ValueMember = "departmentId";
@@ -352,7 +359,7 @@ namespace hospitalManagementSystem
         private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
+            { 
                 e.Handled = true;
             }
         }
@@ -366,6 +373,18 @@ namespace hospitalManagementSystem
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BookAppointment_Deactivate(object sender, EventArgs e)
         {
             this.Close();
         }

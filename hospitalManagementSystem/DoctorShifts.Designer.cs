@@ -45,6 +45,8 @@
             this.textBoxSearchId = new System.Windows.Forms.TextBox();
             this.labelSearchName = new System.Windows.Forms.Label();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
+            this.labelShifts = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShifts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBack.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(605, 182);
+            this.buttonBack.Location = new System.Drawing.Point(605, 175);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(123, 23);
             this.buttonBack.TabIndex = 55;
@@ -64,7 +66,7 @@
             // 
             this.labelShiftName.AutoSize = true;
             this.labelShiftName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShiftName.Location = new System.Drawing.Point(465, 39);
+            this.labelShiftName.Location = new System.Drawing.Point(465, 55);
             this.labelShiftName.Name = "labelShiftName";
             this.labelShiftName.Size = new System.Drawing.Size(69, 13);
             this.labelShiftName.TabIndex = 58;
@@ -72,14 +74,14 @@
             // 
             // textBoxShiftsName
             // 
-            this.textBoxShiftsName.Location = new System.Drawing.Point(571, 39);
+            this.textBoxShiftsName.Location = new System.Drawing.Point(571, 55);
             this.textBoxShiftsName.Name = "textBoxShiftsName";
             this.textBoxShiftsName.Size = new System.Drawing.Size(173, 20);
             this.textBoxShiftsName.TabIndex = 59;
             // 
             // textBoxFrom
             // 
-            this.textBoxFrom.Location = new System.Drawing.Point(571, 66);
+            this.textBoxFrom.Location = new System.Drawing.Point(571, 82);
             this.textBoxFrom.Name = "textBoxFrom";
             this.textBoxFrom.Size = new System.Drawing.Size(173, 20);
             this.textBoxFrom.TabIndex = 60;
@@ -88,7 +90,7 @@
             // 
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.Location = new System.Drawing.Point(465, 69);
+            this.labelFrom.Location = new System.Drawing.Point(465, 85);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(100, 13);
             this.labelFrom.TabIndex = 61;
@@ -98,7 +100,7 @@
             // 
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(465, 99);
+            this.labelTo.Location = new System.Drawing.Point(465, 115);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(88, 13);
             this.labelTo.TabIndex = 62;
@@ -106,7 +108,7 @@
             // 
             // textBoxTo
             // 
-            this.textBoxTo.Location = new System.Drawing.Point(571, 92);
+            this.textBoxTo.Location = new System.Drawing.Point(571, 108);
             this.textBoxTo.Name = "textBoxTo";
             this.textBoxTo.Size = new System.Drawing.Size(173, 20);
             this.textBoxTo.TabIndex = 63;
@@ -116,7 +118,7 @@
             this.buttonNewShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonNewShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewShift.Location = new System.Drawing.Point(468, 153);
+            this.buttonNewShift.Location = new System.Drawing.Point(468, 169);
             this.buttonNewShift.Name = "buttonNewShift";
             this.buttonNewShift.Size = new System.Drawing.Size(123, 23);
             this.buttonNewShift.TabIndex = 64;
@@ -129,12 +131,11 @@
             this.dataGridViewShifts.AllowUserToAddRows = false;
             this.dataGridViewShifts.AllowUserToDeleteRows = false;
             this.dataGridViewShifts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShifts.Location = new System.Drawing.Point(12, 39);
+            this.dataGridViewShifts.Location = new System.Drawing.Point(12, 55);
             this.dataGridViewShifts.Name = "dataGridViewShifts";
             this.dataGridViewShifts.ReadOnly = true;
             this.dataGridViewShifts.Size = new System.Drawing.Size(447, 166);
             this.dataGridViewShifts.TabIndex = 65;
-            this.dataGridViewShifts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShifts_CellClick);
             this.dataGridViewShifts.SelectionChanged += new System.EventHandler(this.dataGridViewShifts_SelectionChanged);
             // 
             // buttonUpdateShift
@@ -142,7 +143,7 @@
             this.buttonUpdateShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonUpdateShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonUpdateShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonUpdateShift.Location = new System.Drawing.Point(605, 153);
+            this.buttonUpdateShift.Location = new System.Drawing.Point(605, 146);
             this.buttonUpdateShift.Name = "buttonUpdateShift";
             this.buttonUpdateShift.Size = new System.Drawing.Size(123, 23);
             this.buttonUpdateShift.TabIndex = 67;
@@ -155,7 +156,7 @@
             this.buttonDeleteShift.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDeleteShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonDeleteShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDeleteShift.Location = new System.Drawing.Point(468, 182);
+            this.buttonDeleteShift.Location = new System.Drawing.Point(468, 198);
             this.buttonDeleteShift.Name = "buttonDeleteShift";
             this.buttonDeleteShift.Size = new System.Drawing.Size(123, 23);
             this.buttonDeleteShift.TabIndex = 68;
@@ -225,12 +226,37 @@
             this.textBoxSearchName.TabIndex = 89;
             this.textBoxSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchName_KeyPress);
             // 
+            // labelShifts
+            // 
+            this.labelShifts.AutoSize = true;
+            this.labelShifts.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelShifts.Location = new System.Drawing.Point(12, 29);
+            this.labelShifts.Name = "labelShifts";
+            this.labelShifts.Size = new System.Drawing.Size(56, 22);
+            this.labelShifts.TabIndex = 97;
+            this.labelShifts.Text = "Shifts";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Navy;
+            this.button1.Location = new System.Drawing.Point(12, 559);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(209, 43);
+            this.button1.TabIndex = 144;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DoctorShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1458, 801);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelShifts);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.labelSearchId);
@@ -250,6 +276,7 @@
             this.Controls.Add(this.buttonBack);
             this.Name = "DoctorShifts";
             this.Text = "DoctorShifts";
+            this.Deactivate += new System.EventHandler(this.DoctorShifts_Deactivate);
             this.Load += new System.EventHandler(this.DoctorShifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShifts)).EndInit();
             this.ResumeLayout(false);
@@ -275,5 +302,7 @@
         private System.Windows.Forms.TextBox textBoxSearchId;
         private System.Windows.Forms.Label labelSearchName;
         private System.Windows.Forms.TextBox textBoxSearchName;
+        private System.Windows.Forms.Label labelShifts;
+        private System.Windows.Forms.Button button1;
     }
 }

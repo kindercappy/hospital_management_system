@@ -26,7 +26,6 @@ namespace HospitalLibrary
         private TimeSpan tFrom;
         private TimeSpan tTo;
         private DateTime dtEntryTime;
-
         public int patientId
         {
             get
@@ -49,7 +48,6 @@ namespace HospitalLibrary
                 sFirstName = value;
             }
         }
-
         public string lastName
         {
             get
@@ -61,19 +59,6 @@ namespace HospitalLibrary
                 sLastName = value;
             }
         }
-
-        //public int department
-        //{
-        //    get
-        //    {
-        //        return iDepartment;
-        //    }
-        //    set
-        //    {
-        //        iDepartment = value;
-        //    }
-        //}
-
         public int age
         {
             get
@@ -85,7 +70,6 @@ namespace HospitalLibrary
                 iAge = value;
             }
         }
-
         public string sex
         {
             get
@@ -97,7 +81,6 @@ namespace HospitalLibrary
                 sSex = value;
             }
         }
-
         public int heightFt
         {
             get
@@ -109,7 +92,6 @@ namespace HospitalLibrary
                 iHeightFt = value;
             }
         }
-
         public int heightInch
         {
             get
@@ -121,7 +103,6 @@ namespace HospitalLibrary
                 iHeightInch = value;
             }
         }
-
         public decimal weight
         {
             get
@@ -133,7 +114,6 @@ namespace HospitalLibrary
                 iWeight = value;
             }
         }
-
         public long phone
         {
             get
@@ -145,7 +125,6 @@ namespace HospitalLibrary
                 iPhone = value;
             }
         }
-
         public string email
         {
             get
@@ -157,7 +136,6 @@ namespace HospitalLibrary
                 sEmail = value;
             }
         }
-
         public string address
         {
             get
@@ -169,7 +147,6 @@ namespace HospitalLibrary
                 sAddress = value;
             }
         }
-
         public int natioinality
         {
             get
@@ -181,7 +158,6 @@ namespace HospitalLibrary
                 iNationality = value;
             }
         }
-
         public TimeSpan from
         {
             get
@@ -192,8 +168,7 @@ namespace HospitalLibrary
             {
                 tFrom = value;
             }
-        }
-        
+        }        
         public TimeSpan to
         {
             get
@@ -205,7 +180,6 @@ namespace HospitalLibrary
                 tTo = value;
             }
         }
-
         public DateTime entryTime
         {
             get
@@ -218,7 +192,6 @@ namespace HospitalLibrary
             }
         }
     }
-
     public class PatientManager
     {   
         //saves patient
@@ -281,43 +254,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-        //save patient for appointment
-        public static void patientAppSave(Patient patient)
-        {
-            using(SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Patient_For_Appointment_Insert";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                //firstName NVarChar param
-                SqlParameter sFirstName = new SqlParameter("@firstName", patient.firstName);
-                sFirstName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sFirstName);
-
-                //lastName NVarChar param
-                SqlParameter sLastName = new SqlParameter("@lastName", patient.lastName);
-                sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sLastName);
-
-                //age Integer param
-                SqlParameter iAge = new SqlParameter("@age", patient.age);
-                iAge.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iAge);
-
-                //sex NVarChar param
-                SqlParameter sSex = new SqlParameter("@sex", patient.sex);
-                sSex.SqlDbType = System.Data.SqlDbType.NVarChar;
-                cmd.Parameters.Add(sSex);
-
-                //nationalityId Integer param
-                SqlParameter iNationalityId = new SqlParameter("@nationalityId", patient.natioinality);
-                iNationalityId.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iNationalityId);
-
-                cmd.ExecuteNonQuery();
-            }
-        }
         //gets patient list
         public static List<Patient> getPatientList()
         {
@@ -371,13 +307,6 @@ namespace HospitalLibrary
                 SqlParameter sLastName = new SqlParameter("@lastName", patient.lastName);
                 sLastName.SqlDbType = System.Data.SqlDbType.NVarChar;
                 cmd.Parameters.Add(sLastName);
-
-                ////Department Integer Parameter
-                //SqlParameter iDepartment = new SqlParameter("@department", patient.department);
-                //iDepartment.SqlDbType = System.Data.SqlDbType.Int;
-                //cmd.Parameters.Add(iDepartment);
-
-                //Age Integer Parameter
                 SqlParameter iAge = new SqlParameter("@age", patient.age);
                 iAge.SqlDbType = System.Data.SqlDbType.Int;
                 cmd.Parameters.Add(iAge);
@@ -424,32 +353,7 @@ namespace HospitalLibrary
 
                 cmd.ExecuteNonQuery();
             }
-        }
-        //selects patient
-        public static Patient patienSelect(int patientId)
-        {
-            Patient patient = new Patient();
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = Common.getConnection();
-                cmd.CommandText = "Patient_Existing_Select";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                SqlParameter iPatientId = new SqlParameter("@patientId", patientId);
-                iPatientId.SqlDbType = System.Data.SqlDbType.Int;
-                cmd.Parameters.Add(iPatientId);
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (patientId > 0)
-                {
-                    patient.firstName = dt.Rows[0]["firstName"].ToString();
-                }
-                cmd.ExecuteNonQuery();
-            }
-            return patient;
-        }
+        }        
         //deletes patient
         public static void patientDelete(Patient patient)
         {

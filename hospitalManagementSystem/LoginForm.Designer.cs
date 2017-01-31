@@ -101,6 +101,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::hospitalManagementSystem.Properties.Resources.infrastructure_21;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(658, 391);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.textBoxPassword);
@@ -111,6 +113,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Deactivate += new System.EventHandler(this.LoginForm_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);

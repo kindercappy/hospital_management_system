@@ -14,9 +14,7 @@ namespace HospitalLibrary
         private int iDoctorShiftId;
         private string sShiftName;
         private TimeSpan tFrom;
-        private TimeSpan tTo;
-        
-
+        private TimeSpan tTo;     
         public int shiftId
         {
             get
@@ -67,12 +65,10 @@ namespace HospitalLibrary
             {
                 return sShiftName + " From " + tFrom + " To " + tTo;
             }
-        }
-        
+        }     
     }
     public class DoctorShiftsManager
     {
-        //gets doctorShifts list
         public static List<DoctorShiftsHL> getDoctorShifts()
         {
             List<DoctorShiftsHL> doctorShiftList = new List<DoctorShiftsHL>();
@@ -97,7 +93,6 @@ namespace HospitalLibrary
                 return doctorShiftList;
             }
         }
-        //saves doctor shift
         public static void doctorShiftSave(DoctorShiftsHL docshi)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -125,7 +120,6 @@ namespace HospitalLibrary
             
             }
         }
-        //updates doctor shift
         public static void doctorShiftUpdate(DoctorShiftsHL docshi)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -157,7 +151,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-        //deletes doctor shift
         public static void doctorShiftDelete(DoctorShiftsHL docshi)
         {
             using (SqlCommand cmd = new SqlCommand())

@@ -154,7 +154,6 @@
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 9;
-            this.comboBoxSex.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
             // 
             // lblHeightFt
             // 
@@ -403,6 +402,7 @@
             this.Name = "NewPatient";
             this.Text = "NewPatient";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Deactivate += new System.EventHandler(this.NewPatient_Deactivate);
             this.Load += new System.EventHandler(this.NewPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

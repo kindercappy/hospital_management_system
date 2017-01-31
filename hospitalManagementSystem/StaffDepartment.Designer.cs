@@ -35,6 +35,8 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.dataGridViewStaffDepartment = new System.Windows.Forms.DataGridView();
+            this.labelStaffDepartment = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffDepartment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             this.buttonClear.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonClear.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonClear.ForeColor = System.Drawing.Color.Navy;
-            this.buttonClear.Location = new System.Drawing.Point(233, 229);
+            this.buttonClear.Location = new System.Drawing.Point(233, 251);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(122, 20);
             this.buttonClear.TabIndex = 23;
@@ -56,7 +58,7 @@
             this.buttonNewDepatment.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewDepatment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonNewDepatment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewDepatment.Location = new System.Drawing.Point(16, 255);
+            this.buttonNewDepatment.Location = new System.Drawing.Point(16, 277);
             this.buttonNewDepatment.Name = "buttonNewDepatment";
             this.buttonNewDepatment.Size = new System.Drawing.Size(211, 30);
             this.buttonNewDepatment.TabIndex = 22;
@@ -66,7 +68,7 @@
             // 
             // textBoxDepartmentName
             // 
-            this.textBoxDepartmentName.Location = new System.Drawing.Point(98, 229);
+            this.textBoxDepartmentName.Location = new System.Drawing.Point(98, 251);
             this.textBoxDepartmentName.Name = "textBoxDepartmentName";
             this.textBoxDepartmentName.Size = new System.Drawing.Size(129, 20);
             this.textBoxDepartmentName.TabIndex = 21;
@@ -75,7 +77,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(16, 232);
+            this.label1.Location = new System.Drawing.Point(16, 254);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 20;
@@ -112,12 +114,35 @@
             this.dataGridViewStaffDepartment.AllowUserToAddRows = false;
             this.dataGridViewStaffDepartment.AllowUserToDeleteRows = false;
             this.dataGridViewStaffDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStaffDepartment.Location = new System.Drawing.Point(12, 41);
+            this.dataGridViewStaffDepartment.Location = new System.Drawing.Point(12, 63);
             this.dataGridViewStaffDepartment.Name = "dataGridViewStaffDepartment";
             this.dataGridViewStaffDepartment.ReadOnly = true;
             this.dataGridViewStaffDepartment.Size = new System.Drawing.Size(343, 182);
             this.dataGridViewStaffDepartment.TabIndex = 17;
             this.dataGridViewStaffDepartment.SelectionChanged += new System.EventHandler(this.dataGridViewStaffDepartment_SelectionChanged);
+            // 
+            // labelStaffDepartment
+            // 
+            this.labelStaffDepartment.AutoSize = true;
+            this.labelStaffDepartment.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelStaffDepartment.Location = new System.Drawing.Point(8, 38);
+            this.labelStaffDepartment.Name = "labelStaffDepartment";
+            this.labelStaffDepartment.Size = new System.Drawing.Size(151, 22);
+            this.labelStaffDepartment.TabIndex = 24;
+            this.labelStaffDepartment.Text = "Staff Department";
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
+            this.buttonBack.Location = new System.Drawing.Point(12, 619);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(209, 43);
+            this.buttonBack.TabIndex = 144;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // StaffDepartment
             // 
@@ -125,6 +150,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1442, 801);
+            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.labelStaffDepartment);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonNewDepatment);
             this.Controls.Add(this.textBoxDepartmentName);
@@ -134,6 +161,7 @@
             this.Controls.Add(this.dataGridViewStaffDepartment);
             this.Name = "StaffDepartment";
             this.Text = "StaffDepartment";
+            this.Deactivate += new System.EventHandler(this.StaffDepartment_Deactivate);
             this.Load += new System.EventHandler(this.StaffDepartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffDepartment)).EndInit();
             this.ResumeLayout(false);
@@ -150,5 +178,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.DataGridView dataGridViewStaffDepartment;
+        private System.Windows.Forms.Label labelStaffDepartment;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

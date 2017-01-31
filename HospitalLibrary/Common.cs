@@ -11,18 +11,12 @@ namespace HospitalLibrary
      public class Common
     {
         
-       public static string connectionString = "Data Source =CAPPY; Initial Catalog= hospitalManagementSystem; Integrated Security = SSPI; ";
-
-
-        
+       public static string connectionString = "Data Source =CAPPY; Initial Catalog= hospitalManagementSystem; Integrated Security = SSPI; ";        
     public static  SqlConnection getConnection()
-    {
-           
-        SqlConnection cnn;
-       
+    {          
+        SqlConnection cnn;       
         cnn = new SqlConnection(connectionString);
         cnn.Open();
-
        return cnn;
     }
         public static bool isValidEmail(string email)
@@ -56,7 +50,6 @@ namespace HospitalLibrary
                 return false;
             }
         }
-
     }
 
 }

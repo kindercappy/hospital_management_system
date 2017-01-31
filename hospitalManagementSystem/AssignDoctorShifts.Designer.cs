@@ -66,11 +66,13 @@
             this.textBoxSearchPhone = new System.Windows.Forms.TextBox();
             this.labelSearchId = new System.Windows.Forms.Label();
             this.textBoxSearchId = new System.Windows.Forms.TextBox();
-            this.labelSearchName = new System.Windows.Forms.Label();
+            this.labelDoctor = new System.Windows.Forms.Label();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelDoctorShifts = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctorShift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).BeginInit();
             this.SuspendLayout();
@@ -78,13 +80,10 @@
             // dataGridViewDoctorShift
             // 
             this.dataGridViewDoctorShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDoctorShift.Location = new System.Drawing.Point(277, 274);
+            this.dataGridViewDoctorShift.Location = new System.Drawing.Point(277, 310);
             this.dataGridViewDoctorShift.Name = "dataGridViewDoctorShift";
             this.dataGridViewDoctorShift.Size = new System.Drawing.Size(344, 203);
             this.dataGridViewDoctorShift.TabIndex = 0;
-            this.dataGridViewDoctorShift.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctorShift_CellClick);
-            this.dataGridViewDoctorShift.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAssignDoctorShift_CellContentClick);
-            this.dataGridViewDoctorShift.SelectionChanged += new System.EventHandler(this.dataGridViewDoctorShift_SelectionChanged);
             // 
             // buttonAssign
             // 
@@ -331,15 +330,12 @@
             this.dataGridViewDoctor.AllowUserToAddRows = false;
             this.dataGridViewDoctor.AllowUserToDeleteRows = false;
             this.dataGridViewDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDoctor.Location = new System.Drawing.Point(12, 33);
+            this.dataGridViewDoctor.Location = new System.Drawing.Point(5, 68);
             this.dataGridViewDoctor.Name = "dataGridViewDoctor";
             this.dataGridViewDoctor.ReadOnly = true;
-            this.dataGridViewDoctor.Size = new System.Drawing.Size(1364, 150);
+            this.dataGridViewDoctor.Size = new System.Drawing.Size(1150, 150);
             this.dataGridViewDoctor.TabIndex = 79;
-            this.dataGridViewDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellClick);
-            this.dataGridViewDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDoctor_CellContentClick);
             this.dataGridViewDoctor.SelectionChanged += new System.EventHandler(this.dataGridViewDoctor_SelectionChanged);
-            this.dataGridViewDoctor.Click += new System.EventHandler(this.dataGridViewDoctor_Click);
             // 
             // comboBoxDoctorShift
             // 
@@ -439,15 +435,15 @@
             this.textBoxSearchId.TabIndex = 139;
             this.textBoxSearchId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchId_KeyPress);
             // 
-            // labelSearchName
+            // labelDoctor
             // 
-            this.labelSearchName.AutoSize = true;
-            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchName.Location = new System.Drawing.Point(12, 9);
-            this.labelSearchName.Name = "labelSearchName";
-            this.labelSearchName.Size = new System.Drawing.Size(87, 13);
-            this.labelSearchName.TabIndex = 138;
-            this.labelSearchName.Text = "Search Name:";
+            this.labelDoctor.AutoSize = true;
+            this.labelDoctor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoctor.Location = new System.Drawing.Point(9, 42);
+            this.labelDoctor.Name = "labelDoctor";
+            this.labelDoctor.Size = new System.Drawing.Size(67, 22);
+            this.labelDoctor.TabIndex = 138;
+            this.labelDoctor.Text = "Doctor";
             // 
             // textBoxSearchName
             // 
@@ -496,21 +492,44 @@
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 138;
+            this.label4.Text = "Search Name:";
+            // 
+            // labelDoctorShifts
+            // 
+            this.labelDoctorShifts.AutoSize = true;
+            this.labelDoctorShifts.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoctorShifts.Location = new System.Drawing.Point(274, 284);
+            this.labelDoctorShifts.Name = "labelDoctorShifts";
+            this.labelDoctorShifts.Size = new System.Drawing.Size(118, 22);
+            this.labelDoctorShifts.TabIndex = 89;
+            this.labelDoctorShifts.Text = "Doctor Shifts";
+            // 
             // AssignDoctorShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1602, 831);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelSearchPhone);
             this.Controls.Add(this.textBoxSearchPhone);
             this.Controls.Add(this.labelSearchId);
             this.Controls.Add(this.textBoxSearchId);
-            this.Controls.Add(this.labelSearchName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelDoctor);
             this.Controls.Add(this.textBoxSearchName);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.labelDoctorShifts);
             this.Controls.Add(this.labelShift);
             this.Controls.Add(this.buttonShiftRefresh);
             this.Controls.Add(this.buttonShiftSearch);
@@ -545,8 +564,11 @@
             this.Controls.Add(this.labelHeightFeet);
             this.Controls.Add(this.buttonAssign);
             this.Controls.Add(this.dataGridViewDoctorShift);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "AssignDoctorShifts";
             this.Text = "AssignDoctorShifts";
+            this.Activated += new System.EventHandler(this.AssignDoctorShifts_Activated);
+            this.Deactivate += new System.EventHandler(this.AssignDoctorShifts_Deactivate);
             this.Load += new System.EventHandler(this.AssignDoctorShifts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctorShift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).EndInit();
@@ -595,10 +617,12 @@
         private System.Windows.Forms.TextBox textBoxSearchPhone;
         private System.Windows.Forms.Label labelSearchId;
         private System.Windows.Forms.TextBox textBoxSearchId;
-        private System.Windows.Forms.Label labelSearchName;
+        private System.Windows.Forms.Label labelDoctor;
         private System.Windows.Forms.TextBox textBoxSearchName;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelDoctorShifts;
     }
 }

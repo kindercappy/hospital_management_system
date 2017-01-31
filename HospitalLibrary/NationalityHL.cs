@@ -12,7 +12,6 @@ namespace HospitalLibrary
     {
         private string sNationalityName;
         private int sNationalityId;
-
         public string nationalityName
         {
             get
@@ -36,7 +35,6 @@ namespace HospitalLibrary
             }
         }
     }
-
         public class NationalityManager
         {
             public static List<NationalityHL> getNationalityList()
@@ -61,7 +59,6 @@ namespace HospitalLibrary
 
                 return NationalityList;
             }
-
             public static DataTable getNationalities()
         {
             SqlCommand cmd = new SqlCommand();
@@ -76,9 +73,8 @@ namespace HospitalLibrary
             da.Fill(dt);
 
             return dt;
-        }
-            
-        public static void nationalityUpdate(NationalityHL nation)
+        }           
+            public static void nationalityUpdate(NationalityHL nation)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -101,8 +97,7 @@ namespace HospitalLibrary
 
 
         }
-
-        public static void nationalityInsert(NationalityHL nation)
+            public static void nationalityInsert(NationalityHL nation)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -117,8 +112,7 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
-        public static void nationalityDelete(NationalityHL nation)
+            public static void nationalityDelete(NationalityHL nation)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
@@ -133,7 +127,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
         }
     
 }

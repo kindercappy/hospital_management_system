@@ -20,7 +20,6 @@ namespace HospitalLibrary
         private int iPatientId;
         private DateTime tAppTime;
         private int iappId;
-
         public int appId
         {
             get
@@ -131,9 +130,7 @@ namespace HospitalLibrary
                 tAppTime = value;
             }
         }
-
-    }
-    
+    }   
     public class AppointmentManager
     {
         public static void appointmentSave(Appointment app)
@@ -207,8 +204,7 @@ namespace HospitalLibrary
 
                 cmd.ExecuteNonQuery();
             }
-        }
-        
+        }        
         public static void AppointmentInfoUpdate(Appointment app)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -261,7 +257,6 @@ namespace HospitalLibrary
 
             return dt;
         }
-
         public static void deleteAppointmentByAppointmentId(Appointment app)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -277,6 +272,5 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
     }
 }

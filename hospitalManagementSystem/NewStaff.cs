@@ -36,21 +36,23 @@ namespace hospitalManagementSystem
             this.comboBoxStaffShift.SelectedIndex = -1;
 
         }
-
         private void entries()
         {
             this.textBoxFirstName.Text = "Cappy";
             this.textBoxLastName.Text = " Preet";
             this.textBoxAge.Text = "23";
-
-        }
-        
-
+        }       
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             
@@ -171,7 +173,6 @@ namespace hospitalManagementSystem
                 }
             }
         }
-
         private void NewStaff_Load(object sender, EventArgs e)
         {
             try
@@ -202,18 +203,7 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void comboBoxDepartment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxSex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }     
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -227,9 +217,7 @@ namespace hospitalManagementSystem
             {
                 e.Handled = true;
             }
-            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
         private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -237,7 +225,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightFt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -245,7 +232,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightInch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -253,13 +239,17 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
+        }
+
+        private void NewStaff_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

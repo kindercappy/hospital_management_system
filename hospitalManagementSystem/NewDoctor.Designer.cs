@@ -388,6 +388,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(979, 718);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -426,6 +427,7 @@
             this.Name = "NewDoctor";
             this.Text = "NewDoctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Deactivate += new System.EventHandler(this.NewDoctor_Deactivate);
             this.Load += new System.EventHandler(this.NewDoctor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

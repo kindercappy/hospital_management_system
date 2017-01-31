@@ -41,23 +41,23 @@ namespace hospitalManagementSystem
             this.dataGridViewDoctorDepartment.Columns[0].HeaderText = "Department";
             this.dataGridViewDoctorDepartment.Columns[1].HeaderText = "Department ID";
         }
-
-
-
+        private void toUpperCaseLabels()
+        {
+            labelDoctorDepartment.Text = labelDoctorDepartment.Text.ToUpper();
+        }
         public DoctorDepartment()
         {
             InitializeComponent();
         }
-
         private void DoctorDepartment_Load(object sender, EventArgs e)
         {
             displayDoctorDepartment();
             notSortableDataGridViewDoctorDepartment();
             fullRowSelectDataGridViewStaffDepartment();
             setDataGridViewStaffDepartmentHeaders();
+            toUpperCaseLabels();
             this.dataGridViewDoctorDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
         }
-
         private void buttonNewDepartment_Click(object sender, EventArgs e)
         {
             try
@@ -74,7 +74,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -92,7 +91,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             try
@@ -109,7 +107,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonClear_Click(object sender, EventArgs e)
         {
             try
@@ -122,7 +119,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void dataGridViewDoctorDepartment_SelectionChanged(object sender, EventArgs e)
         {
             if (this.dataGridViewDoctorDepartment.CurrentRow != null && this.dataGridViewDoctorDepartment.CurrentRow.Index != -1)
@@ -139,6 +135,22 @@ namespace hospitalManagementSystem
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DoctorDepartment_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

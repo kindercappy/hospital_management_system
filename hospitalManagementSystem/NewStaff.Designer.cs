@@ -261,7 +261,6 @@
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 24;
-            this.comboBoxDepartment.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartment_SelectedIndexChanged);
             // 
             // comboBoxNationality
             // 
@@ -437,6 +436,7 @@
             this.Name = "NewStaff";
             this.Text = "NewStaff";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Deactivate += new System.EventHandler(this.NewStaff_Deactivate);
             this.Load += new System.EventHandler(this.NewStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

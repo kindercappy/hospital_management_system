@@ -18,6 +18,7 @@ namespace hospitalManagementSystem
         public HospitalMain()
         {
             InitializeComponent();
+           
         }
         public void panelBringToFront()
         {
@@ -27,6 +28,7 @@ namespace hospitalManagementSystem
         {
             LoginForm form = new LoginForm();
             form.ShowDialog();
+           
         }
 
         //Patient
@@ -192,22 +194,6 @@ namespace hospitalManagementSystem
             panelHospitalMain.SendToBack();
         }
 
-
-
-        private void HospitalMain_FormClosed(object sender, FormClosedEventArgs e)
-        {  
-
-        }
-
-        private void HospitalMain_Activated(object sender, EventArgs e)
-        {
-            //panelHospitalMain.BringToFront();
-        }
-
-        private void HospitalMain_Shown(object sender, EventArgs e)
-        {
-           
-        }
         //Nationality
         //nationality button
         private void buttonNationality_Click(object sender, EventArgs e)
@@ -222,15 +208,15 @@ namespace hospitalManagementSystem
             panelHospitalMain.SendToBack();
         }
 
-        private void panelHospitalMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void buttonUser_Click(object sender, EventArgs e)
         {
             CommonFormOperation.ShowMaximizeSubForm(CommonFormOperation.user, this);
             panelHospitalMain.SendToBack();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,11 +44,7 @@ namespace hospitalManagementSystem
             this.dataGridViewAppointmentHistory.DataSource = dt;
             
         }
-        private void appointmentDeleteByAppointmentId()
-        {
-            
-
-        }
+      
         //clear data
         private void clearAllBoxes()
         {
@@ -114,13 +110,22 @@ namespace hospitalManagementSystem
         {
             this.dataGridViewAppointmentHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {            
-            this.Close();
+        private void toUpperCaseLabels()
+        {
+            labelDoctor.Text = labelDoctor.Text.ToUpper();
+            labelAppointmentRecord.Text = labelAppointmentRecord.Text.ToUpper();
         }
-
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void ExistingDoctor_Load(object sender, EventArgs e)
         {
             try
@@ -132,6 +137,7 @@ namespace hospitalManagementSystem
                 setdatGridViewEixsitngHeaders();
                 fullRowSelectDataGridViewExistingDoctor();
                 fullRowSelectDataGridViewAppointmentHistory();
+                toUpperCaseLabels();
                 //this.dataGridViewExistingDoctor.Columns[0].Visible = false;
                 //ExistingDoctor Depertment comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
@@ -155,21 +161,14 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
                 this.comboBoxDoctorShift.SelectedIndex = -1;
-                //datagridview full row select
-                
+                //For flickering problem
+                this.DoubleBuffered = true;
             }
             catch(System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
         private void buttonInsert_Click(object sender, EventArgs e)
             {
             string str = "";
@@ -489,6 +488,16 @@ namespace hospitalManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ExistingDoctor_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ExistingDoctor_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -12,7 +12,6 @@ namespace HospitalLibrary
     {
         private string sDepartmentName;
         private int sDepartmentId;
-
         public string departmentName
         {
             get
@@ -36,7 +35,6 @@ namespace HospitalLibrary
             }
         }
     }
-
     public class DepartmentStaffManager
     {
         public static List<DepartmentStaff> getDepartmentList()

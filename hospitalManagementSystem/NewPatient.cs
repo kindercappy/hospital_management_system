@@ -35,14 +35,11 @@ namespace hospitalManagementSystem
             this.textBoxEmail.Text = "";
             this.textBoxAddress.Text = "";
             this.comboBoxNationality.SelectedIndex = -1;
-        }
-        
+        }        
         private void NewPatient_Load(object sender, EventArgs e)
         {
             try
             {
-                
-
                 //NewPatient Department comboBox
                 this.comboBoxDepartment.DataSource = DepartmentDoctorManager.getDepartmentList();
                 this.comboBoxDepartment.DisplayMember = "departmentName";
@@ -55,28 +52,23 @@ namespace hospitalManagementSystem
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
-
             }
             catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonBack_Click(object sender, EventArgs e)
         {
             try
             {
-            this.Close();
-                //((Form)this.Parent).Controls["panelHospitalMain"].BringToFront();
-                
+            this.Close();                
             }
             catch(System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             string str = "";
@@ -178,12 +170,6 @@ namespace hospitalManagementSystem
                 }
             }
         }
-
-        private void comboBoxSex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -191,7 +177,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightFt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -199,7 +184,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxHeightInch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -207,7 +191,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -215,7 +198,6 @@ namespace hospitalManagementSystem
                 e.Handled = true;
             }
         }
-
         private void textBoxWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -223,13 +205,16 @@ namespace hospitalManagementSystem
             {
                 e.Handled = true;
             }
-
             // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
-            }
-            
+            }            
+        }
+
+        private void NewPatient_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

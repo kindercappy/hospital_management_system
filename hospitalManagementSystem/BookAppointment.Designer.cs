@@ -37,7 +37,7 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearchPhone = new System.Windows.Forms.TextBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelBookAppointment = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@
             this.textBoxAppTime = new System.Windows.Forms.TextBox();
             this.buttonBookAppointment = new System.Windows.Forms.Button();
             this.dataGridViewDoctor = new System.Windows.Forms.DataGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.labelDoctor = new System.Windows.Forms.Label();
+            this.labelPatient = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxDoctor = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@
             this.dataGridViewPatient.Location = new System.Drawing.Point(12, 58);
             this.dataGridViewPatient.Name = "dataGridViewPatient";
             this.dataGridViewPatient.ReadOnly = true;
-            this.dataGridViewPatient.Size = new System.Drawing.Size(1494, 150);
+            this.dataGridViewPatient.Size = new System.Drawing.Size(1150, 150);
             this.dataGridViewPatient.TabIndex = 0;
             this.dataGridViewPatient.SelectionChanged += new System.EventHandler(this.dataGridViewPatient_SelectionChanged);
             // 
@@ -168,19 +168,19 @@
             this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
-            // label1
+            // labelBookAppointment
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(707, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Book Appointment";
+            this.labelBookAppointment.AutoSize = true;
+            this.labelBookAppointment.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelBookAppointment.Location = new System.Drawing.Point(367, 218);
+            this.labelBookAppointment.Name = "labelBookAppointment";
+            this.labelBookAppointment.Size = new System.Drawing.Size(162, 22);
+            this.labelBookAppointment.TabIndex = 11;
+            this.labelBookAppointment.Text = "Book Appointment";
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(808, 237);
+            this.textBoxFirstName.Location = new System.Drawing.Point(560, 243);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(177, 20);
             this.textBoxFirstName.TabIndex = 12;
@@ -189,7 +189,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(707, 240);
+            this.label2.Location = new System.Drawing.Point(371, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 13;
@@ -199,7 +199,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(995, 240);
+            this.label3.Location = new System.Drawing.Point(368, 355);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 15;
@@ -207,7 +207,7 @@
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(1188, 237);
+            this.textBoxLastName.Location = new System.Drawing.Point(560, 348);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(177, 20);
             this.textBoxLastName.TabIndex = 14;
@@ -216,7 +216,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(707, 266);
+            this.label4.Location = new System.Drawing.Point(371, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 16;
@@ -226,7 +226,7 @@
             // 
             this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(808, 263);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(560, 269);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(177, 21);
             this.comboBoxDepartment.TabIndex = 17;
@@ -236,7 +236,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(995, 266);
+            this.label5.Location = new System.Drawing.Point(371, 377);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 19;
@@ -244,7 +244,7 @@
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(1188, 263);
+            this.textBoxAge.Location = new System.Drawing.Point(560, 374);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(177, 20);
             this.textBoxAge.TabIndex = 18;
@@ -257,7 +257,7 @@
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(1188, 289);
+            this.comboBoxSex.Location = new System.Drawing.Point(560, 400);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(177, 21);
             this.comboBoxSex.TabIndex = 21;
@@ -266,7 +266,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(996, 295);
+            this.label6.Location = new System.Drawing.Point(368, 403);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 20;
@@ -276,7 +276,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(706, 323);
+            this.label10.Location = new System.Drawing.Point(370, 329);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 29;
@@ -284,7 +284,7 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(808, 316);
+            this.textBoxPhone.Location = new System.Drawing.Point(560, 322);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(177, 20);
             this.textBoxPhone.TabIndex = 28;
@@ -294,7 +294,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(996, 320);
+            this.label16.Location = new System.Drawing.Point(368, 428);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(186, 13);
             this.label16.TabIndex = 43;
@@ -302,7 +302,7 @@
             // 
             // textBoxAppTime
             // 
-            this.textBoxAppTime.Location = new System.Drawing.Point(1188, 342);
+            this.textBoxAppTime.Location = new System.Drawing.Point(560, 453);
             this.textBoxAppTime.Name = "textBoxAppTime";
             this.textBoxAppTime.Size = new System.Drawing.Size(177, 20);
             this.textBoxAppTime.TabIndex = 42;
@@ -312,7 +312,7 @@
             this.buttonBookAppointment.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBookAppointment.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBookAppointment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBookAppointment.Location = new System.Drawing.Point(707, 342);
+            this.buttonBookAppointment.Location = new System.Drawing.Point(374, 479);
             this.buttonBookAppointment.Name = "buttonBookAppointment";
             this.buttonBookAppointment.Size = new System.Drawing.Size(278, 52);
             this.buttonBookAppointment.TabIndex = 46;
@@ -325,38 +325,38 @@
             this.dataGridViewDoctor.AllowUserToAddRows = false;
             this.dataGridViewDoctor.AllowUserToDeleteRows = false;
             this.dataGridViewDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDoctor.Location = new System.Drawing.Point(710, 417);
+            this.dataGridViewDoctor.Location = new System.Drawing.Point(778, 244);
             this.dataGridViewDoctor.Name = "dataGridViewDoctor";
             this.dataGridViewDoctor.ReadOnly = true;
             this.dataGridViewDoctor.Size = new System.Drawing.Size(344, 159);
             this.dataGridViewDoctor.TabIndex = 47;
             this.dataGridViewDoctor.SelectionChanged += new System.EventHandler(this.dataGridViewDoctor_SelectionChanged);
             // 
-            // label18
+            // labelDoctor
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(707, 397);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 17);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Doctor";
+            this.labelDoctor.AutoSize = true;
+            this.labelDoctor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoctor.Location = new System.Drawing.Point(774, 218);
+            this.labelDoctor.Name = "labelDoctor";
+            this.labelDoctor.Size = new System.Drawing.Size(67, 22);
+            this.labelDoctor.TabIndex = 48;
+            this.labelDoctor.Text = "Doctor";
             // 
-            // label19
+            // labelPatient
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(9, 38);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(62, 17);
-            this.label19.TabIndex = 49;
-            this.label19.Text = "Patient";
+            this.labelPatient.AutoSize = true;
+            this.labelPatient.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelPatient.Location = new System.Drawing.Point(11, 32);
+            this.labelPatient.Name = "labelPatient";
+            this.labelPatient.Size = new System.Drawing.Size(68, 22);
+            this.labelPatient.TabIndex = 49;
+            this.labelPatient.Text = "Patient";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(707, 295);
+            this.label17.Location = new System.Drawing.Point(371, 301);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 13);
             this.label17.TabIndex = 51;
@@ -364,7 +364,7 @@
             // 
             // textBoxDoctor
             // 
-            this.textBoxDoctor.Location = new System.Drawing.Point(808, 290);
+            this.textBoxDoctor.Location = new System.Drawing.Point(560, 296);
             this.textBoxDoctor.Name = "textBoxDoctor";
             this.textBoxDoctor.Size = new System.Drawing.Size(177, 20);
             this.textBoxDoctor.TabIndex = 50;
@@ -400,7 +400,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(296, 238);
+            this.label9.Location = new System.Drawing.Point(12, 319);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 56;
@@ -408,7 +408,7 @@
             // 
             // textBoxNewLastName
             // 
-            this.textBoxNewLastName.Location = new System.Drawing.Point(373, 235);
+            this.textBoxNewLastName.Location = new System.Drawing.Point(113, 314);
             this.textBoxNewLastName.Name = "textBoxNewLastName";
             this.textBoxNewLastName.Size = new System.Drawing.Size(177, 20);
             this.textBoxNewLastName.TabIndex = 55;
@@ -438,7 +438,7 @@
             this.comboBoxNewSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxNewSex.Location = new System.Drawing.Point(373, 264);
+            this.comboBoxNewSex.Location = new System.Drawing.Point(113, 343);
             this.comboBoxNewSex.Name = "comboBoxNewSex";
             this.comboBoxNewSex.Size = new System.Drawing.Size(177, 21);
             this.comboBoxNewSex.TabIndex = 60;
@@ -447,7 +447,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(296, 267);
+            this.label12.Location = new System.Drawing.Point(14, 343);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(32, 13);
             this.label12.TabIndex = 59;
@@ -477,7 +477,7 @@
             this.buttonNewPatient.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonNewPatient.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNewPatient.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewPatient.Location = new System.Drawing.Point(15, 314);
+            this.buttonNewPatient.Location = new System.Drawing.Point(15, 387);
             this.buttonNewPatient.Name = "buttonNewPatient";
             this.buttonNewPatient.Size = new System.Drawing.Size(275, 52);
             this.buttonNewPatient.TabIndex = 63;
@@ -487,7 +487,7 @@
             // 
             // dateTimePickerAppointmentTime
             // 
-            this.dateTimePickerAppointmentTime.Location = new System.Drawing.Point(1188, 317);
+            this.dateTimePickerAppointmentTime.Location = new System.Drawing.Point(560, 428);
             this.dateTimePickerAppointmentTime.Name = "dateTimePickerAppointmentTime";
             this.dateTimePickerAppointmentTime.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerAppointmentTime.TabIndex = 64;
@@ -527,8 +527,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBoxDoctor);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.labelPatient);
+            this.Controls.Add(this.labelDoctor);
             this.Controls.Add(this.dataGridViewDoctor);
             this.Controls.Add(this.buttonBookAppointment);
             this.Controls.Add(this.label16);
@@ -545,7 +545,7 @@
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxFirstName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelBookAppointment);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.labelSearchPhone);
             this.Controls.Add(this.buttonSearch);
@@ -557,6 +557,7 @@
             this.Controls.Add(this.dataGridViewPatient);
             this.Name = "BookAppointment";
             this.Text = " ";
+            this.Deactivate += new System.EventHandler(this.BookAppointment_Deactivate);
             this.Load += new System.EventHandler(this.BookAppointment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDoctor)).EndInit();
@@ -576,7 +577,7 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearchPhone;
         private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelBookAppointment;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -593,8 +594,8 @@
         private System.Windows.Forms.TextBox textBoxAppTime;
         private System.Windows.Forms.Button buttonBookAppointment;
         private System.Windows.Forms.DataGridView dataGridViewDoctor;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label labelDoctor;
+        private System.Windows.Forms.Label labelPatient;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxDoctor;
         private System.Windows.Forms.Label label7;

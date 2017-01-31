@@ -75,6 +75,8 @@
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.dataGridViewAppointmentHistory = new System.Windows.Forms.DataGridView();
             this.buttonDeleteAppointment = new System.Windows.Forms.Button();
+            this.labelDoctor = new System.Windows.Forms.Label();
+            this.labelAppointmentRecord = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentHistory)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +85,7 @@
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(12, 468);
+            this.labelPhone.Location = new System.Drawing.Point(12, 492);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(47, 13);
             this.labelPhone.TabIndex = 2;
@@ -91,49 +93,49 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(131, 465);
+            this.textBoxPhone.Location = new System.Drawing.Point(131, 489);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(121, 20);
             this.textBoxPhone.TabIndex = 3;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(131, 256);
+            this.textBoxFirstName.Location = new System.Drawing.Point(131, 280);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(121, 20);
             this.textBoxFirstName.TabIndex = 4;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(131, 282);
+            this.textBoxLastName.Location = new System.Drawing.Point(131, 306);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(121, 20);
             this.textBoxLastName.TabIndex = 5;
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(131, 335);
+            this.textBoxAge.Location = new System.Drawing.Point(131, 359);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(121, 20);
             this.textBoxAge.TabIndex = 6;
             // 
             // textBoxHeightFt
             // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(131, 387);
+            this.textBoxHeightFt.Location = new System.Drawing.Point(131, 411);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightFt.TabIndex = 8;
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(131, 413);
+            this.textBoxHeightInch.Location = new System.Drawing.Point(131, 437);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightInch.TabIndex = 9;
             // 
             // textBoxWeight
             // 
-            this.textBoxWeight.Location = new System.Drawing.Point(131, 439);
+            this.textBoxWeight.Location = new System.Drawing.Point(131, 463);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(121, 20);
             this.textBoxWeight.TabIndex = 10;
@@ -141,14 +143,14 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(131, 491);
+            this.textBoxEmail.Location = new System.Drawing.Point(131, 515);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(121, 20);
             this.textBoxEmail.TabIndex = 11;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(131, 543);
+            this.textBoxAddress.Location = new System.Drawing.Point(131, 567);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(121, 21);
@@ -158,7 +160,7 @@
             // 
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(12, 259);
+            this.labelFirstName.Location = new System.Drawing.Point(12, 283);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(71, 13);
             this.labelFirstName.TabIndex = 14;
@@ -168,7 +170,7 @@
             // 
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(12, 285);
+            this.labelLastName.Location = new System.Drawing.Point(12, 309);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(71, 13);
             this.labelLastName.TabIndex = 15;
@@ -178,7 +180,7 @@
             // 
             this.labelAge.AutoSize = true;
             this.labelAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAge.Location = new System.Drawing.Point(12, 338);
+            this.labelAge.Location = new System.Drawing.Point(12, 362);
             this.labelAge.Name = "labelAge";
             this.labelAge.Size = new System.Drawing.Size(33, 13);
             this.labelAge.TabIndex = 16;
@@ -188,7 +190,7 @@
             // 
             this.labelSex.AutoSize = true;
             this.labelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSex.Location = new System.Drawing.Point(12, 364);
+            this.labelSex.Location = new System.Drawing.Point(12, 388);
             this.labelSex.Name = "labelSex";
             this.labelSex.Size = new System.Drawing.Size(32, 13);
             this.labelSex.TabIndex = 17;
@@ -198,7 +200,7 @@
             // 
             this.labelHeightInFt.AutoSize = true;
             this.labelHeightInFt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeightInFt.Location = new System.Drawing.Point(12, 390);
+            this.labelHeightInFt.Location = new System.Drawing.Point(12, 414);
             this.labelHeightInFt.Name = "labelHeightInFt";
             this.labelHeightInFt.Size = new System.Drawing.Size(100, 13);
             this.labelHeightInFt.TabIndex = 18;
@@ -208,7 +210,7 @@
             // 
             this.labelHeightInch.AutoSize = true;
             this.labelHeightInch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeightInch.Location = new System.Drawing.Point(12, 416);
+            this.labelHeightInch.Location = new System.Drawing.Point(12, 440);
             this.labelHeightInch.Name = "labelHeightInch";
             this.labelHeightInch.Size = new System.Drawing.Size(113, 13);
             this.labelHeightInch.TabIndex = 19;
@@ -218,7 +220,7 @@
             // 
             this.labelWeight.AutoSize = true;
             this.labelWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeight.Location = new System.Drawing.Point(12, 442);
+            this.labelWeight.Location = new System.Drawing.Point(12, 466);
             this.labelWeight.Name = "labelWeight";
             this.labelWeight.Size = new System.Drawing.Size(51, 13);
             this.labelWeight.TabIndex = 20;
@@ -228,7 +230,7 @@
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(12, 494);
+            this.labelEmail.Location = new System.Drawing.Point(12, 518);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(41, 13);
             this.labelEmail.TabIndex = 21;
@@ -238,7 +240,7 @@
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(12, 546);
+            this.labelAddress.Location = new System.Drawing.Point(12, 570);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(56, 13);
             this.labelAddress.TabIndex = 22;
@@ -248,7 +250,7 @@
             // 
             this.labelNationality.AutoSize = true;
             this.labelNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNationality.Location = new System.Drawing.Point(12, 520);
+            this.labelNationality.Location = new System.Drawing.Point(12, 544);
             this.labelNationality.Name = "labelNationality";
             this.labelNationality.Size = new System.Drawing.Size(71, 13);
             this.labelNationality.TabIndex = 23;
@@ -258,7 +260,7 @@
             // 
             this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(131, 517);
+            this.comboBoxNationality.Location = new System.Drawing.Point(131, 541);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 24;
@@ -270,7 +272,7 @@
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(131, 361);
+            this.comboBoxSex.Location = new System.Drawing.Point(131, 385);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 25;
@@ -279,7 +281,7 @@
             // 
             this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(131, 308);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(131, 332);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 26;
@@ -288,7 +290,7 @@
             // 
             this.labelDepartment.AutoSize = true;
             this.labelDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDepartment.Location = new System.Drawing.Point(12, 311);
+            this.labelDepartment.Location = new System.Drawing.Point(12, 335);
             this.labelDepartment.Name = "labelDepartment";
             this.labelDepartment.Size = new System.Drawing.Size(76, 13);
             this.labelDepartment.TabIndex = 27;
@@ -299,7 +301,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(15, 596);
+            this.buttonBack.Location = new System.Drawing.Point(15, 620);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 43);
             this.buttonBack.TabIndex = 28;
@@ -312,10 +314,10 @@
             this.dataGridViewExistingDoctor.AllowUserToAddRows = false;
             this.dataGridViewExistingDoctor.AllowUserToDeleteRows = false;
             this.dataGridViewExistingDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExistingDoctor.Location = new System.Drawing.Point(15, 33);
+            this.dataGridViewExistingDoctor.Location = new System.Drawing.Point(15, 57);
             this.dataGridViewExistingDoctor.Name = "dataGridViewExistingDoctor";
             this.dataGridViewExistingDoctor.ReadOnly = true;
-            this.dataGridViewExistingDoctor.Size = new System.Drawing.Size(1364, 150);
+            this.dataGridViewExistingDoctor.Size = new System.Drawing.Size(1150, 150);
             this.dataGridViewExistingDoctor.TabIndex = 34;
             this.dataGridViewExistingDoctor.SelectionChanged += new System.EventHandler(this.dataGridViewExistingDoctor_SelectionChanged);
             // 
@@ -324,7 +326,7 @@
             this.buttonInsert.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonInsert.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonInsert.ForeColor = System.Drawing.Color.Navy;
-            this.buttonInsert.Location = new System.Drawing.Point(15, 189);
+            this.buttonInsert.Location = new System.Drawing.Point(15, 213);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(150, 23);
             this.buttonInsert.TabIndex = 35;
@@ -337,7 +339,7 @@
             this.buttonUpdate.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonUpdate.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonUpdate.ForeColor = System.Drawing.Color.Navy;
-            this.buttonUpdate.Location = new System.Drawing.Point(171, 189);
+            this.buttonUpdate.Location = new System.Drawing.Point(171, 213);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(150, 23);
             this.buttonUpdate.TabIndex = 36;
@@ -350,7 +352,7 @@
             this.buttonDelete.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDelete.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonDelete.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDelete.Location = new System.Drawing.Point(327, 189);
+            this.buttonDelete.Location = new System.Drawing.Point(327, 213);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(150, 23);
             this.buttonDelete.TabIndex = 37;
@@ -362,7 +364,7 @@
             // 
             this.comboBoxDoctorShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDoctorShift.FormattingEnabled = true;
-            this.comboBoxDoctorShift.Location = new System.Drawing.Point(131, 569);
+            this.comboBoxDoctorShift.Location = new System.Drawing.Point(131, 593);
             this.comboBoxDoctorShift.Name = "comboBoxDoctorShift";
             this.comboBoxDoctorShift.Size = new System.Drawing.Size(228, 21);
             this.comboBoxDoctorShift.TabIndex = 39;
@@ -371,7 +373,7 @@
             // 
             this.labelDoctorShift.AutoSize = true;
             this.labelDoctorShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDoctorShift.Location = new System.Drawing.Point(12, 572);
+            this.labelDoctorShift.Location = new System.Drawing.Point(12, 596);
             this.labelDoctorShift.Name = "labelDoctorShift";
             this.labelDoctorShift.Size = new System.Drawing.Size(81, 13);
             this.labelDoctorShift.TabIndex = 40;
@@ -380,7 +382,7 @@
             // labelStar
             // 
             this.labelStar.AutoSize = true;
-            this.labelStar.Location = new System.Drawing.Point(258, 256);
+            this.labelStar.Location = new System.Drawing.Point(258, 280);
             this.labelStar.Name = "labelStar";
             this.labelStar.Size = new System.Drawing.Size(11, 13);
             this.labelStar.TabIndex = 41;
@@ -389,7 +391,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 282);
+            this.label1.Location = new System.Drawing.Point(258, 306);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(11, 13);
             this.label1.TabIndex = 42;
@@ -398,7 +400,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(258, 308);
+            this.label2.Location = new System.Drawing.Point(258, 332);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(11, 13);
             this.label2.TabIndex = 43;
@@ -407,7 +409,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(258, 338);
+            this.label3.Location = new System.Drawing.Point(258, 362);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 44;
@@ -416,7 +418,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(258, 361);
+            this.label4.Location = new System.Drawing.Point(258, 385);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(11, 13);
             this.label4.TabIndex = 45;
@@ -425,7 +427,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(258, 517);
+            this.label5.Location = new System.Drawing.Point(258, 541);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 46;
@@ -516,10 +518,10 @@
             this.dataGridViewAppointmentHistory.AllowUserToAddRows = false;
             this.dataGridViewAppointmentHistory.AllowUserToDeleteRows = false;
             this.dataGridViewAppointmentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAppointmentHistory.Location = new System.Drawing.Point(486, 256);
+            this.dataGridViewAppointmentHistory.Location = new System.Drawing.Point(327, 309);
             this.dataGridViewAppointmentHistory.Name = "dataGridViewAppointmentHistory";
             this.dataGridViewAppointmentHistory.ReadOnly = true;
-            this.dataGridViewAppointmentHistory.Size = new System.Drawing.Size(1073, 150);
+            this.dataGridViewAppointmentHistory.Size = new System.Drawing.Size(888, 150);
             this.dataGridViewAppointmentHistory.TabIndex = 89;
             this.dataGridViewAppointmentHistory.SelectionChanged += new System.EventHandler(this.dataGridViewAppointmentHistory_SelectionChanged);
             // 
@@ -528,7 +530,7 @@
             this.buttonDeleteAppointment.BackColor = System.Drawing.SystemColors.ControlDark;
             this.buttonDeleteAppointment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonDeleteAppointment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDeleteAppointment.Location = new System.Drawing.Point(486, 413);
+            this.buttonDeleteAppointment.Location = new System.Drawing.Point(327, 466);
             this.buttonDeleteAppointment.Name = "buttonDeleteAppointment";
             this.buttonDeleteAppointment.Size = new System.Drawing.Size(150, 23);
             this.buttonDeleteAppointment.TabIndex = 90;
@@ -536,12 +538,35 @@
             this.buttonDeleteAppointment.UseVisualStyleBackColor = false;
             this.buttonDeleteAppointment.Click += new System.EventHandler(this.buttonDeleteAppointment_Click);
             // 
+            // labelDoctor
+            // 
+            this.labelDoctor.AutoSize = true;
+            this.labelDoctor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoctor.Location = new System.Drawing.Point(11, 31);
+            this.labelDoctor.Name = "labelDoctor";
+            this.labelDoctor.Size = new System.Drawing.Size(67, 22);
+            this.labelDoctor.TabIndex = 91;
+            this.labelDoctor.Text = "Doctor";
+            // 
+            // labelAppointmentRecord
+            // 
+            this.labelAppointmentRecord.AutoSize = true;
+            this.labelAppointmentRecord.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelAppointmentRecord.Location = new System.Drawing.Point(323, 283);
+            this.labelAppointmentRecord.Name = "labelAppointmentRecord";
+            this.labelAppointmentRecord.Size = new System.Drawing.Size(179, 22);
+            this.labelAppointmentRecord.TabIndex = 92;
+            this.labelAppointmentRecord.Text = "Appointment Record";
+            // 
             // ExistingDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1510, 813);
+            this.Controls.Add(this.labelAppointmentRecord);
+            this.Controls.Add(this.labelDoctor);
             this.Controls.Add(this.buttonDeleteAppointment);
             this.Controls.Add(this.dataGridViewAppointmentHistory);
             this.Controls.Add(this.buttonReset);
@@ -592,6 +617,8 @@
             this.Name = "ExistingDoctor";
             this.Text = "Existing Doctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.ExistingDoctor_Activated);
+            this.Deactivate += new System.EventHandler(this.ExistingDoctor_Deactivate);
             this.Load += new System.EventHandler(this.ExistingDoctor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentHistory)).EndInit();
@@ -648,5 +675,7 @@
         private System.Windows.Forms.TextBox textBoxSearchName;
         private System.Windows.Forms.DataGridView dataGridViewAppointmentHistory;
         private System.Windows.Forms.Button buttonDeleteAppointment;
+        private System.Windows.Forms.Label labelDoctor;
+        private System.Windows.Forms.Label labelAppointmentRecord;
     }
 }

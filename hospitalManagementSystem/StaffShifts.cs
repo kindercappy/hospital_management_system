@@ -70,7 +70,11 @@ namespace hospitalManagementSystem
             this.textBoxSearchName.Text = "";
             this.textBoxSearchId.Text = "";
         }
+        private void toUpperCaseLabels()
+        {
+            labelStaffShifts.Text = labelStaffShifts.Text.ToUpper();
 
+        }
         private void StaffShifts_Load(object sender, EventArgs e)
         {
             //sets alternate rows color of datagridviewsshifts
@@ -84,10 +88,9 @@ namespace hospitalManagementSystem
             setHeaderDataGridViewShifts();
             notSortableDataGridViewShifts();
             clearTextBoxes();
+            toUpperCaseLabels();
 
         }
-
-
         private void buttonNewShift_Click(object sender, EventArgs e)
         {
             StaffShiftsHL staffShift = new StaffShiftsHL();
@@ -105,22 +108,6 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void dataGridViewShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dataGridViewShifts_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridViewShifts_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void dataGridViewShifts_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -138,12 +125,10 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonClearTextboxes_Click(object sender, EventArgs e)
         {
             clearTextBoxes();
         }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             try
@@ -204,23 +189,36 @@ namespace hospitalManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             displayStaffShift();
         }
-
         private void textBoxSearchName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
-
         private void textBoxSearchId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void StaffShifts_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

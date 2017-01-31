@@ -11,9 +11,7 @@ namespace HospitalLibrary
     {
         private int sUserId;
         private string sUserName;
-        private string sPassword;
-        
-
+        private string sPassword;       
         public string userName
         {
             get
@@ -48,8 +46,6 @@ namespace HospitalLibrary
             }
 
         }
-
-
     }
     public class UsersManager
     {
@@ -82,7 +78,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
         //get user by id, name , password
         public static int getUserByIdUserNameAndPassword(Users user)
         {
@@ -113,7 +108,6 @@ namespace HospitalLibrary
                 return userId;
             }
         }
-
         //gets user by id
         public static DataTable getUserIdByUserId(Users user)
         {
@@ -133,7 +127,6 @@ namespace HospitalLibrary
 
             return dt;
         }
-
         //updates password
         public static void userUpdatePassword(Users user)
         {
@@ -164,7 +157,6 @@ namespace HospitalLibrary
                 cmd.ExecuteNonQuery();
             }
         }
-
         //selects id, userName
         public static DataTable userSelect()
         {
@@ -179,8 +171,7 @@ namespace HospitalLibrary
                 da.Fill(dt);
 
             return dt;
-        }
-
+        }        
         public static void userDelete(Users user)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -195,7 +186,6 @@ namespace HospitalLibrary
 
                 cmd.ExecuteNonQuery();
             }
-        }
-        
+        }       
     }
 }
