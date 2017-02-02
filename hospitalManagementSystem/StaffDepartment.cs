@@ -60,7 +60,8 @@ namespace hospitalManagementSystem
                 fullRowSelectDataGridViewStaffDepartment();
                 setDataGridViewStaffDepartmentHeaders();
                 toUpperCaseLabels();
-                this.dataGridViewStaffDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+                this.dataGridViewStaffDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque;
+                this.labelHeader.Width = this.Width;
             }
             catch (System.Exception ex)
             {

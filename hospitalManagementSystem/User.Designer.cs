@@ -52,17 +52,21 @@
             this.textBoxDeleteUserName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxDeleteUserId = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelDeleteUser = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelCreateNewUser = new System.Windows.Forms.Label();
+            this.labelHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNewUserName
             // 
-            this.textBoxNewUserName.Location = new System.Drawing.Point(131, 31);
+            this.textBoxNewUserName.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxNewUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNewUserName.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxNewUserName.Location = new System.Drawing.Point(197, 94);
             this.textBoxNewUserName.Name = "textBoxNewUserName";
             this.textBoxNewUserName.Size = new System.Drawing.Size(168, 20);
             this.textBoxNewUserName.TabIndex = 3;
@@ -70,22 +74,23 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label.Location = new System.Drawing.Point(14, 34);
+            this.label.BackColor = System.Drawing.Color.DimGray;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label.Location = new System.Drawing.Point(17, 94);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(107, 13);
+            this.label.Size = new System.Drawing.Size(174, 24);
             this.label.TabIndex = 2;
             this.label.Text = "Create New User:";
             // 
             // buttonNewAccount
             // 
-            this.buttonNewAccount.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonNewAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNewAccount.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewAccount.Location = new System.Drawing.Point(17, 119);
+            this.buttonNewAccount.BackColor = System.Drawing.Color.DimGray;
+            this.buttonNewAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNewAccount.ForeColor = System.Drawing.Color.AliceBlue;
+            this.buttonNewAccount.Location = new System.Drawing.Point(22, 182);
             this.buttonNewAccount.Name = "buttonNewAccount";
-            this.buttonNewAccount.Size = new System.Drawing.Size(282, 30);
+            this.buttonNewAccount.Size = new System.Drawing.Size(343, 34);
             this.buttonNewAccount.TabIndex = 6;
             this.buttonNewAccount.Text = "Create User";
             this.buttonNewAccount.UseVisualStyleBackColor = false;
@@ -93,7 +98,10 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(131, 57);
+            this.textBoxPassword.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxPassword.Location = new System.Drawing.Point(197, 120);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(168, 20);
@@ -103,17 +111,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(14, 60);
+            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(17, 120);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 7;
             this.label1.Text = "Password:";
             // 
             // textBoxConfirmPassword
             // 
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(131, 83);
+            this.textBoxConfirmPassword.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxConfirmPassword.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(197, 146);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.PasswordChar = '•';
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(168, 20);
@@ -123,28 +135,33 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(14, 86);
+            this.label2.BackColor = System.Drawing.Color.DimGray;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(17, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.Size = new System.Drawing.Size(184, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "Confirm Password:";
             // 
             // labelChangePassword
             // 
             this.labelChangePassword.AutoSize = true;
-            this.labelChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChangePassword.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.labelChangePassword.Location = new System.Drawing.Point(17, 293);
+            this.labelChangePassword.BackColor = System.Drawing.Color.DimGray;
+            this.labelChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChangePassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelChangePassword.Location = new System.Drawing.Point(17, 343);
             this.labelChangePassword.Name = "labelChangePassword";
-            this.labelChangePassword.Size = new System.Drawing.Size(108, 13);
+            this.labelChangePassword.Size = new System.Drawing.Size(225, 29);
             this.labelChangePassword.TabIndex = 11;
             this.labelChangePassword.Text = "Change Password";
             // 
             // textBoxUpdateUserId
             // 
-            this.textBoxUpdateUserId.Location = new System.Drawing.Point(134, 312);
+            this.textBoxUpdateUserId.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxUpdateUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUpdateUserId.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxUpdateUserId.Location = new System.Drawing.Point(209, 388);
             this.textBoxUpdateUserId.Name = "textBoxUpdateUserId";
             this.textBoxUpdateUserId.Size = new System.Drawing.Size(168, 20);
             this.textBoxUpdateUserId.TabIndex = 12;
@@ -152,22 +169,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(17, 315);
+            this.label4.BackColor = System.Drawing.Color.DimGray;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(19, 384);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.Size = new System.Drawing.Size(84, 24);
             this.label4.TabIndex = 13;
             this.label4.Text = "User ID:";
             // 
             // labelDontMatch
             // 
             this.labelDontMatch.AutoSize = true;
-            this.labelDontMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDontMatch.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.labelDontMatch.Location = new System.Drawing.Point(305, 83);
+            this.labelDontMatch.BackColor = System.Drawing.Color.DimGray;
+            this.labelDontMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDontMatch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelDontMatch.Location = new System.Drawing.Point(371, 146);
             this.labelDontMatch.Name = "labelDontMatch";
-            this.labelDontMatch.Size = new System.Drawing.Size(73, 13);
+            this.labelDontMatch.Size = new System.Drawing.Size(115, 24);
             this.labelDontMatch.TabIndex = 14;
             this.labelDontMatch.Text = "Dont Match";
             // 
@@ -175,8 +194,9 @@
             // 
             this.dataGridViewUser.AllowUserToAddRows = false;
             this.dataGridViewUser.AllowUserToDeleteRows = false;
+            this.dataGridViewUser.BackgroundColor = System.Drawing.Color.DimGray;
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUser.Location = new System.Drawing.Point(386, 35);
+            this.dataGridViewUser.Location = new System.Drawing.Point(489, 91);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.ReadOnly = true;
             this.dataGridViewUser.Size = new System.Drawing.Size(245, 233);
@@ -186,17 +206,21 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label5.Location = new System.Drawing.Point(17, 341);
+            this.label5.BackColor = System.Drawing.Color.DimGray;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(19, 410);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.Size = new System.Drawing.Size(120, 24);
             this.label5.TabIndex = 17;
             this.label5.Text = "User Name:";
             // 
             // textBoxUpdateUserName
             // 
-            this.textBoxUpdateUserName.Location = new System.Drawing.Point(134, 338);
+            this.textBoxUpdateUserName.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxUpdateUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUpdateUserName.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxUpdateUserName.Location = new System.Drawing.Point(209, 414);
             this.textBoxUpdateUserName.Name = "textBoxUpdateUserName";
             this.textBoxUpdateUserName.Size = new System.Drawing.Size(168, 20);
             this.textBoxUpdateUserName.TabIndex = 16;
@@ -204,17 +228,21 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label6.Location = new System.Drawing.Point(17, 367);
+            this.label6.BackColor = System.Drawing.Color.DimGray;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(19, 436);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.Size = new System.Drawing.Size(154, 24);
             this.label6.TabIndex = 19;
             this.label6.Text = "New Password:";
             // 
             // textBoxUpdateNewPassword
             // 
-            this.textBoxUpdateNewPassword.Location = new System.Drawing.Point(134, 364);
+            this.textBoxUpdateNewPassword.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxUpdateNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUpdateNewPassword.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxUpdateNewPassword.Location = new System.Drawing.Point(209, 440);
             this.textBoxUpdateNewPassword.Name = "textBoxUpdateNewPassword";
             this.textBoxUpdateNewPassword.PasswordChar = '•';
             this.textBoxUpdateNewPassword.Size = new System.Drawing.Size(168, 20);
@@ -224,17 +252,21 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label7.Location = new System.Drawing.Point(17, 393);
+            this.label7.BackColor = System.Drawing.Color.DimGray;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(19, 462);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 13);
+            this.label7.Size = new System.Drawing.Size(184, 24);
             this.label7.TabIndex = 21;
             this.label7.Text = "Confirm Password:";
             // 
             // textBoxUpdateConfirmPassword
             // 
-            this.textBoxUpdateConfirmPassword.Location = new System.Drawing.Point(134, 390);
+            this.textBoxUpdateConfirmPassword.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxUpdateConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUpdateConfirmPassword.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxUpdateConfirmPassword.Location = new System.Drawing.Point(209, 466);
             this.textBoxUpdateConfirmPassword.Name = "textBoxUpdateConfirmPassword";
             this.textBoxUpdateConfirmPassword.PasswordChar = '•';
             this.textBoxUpdateConfirmPassword.Size = new System.Drawing.Size(168, 20);
@@ -243,12 +275,12 @@
             // 
             // buttonUpdateUser
             // 
-            this.buttonUpdateUser.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonUpdateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateUser.ForeColor = System.Drawing.Color.Navy;
-            this.buttonUpdateUser.Location = new System.Drawing.Point(20, 416);
+            this.buttonUpdateUser.BackColor = System.Drawing.Color.DimGray;
+            this.buttonUpdateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateUser.ForeColor = System.Drawing.Color.AliceBlue;
+            this.buttonUpdateUser.Location = new System.Drawing.Point(34, 492);
             this.buttonUpdateUser.Name = "buttonUpdateUser";
-            this.buttonUpdateUser.Size = new System.Drawing.Size(282, 30);
+            this.buttonUpdateUser.Size = new System.Drawing.Size(343, 34);
             this.buttonUpdateUser.TabIndex = 22;
             this.buttonUpdateUser.Text = "Update";
             this.buttonUpdateUser.UseVisualStyleBackColor = false;
@@ -257,28 +289,33 @@
             // labelUpdateDontMatch
             // 
             this.labelUpdateDontMatch.AutoSize = true;
-            this.labelUpdateDontMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdateDontMatch.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.labelUpdateDontMatch.Location = new System.Drawing.Point(308, 393);
+            this.labelUpdateDontMatch.BackColor = System.Drawing.Color.DimGray;
+            this.labelUpdateDontMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUpdateDontMatch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelUpdateDontMatch.Location = new System.Drawing.Point(383, 469);
             this.labelUpdateDontMatch.Name = "labelUpdateDontMatch";
-            this.labelUpdateDontMatch.Size = new System.Drawing.Size(73, 13);
+            this.labelUpdateDontMatch.Size = new System.Drawing.Size(115, 24);
             this.labelUpdateDontMatch.TabIndex = 23;
             this.labelUpdateDontMatch.Text = "Dont Match";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(637, 83);
+            this.label8.BackColor = System.Drawing.Color.DimGray;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(740, 139);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 13);
+            this.label8.Size = new System.Drawing.Size(120, 24);
             this.label8.TabIndex = 27;
             this.label8.Text = "User Name:";
             // 
             // textBoxDeleteUserName
             // 
-            this.textBoxDeleteUserName.Location = new System.Drawing.Point(754, 80);
+            this.textBoxDeleteUserName.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxDeleteUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDeleteUserName.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxDeleteUserName.Location = new System.Drawing.Point(857, 136);
             this.textBoxDeleteUserName.Name = "textBoxDeleteUserName";
             this.textBoxDeleteUserName.Size = new System.Drawing.Size(168, 20);
             this.textBoxDeleteUserName.TabIndex = 26;
@@ -286,40 +323,45 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label9.Location = new System.Drawing.Point(637, 57);
+            this.label9.BackColor = System.Drawing.Color.DimGray;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(740, 113);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.Size = new System.Drawing.Size(84, 24);
             this.label9.TabIndex = 25;
             this.label9.Text = "User ID:";
             // 
             // textBoxDeleteUserId
             // 
-            this.textBoxDeleteUserId.Location = new System.Drawing.Point(754, 54);
+            this.textBoxDeleteUserId.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxDeleteUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDeleteUserId.ForeColor = System.Drawing.SystemColors.Menu;
+            this.textBoxDeleteUserId.Location = new System.Drawing.Point(857, 110);
             this.textBoxDeleteUserId.Name = "textBoxDeleteUserId";
             this.textBoxDeleteUserId.Size = new System.Drawing.Size(168, 20);
             this.textBoxDeleteUserId.TabIndex = 24;
             // 
-            // label10
+            // labelDeleteUser
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label10.Location = new System.Drawing.Point(637, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Delete User";
+            this.labelDeleteUser.AutoSize = true;
+            this.labelDeleteUser.BackColor = System.Drawing.Color.DimGray;
+            this.labelDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeleteUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelDeleteUser.Location = new System.Drawing.Point(740, 91);
+            this.labelDeleteUser.Name = "labelDeleteUser";
+            this.labelDeleteUser.Size = new System.Drawing.Size(119, 24);
+            this.labelDeleteUser.TabIndex = 28;
+            this.labelDeleteUser.Text = "Delete User";
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDelete.Location = new System.Drawing.Point(640, 106);
+            this.buttonDelete.BackColor = System.Drawing.Color.DimGray;
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.AliceBlue;
+            this.buttonDelete.Location = new System.Drawing.Point(743, 162);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(282, 30);
+            this.buttonDelete.Size = new System.Drawing.Size(282, 38);
             this.buttonDelete.TabIndex = 29;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -328,20 +370,21 @@
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.labelUser.Location = new System.Drawing.Point(382, 9);
+            this.labelUser.BackColor = System.Drawing.Color.DimGray;
+            this.labelUser.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelUser.Location = new System.Drawing.Point(484, 62);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(48, 22);
+            this.labelUser.Size = new System.Drawing.Size(60, 26);
             this.labelUser.TabIndex = 25;
             this.labelUser.Text = "User";
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(18, 528);
+            this.buttonBack.BackColor = System.Drawing.Color.DimGray;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.ForeColor = System.Drawing.Color.AliceBlue;
+            this.buttonBack.Location = new System.Drawing.Point(18, 578);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 43);
             this.buttonBack.TabIndex = 144;
@@ -352,24 +395,39 @@
             // labelCreateNewUser
             // 
             this.labelCreateNewUser.AutoSize = true;
-            this.labelCreateNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreateNewUser.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.labelCreateNewUser.Location = new System.Drawing.Point(15, 9);
+            this.labelCreateNewUser.BackColor = System.Drawing.Color.DimGray;
+            this.labelCreateNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreateNewUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelCreateNewUser.Location = new System.Drawing.Point(15, 59);
             this.labelCreateNewUser.Name = "labelCreateNewUser";
-            this.labelCreateNewUser.Size = new System.Drawing.Size(103, 13);
+            this.labelCreateNewUser.Size = new System.Drawing.Size(213, 29);
             this.labelCreateNewUser.TabIndex = 145;
             this.labelCreateNewUser.Text = "Create New User";
+            // 
+            // labelHeader
+            // 
+            this.labelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHeader.BackColor = System.Drawing.Color.Silver;
+            this.labelHeader.Font = new System.Drawing.Font("Times New Roman", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Location = new System.Drawing.Point(-2, -3);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(521, 39);
+            this.labelHeader.TabIndex = 146;
+            this.labelHeader.Text = "Users";
+            this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1271, 741);
+            this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.labelCreateNewUser);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.labelDeleteUser);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxDeleteUserName);
             this.Controls.Add(this.labelUser);
@@ -395,6 +453,7 @@
             this.Controls.Add(this.buttonNewAccount);
             this.Controls.Add(this.textBoxNewUserName);
             this.Controls.Add(this.label);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "User";
             this.Text = " ";
             this.Deactivate += new System.EventHandler(this.User_Deactivate);
@@ -431,10 +490,11 @@
         private System.Windows.Forms.TextBox textBoxDeleteUserName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxDeleteUserId;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelDeleteUser;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelCreateNewUser;
+        private System.Windows.Forms.Label labelHeader;
     }
 }

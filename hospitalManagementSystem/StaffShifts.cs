@@ -78,7 +78,7 @@ namespace hospitalManagementSystem
         private void StaffShifts_Load(object sender, EventArgs e)
         {
             //sets alternate rows color of datagridviewsshifts
-            this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
+            this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque;
             //disable datagrid sorting header
             this.dataGridViewShifts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //datagridviewshifts read only
@@ -89,7 +89,7 @@ namespace hospitalManagementSystem
             notSortableDataGridViewShifts();
             clearTextBoxes();
             toUpperCaseLabels();
-
+            this.labelHeader.Width = this.Width;
         }
         private void buttonNewShift_Click(object sender, EventArgs e)
         {

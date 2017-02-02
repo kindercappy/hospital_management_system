@@ -77,6 +77,7 @@
             this.buttonDeleteAppointment = new System.Windows.Forms.Button();
             this.labelDoctor = new System.Windows.Forms.Label();
             this.labelAppointmentRecord = new System.Windows.Forms.Label();
+            this.labelHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExistingDoctor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentHistory)).BeginInit();
             this.SuspendLayout();
@@ -84,58 +85,65 @@
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(12, 492);
+            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelPhone.Location = new System.Drawing.Point(12, 553);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(47, 13);
+            this.labelPhone.Size = new System.Drawing.Size(86, 25);
             this.labelPhone.TabIndex = 2;
             this.labelPhone.Text = "Phone:";
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(131, 489);
+            this.textBoxPhone.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxPhone.Location = new System.Drawing.Point(215, 559);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(121, 20);
             this.textBoxPhone.TabIndex = 3;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(131, 280);
+            this.textBoxFirstName.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxFirstName.Location = new System.Drawing.Point(215, 350);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(121, 20);
             this.textBoxFirstName.TabIndex = 4;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(131, 306);
+            this.textBoxLastName.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxLastName.Location = new System.Drawing.Point(215, 376);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(121, 20);
             this.textBoxLastName.TabIndex = 5;
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(131, 359);
+            this.textBoxAge.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxAge.Location = new System.Drawing.Point(215, 429);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(121, 20);
             this.textBoxAge.TabIndex = 6;
             // 
             // textBoxHeightFt
             // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(131, 411);
+            this.textBoxHeightFt.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxHeightFt.Location = new System.Drawing.Point(215, 481);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightFt.TabIndex = 8;
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(131, 437);
+            this.textBoxHeightInch.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxHeightInch.Location = new System.Drawing.Point(215, 507);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightInch.TabIndex = 9;
             // 
             // textBoxWeight
             // 
-            this.textBoxWeight.Location = new System.Drawing.Point(131, 463);
+            this.textBoxWeight.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxWeight.Location = new System.Drawing.Point(215, 533);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(121, 20);
             this.textBoxWeight.TabIndex = 10;
@@ -143,14 +151,16 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(131, 515);
+            this.textBoxEmail.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxEmail.Location = new System.Drawing.Point(215, 585);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(121, 20);
             this.textBoxEmail.TabIndex = 11;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(131, 567);
+            this.textBoxAddress.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxAddress.Location = new System.Drawing.Point(215, 637);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(121, 21);
@@ -159,129 +169,132 @@
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(12, 283);
+            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelFirstName.Location = new System.Drawing.Point(12, 344);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(71, 13);
+            this.labelFirstName.Size = new System.Drawing.Size(133, 25);
             this.labelFirstName.TabIndex = 14;
             this.labelFirstName.Text = "First Name:";
             // 
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(12, 309);
+            this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelLastName.Location = new System.Drawing.Point(12, 370);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(71, 13);
+            this.labelLastName.Size = new System.Drawing.Size(131, 25);
             this.labelLastName.TabIndex = 15;
             this.labelLastName.Text = "Last Name:";
             // 
             // labelAge
             // 
             this.labelAge.AutoSize = true;
-            this.labelAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAge.Location = new System.Drawing.Point(12, 362);
+            this.labelAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelAge.Location = new System.Drawing.Point(12, 423);
             this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(33, 13);
+            this.labelAge.Size = new System.Drawing.Size(60, 25);
             this.labelAge.TabIndex = 16;
             this.labelAge.Text = "Age:";
             // 
             // labelSex
             // 
             this.labelSex.AutoSize = true;
-            this.labelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSex.Location = new System.Drawing.Point(12, 388);
+            this.labelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelSex.Location = new System.Drawing.Point(12, 449);
             this.labelSex.Name = "labelSex";
-            this.labelSex.Size = new System.Drawing.Size(32, 13);
+            this.labelSex.Size = new System.Drawing.Size(59, 25);
             this.labelSex.TabIndex = 17;
             this.labelSex.Text = "Sex:";
             // 
             // labelHeightInFt
             // 
             this.labelHeightInFt.AutoSize = true;
-            this.labelHeightInFt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeightInFt.Location = new System.Drawing.Point(12, 414);
+            this.labelHeightInFt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelHeightInFt.Location = new System.Drawing.Point(12, 475);
             this.labelHeightInFt.Name = "labelHeightInFt";
-            this.labelHeightInFt.Size = new System.Drawing.Size(100, 13);
+            this.labelHeightInFt.Size = new System.Drawing.Size(183, 25);
             this.labelHeightInFt.TabIndex = 18;
             this.labelHeightInFt.Text = "Height (In Feet):";
             // 
             // labelHeightInch
             // 
             this.labelHeightInch.AutoSize = true;
-            this.labelHeightInch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeightInch.Location = new System.Drawing.Point(12, 440);
+            this.labelHeightInch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelHeightInch.Location = new System.Drawing.Point(12, 501);
             this.labelHeightInch.Name = "labelHeightInch";
-            this.labelHeightInch.Size = new System.Drawing.Size(113, 13);
+            this.labelHeightInch.Size = new System.Drawing.Size(205, 25);
             this.labelHeightInch.TabIndex = 19;
             this.labelHeightInch.Text = "Height (In Inches):";
             // 
             // labelWeight
             // 
             this.labelWeight.AutoSize = true;
-            this.labelWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeight.Location = new System.Drawing.Point(12, 466);
+            this.labelWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelWeight.Location = new System.Drawing.Point(12, 527);
             this.labelWeight.Name = "labelWeight";
-            this.labelWeight.Size = new System.Drawing.Size(51, 13);
+            this.labelWeight.Size = new System.Drawing.Size(92, 25);
             this.labelWeight.TabIndex = 20;
             this.labelWeight.Text = "Weight:";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(12, 518);
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelEmail.Location = new System.Drawing.Point(12, 579);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(41, 13);
+            this.labelEmail.Size = new System.Drawing.Size(77, 25);
             this.labelEmail.TabIndex = 21;
             this.labelEmail.Text = "Email:";
             // 
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(12, 570);
+            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelAddress.Location = new System.Drawing.Point(12, 631);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(56, 13);
+            this.labelAddress.Size = new System.Drawing.Size(105, 25);
             this.labelAddress.TabIndex = 22;
             this.labelAddress.Text = "Address:";
             // 
             // labelNationality
             // 
             this.labelNationality.AutoSize = true;
-            this.labelNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNationality.Location = new System.Drawing.Point(12, 544);
+            this.labelNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelNationality.Location = new System.Drawing.Point(12, 605);
             this.labelNationality.Name = "labelNationality";
-            this.labelNationality.Size = new System.Drawing.Size(71, 13);
+            this.labelNationality.Size = new System.Drawing.Size(131, 25);
             this.labelNationality.TabIndex = 23;
             this.labelNationality.Text = "Nationality:";
             // 
             // comboBoxNationality
             // 
+            this.comboBoxNationality.BackColor = System.Drawing.Color.LightYellow;
             this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(131, 541);
+            this.comboBoxNationality.Location = new System.Drawing.Point(215, 611);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 24;
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.BackColor = System.Drawing.Color.LightYellow;
             this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(131, 385);
+            this.comboBoxSex.Location = new System.Drawing.Point(215, 455);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 25;
             // 
             // comboBoxDepartment
             // 
+            this.comboBoxDepartment.BackColor = System.Drawing.Color.LightYellow;
             this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(131, 332);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(215, 402);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 26;
@@ -289,21 +302,21 @@
             // labelDepartment
             // 
             this.labelDepartment.AutoSize = true;
-            this.labelDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDepartment.Location = new System.Drawing.Point(12, 335);
+            this.labelDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelDepartment.Location = new System.Drawing.Point(12, 396);
             this.labelDepartment.Name = "labelDepartment";
-            this.labelDepartment.Size = new System.Drawing.Size(76, 13);
+            this.labelDepartment.Size = new System.Drawing.Size(140, 25);
             this.labelDepartment.TabIndex = 27;
             this.labelDepartment.Text = "Department:";
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonBack.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(15, 620);
+            this.buttonBack.Location = new System.Drawing.Point(15, 699);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(209, 43);
+            this.buttonBack.Size = new System.Drawing.Size(428, 43);
             this.buttonBack.TabIndex = 28;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = false;
@@ -313,8 +326,9 @@
             // 
             this.dataGridViewExistingDoctor.AllowUserToAddRows = false;
             this.dataGridViewExistingDoctor.AllowUserToDeleteRows = false;
+            this.dataGridViewExistingDoctor.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.dataGridViewExistingDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExistingDoctor.Location = new System.Drawing.Point(15, 57);
+            this.dataGridViewExistingDoctor.Location = new System.Drawing.Point(15, 118);
             this.dataGridViewExistingDoctor.Name = "dataGridViewExistingDoctor";
             this.dataGridViewExistingDoctor.ReadOnly = true;
             this.dataGridViewExistingDoctor.Size = new System.Drawing.Size(1150, 150);
@@ -323,12 +337,12 @@
             // 
             // buttonInsert
             // 
-            this.buttonInsert.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonInsert.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonInsert.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonInsert.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonInsert.ForeColor = System.Drawing.Color.Navy;
-            this.buttonInsert.Location = new System.Drawing.Point(15, 213);
+            this.buttonInsert.Location = new System.Drawing.Point(15, 274);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(150, 23);
+            this.buttonInsert.Size = new System.Drawing.Size(175, 36);
             this.buttonInsert.TabIndex = 35;
             this.buttonInsert.Text = "Insert";
             this.buttonInsert.UseVisualStyleBackColor = false;
@@ -336,12 +350,12 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonUpdate.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonUpdate.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonUpdate.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonUpdate.ForeColor = System.Drawing.Color.Navy;
-            this.buttonUpdate.Location = new System.Drawing.Point(171, 213);
+            this.buttonUpdate.Location = new System.Drawing.Point(196, 274);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(150, 23);
+            this.buttonUpdate.Size = new System.Drawing.Size(175, 36);
             this.buttonUpdate.TabIndex = 36;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = false;
@@ -349,12 +363,12 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDelete.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDelete.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonDelete.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonDelete.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDelete.Location = new System.Drawing.Point(327, 213);
+            this.buttonDelete.Location = new System.Drawing.Point(377, 274);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(150, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(175, 36);
             this.buttonDelete.TabIndex = 37;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -362,9 +376,10 @@
             // 
             // comboBoxDoctorShift
             // 
+            this.comboBoxDoctorShift.BackColor = System.Drawing.Color.LightYellow;
             this.comboBoxDoctorShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDoctorShift.FormattingEnabled = true;
-            this.comboBoxDoctorShift.Location = new System.Drawing.Point(131, 593);
+            this.comboBoxDoctorShift.Location = new System.Drawing.Point(215, 663);
             this.comboBoxDoctorShift.Name = "comboBoxDoctorShift";
             this.comboBoxDoctorShift.Size = new System.Drawing.Size(228, 21);
             this.comboBoxDoctorShift.TabIndex = 39;
@@ -372,17 +387,17 @@
             // labelDoctorShift
             // 
             this.labelDoctorShift.AutoSize = true;
-            this.labelDoctorShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDoctorShift.Location = new System.Drawing.Point(12, 596);
+            this.labelDoctorShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelDoctorShift.Location = new System.Drawing.Point(12, 657);
             this.labelDoctorShift.Name = "labelDoctorShift";
-            this.labelDoctorShift.Size = new System.Drawing.Size(81, 13);
+            this.labelDoctorShift.Size = new System.Drawing.Size(148, 25);
             this.labelDoctorShift.TabIndex = 40;
             this.labelDoctorShift.Text = "DoctorShifts:";
             // 
             // labelStar
             // 
             this.labelStar.AutoSize = true;
-            this.labelStar.Location = new System.Drawing.Point(258, 280);
+            this.labelStar.Location = new System.Drawing.Point(342, 350);
             this.labelStar.Name = "labelStar";
             this.labelStar.Size = new System.Drawing.Size(11, 13);
             this.labelStar.TabIndex = 41;
@@ -391,7 +406,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 306);
+            this.label1.Location = new System.Drawing.Point(342, 376);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(11, 13);
             this.label1.TabIndex = 42;
@@ -400,7 +415,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(258, 332);
+            this.label2.Location = new System.Drawing.Point(342, 402);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(11, 13);
             this.label2.TabIndex = 43;
@@ -409,7 +424,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(258, 362);
+            this.label3.Location = new System.Drawing.Point(342, 432);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 44;
@@ -418,7 +433,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(258, 385);
+            this.label4.Location = new System.Drawing.Point(342, 455);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(11, 13);
             this.label4.TabIndex = 45;
@@ -427,7 +442,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(258, 541);
+            this.label5.Location = new System.Drawing.Point(342, 611);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 46;
@@ -435,12 +450,12 @@
             // 
             // buttonReset
             // 
-            this.buttonReset.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonReset.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonReset.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonReset.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonReset.ForeColor = System.Drawing.Color.Navy;
-            this.buttonReset.Location = new System.Drawing.Point(748, 4);
+            this.buttonReset.Location = new System.Drawing.Point(976, 51);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(150, 23);
+            this.buttonReset.Size = new System.Drawing.Size(175, 36);
             this.buttonReset.TabIndex = 88;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = false;
@@ -449,21 +464,21 @@
             // labelSearchPhone
             // 
             this.labelSearchPhone.AutoSize = true;
-            this.labelSearchPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchPhone.Location = new System.Drawing.Point(389, 9);
+            this.labelSearchPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelSearchPhone.Location = new System.Drawing.Point(516, 55);
             this.labelSearchPhone.Name = "labelSearchPhone";
-            this.labelSearchPhone.Size = new System.Drawing.Size(91, 13);
+            this.labelSearchPhone.Size = new System.Drawing.Size(167, 25);
             this.labelSearchPhone.TabIndex = 87;
             this.labelSearchPhone.Text = "Search Phone:";
             // 
             // buttonSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSearch.Location = new System.Drawing.Point(592, 4);
+            this.buttonSearch.Location = new System.Drawing.Point(795, 51);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(175, 36);
             this.buttonSearch.TabIndex = 86;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
@@ -471,7 +486,8 @@
             // 
             // textBoxSearchPhone
             // 
-            this.textBoxSearchPhone.Location = new System.Drawing.Point(486, 6);
+            this.textBoxSearchPhone.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxSearchPhone.Location = new System.Drawing.Point(689, 60);
             this.textBoxSearchPhone.Name = "textBoxSearchPhone";
             this.textBoxSearchPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchPhone.TabIndex = 85;
@@ -480,16 +496,17 @@
             // labelSearchId
             // 
             this.labelSearchId.AutoSize = true;
-            this.labelSearchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchId.Location = new System.Drawing.Point(211, 9);
+            this.labelSearchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelSearchId.Location = new System.Drawing.Point(282, 55);
             this.labelSearchId.Name = "labelSearchId";
-            this.labelSearchId.Size = new System.Drawing.Size(68, 13);
+            this.labelSearchId.Size = new System.Drawing.Size(122, 25);
             this.labelSearchId.TabIndex = 84;
             this.labelSearchId.Text = "Search ID:";
             // 
             // textBoxSearchId
             // 
-            this.textBoxSearchId.Location = new System.Drawing.Point(283, 6);
+            this.textBoxSearchId.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxSearchId.Location = new System.Drawing.Point(410, 60);
             this.textBoxSearchId.Name = "textBoxSearchId";
             this.textBoxSearchId.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchId.TabIndex = 83;
@@ -498,16 +515,17 @@
             // labelSearchName
             // 
             this.labelSearchName.AutoSize = true;
-            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchName.Location = new System.Drawing.Point(12, 9);
+            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelSearchName.Location = new System.Drawing.Point(10, 55);
             this.labelSearchName.Name = "labelSearchName";
-            this.labelSearchName.Size = new System.Drawing.Size(87, 13);
+            this.labelSearchName.Size = new System.Drawing.Size(160, 25);
             this.labelSearchName.TabIndex = 82;
             this.labelSearchName.Text = "Search Name:";
             // 
             // textBoxSearchName
             // 
-            this.textBoxSearchName.Location = new System.Drawing.Point(105, 6);
+            this.textBoxSearchName.BackColor = System.Drawing.Color.LightYellow;
+            this.textBoxSearchName.Location = new System.Drawing.Point(176, 61);
             this.textBoxSearchName.Name = "textBoxSearchName";
             this.textBoxSearchName.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchName.TabIndex = 81;
@@ -517,8 +535,9 @@
             // 
             this.dataGridViewAppointmentHistory.AllowUserToAddRows = false;
             this.dataGridViewAppointmentHistory.AllowUserToDeleteRows = false;
+            this.dataGridViewAppointmentHistory.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.dataGridViewAppointmentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAppointmentHistory.Location = new System.Drawing.Point(327, 309);
+            this.dataGridViewAppointmentHistory.Location = new System.Drawing.Point(395, 370);
             this.dataGridViewAppointmentHistory.Name = "dataGridViewAppointmentHistory";
             this.dataGridViewAppointmentHistory.ReadOnly = true;
             this.dataGridViewAppointmentHistory.Size = new System.Drawing.Size(888, 150);
@@ -527,12 +546,12 @@
             // 
             // buttonDeleteAppointment
             // 
-            this.buttonDeleteAppointment.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDeleteAppointment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDeleteAppointment.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonDeleteAppointment.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonDeleteAppointment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDeleteAppointment.Location = new System.Drawing.Point(327, 466);
+            this.buttonDeleteAppointment.Location = new System.Drawing.Point(395, 527);
             this.buttonDeleteAppointment.Name = "buttonDeleteAppointment";
-            this.buttonDeleteAppointment.Size = new System.Drawing.Size(150, 23);
+            this.buttonDeleteAppointment.Size = new System.Drawing.Size(175, 36);
             this.buttonDeleteAppointment.TabIndex = 90;
             this.buttonDeleteAppointment.Text = "Delete";
             this.buttonDeleteAppointment.UseVisualStyleBackColor = false;
@@ -541,30 +560,45 @@
             // labelDoctor
             // 
             this.labelDoctor.AutoSize = true;
-            this.labelDoctor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.labelDoctor.Location = new System.Drawing.Point(11, 31);
+            this.labelDoctor.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDoctor.Location = new System.Drawing.Point(11, 79);
             this.labelDoctor.Name = "labelDoctor";
-            this.labelDoctor.Size = new System.Drawing.Size(67, 22);
+            this.labelDoctor.Size = new System.Drawing.Size(109, 36);
             this.labelDoctor.TabIndex = 91;
             this.labelDoctor.Text = "Doctor";
             // 
             // labelAppointmentRecord
             // 
             this.labelAppointmentRecord.AutoSize = true;
-            this.labelAppointmentRecord.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.labelAppointmentRecord.Location = new System.Drawing.Point(323, 283);
+            this.labelAppointmentRecord.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAppointmentRecord.Location = new System.Drawing.Point(389, 331);
             this.labelAppointmentRecord.Name = "labelAppointmentRecord";
-            this.labelAppointmentRecord.Size = new System.Drawing.Size(179, 22);
+            this.labelAppointmentRecord.Size = new System.Drawing.Size(305, 36);
             this.labelAppointmentRecord.TabIndex = 92;
             this.labelAppointmentRecord.Text = "Appointment Record";
+            // 
+            // labelHeader
+            // 
+            this.labelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHeader.BackColor = System.Drawing.Color.DarkGreen;
+            this.labelHeader.Font = new System.Drawing.Font("Times New Roman", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelHeader.Location = new System.Drawing.Point(-2, 0);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(1169, 39);
+            this.labelHeader.TabIndex = 93;
+            this.labelHeader.Text = "Existing Doctor";
+            this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ExistingDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.PaleGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1510, 813);
+            this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.labelAppointmentRecord);
             this.Controls.Add(this.labelDoctor);
             this.Controls.Add(this.buttonDeleteAppointment);
@@ -614,7 +648,10 @@
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.labelPhone);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MinimizeBox = false;
             this.Name = "ExistingDoctor";
+            this.ShowInTaskbar = false;
             this.Text = "Existing Doctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.ExistingDoctor_Activated);
@@ -677,5 +714,6 @@
         private System.Windows.Forms.Button buttonDeleteAppointment;
         private System.Windows.Forms.Label labelDoctor;
         private System.Windows.Forms.Label labelAppointmentRecord;
+        private System.Windows.Forms.Label labelHeader;
     }
 }

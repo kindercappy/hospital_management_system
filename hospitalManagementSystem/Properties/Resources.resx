@@ -121,6 +121,9 @@
   <data name="infrastructure-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\infrastructure-21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="infrastructure-21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infrastructure-211.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1 (3)1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,7 +145,7 @@
   <data name="Cure-Logo-" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cure-Logo-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="infrastructure-21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\infrastructure-211.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MAIN PIC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MAIN PIC.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

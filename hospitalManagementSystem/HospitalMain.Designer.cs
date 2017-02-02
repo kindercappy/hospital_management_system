@@ -61,6 +61,7 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNewShifts = new System.Windows.Forms.Button();
             this.panelHospitalMain = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,12 +80,12 @@
             // 
             // btnNewPatient
             // 
-            this.btnNewPatient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnNewPatient.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNewPatient.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnNewPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewPatient.ForeColor = System.Drawing.Color.Navy;
-            this.btnNewPatient.Location = new System.Drawing.Point(15, 49);
+            this.btnNewPatient.Location = new System.Drawing.Point(15, 74);
             this.btnNewPatient.Name = "btnNewPatient";
-            this.btnNewPatient.Size = new System.Drawing.Size(134, 23);
+            this.btnNewPatient.Size = new System.Drawing.Size(189, 34);
             this.btnNewPatient.TabIndex = 1;
             this.btnNewPatient.Text = "New Patient";
             this.btnNewPatient.UseVisualStyleBackColor = false;
@@ -92,12 +93,12 @@
             // 
             // btnExistingPatient
             // 
-            this.btnExistingPatient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnExistingPatient.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExistingPatient.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnExistingPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExistingPatient.ForeColor = System.Drawing.Color.Navy;
-            this.btnExistingPatient.Location = new System.Drawing.Point(15, 78);
+            this.btnExistingPatient.Location = new System.Drawing.Point(15, 113);
             this.btnExistingPatient.Name = "btnExistingPatient";
-            this.btnExistingPatient.Size = new System.Drawing.Size(134, 23);
+            this.btnExistingPatient.Size = new System.Drawing.Size(189, 34);
             this.btnExistingPatient.TabIndex = 2;
             this.btnExistingPatient.Text = "Existing Patient";
             this.btnExistingPatient.UseVisualStyleBackColor = false;
@@ -106,21 +107,21 @@
             // lblPatient
             // 
             this.lblPatient.AutoSize = true;
-            this.lblPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatient.Location = new System.Drawing.Point(12, 0);
+            this.lblPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatient.Location = new System.Drawing.Point(16, 5);
             this.lblPatient.Name = "lblPatient";
-            this.lblPatient.Size = new System.Drawing.Size(59, 17);
+            this.lblPatient.Size = new System.Drawing.Size(94, 29);
             this.lblPatient.TabIndex = 4;
             this.lblPatient.Text = "Patient";
             // 
             // btnNewDoctor
             // 
-            this.btnNewDoctor.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnNewDoctor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNewDoctor.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnNewDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewDoctor.ForeColor = System.Drawing.Color.Navy;
-            this.btnNewDoctor.Location = new System.Drawing.Point(15, 124);
+            this.btnNewDoctor.Location = new System.Drawing.Point(17, 182);
             this.btnNewDoctor.Name = "btnNewDoctor";
-            this.btnNewDoctor.Size = new System.Drawing.Size(134, 23);
+            this.btnNewDoctor.Size = new System.Drawing.Size(189, 34);
             this.btnNewDoctor.TabIndex = 4;
             this.btnNewDoctor.Text = "New Doctor";
             this.btnNewDoctor.UseVisualStyleBackColor = false;
@@ -129,21 +130,21 @@
             // lblDoctor
             // 
             this.lblDoctor.AutoSize = true;
-            this.lblDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoctor.Location = new System.Drawing.Point(12, 104);
+            this.lblDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoctor.Location = new System.Drawing.Point(16, 150);
             this.lblDoctor.Name = "lblDoctor";
-            this.lblDoctor.Size = new System.Drawing.Size(56, 17);
+            this.lblDoctor.Size = new System.Drawing.Size(90, 29);
             this.lblDoctor.TabIndex = 6;
             this.lblDoctor.Text = "Doctor";
             // 
             // btnExistingDoctor
             // 
-            this.btnExistingDoctor.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnExistingDoctor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExistingDoctor.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnExistingDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExistingDoctor.ForeColor = System.Drawing.Color.Navy;
-            this.btnExistingDoctor.Location = new System.Drawing.Point(15, 153);
+            this.btnExistingDoctor.Location = new System.Drawing.Point(17, 222);
             this.btnExistingDoctor.Name = "btnExistingDoctor";
-            this.btnExistingDoctor.Size = new System.Drawing.Size(134, 23);
+            this.btnExistingDoctor.Size = new System.Drawing.Size(189, 34);
             this.btnExistingDoctor.TabIndex = 5;
             this.btnExistingDoctor.Text = "Existing Doctor";
             this.btnExistingDoctor.UseVisualStyleBackColor = false;
@@ -152,21 +153,21 @@
             // lblStaff
             // 
             this.lblStaff.AutoSize = true;
-            this.lblStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaff.Location = new System.Drawing.Point(12, 266);
+            this.lblStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaff.Location = new System.Drawing.Point(12, 379);
             this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(42, 17);
+            this.lblStaff.Size = new System.Drawing.Size(65, 29);
             this.lblStaff.TabIndex = 10;
             this.lblStaff.Text = "Staff";
             // 
             // btnNewStaff
             // 
-            this.btnNewStaff.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnNewStaff.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnNewStaff.BackColor = System.Drawing.Color.SeaShell;
+            this.btnNewStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewStaff.ForeColor = System.Drawing.Color.Navy;
-            this.btnNewStaff.Location = new System.Drawing.Point(15, 286);
+            this.btnNewStaff.Location = new System.Drawing.Point(15, 411);
             this.btnNewStaff.Name = "btnNewStaff";
-            this.btnNewStaff.Size = new System.Drawing.Size(134, 23);
+            this.btnNewStaff.Size = new System.Drawing.Size(189, 34);
             this.btnNewStaff.TabIndex = 8;
             this.btnNewStaff.Text = "New Staff";
             this.btnNewStaff.UseVisualStyleBackColor = false;
@@ -174,12 +175,12 @@
             // 
             // btnExistingStaff
             // 
-            this.btnExistingStaff.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnExistingStaff.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnExistingStaff.BackColor = System.Drawing.Color.SeaShell;
+            this.btnExistingStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExistingStaff.ForeColor = System.Drawing.Color.Navy;
-            this.btnExistingStaff.Location = new System.Drawing.Point(15, 315);
+            this.btnExistingStaff.Location = new System.Drawing.Point(15, 451);
             this.btnExistingStaff.Name = "btnExistingStaff";
-            this.btnExistingStaff.Size = new System.Drawing.Size(134, 23);
+            this.btnExistingStaff.Size = new System.Drawing.Size(189, 34);
             this.btnExistingStaff.TabIndex = 9;
             this.btnExistingStaff.Text = "Existing Staff";
             this.btnExistingStaff.UseVisualStyleBackColor = false;
@@ -192,7 +193,8 @@
             this.doctorToolStripMenuItem,
             this.staffToolStripMenuItem,
             this.nationalityToolStripMenuItem,
-            this.userToolStripMenuItem});
+            this.userToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1479, 24);
@@ -373,14 +375,21 @@
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // buttonNewShifts
             // 
-            this.buttonNewShifts.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonNewShifts.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonNewShifts.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonNewShifts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNewShifts.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewShifts.Location = new System.Drawing.Point(15, 182);
+            this.buttonNewShifts.Location = new System.Drawing.Point(17, 262);
             this.buttonNewShifts.Name = "buttonNewShifts";
-            this.buttonNewShifts.Size = new System.Drawing.Size(134, 23);
+            this.buttonNewShifts.Size = new System.Drawing.Size(189, 34);
             this.buttonNewShifts.TabIndex = 6;
             this.buttonNewShifts.Text = "New Shifts";
             this.buttonNewShifts.UseVisualStyleBackColor = false;
@@ -388,7 +397,8 @@
             // 
             // panelHospitalMain
             // 
-            this.panelHospitalMain.BackColor = System.Drawing.Color.DarkGray;
+            this.panelHospitalMain.AutoScroll = true;
+            this.panelHospitalMain.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panelHospitalMain.Controls.Add(this.label2);
             this.panelHospitalMain.Controls.Add(this.buttonUser);
             this.panelHospitalMain.Controls.Add(this.label1);
@@ -412,27 +422,27 @@
             this.panelHospitalMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelHospitalMain.Location = new System.Drawing.Point(0, 24);
             this.panelHospitalMain.Name = "panelHospitalMain";
-            this.panelHospitalMain.Size = new System.Drawing.Size(162, 700);
+            this.panelHospitalMain.Size = new System.Drawing.Size(229, 765);
             this.panelHospitalMain.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 474);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 677);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.Size = new System.Drawing.Size(68, 29);
             this.label2.TabIndex = 17;
             this.label2.Text = "User";
             // 
             // buttonUser
             // 
-            this.buttonUser.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonUser.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonUser.ForeColor = System.Drawing.Color.Navy;
-            this.buttonUser.Location = new System.Drawing.Point(15, 494);
+            this.buttonUser.BackColor = System.Drawing.Color.DimGray;
+            this.buttonUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUser.ForeColor = System.Drawing.Color.AliceBlue;
+            this.buttonUser.Location = new System.Drawing.Point(15, 709);
             this.buttonUser.Name = "buttonUser";
-            this.buttonUser.Size = new System.Drawing.Size(134, 23);
+            this.buttonUser.Size = new System.Drawing.Size(189, 32);
             this.buttonUser.TabIndex = 16;
             this.buttonUser.Text = "User";
             this.buttonUser.UseVisualStyleBackColor = false;
@@ -441,21 +451,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 428);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 608);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.Size = new System.Drawing.Size(136, 29);
             this.label1.TabIndex = 15;
             this.label1.Text = "Nationality";
             // 
             // buttonStaffDepartment
             // 
-            this.buttonStaffDepartment.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonStaffDepartment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonStaffDepartment.BackColor = System.Drawing.Color.SeaShell;
+            this.buttonStaffDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStaffDepartment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonStaffDepartment.Location = new System.Drawing.Point(15, 402);
+            this.buttonStaffDepartment.Location = new System.Drawing.Point(15, 571);
             this.buttonStaffDepartment.Name = "buttonStaffDepartment";
-            this.buttonStaffDepartment.Size = new System.Drawing.Size(134, 23);
+            this.buttonStaffDepartment.Size = new System.Drawing.Size(189, 34);
             this.buttonStaffDepartment.TabIndex = 14;
             this.buttonStaffDepartment.Text = "Department";
             this.buttonStaffDepartment.UseVisualStyleBackColor = false;
@@ -463,12 +473,12 @@
             // 
             // buttonDoctorDepartment
             // 
-            this.buttonDoctorDepartment.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDoctorDepartment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDoctorDepartment.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDoctorDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDoctorDepartment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDoctorDepartment.Location = new System.Drawing.Point(15, 240);
+            this.buttonDoctorDepartment.Location = new System.Drawing.Point(17, 342);
             this.buttonDoctorDepartment.Name = "buttonDoctorDepartment";
-            this.buttonDoctorDepartment.Size = new System.Drawing.Size(134, 23);
+            this.buttonDoctorDepartment.Size = new System.Drawing.Size(189, 34);
             this.buttonDoctorDepartment.TabIndex = 13;
             this.buttonDoctorDepartment.Text = "Department";
             this.buttonDoctorDepartment.UseVisualStyleBackColor = false;
@@ -476,12 +486,12 @@
             // 
             // buttonNationality
             // 
-            this.buttonNationality.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonNationality.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonNationality.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNationality.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNationality.Location = new System.Drawing.Point(15, 448);
+            this.buttonNationality.Location = new System.Drawing.Point(17, 640);
             this.buttonNationality.Name = "buttonNationality";
-            this.buttonNationality.Size = new System.Drawing.Size(134, 23);
+            this.buttonNationality.Size = new System.Drawing.Size(189, 34);
             this.buttonNationality.TabIndex = 12;
             this.buttonNationality.Text = "Nationality";
             this.buttonNationality.UseVisualStyleBackColor = false;
@@ -489,25 +499,25 @@
             // 
             // buttonBookAppointment
             // 
-            this.buttonBookAppointment.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonBookAppointment.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonBookAppointment.BackColor = System.Drawing.Color.PowderBlue;
+            this.buttonBookAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBookAppointment.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBookAppointment.Location = new System.Drawing.Point(15, 20);
+            this.buttonBookAppointment.Location = new System.Drawing.Point(15, 34);
             this.buttonBookAppointment.Name = "buttonBookAppointment";
-            this.buttonBookAppointment.Size = new System.Drawing.Size(134, 23);
+            this.buttonBookAppointment.Size = new System.Drawing.Size(189, 34);
             this.buttonBookAppointment.TabIndex = 3;
-            this.buttonBookAppointment.Text = "Book Appointment";
+            this.buttonBookAppointment.Text = "Appointment";
             this.buttonBookAppointment.UseVisualStyleBackColor = false;
             this.buttonBookAppointment.Click += new System.EventHandler(this.buttonBookAppointment_Click);
             // 
             // buttonDoctorAssignShifts
             // 
-            this.buttonDoctorAssignShifts.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonDoctorAssignShifts.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonDoctorAssignShifts.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDoctorAssignShifts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDoctorAssignShifts.ForeColor = System.Drawing.Color.Navy;
-            this.buttonDoctorAssignShifts.Location = new System.Drawing.Point(15, 211);
+            this.buttonDoctorAssignShifts.Location = new System.Drawing.Point(17, 302);
             this.buttonDoctorAssignShifts.Name = "buttonDoctorAssignShifts";
-            this.buttonDoctorAssignShifts.Size = new System.Drawing.Size(134, 23);
+            this.buttonDoctorAssignShifts.Size = new System.Drawing.Size(189, 34);
             this.buttonDoctorAssignShifts.TabIndex = 7;
             this.buttonDoctorAssignShifts.Text = "Assign Shifts";
             this.buttonDoctorAssignShifts.UseVisualStyleBackColor = false;
@@ -515,12 +525,12 @@
             // 
             // buttonStaffAssignShift
             // 
-            this.buttonStaffAssignShift.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonStaffAssignShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonStaffAssignShift.BackColor = System.Drawing.Color.SeaShell;
+            this.buttonStaffAssignShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStaffAssignShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonStaffAssignShift.Location = new System.Drawing.Point(15, 373);
+            this.buttonStaffAssignShift.Location = new System.Drawing.Point(15, 531);
             this.buttonStaffAssignShift.Name = "buttonStaffAssignShift";
-            this.buttonStaffAssignShift.Size = new System.Drawing.Size(134, 23);
+            this.buttonStaffAssignShift.Size = new System.Drawing.Size(189, 34);
             this.buttonStaffAssignShift.TabIndex = 11;
             this.buttonStaffAssignShift.Text = "Assign Shift";
             this.buttonStaffAssignShift.UseVisualStyleBackColor = false;
@@ -528,12 +538,12 @@
             // 
             // buttonNewShift
             // 
-            this.buttonNewShift.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonNewShift.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonNewShift.BackColor = System.Drawing.Color.SeaShell;
+            this.buttonNewShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNewShift.ForeColor = System.Drawing.Color.Navy;
-            this.buttonNewShift.Location = new System.Drawing.Point(15, 344);
+            this.buttonNewShift.Location = new System.Drawing.Point(15, 491);
             this.buttonNewShift.Name = "buttonNewShift";
-            this.buttonNewShift.Size = new System.Drawing.Size(134, 23);
+            this.buttonNewShift.Size = new System.Drawing.Size(189, 34);
             this.buttonNewShift.TabIndex = 10;
             this.buttonNewShift.Text = "New Shift";
             this.buttonNewShift.UseVisualStyleBackColor = false;
@@ -543,15 +553,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::hospitalManagementSystem.Properties.Resources.healthcare_loop;
+            this.BackgroundImage = global::hospitalManagementSystem.Properties.Resources.MAIN_PIC;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1479, 724);
+            this.ClientSize = new System.Drawing.Size(1479, 789);
             this.Controls.Add(this.panelHospitalMain);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "HospitalMain";
-            this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HospitalMain_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -609,6 +618,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonUser;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

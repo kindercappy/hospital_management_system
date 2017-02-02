@@ -154,8 +154,8 @@ namespace hospitalManagementSystem
                 this.comboBoxDoctorShift.DisplayMember = "fullDetails";
                 this.comboBoxDoctorShift.ValueMember = "shiftId";
                 //sets colour for alternate rowns for dataGridViewExsitingDoctor
-                this.dataGridViewExistingDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
-                this.dataGridViewAppointmentHistory.AlternatingRowsDefaultCellStyle.BackColor = Color.DodgerBlue;
+                this.dataGridViewExistingDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
+                this.dataGridViewAppointmentHistory.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
@@ -163,6 +163,7 @@ namespace hospitalManagementSystem
                 this.comboBoxDoctorShift.SelectedIndex = -1;
                 //For flickering problem
                 this.DoubleBuffered = true;
+                this.labelHeader.Width = this.Width;
             }
             catch(System.Exception ex)
             {

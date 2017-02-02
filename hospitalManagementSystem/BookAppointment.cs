@@ -138,7 +138,7 @@ namespace hospitalManagementSystem
             textBoxAppTime.ScrollBars = ScrollBars.Vertical;
             //dataGridViewDoctor is Visible = False
             this.dataGridViewDoctor.Visible = false;
-
+            this.labelHeader.Width = this.Width;
         }
 
         //button Search onClick event

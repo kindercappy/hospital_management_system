@@ -125,7 +125,7 @@ namespace hospitalManagementSystem
             this.comboBoxStaffShift.DisplayMember = "fullDetails";
             this.comboBoxStaffShift.ValueMember = "shiftId";
             //sets colour for alternate rowns for dataGridViewExsitingDoctor
-            this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+            this.dataGridViewExistingStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque;
             //hide shift ID column
             //this.dataGridViewExistingStaff.Columns[0].Visible = false;
             //datagridview full row select
@@ -139,7 +139,7 @@ namespace hospitalManagementSystem
             this.comboBoxNationality.SelectedIndex = -1;
             this.comboBoxSex.SelectedIndex = -1;
             this.comboBoxStaffShift.SelectedIndex = -1;
-
+            this.labelHeader.Width = this.Width;
 
         }
         //dataGridView cellContentClick        

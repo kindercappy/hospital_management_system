@@ -87,9 +87,10 @@ namespace hospitalManagementSystem
             toUpperCaseLabels();
             //this.dataGridViewShifts.Columns[0].Visible = false;
             //sets alternate color of datagridviewshifts
-            this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
+            this.dataGridViewShifts.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
             //datagridview shifts full row select
             this.dataGridViewShifts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.labelHeader.Width = this.Width;
         }
 
         private void buttonNewShift_Click(object sender, EventArgs e)

@@ -56,7 +56,8 @@ namespace hospitalManagementSystem
             fullRowSelectDataGridViewStaffDepartment();
             setDataGridViewStaffDepartmentHeaders();
             toUpperCaseLabels();
-            this.dataGridViewDoctorDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
+            this.dataGridViewDoctorDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
+            this.labelHeader.Width = this.Width;
         }
         private void buttonNewDepartment_Click(object sender, EventArgs e)
         {

@@ -100,6 +100,7 @@ namespace hospitalManagementSystem
             labelChangePassword.Text = labelChangePassword.Text.ToUpper();
             labelCreateNewUser.Text = labelCreateNewUser.Text.ToUpper();
             labelUser.Text = labelUser.Text.ToUpper();
+            labelDeleteUser.Text = labelDeleteUser.Text.ToUpper();
         }
         private void buttonNewAccount_Click(object sender, EventArgs e)
         {
@@ -118,6 +119,7 @@ namespace hospitalManagementSystem
             setDataGridViewUserHeaders();
             fullRowSelectDataGridViewUser();
             toUpperCaseLabels();
+            this.labelHeader.Width = this.Width;
         }
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {

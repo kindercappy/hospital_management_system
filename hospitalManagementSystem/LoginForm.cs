@@ -87,7 +87,7 @@ namespace hospitalManagementSystem
         }
         private void buttonChangePassword_Click(object sender, EventArgs e)
         {
-            CommonFormOperation.ShowDialogSubForm(CommonFormOperation.changePassword, this.MdiParent);
+            
         }
 
         private void LoginForm_Deactivate(object sender, EventArgs e)

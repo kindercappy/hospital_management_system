@@ -34,7 +34,7 @@ namespace hospitalManagementSystem
         //User
         private static User fUser;
         //Change password
-        private static ChangePassowrd fChangePassword;
+        
 
         //Patient
         public static NewPatient newPatient
@@ -220,17 +220,7 @@ namespace hospitalManagementSystem
                 return fUser;
             }
         }
-        public static ChangePassowrd changePassword
-        {
-            get
-            {
-                if(fChangePassword ==  null || fChangePassword.IsDisposed)
-                {
-                    fChangePassword = new ChangePassowrd();
-                }
-                return fChangePassword;
-            }
-        }
+       
 
 
         public static void ShowMaximizeSubForm(Form frm, Form mdi)

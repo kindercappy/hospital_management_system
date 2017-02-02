@@ -133,9 +133,9 @@ namespace hospitalManagementSystem
             this.comboBoxDoctorShift.DisplayMember = "fullDetails";
             this.comboBoxDoctorShift.ValueMember = "shiftId";
             //sets colour for alternate rowns for dataGridViewDoctor
-            this.dataGridViewDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.SkyBlue;
+            this.dataGridViewDoctor.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
             //sets color for alternate rows for datagridviewdoctorshifts
-            this.dataGridViewDoctorShift.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
+            this.dataGridViewDoctorShift.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
             //hide Doctor Id column
             this.dataGridViewDoctor.Columns[0].Visible = false;
             //hide shift Id column
@@ -148,6 +148,7 @@ namespace hospitalManagementSystem
             this.dataGridViewDoctorShift.ReadOnly = true;
             //For flickering problem
             this.DoubleBuffered = true;
+            this.labelHeader.Width = this.Width;
         }
 
         // Doctor

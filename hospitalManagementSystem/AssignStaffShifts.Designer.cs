@@ -72,6 +72,7 @@
             this.buttonBack = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.labelStaff = new System.Windows.Forms.Label();
+            this.labelHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffShift)).BeginInit();
             this.SuspendLayout();
@@ -79,35 +80,35 @@
             // labelStaffShifts
             // 
             this.labelStaffShifts.AutoSize = true;
-            this.labelStaffShifts.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.labelStaffShifts.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelStaffShifts.BackColor = System.Drawing.Color.SeaShell;
+            this.labelStaffShifts.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStaffShifts.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelStaffShifts.Location = new System.Drawing.Point(395, 301);
+            this.labelStaffShifts.Location = new System.Drawing.Point(395, 351);
             this.labelStaffShifts.Name = "labelStaffShifts";
-            this.labelStaffShifts.Size = new System.Drawing.Size(100, 22);
+            this.labelStaffShifts.Size = new System.Drawing.Size(153, 32);
             this.labelStaffShifts.TabIndex = 126;
             this.labelStaffShifts.Text = "Staff Shifts";
             // 
             // buttonShiftRefresh
             // 
-            this.buttonShiftRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonShiftRefresh.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonShiftRefresh.BackColor = System.Drawing.Color.PeachPuff;
+            this.buttonShiftRefresh.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonShiftRefresh.ForeColor = System.Drawing.Color.Navy;
-            this.buttonShiftRefresh.Location = new System.Drawing.Point(754, 267);
+            this.buttonShiftRefresh.Location = new System.Drawing.Point(840, 320);
             this.buttonShiftRefresh.Name = "buttonShiftRefresh";
-            this.buttonShiftRefresh.Size = new System.Drawing.Size(150, 23);
+            this.buttonShiftRefresh.Size = new System.Drawing.Size(175, 36);
             this.buttonShiftRefresh.TabIndex = 125;
             this.buttonShiftRefresh.Text = "Refresh";
             this.buttonShiftRefresh.UseVisualStyleBackColor = false;
             // 
             // buttonShiftSearch
             // 
-            this.buttonShiftSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonShiftSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonShiftSearch.BackColor = System.Drawing.Color.PeachPuff;
+            this.buttonShiftSearch.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonShiftSearch.ForeColor = System.Drawing.Color.Navy;
-            this.buttonShiftSearch.Location = new System.Drawing.Point(598, 268);
+            this.buttonShiftSearch.Location = new System.Drawing.Point(659, 321);
             this.buttonShiftSearch.Name = "buttonShiftSearch";
-            this.buttonShiftSearch.Size = new System.Drawing.Size(150, 23);
+            this.buttonShiftSearch.Size = new System.Drawing.Size(175, 36);
             this.buttonShiftSearch.TabIndex = 124;
             this.buttonShiftSearch.Text = "Search";
             this.buttonShiftSearch.UseVisualStyleBackColor = false;
@@ -115,19 +116,20 @@
             // 
             // textBoxShiftSearch
             // 
-            this.textBoxShiftSearch.Location = new System.Drawing.Point(474, 270);
+            this.textBoxShiftSearch.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxShiftSearch.Location = new System.Drawing.Point(535, 330);
             this.textBoxShiftSearch.Name = "textBoxShiftSearch";
             this.textBoxShiftSearch.Size = new System.Drawing.Size(118, 20);
             this.textBoxShiftSearch.TabIndex = 123;
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonRefresh.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonRefresh.BackColor = System.Drawing.Color.PeachPuff;
+            this.buttonRefresh.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonRefresh.ForeColor = System.Drawing.Color.Navy;
-            this.buttonRefresh.Location = new System.Drawing.Point(748, 6);
+            this.buttonRefresh.Location = new System.Drawing.Point(978, 49);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(150, 23);
+            this.buttonRefresh.Size = new System.Drawing.Size(175, 36);
             this.buttonRefresh.TabIndex = 122;
             this.buttonRefresh.Text = "Reset";
             this.buttonRefresh.UseVisualStyleBackColor = false;
@@ -135,12 +137,12 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.BackColor = System.Drawing.Color.PeachPuff;
+            this.buttonSearch.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.buttonSearch.ForeColor = System.Drawing.Color.Navy;
-            this.buttonSearch.Location = new System.Drawing.Point(592, 6);
+            this.buttonSearch.Location = new System.Drawing.Point(797, 49);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(150, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(175, 36);
             this.buttonSearch.TabIndex = 121;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
@@ -149,26 +151,28 @@
             // labelDoctorShift
             // 
             this.labelDoctorShift.AutoSize = true;
-            this.labelDoctorShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDoctorShift.Location = new System.Drawing.Point(8, 590);
+            this.labelDoctorShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelDoctorShift.Location = new System.Drawing.Point(8, 640);
             this.labelDoctorShift.Name = "labelDoctorShift";
-            this.labelDoctorShift.Size = new System.Drawing.Size(68, 13);
+            this.labelDoctorShift.Size = new System.Drawing.Size(123, 25);
             this.labelDoctorShift.TabIndex = 118;
             this.labelDoctorShift.Text = "Staff Shift:";
             // 
             // comboBoxStaffShift
             // 
+            this.comboBoxStaffShift.BackColor = System.Drawing.Color.FloralWhite;
             this.comboBoxStaffShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStaffShift.FormattingEnabled = true;
-            this.comboBoxStaffShift.Location = new System.Drawing.Point(127, 587);
+            this.comboBoxStaffShift.Location = new System.Drawing.Point(208, 640);
             this.comboBoxStaffShift.Name = "comboBoxStaffShift";
             this.comboBoxStaffShift.Size = new System.Drawing.Size(253, 21);
             this.comboBoxStaffShift.TabIndex = 117;
             // 
             // dataGridViewStaff
             // 
+            this.dataGridViewStaff.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridViewStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStaff.Location = new System.Drawing.Point(12, 58);
+            this.dataGridViewStaff.Location = new System.Drawing.Point(20, 117);
             this.dataGridViewStaff.Name = "dataGridViewStaff";
             this.dataGridViewStaff.Size = new System.Drawing.Size(1150, 150);
             this.dataGridViewStaff.TabIndex = 116;
@@ -177,39 +181,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 327);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(8, 377);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(140, 25);
             this.label1.TabIndex = 115;
             this.label1.Text = "Department:";
             // 
             // comboBoxDepartment
             // 
+            this.comboBoxDepartment.BackColor = System.Drawing.Color.FloralWhite;
             this.comboBoxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(127, 324);
+            this.comboBoxDepartment.Location = new System.Drawing.Point(208, 377);
             this.comboBoxDepartment.Name = "comboBoxDepartment";
             this.comboBoxDepartment.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDepartment.TabIndex = 114;
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.BackColor = System.Drawing.Color.FloralWhite;
             this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.comboBoxSex.Location = new System.Drawing.Point(127, 377);
+            this.comboBoxSex.Location = new System.Drawing.Point(208, 430);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSex.TabIndex = 113;
             // 
             // comboBoxNationality
             // 
+            this.comboBoxNationality.BackColor = System.Drawing.Color.FloralWhite;
             this.comboBoxNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNationality.FormattingEnabled = true;
-            this.comboBoxNationality.Location = new System.Drawing.Point(127, 533);
+            this.comboBoxNationality.Location = new System.Drawing.Point(208, 586);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNationality.TabIndex = 112;
@@ -217,106 +224,107 @@
             // labelNationality
             // 
             this.labelNationality.AutoSize = true;
-            this.labelNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNationality.Location = new System.Drawing.Point(8, 536);
+            this.labelNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelNationality.Location = new System.Drawing.Point(8, 586);
             this.labelNationality.Name = "labelNationality";
-            this.labelNationality.Size = new System.Drawing.Size(71, 13);
+            this.labelNationality.Size = new System.Drawing.Size(131, 25);
             this.labelNationality.TabIndex = 111;
             this.labelNationality.Text = "Nationality:";
             // 
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(8, 562);
+            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelAddress.Location = new System.Drawing.Point(8, 612);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(56, 13);
+            this.labelAddress.Size = new System.Drawing.Size(105, 25);
             this.labelAddress.TabIndex = 110;
             this.labelAddress.Text = "Address:";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(8, 510);
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelEmail.Location = new System.Drawing.Point(8, 560);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(41, 13);
+            this.labelEmail.Size = new System.Drawing.Size(77, 25);
             this.labelEmail.TabIndex = 109;
             this.labelEmail.Text = "Email:";
             // 
             // labelWeight
             // 
             this.labelWeight.AutoSize = true;
-            this.labelWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeight.Location = new System.Drawing.Point(8, 458);
+            this.labelWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelWeight.Location = new System.Drawing.Point(8, 508);
             this.labelWeight.Name = "labelWeight";
-            this.labelWeight.Size = new System.Drawing.Size(51, 13);
+            this.labelWeight.Size = new System.Drawing.Size(92, 25);
             this.labelWeight.TabIndex = 108;
             this.labelWeight.Text = "Weight:";
             // 
             // labelHeightInch
             // 
             this.labelHeightInch.AutoSize = true;
-            this.labelHeightInch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeightInch.Location = new System.Drawing.Point(8, 432);
+            this.labelHeightInch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelHeightInch.Location = new System.Drawing.Point(8, 482);
             this.labelHeightInch.Name = "labelHeightInch";
-            this.labelHeightInch.Size = new System.Drawing.Size(113, 13);
+            this.labelHeightInch.Size = new System.Drawing.Size(205, 25);
             this.labelHeightInch.TabIndex = 107;
             this.labelHeightInch.Text = "Height (In Inches):";
             // 
             // labelHeightInFt
             // 
             this.labelHeightInFt.AutoSize = true;
-            this.labelHeightInFt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeightInFt.Location = new System.Drawing.Point(8, 406);
+            this.labelHeightInFt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelHeightInFt.Location = new System.Drawing.Point(8, 456);
             this.labelHeightInFt.Name = "labelHeightInFt";
-            this.labelHeightInFt.Size = new System.Drawing.Size(100, 13);
+            this.labelHeightInFt.Size = new System.Drawing.Size(183, 25);
             this.labelHeightInFt.TabIndex = 106;
             this.labelHeightInFt.Text = "Height (In Feet):";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 380);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(8, 430);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(59, 25);
             this.label2.TabIndex = 105;
             this.label2.Text = "Sex:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 354);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(8, 404);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(60, 25);
             this.label3.TabIndex = 104;
             this.label3.Text = "Age:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 301);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(8, 351);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.Size = new System.Drawing.Size(131, 25);
             this.label9.TabIndex = 103;
             this.label9.Text = "Last Name:";
             // 
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(8, 275);
+            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelFirstName.Location = new System.Drawing.Point(8, 325);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(71, 13);
+            this.labelFirstName.Size = new System.Drawing.Size(133, 25);
             this.labelFirstName.TabIndex = 102;
             this.labelFirstName.Text = "First Name:";
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(127, 559);
+            this.textBoxAddress.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxAddress.Location = new System.Drawing.Point(208, 612);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(121, 21);
@@ -324,14 +332,16 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(127, 507);
+            this.textBoxEmail.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxEmail.Location = new System.Drawing.Point(208, 560);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(121, 20);
             this.textBoxEmail.TabIndex = 100;
             // 
             // textBoxWeight
             // 
-            this.textBoxWeight.Location = new System.Drawing.Point(127, 455);
+            this.textBoxWeight.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxWeight.Location = new System.Drawing.Point(208, 508);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(121, 20);
             this.textBoxWeight.TabIndex = 99;
@@ -339,7 +349,8 @@
             // 
             // textBoxHeightInch
             // 
-            this.textBoxHeightInch.Location = new System.Drawing.Point(127, 429);
+            this.textBoxHeightInch.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxHeightInch.Location = new System.Drawing.Point(208, 482);
             this.textBoxHeightInch.Name = "textBoxHeightInch";
             this.textBoxHeightInch.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightInch.TabIndex = 98;
@@ -347,7 +358,8 @@
             // 
             // textBoxHeightFt
             // 
-            this.textBoxHeightFt.Location = new System.Drawing.Point(127, 403);
+            this.textBoxHeightFt.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxHeightFt.Location = new System.Drawing.Point(208, 456);
             this.textBoxHeightFt.Name = "textBoxHeightFt";
             this.textBoxHeightFt.Size = new System.Drawing.Size(121, 20);
             this.textBoxHeightFt.TabIndex = 97;
@@ -355,7 +367,8 @@
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(127, 351);
+            this.textBoxAge.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxAge.Location = new System.Drawing.Point(208, 404);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(121, 20);
             this.textBoxAge.TabIndex = 96;
@@ -363,21 +376,24 @@
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(127, 298);
+            this.textBoxLastName.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxLastName.Location = new System.Drawing.Point(208, 351);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(121, 20);
             this.textBoxLastName.TabIndex = 95;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(127, 272);
+            this.textBoxFirstName.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxFirstName.Location = new System.Drawing.Point(208, 325);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(121, 20);
             this.textBoxFirstName.TabIndex = 94;
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(127, 481);
+            this.textBoxPhone.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxPhone.Location = new System.Drawing.Point(208, 534);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(121, 20);
             this.textBoxPhone.TabIndex = 93;
@@ -386,29 +402,30 @@
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(8, 484);
+            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelPhone.Location = new System.Drawing.Point(8, 534);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(47, 13);
+            this.labelPhone.Size = new System.Drawing.Size(86, 25);
             this.labelPhone.TabIndex = 92;
             this.labelPhone.Text = "Phone:";
             // 
             // buttonAssign
             // 
-            this.buttonAssign.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonAssign.BackColor = System.Drawing.Color.PeachPuff;
             this.buttonAssign.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.buttonAssign.ForeColor = System.Drawing.Color.Navy;
-            this.buttonAssign.Location = new System.Drawing.Point(11, 614);
+            this.buttonAssign.Location = new System.Drawing.Point(13, 668);
             this.buttonAssign.Name = "buttonAssign";
-            this.buttonAssign.Size = new System.Drawing.Size(172, 25);
+            this.buttonAssign.Size = new System.Drawing.Size(448, 36);
             this.buttonAssign.TabIndex = 91;
             this.buttonAssign.Text = "Assign";
             this.buttonAssign.UseVisualStyleBackColor = false;
             // 
             // dataGridViewStaffShift
             // 
+            this.dataGridViewStaffShift.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridViewStaffShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStaffShift.Location = new System.Drawing.Point(398, 327);
+            this.dataGridViewStaffShift.Location = new System.Drawing.Point(401, 386);
             this.dataGridViewStaffShift.Name = "dataGridViewStaffShift";
             this.dataGridViewStaffShift.Size = new System.Drawing.Size(344, 203);
             this.dataGridViewStaffShift.TabIndex = 90;
@@ -416,16 +433,18 @@
             // labelSearchPhone
             // 
             this.labelSearchPhone.AutoSize = true;
-            this.labelSearchPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchPhone.Location = new System.Drawing.Point(389, 9);
+            this.labelSearchPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelSearchPhone.Location = new System.Drawing.Point(518, 59);
             this.labelSearchPhone.Name = "labelSearchPhone";
-            this.labelSearchPhone.Size = new System.Drawing.Size(91, 13);
+            this.labelSearchPhone.Size = new System.Drawing.Size(167, 25);
             this.labelSearchPhone.TabIndex = 134;
             this.labelSearchPhone.Text = "Search Phone:";
+            this.labelSearchPhone.Click += new System.EventHandler(this.labelSearchPhone_Click);
             // 
             // textBoxSearchPhone
             // 
-            this.textBoxSearchPhone.Location = new System.Drawing.Point(486, 6);
+            this.textBoxSearchPhone.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxSearchPhone.Location = new System.Drawing.Point(691, 59);
             this.textBoxSearchPhone.Name = "textBoxSearchPhone";
             this.textBoxSearchPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchPhone.TabIndex = 133;
@@ -434,16 +453,17 @@
             // labelSearchId
             // 
             this.labelSearchId.AutoSize = true;
-            this.labelSearchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchId.Location = new System.Drawing.Point(211, 9);
+            this.labelSearchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelSearchId.Location = new System.Drawing.Point(284, 59);
             this.labelSearchId.Name = "labelSearchId";
-            this.labelSearchId.Size = new System.Drawing.Size(68, 13);
+            this.labelSearchId.Size = new System.Drawing.Size(122, 25);
             this.labelSearchId.TabIndex = 132;
             this.labelSearchId.Text = "Search ID:";
             // 
             // textBoxSearchId
             // 
-            this.textBoxSearchId.Location = new System.Drawing.Point(283, 6);
+            this.textBoxSearchId.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxSearchId.Location = new System.Drawing.Point(412, 59);
             this.textBoxSearchId.Name = "textBoxSearchId";
             this.textBoxSearchId.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchId.TabIndex = 131;
@@ -452,16 +472,17 @@
             // labelSearchName
             // 
             this.labelSearchName.AutoSize = true;
-            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchName.Location = new System.Drawing.Point(12, 9);
+            this.labelSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelSearchName.Location = new System.Drawing.Point(12, 59);
             this.labelSearchName.Name = "labelSearchName";
-            this.labelSearchName.Size = new System.Drawing.Size(87, 13);
+            this.labelSearchName.Size = new System.Drawing.Size(160, 25);
             this.labelSearchName.TabIndex = 130;
             this.labelSearchName.Text = "Search Name:";
             // 
             // textBoxSearchName
             // 
-            this.textBoxSearchName.Location = new System.Drawing.Point(105, 6);
+            this.textBoxSearchName.BackColor = System.Drawing.Color.FloralWhite;
+            this.textBoxSearchName.Location = new System.Drawing.Point(178, 59);
             this.textBoxSearchName.Name = "textBoxSearchName";
             this.textBoxSearchName.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchName.TabIndex = 129;
@@ -469,10 +490,10 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonBack.BackColor = System.Drawing.Color.PeachPuff;
             this.buttonBack.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.buttonBack.ForeColor = System.Drawing.Color.Navy;
-            this.buttonBack.Location = new System.Drawing.Point(11, 668);
+            this.buttonBack.Location = new System.Drawing.Point(11, 735);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(209, 43);
             this.buttonBack.TabIndex = 135;
@@ -483,30 +504,44 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(395, 277);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(395, 327);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.Size = new System.Drawing.Size(134, 25);
             this.label4.TabIndex = 126;
             this.label4.Text = "Shift Name:";
             // 
             // labelStaff
             // 
             this.labelStaff.AutoSize = true;
-            this.labelStaff.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelStaff.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStaff.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelStaff.Location = new System.Drawing.Point(14, 32);
+            this.labelStaff.Location = new System.Drawing.Point(14, 82);
             this.labelStaff.Name = "labelStaff";
-            this.labelStaff.Size = new System.Drawing.Size(49, 22);
+            this.labelStaff.Size = new System.Drawing.Size(75, 32);
             this.labelStaff.TabIndex = 130;
             this.labelStaff.Text = "Staff";
+            // 
+            // labelHeader
+            // 
+            this.labelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHeader.BackColor = System.Drawing.Color.BurlyWood;
+            this.labelHeader.Font = new System.Drawing.Font("Times New Roman", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Location = new System.Drawing.Point(-1, 0);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(521, 39);
+            this.labelHeader.TabIndex = 136;
+            this.labelHeader.Text = "Assign Shift (Staff)";
+            this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AssignStaffShifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1381, 756);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(1381, 804);
+            this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelSearchPhone);
             this.Controls.Add(this.textBoxSearchPhone);
@@ -551,6 +586,7 @@
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.buttonAssign);
             this.Controls.Add(this.dataGridViewStaffShift);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "AssignStaffShifts";
             this.Text = "AssignStaffShifts";
             this.Deactivate += new System.EventHandler(this.AssignStaffShifts_Deactivate);
@@ -608,5 +644,6 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelStaff;
+        private System.Windows.Forms.Label labelHeader;
     }
 }

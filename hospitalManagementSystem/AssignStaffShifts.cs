@@ -79,14 +79,15 @@ namespace hospitalManagementSystem
                 this.comboBoxStaffShift.DisplayMember = "fullDetails";
                 this.comboBoxStaffShift.ValueMember = "shiftId";
                 //sets colour for alternate rowns for dataGridViewStaff
-                this.dataGridViewStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+                this.dataGridViewStaff.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque;
                 //sets colour for laternate rows for datagridviewstaffshift
-                this.dataGridViewStaffShift.AlternatingRowsDefaultCellStyle.BackColor = Color.Red;
+                this.dataGridViewStaffShift.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque;
                 //Setting comboboxes to -1 index so no item apperas on load
                 this.comboBoxDepartment.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
                 this.comboBoxStaffShift.SelectedIndex = -1;
+                this.labelHeader.Width = this.Width;
             }
             catch (System.Exception ex)
             {
@@ -295,6 +296,11 @@ namespace hospitalManagementSystem
         private void AssignStaffShifts_Deactivate(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void labelSearchPhone_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

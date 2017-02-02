@@ -156,6 +156,8 @@ namespace hospitalManagementSystem
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
                 this.comboBoxDepartment.SelectedIndex = -1;
+                this.labelHeader.Width = this.Width;
+
             }
             catch (System.Exception ex)
             {

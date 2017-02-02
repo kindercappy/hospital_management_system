@@ -28,7 +28,7 @@ namespace hospitalManagementSystem
         {
             LoginForm form = new LoginForm();
             form.ShowDialog();
-           
+            
         }
 
         //Patient
@@ -217,6 +217,11 @@ namespace hospitalManagementSystem
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

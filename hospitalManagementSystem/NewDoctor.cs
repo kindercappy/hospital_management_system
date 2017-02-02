@@ -190,6 +190,7 @@ namespace hospitalManagementSystem
                 this.comboBoxDoctorShift.SelectedIndex = -1;
                 this.comboBoxNationality.SelectedIndex = -1;
                 this.comboBoxSex.SelectedIndex = -1;
+                this.labelHeader.Width = this.Width;
             }
             catch (System.Exception ex)
             {

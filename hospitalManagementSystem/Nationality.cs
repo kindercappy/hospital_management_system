@@ -55,6 +55,7 @@ namespace hospitalManagementSystem
             fullRowSelectDataGridViewNationalities();
             setDataGridViewNationalitiesHeaders();
             toUpperCaseLabels();
+            this.labelHeader.Width = this.Width;
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
