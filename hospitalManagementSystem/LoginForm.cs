@@ -64,6 +64,7 @@ namespace hospitalManagementSystem
                     case CloseReason.TaskManagerClosing:
                         break;
                     case CloseReason.UserClosing:
+                        try {
                         if (UserClosing)
                         {
                             this.Close();
@@ -71,6 +72,11 @@ namespace hospitalManagementSystem
                         else
                         {
                             Application.Exit();
+                        }
+                        }
+                        catch(System.Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
                         }
                         break;
                     case CloseReason.WindowsShutDown:

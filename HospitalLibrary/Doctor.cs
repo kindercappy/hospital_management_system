@@ -24,6 +24,7 @@ namespace HospitalLibrary
         private string sAddress;
         private int iNationality;
         private int iShift;
+
         public int doctorId
         {
             get

@@ -101,11 +101,7 @@ namespace hospitalManagementSystem
             }
             else
             {
-                int resultHeightFt;
-                int resultHeightInch;
-                decimal resultWeight;
-                long resultPhone;
-                Doctor doc = new Doctor();
+                Doctor doc = NewMethod();
                 try
                 {
                     doc.firstName = this.textBoxFirstName.Text;
@@ -114,27 +110,27 @@ namespace hospitalManagementSystem
                     doc.age = Convert.ToInt32(this.textBoxAge.Text);
                     doc.sex = this.comboBoxSex.Text;
                     //heightFt
-                    if(Int32.TryParse(this.textBoxHeightFt.Text,out resultHeightFt))
+                    if (Int32.TryParse(textBoxHeightFt.Text, out int resultHeightFt))
                     {
-                    doc.heightFt = Int32.Parse(this.textBoxHeightFt.Text);
+                        doc.heightFt = Int32.Parse(this.textBoxHeightFt.Text);
                     }
                     else
                     {
                         doc.heightFt = Int32.Parse(resultHeightFt.ToString());
                     }
                     //heightInch
-                    if(Int32.TryParse(this.textBoxHeightInch.Text,out resultHeightInch))
+                    if (Int32.TryParse(textBoxHeightInch.Text, out int resultHeightInch))
                     {
-                    doc.heightInch = Int32.Parse(this.textBoxHeightInch.Text);
+                        doc.heightInch = Int32.Parse(this.textBoxHeightInch.Text);
                     }
                     else
                     {
                         doc.heightInch = Int32.Parse(resultHeightInch.ToString());
                     }
                     //weight
-                    if(Decimal.TryParse(this.textBoxWeight.Text,out resultWeight))
+                    if (Decimal.TryParse(this.textBoxWeight.Text, out decimal resultWeight))
                     {
-                    doc.weight = Convert.ToDecimal(this.textBoxWeight.Text);
+                        doc.weight = Convert.ToDecimal(this.textBoxWeight.Text);
                     }
                     else
                     {
@@ -142,9 +138,9 @@ namespace hospitalManagementSystem
                     }
 
                     //phone
-                    if(Int64.TryParse(this.textBoxPhone.Text,out resultPhone))
+                    if (Int64.TryParse(this.textBoxPhone.Text, out long resultPhone))
                     {
-                    doc.phone = Int64.Parse(this.textBoxPhone.Text);
+                        doc.phone = Int64.Parse(this.textBoxPhone.Text);
                     }
                     else
                     {
@@ -164,6 +160,11 @@ namespace hospitalManagementSystem
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private static Doctor NewMethod()
+        {
+            return new Doctor();
         }
 
         private void NewDoctor_Load(object sender, EventArgs e)

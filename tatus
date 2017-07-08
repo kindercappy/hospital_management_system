@@ -1,0 +1,59 @@
+[33mcommit 60374accd264edca3dcfb772765b0ceb9810827d[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Thu Sep 15 23:46:44 2016 +0530
+
+    Add functionality for NewDoctor, NewPatient, NewStaff Forms
+
+[33mcommit be2540a3a3eeeb270d4ba79ca02ae2351b25f693[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Tue Sep 13 23:33:23 2016 +0530
+
+    Add NewDoctor NationalityComboBox functionality
+
+[33mcommit a14f6e796e12d4c0d3f8522c9e02f7447a9beea8[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Tue Sep 13 18:51:52 2016 +0530
+
+    Add NewDoctor ComboBoxDepartment DropDown functionality
+
+[33mcommit 08ee106a9b3cc9f4b4094630c9afd6c0dbf95246[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Tue Sep 13 13:27:23 2016 +0530
+
+    Add Sample Doctor textBoxFirstName functionality with Sqlserver
+
+[33mcommit 943df077ec459bd740f1ffeb1904fcdfc3d1fa5e[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Sun Sep 11 17:24:50 2016 +0530
+
+    Add all button click event HospitalMain.
+
+[33mcommit 08ffe32ac446be1381d3aa9cc6f87159c242e983[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Sun Sep 11 14:11:40 2016 +0530
+
+    Add NewStaff and ExistingStaff Designer.
+
+[33mcommit c6a191236973a6de771d3b3f7e29389f385675d0[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Sat Sep 10 18:06:58 2016 +0530
+
+    Add NewDoctor and ExistingDoctor Designer.
+
+[33mcommit adccddeb0e2b60f9293c69f84c485cad53098262[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Sat Sep 10 16:51:19 2016 +0530
+
+    Add Existing Patient Designer.
+
+[33mcommit 5dec4893635d02aa1dac6d7f00ea5a9b22704209[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Sat Sep 10 16:04:38 2016 +0530
+
+    Add HospitalMain and NewPatient designer.
+
+[33mcommit 0c71602bf7e4084d71120fb850c1ef95adfc866d[m
+Author: Kinderpreet <kp.cappy.kp@gmail.com>
+Date:   Sat Sep 10 15:40:12 2016 +0530
+
+    Add .gitignore and .gitattributes.
